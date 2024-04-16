@@ -40,7 +40,7 @@ public enum Category {
                 return category;
             }
         }
-        throw new IllegalArgumentException("no value for the delimiter('" + delimiter + "'");
+        throw new IllegalArgumentException("no value for the delimiter('" + delimiter + "')");
     }
 
     Category(final String delimiter) {

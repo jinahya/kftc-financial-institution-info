@@ -8,12 +8,18 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -140,7 +146,7 @@ class Bankinfo_20204_03_29_Test {
             int pages = reader.getNumberOfPages();
             for (int i = 1; i <= pages; i++) {
                 String pageContent = PdfTextExtractor.getTextFromPage(reader, i);
-                System.out.println("Content on Page " + i + ": \n" + pageContent);
+//                System.out.println("Content on Page " + i + ": \n" + pageContent);
                 parse(representatives, categories, pageContent, map);
             }
         } finally {
@@ -152,12 +158,27 @@ class Bankinfo_20204_03_29_Test {
         assertThat(map.values().stream().filter(v -> v.getCategory() == Category.CARD).count())
                 .as("count of %1$s", Category.CARD)
                 .isEqualTo(15);
-
-        map.entrySet().stream().filter(e -> e.getValue().getCategory() == Category.INSU).forEach(e -> {
-            log.debug("INSU / {}, {}", e.getKey(), e.getValue());
-        });
         assertThat(map.values().stream().filter(v -> v.getCategory() == Category.INSU).count()).isEqualTo(35);
-
         assertThat(map.values().stream().filter(v -> v.getCategory() == Category.MISC).count()).isEqualTo(5);
+
+        assertThat(map.values().stream().filter(KftcFinancialInstitutionCode::isRepresentative).count()).isEqualTo(150);
+        assertThat(map).hasSize(196);
+
+        final var directory = Stream.concat(
+                        Stream.of("src", "main", "resources"),
+                        Arrays.stream(getClass().getPackage().getName().split("\\."))
+                )
+                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
+                .toAbsolutePath()
+                .normalize();
+        directory.toFile().mkdirs();
+        final var path = directory.resolve("bankinfo.bin");
+        log.debug("path: {}", directory);
+        try (var stream = new FileOutputStream(path.toFile())) {
+            final var text = map.values().stream().map(KftcFinancialInstitutionCode::toLine)
+                    .collect(Collectors.joining("\r\n"));
+            stream.write(text.getBytes(StandardCharsets.UTF_8));
+            stream.flush();
+        }
     }
 }
