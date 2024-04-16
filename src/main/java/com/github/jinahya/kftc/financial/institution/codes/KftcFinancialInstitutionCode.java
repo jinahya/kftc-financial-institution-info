@@ -2,14 +2,12 @@ package com.github.jinahya.kftc.financial.institution.codes;
 
 import lombok.*;
 
-import java.util.Arrays;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 @Setter(AccessLevel.NONE)
 @Getter(AccessLevel.PUBLIC)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @ToString
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
+@AllArgsConstructor(access = AccessLevel.PACKAGE)
 @Builder(access = AccessLevel.PACKAGE)
 public class KftcFinancialInstitutionCode {
 
@@ -17,7 +15,6 @@ public class KftcFinancialInstitutionCode {
 
     static KftcFinancialInstitutionCode parse(final String string) {
         final var split = string.split(DELIMITER);
-        System.out.println("split: " + Arrays.toString(split));
         return builder()
                 .category(Category.valueOf(split[0]))
                 .code(split[1])
@@ -27,11 +24,10 @@ public class KftcFinancialInstitutionCode {
     }
 
     String toLine() {
-        return Stream.<String>of(category.toString(), code, name, Boolean.toString(representative))
-                .collect(Collectors.joining(DELIMITER));
-//        return category + "\u001d" + code + "\u001d" + name + "\u001d" + representative;
+        return String.join(DELIMITER, category.toString(), code, name, Boolean.toString(representative));
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
     @Setter(AccessLevel.PACKAGE)
     private Category category;
 

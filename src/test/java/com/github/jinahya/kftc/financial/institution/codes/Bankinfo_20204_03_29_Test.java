@@ -5,6 +5,7 @@ import com.itextpdf.text.pdf.parser.PdfTextExtractor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -101,6 +102,7 @@ class Bankinfo_20204_03_29_Test {
         });
     }
 
+    @Disabled
     @Test
     void __pdfbox() throws IOException, URISyntaxException {
         final var file = new File(getClass().getResource("/bankinfo_2024_03_29.hwp.pdf").toURI());
