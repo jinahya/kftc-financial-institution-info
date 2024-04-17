@@ -23,7 +23,7 @@ import java.util.stream.Stream;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class Bankinfo_20204_03_29_Test {
+class KftcFinancialInstitutionCodes_Resource_Test {
 
     private static final Pattern pattern = Pattern.compile("(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
 
