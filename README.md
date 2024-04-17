@@ -60,3 +60,13 @@ KftcFinancialInstitutionCodes.getCodeList().stream()
             log.debug("code: {}", c);
         });
 ```
+```text
+....KftcFinancialInstitutionCode@c935{category=INSU,code=401,name=하나생명보험,representative=true}
+....KftcFinancialInstitutionCode@c936{category=INSU,code=402,name=동양생명,representative=true}
+....KftcFinancialInstitutionCode@c937{category=INSU,code=403,name=흥국화재,representative=true}
+....KftcFinancialInstitutionCode@c938{category=INSU,code=404,name=BNP파리바 카디프생명,representative=true}
+....KftcFinancialInstitutionCode@c939{category=INSU,code=405,name=AIG손해보험,representative=true}
+....KftcFinancialInstitutionCode@c93a{category=INSU,code=406,name=하나손해보험,representative=true}
+....KftcFinancialInstitutionCode@c992{category=INSU,code=431,name=미래에셋생명,representative=true}
+....
+```
