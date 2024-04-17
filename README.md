@@ -31,6 +31,7 @@ Codes, assigned by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do),
 <dependency>
   <groupId>com.github.jinahya</groupId>
   <artifactId>kftc-financial-institution-codes</artifactId>
+  <!-- Check the badge above for the latest version -->
 </dependency>
 ```
 
