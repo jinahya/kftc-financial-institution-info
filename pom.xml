@@ -13,7 +13,7 @@
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
-  <description>Bound instance of SPDX License List</description>
+  <description>Bound codes assigned by KFTC</description>
   <url>https://github.com/jinahya/$project.artifactId}</url>
   <inceptionYear>2024</inceptionYear>
   <organization>
@@ -33,7 +33,7 @@
   </issueManagement>
   <ciManagement>
     <system>GitHub Actions</system>
-    <url>https://github.com/jinahya/spdx-licenses/actions/workflows/maven.yml</url>
+    <url>https://github.com/jinahya/${project.artifactId}/actions/workflows/maven.yml</url>
   </ciManagement>
 
   <properties>
@@ -58,7 +58,7 @@
     <version.org.mockito>5.11.0</version.org.mockito>
   </properties>
 
-  <dependencyManagement />
+  <dependencyManagement/>
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -180,7 +180,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -242,30 +242,6 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.5.0</version>
-        <executions>
-          <execution>
-            <id>add-test-resource-data-json</id>
-            <phase>generate-test-resources</phase> <!-- default -->
-            <goals>
-              <goal>add-test-resource</goal>
-            </goals>
-            <configuration>
-              <resources>
-                <resource>
-                  <directory>${project.basedir}/src/test/resources-spdx-license-data</directory>
-                  <includes>
-                    <include>json/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <version>2.4.0</version>
         <configuration>
@@ -290,11 +266,6 @@
           </execution>
         </executions>
       </plugin>
-<!--      <plugin>-->
-<!--        <groupId>org.codehaus.mojo</groupId>-->
-<!--        <artifactId>sonar-maven-plugin</artifactId>-->
-<!--        <version>3.11.0.3922</version>-->
-<!--      </plugin>-->
     </plugins>
   </build>
 
