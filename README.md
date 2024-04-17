@@ -14,14 +14,15 @@ Codes, assigned by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do),
 
 ### JDK
 
-```shell
-$ grep "<maven.compiler." pom.xml
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-    <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
-    <maven.compiler.testSource>21</maven.compiler.testSource>
-    <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
-    <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
+```xml
+<project>
+  <maven.compiler.source>11</maven.compiler.source>
+  <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+  <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
+  <maven.compiler.testSource>21</maven.compiler.testSource>
+  <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
+  <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
+</project>
 ```
 
 ### Apache Maven
