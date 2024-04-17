@@ -57,55 +57,18 @@
     <version.org.mockito>5.11.0</version.org.mockito>
   </properties>
 
-  <dependencyManagement>
-    <dependencies>
-      <dependency><!-- https://search.maven.org/artifact/com.fasterxml.jackson/jackson-bom -->
-        <groupId>com.fasterxml.jackson</groupId>
-        <artifactId>jackson-bom</artifactId>
-        <version>2.17.0</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-      <dependency><!-- https://search.maven.org/artifact/jakarta.platform/jakarta.jakartaee-bom -->
-        <groupId>jakarta.platform</groupId>
-        <artifactId>jakarta.jakartaee-bom</artifactId>
-        <version>11.0.0-M1</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
+  <dependencyManagement/>
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.5.4</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.datatype</groupId>
-      <artifactId>jackson-datatype-jsr310</artifactId>
+      <version>1.5.5</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>itextpdf</artifactId>
       <version>5.5.13.3</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.enterprise</groupId>
-      <artifactId>jakarta.enterprise.cdi-api</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.inject</groupId>
-      <artifactId>jakarta.inject-api</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -138,12 +101,6 @@
       <version>${version.lombok}</version>
       <scope>provided</scope>
     </dependency>
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-api</artifactId>
-      <version>2.0.12</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 
   <build>
@@ -162,7 +119,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
