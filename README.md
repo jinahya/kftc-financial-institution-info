@@ -5,9 +5,11 @@
 [![Maven Central Version](https://img.shields.io/maven-central/v/com.github.jinahya/kftc-financial-institution-codes)](https://search.maven.org/artifact/com.github.jinahya/kftc-financial-institution-codes)
 [![javadoc](https://javadoc.io/badge2/com.github.jinahya/kftc-financial-institution-codes/javadoc.svg)](https://javadoc.io/doc/com.github.jinahya/kftc-financial-institution-codes)
 
-Codes, assigned by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do), for financial institutions.
+Codes, assigned by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do), for financial institutions. 금융결재원에서 금융기관들에 할당한 코드와 정보를 조회할 수 있는 API이다.
 
-* [금융회사코드 조회](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do)
+## Links
+
+* [금융회사코드 조회](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do) (금융결재원)
 
 
 ## Build environment
