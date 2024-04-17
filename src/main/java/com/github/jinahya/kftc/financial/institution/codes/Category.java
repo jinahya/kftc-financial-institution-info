@@ -2,6 +2,9 @@ package com.github.jinahya.kftc.financial.institution.codes;
 
 import java.util.Objects;
 
+/**
+ * Predefined categories for codes.
+ */
 public enum Category {
 
     /**
@@ -34,6 +37,7 @@ public enum Category {
      */
     MISC("■ 기 타");
 
+    // -----------------------------------------------------------------------------------------------------------------
     static Category valueOfDelimiter(final String delimiter) {
         for (final Category category : Category.values()) {
             if (Objects.equals(category.delimiter, delimiter)) {
@@ -43,9 +47,11 @@ public enum Category {
         throw new IllegalArgumentException("no value for the delimiter('" + delimiter + "')");
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
     Category(final String delimiter) {
         this.delimiter = Objects.requireNonNull(delimiter, "delimiter is null");
     }
 
-    final String delimiter;
+    // -----------------------------------------------------------------------------------------------------------------
+    private final String delimiter;
 }
