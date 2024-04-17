@@ -3,6 +3,12 @@ package com.github.jinahya.kftc.financial.institution.codes;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Represents a code and additional info assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
+ *
+ * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
+ * @see KftcFinancialInstitutionCodes
+ */
 public final class KftcFinancialInstitutionCode
         implements Serializable {
 
@@ -12,6 +18,10 @@ public final class KftcFinancialInstitutionCode
     static final String DELIMITER = "\u001d";
 
     // -----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * Creates a new instance.
+     */
     KftcFinancialInstitutionCode() {
         super();
     }
@@ -45,7 +55,7 @@ public final class KftcFinancialInstitutionCode
     static KftcFinancialInstitutionCode parse(final String string) {
         final var instance = new KftcFinancialInstitutionCode();
         final var split = string.split(DELIMITER);
-        instance.category = Category.valueOf(split[0]);
+        instance.category = KftcFinancialInstitutionCategory.valueOf(split[0]);
         instance.code = split[1];
         instance.name = split[2];
         instance.representative = Boolean.parseBoolean(split[3]);
@@ -58,11 +68,11 @@ public final class KftcFinancialInstitutionCode
 
     // -----------------------------------------------------------------------------------------------------------------
 
-    public Category getCategory() {
+    public KftcFinancialInstitutionCategory getCategory() {
         return category;
     }
 
-    void setCategory(final Category category) {
+    void setCategory(final KftcFinancialInstitutionCategory category) {
         this.category = category;
     }
 
@@ -94,7 +104,7 @@ public final class KftcFinancialInstitutionCode
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    private Category category;
+    private KftcFinancialInstitutionCategory category;
 
     private String code;
 

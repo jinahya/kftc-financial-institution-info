@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * Predefined categories for codes.
  */
-public enum Category {
+public enum KftcFinancialInstitutionCategory {
 
     /**
      * 은행.
@@ -38,8 +38,8 @@ public enum Category {
     MISC("■ 기 타");
 
     // -----------------------------------------------------------------------------------------------------------------
-    static Category valueOfDelimiter(final String delimiter) {
-        for (final Category category : Category.values()) {
+    static KftcFinancialInstitutionCategory valueOfDelimiter(final String delimiter) {
+        for (final KftcFinancialInstitutionCategory category : KftcFinancialInstitutionCategory.values()) {
             if (Objects.equals(category.delimiter, delimiter)) {
                 return category;
             }
@@ -48,7 +48,7 @@ public enum Category {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    Category(final String delimiter) {
+    KftcFinancialInstitutionCategory(final String delimiter) {
         this.delimiter = Objects.requireNonNull(delimiter, "delimiter is null");
     }
 

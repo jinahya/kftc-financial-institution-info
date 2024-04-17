@@ -20,20 +20,18 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.assertj.core.api.Assertions.*;
-import static org.assertj.core.api.Assertions.as;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 class Bankinfo_20204_03_29_Test {
 
-    private static final Pattern pattern = Pattern.compile("(\\d{3})\\s([\\p{L}\\(\\)\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\s]+)?");
+    private static final Pattern pattern = Pattern.compile("(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
 
-    static void parse(final boolean[] representatives, final Category[] categories, final String text,
+    static void parse(final boolean[] representatives, final KftcFinancialInstitutionCategory[] categories, final String text,
                       Map<String, KftcFinancialInstitutionCode> map) {
         text.lines().forEach(l -> {
             try {
-                final var category = Category.valueOfDelimiter(l);
+                final var category = KftcFinancialInstitutionCategory.valueOfDelimiter(l);
                 log.debug("category <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,<<: {}", category);
                 representatives[0] = false;
                 categories[0] = category;
@@ -140,7 +138,7 @@ class Bankinfo_20204_03_29_Test {
         final var file = new File(getClass().getResource("/bankinfo_2024_03_29.hwp.pdf").toURI());
         assert file.isFile();
         final boolean[] representatives = new boolean[]{false};
-        final Category[] categories = new Category[]{null};
+        final KftcFinancialInstitutionCategory[] categories = new KftcFinancialInstitutionCategory[]{null};
         final Map<String, KftcFinancialInstitutionCode> map = new TreeMap<>();
         final var reader = new PdfReader(file.toURI().toURL());
         try {
@@ -152,14 +150,14 @@ class Bankinfo_20204_03_29_Test {
         } finally {
             reader.close();
         }
-        assertThat(map.values().stream().filter(v -> v.getCategory() == Category.BANK).count()).isEqualTo(80);
-        assertThat(map.values().stream().filter(v -> v.getCategory() == Category.FIIN).count()).isEqualTo(47);
-        assertThat(map.values().stream().filter(v -> v.getCategory() == Category.CAPI).count()).isEqualTo(14);
-        assertThat(map.values().stream().filter(v -> v.getCategory() == Category.CARD).count())
-                .as("count of %1$s", Category.CARD)
+        assertThat(map.values().stream().filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.BANK).count()).isEqualTo(80);
+        assertThat(map.values().stream().filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.FIIN).count()).isEqualTo(47);
+        assertThat(map.values().stream().filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CAPI).count()).isEqualTo(14);
+        assertThat(map.values().stream().filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CARD).count())
+                .as("count of %1$s", KftcFinancialInstitutionCategory.CARD)
                 .isEqualTo(15);
-        assertThat(map.values().stream().filter(v -> v.getCategory() == Category.INSU).count()).isEqualTo(35);
-        assertThat(map.values().stream().filter(v -> v.getCategory() == Category.MISC).count()).isEqualTo(5);
+        assertThat(map.values().stream().filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.INSU).count()).isEqualTo(35);
+        assertThat(map.values().stream().filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.MISC).count()).isEqualTo(5);
         assertThat(map.values().stream().filter(KftcFinancialInstitutionCode::isRepresentative).count()).isEqualTo(150);
         assertThat(map).hasSize(196);
         final var directory = Stream.concat(

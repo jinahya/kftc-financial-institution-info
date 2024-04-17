@@ -33,7 +33,7 @@ class ReadmeTest {
     @Test
     void __2() {
         KftcFinancialInstitutionCodes.getCodeList().stream()
-                .filter(c -> c.getCategory() == Category.INSU) // 보험사
+                .filter(c -> c.getCategory() == KftcFinancialInstitutionCategory.INSU) // 보험사
                 .forEach(c -> {
                     log.debug("code: {}", c);
                 });

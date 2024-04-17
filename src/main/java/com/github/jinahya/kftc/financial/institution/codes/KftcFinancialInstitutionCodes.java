@@ -9,6 +9,12 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * A class for accessing codes and additional info assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
+ *
+ * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
+ * @see KftcFinancialInstitutionCode
+ */
 public final class KftcFinancialInstitutionCodes {
 
     static final String RESOURCE_NAME = "bankinfo.bin";
