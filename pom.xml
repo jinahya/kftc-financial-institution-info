@@ -49,6 +49,7 @@
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>jinahya-github</sonar.organization>
     <sonar.projectKey>jinahya_kftc-financial-institution-codes</sonar.projectKey>
+    <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <version.lombok>1.18.32</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <version.maven-surefire>3.2.5</version.maven-surefire>
@@ -58,7 +59,7 @@
     <version.org.mockito>5.11.0</version.org.mockito>
   </properties>
 
-  <dependencyManagement />
+  <dependencyManagement/>
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -180,7 +181,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -263,6 +264,7 @@
             <goals>
               <goal>report</goal>
             </goals>
+<!--            <phase>verify</phase>-->
             <configuration>
               <formats>
                 <format>XML</format>
