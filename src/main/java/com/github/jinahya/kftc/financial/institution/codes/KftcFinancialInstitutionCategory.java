@@ -3,7 +3,9 @@ package com.github.jinahya.kftc.financial.institution.codes;
 import java.util.Objects;
 
 /**
- * Predefined categories for codes.
+ * Predefined categories for instance of {@link KftcFinancialInstitutionInfo} class.
+ *
+ * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  */
 public enum KftcFinancialInstitutionCategory {
 
