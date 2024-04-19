@@ -30,32 +30,32 @@ import java.util.Objects;
 public enum KftcFinancialInstitutionCategory {
 
     /**
-     * 은행.
+     * A constant for {@code 은행}들.
      */
     BANK("■ 은 행"),
 
     /**
-     * 금융투자회사.
+     * A constant for {@code 금융투자회사}들.
      */
     FIIN("■ 금융투자회사"),
 
     /**
-     * 캐피탈사.
+     * A constant for {@code 캐피탈사}들.
      */
     CAPI("■ 캐피탈사"),
 
     /**
-     * 카드사.
+     * A constant for {@code 카드사}들.
      */
     CARD("■ 카드사"),
 
     /**
-     * 보험사.
+     * A constant for {@code 보험사}들.
      */
     INSU("■ 보험사"),
 
     /**
-     * 기타.
+     * A constant for {@code 기타}.
      */
     MISC("■ 기 타");
 
@@ -75,5 +75,9 @@ public enum KftcFinancialInstitutionCategory {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * A delimiter for delimiting parts in the PDF.
+     */
     private final String delimiter;
 }
