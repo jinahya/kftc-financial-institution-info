@@ -1,11 +1,13 @@
-# kftc-financial-institution-codes
+# kftc-financial-institution-info
 
-[![Java CI with Maven](https://github.com/jinahya/kftc-financial-institution-codes/actions/workflows/maven.yml/badge.svg)](https://github.com/jinahya/kftc-financial-institution-codes/actions/workflows/maven.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jinahya_kftc-financial-institution-codes&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jinahya_kftc-financial-institution-codes)
-[![Maven Central Version](https://img.shields.io/maven-central/v/com.github.jinahya/kftc-financial-institution-codes)](https://search.maven.org/artifact/com.github.jinahya/kftc-financial-institution-codes)
-[![javadoc](https://javadoc.io/badge2/com.github.jinahya/kftc-financial-institution-codes/javadoc.svg)](https://javadoc.io/doc/com.github.jinahya/kftc-financial-institution-codes)
+[![Java CI with Maven](https://github.com/jinahya/kftc-financial-institution-info/actions/workflows/maven.yml/badge.svg)](https://github.com/jinahya/kftc-financial-institution-info/actions/workflows/maven.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jinahya_kftc-financial-institution-info&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jinahya_kftc-financial-institution-info)
+[![Maven Central Version](https://img.shields.io/maven-central/v/com.github.jinahya/kftc-financial-institution-info)](https://search.maven.org/artifact/com.github.jinahya/kftc-financial-institution-info)
+[![javadoc](https://javadoc.io/badge2/com.github.jinahya/kftc-financial-institution-info/javadoc.svg)](https://javadoc.io/doc/com.github.jinahya/kftc-financial-institution-info)
 
-Codes, assigned by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do), for financial institutions. 금융결재원에서 금융기관들에 할당한 코드와 정보를 조회할 수 있는 API이다.
+Financial institution information, provided by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
+
+금융결재원에서 제공하는 금융기관들에 대한 정보를 제공하는 API이다.
 
 ## Links
 
@@ -34,7 +36,7 @@ Requires `21` for building while the module targets `11`.
 ```xml
 <dependency>
   <groupId>com.github.jinahya</groupId>
-  <artifactId>kftc-financial-institution-codes</artifactId>
+  <artifactId>kftc-financial-institution-info</artifactId>
   <!-- Check the badge above for the latest version -->
 </dependency>
 ```
@@ -42,6 +44,7 @@ Requires `21` for building while the module targets `11`.
 ## Usages
 
 ```java
+// 금융기관 정보
 final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
 assert info != null;
 assert info.getCode().equals("001");
@@ -49,6 +52,7 @@ assert info.getName().equals("한국은행");
 ```
 
 ```java
+// 금융기관 지점 정보
 final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
 assert info != null;
 assert info.getBranchCode().equals("0010003");
