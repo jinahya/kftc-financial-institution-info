@@ -50,12 +50,12 @@ public final class KftcFinancialInstitutionBranchInfo
         /**
          * A value for {@value #STATUS_RAW_VALUE_ACTIVE}.
          */
-        ACTIVE("정상"),
+        ACTIVE(STATUS_RAW_VALUE_ACTIVE),
 
         /**
          * A value for {@value #STATUS_RAW_VALUE_TEMPORARILY_CLOSED}.
          */
-        TEMPORARILY_CLOSED("잠정폐쇄");
+        TEMPORARILY_CLOSED(STATUS_RAW_VALUE_TEMPORARILY_CLOSED);
 
         // -------------------------------------------------------------------------------------------------------------
 
@@ -115,16 +115,29 @@ public final class KftcFinancialInstitutionBranchInfo
     @Override
     public String toString() {
         return super.toString() + '{' +
-                "name=" + financialInstitutionName +
+                "branchCode=" + branchCode +
+                ",financialInstitutionName=" + financialInstitutionName +
                 ",branchName=" + branchName +
-                ",branchCode=" + branchCode +
-                ",postalCode=" + postalCode +
-                ",address=" + address +
                 ",phoneNumber=" + phoneNumber +
                 ",faxNumber=" + faxNumber +
+                ",postalCode=" + postalCode +
+                ",address=" + address +
                 ",status=" + status +
-                ",agency=" + managingBranchCode +
+                ",managingBranchCode=" + managingBranchCode +
                 '}';
+    }
+
+    @Override
+    public boolean equals(final Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof KftcFinancialInstitutionBranchInfo)) return false;
+        final var that = (KftcFinancialInstitutionBranchInfo) obj;
+        return Objects.equals(branchCode, that.branchCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(branchCode);
     }
 
     // ------------------------------------------------------------------------------------------------------ branchCode
