@@ -31,6 +31,7 @@ class KftcFinancialInstitutionInfoSet_Test {
     @Test
     void __() {
         final var instance = KftcFinancialInstitutionInfoSet.getInstance();
+        log.debug("instance: {}", instance);
         assertThat(instance).isNotNull();
         assertThat(instance.getMap()).isNotEmpty();
         assertThat(instance.getMap().get("001")).satisfies(i -> {

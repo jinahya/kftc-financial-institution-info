@@ -65,6 +65,11 @@ public final class KftcFinancialInstitutionBranchInfoSet
         }
     }
 
+    /**
+     * Returns the instance of this class.
+     *
+     * @return the instance of this class.
+     */
     public static KftcFinancialInstitutionBranchInfoSet getInstance() {
         return InstanceHolder.INSTANCE;
     }

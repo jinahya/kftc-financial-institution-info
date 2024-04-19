@@ -2,14 +2,14 @@
  * Provides classes for accessing information of financial institutions provided by <a
  * href="https://www.kftc.or.kr">KFTC</a>
  * <p>
- * {@snippet lang = java:
+ * {@snippet lang = "java":
  * // 금융기관 정보
  * final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
  * assert info != null;
  * assert info.getCode().equals("001");
  * assert info.getName().equals("한국은행");
  *}
- * {@snippet lang = java:
+ * {@snippet lang = "java":
  * // 금융기관 지점 정보
  * final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
  * assert info != null;

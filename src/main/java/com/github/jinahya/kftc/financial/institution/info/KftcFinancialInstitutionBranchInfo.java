@@ -110,6 +110,13 @@ public final class KftcFinancialInstitutionBranchInfo
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
 
+    /**
+     * Creates a new instance.
+     */
+    KftcFinancialInstitutionBranchInfo() {
+        super();
+    }
+
     // ------------------------------------------------------------------------------------------------ java.lang.Object
 
     @Override
