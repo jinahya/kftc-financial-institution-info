@@ -19,7 +19,7 @@
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  */
-package com.github.jinahya.kftc.financial.institution.codes;
+package com.github.jinahya.kftc.financial.institution.info;
 
 /*-
  * #%L

@@ -1,4 +1,4 @@
-package com.github.jinahya.kftc.financial.institution.codes;
+package com.github.jinahya.kftc.financial.institution.info;
 
 /*-
  * #%L
@@ -28,26 +28,26 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
- * A class for accessing instances of {@link KftcFinancialInstitutionInfo}.
+ * A class for accessing instances of {@link KftcFinancialInstitutionBranchInfo}.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
- * @see KftcFinancialInstitutionInfo
+ * @see KftcFinancialInstitutionBranchInfo
  */
-public final class KftcFinancialInstitutionInfoSet
+public final class KftcFinancialInstitutionBranchInfoSet
         implements Serializable {
 
-    private static final long serialVersionUID = 4389137085143896510L;
+    private static final long serialVersionUID = 3830614459747984712L;
 
     // -----------------------------------------------------------------------------------------------------------------
-    static final String RESOURCE_NAME = "bankinfo.ser";
+    static final String RESOURCE_NAME = "codefilex.ser";
 
     // -----------------------------------------------------------------------------------------------------------------
     private static final class InstanceHolder {
 
-        private static final KftcFinancialInstitutionInfoSet INSTANCE;
+        private static final KftcFinancialInstitutionBranchInfoSet INSTANCE;
 
         static {
-            try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
+            try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
                 if (resource == null) {
                     throw new RuntimeException("no resource for " + RESOURCE_NAME);
                 }
@@ -62,14 +62,14 @@ public final class KftcFinancialInstitutionInfoSet
         }
     }
 
-    public static KftcFinancialInstitutionInfoSet getInstance() {
+    public static KftcFinancialInstitutionBranchInfoSet getInstance() {
         return InstanceHolder.INSTANCE;
     }
 
     // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
-    KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
+    KftcFinancialInstitutionBranchInfoSet(final List<KftcFinancialInstitutionBranchInfo> list) {
         super();
         this.list = Objects.requireNonNull(list, "list is null");
         new HashMap<String, String>();
@@ -85,25 +85,39 @@ public final class KftcFinancialInstitutionInfoSet
 
     private void map() {
         map = list.stream()
-                .collect(Collectors.toMap(KftcFinancialInstitutionInfo::getCode, Function.identity()));
+                .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode, Function.identity()));
     }
 
     // ------------------------------------------------------------------------------------------------------------ list
 
     // ------------------------------------------------------------------------------------------------------------- map
-    public Map<String, KftcFinancialInstitutionInfo> getMap() {
+
+    /**
+     * Returns an <em>unmodifiable</em> map of branch codes and branch info.
+     *
+     * @return an <em>unmodifiable</em> map of branch codes and branch info.
+     */
+    public Map<String, KftcFinancialInstitutionBranchInfo> getMap() {
         if (map == null) {
             map();
         }
         return map;
     }
 
-    public Optional<KftcFinancialInstitutionInfo> get(final String code) {
-        return Optional.ofNullable(getMap().get(code));
+    /**
+     * Returns the branch info whose {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property
+     * matches specified value.
+     *
+     * @param branchCode the {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property value to
+     *                   match.
+     * @return an optional of matched branch info; {@link Optional#empty() empty} when none matches.
+     */
+    public Optional<KftcFinancialInstitutionBranchInfo> get(final String branchCode) {
+        return Optional.ofNullable(getMap().get(branchCode));
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    private final List<KftcFinancialInstitutionInfo> list;
+    private final List<KftcFinancialInstitutionBranchInfo> list;
 
-    private transient Map<String, KftcFinancialInstitutionInfo> map;
+    private transient Map<String, KftcFinancialInstitutionBranchInfo> map;
 }

@@ -1,4 +1,4 @@
-package com.github.jinahya.kftc.financial.institution.codes;
+package com.github.jinahya.kftc.financial.institution.info;
 
 /*-
  * #%L

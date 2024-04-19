@@ -1,4 +1,4 @@
-package com.github.jinahya.kftc.financial.institution.codes;
+package com.github.jinahya.kftc.financial.institution.info;
 
 /*-
  * #%L
@@ -20,9 +20,12 @@ package com.github.jinahya.kftc.financial.institution.codes;
  * #L%
  */
 
-public final class _NoTest {
+@SuppressWarnings({"java:S101"})
+final class _Constants {
 
-    private _NoTest() {
+    static final String DELIMITER_REPR = "■ 대표코드";
+
+    private _Constants() {
         throw new AssertionError("instantiation is not allowed");
     }
 }
