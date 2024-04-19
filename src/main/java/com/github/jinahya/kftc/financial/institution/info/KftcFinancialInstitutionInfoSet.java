@@ -23,7 +23,10 @@ package com.github.jinahya.kftc.financial.institution.info;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -72,7 +75,6 @@ public final class KftcFinancialInstitutionInfoSet
     KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
         super();
         this.list = Objects.requireNonNull(list, "list is null");
-        new HashMap<String, String>();
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -91,6 +93,12 @@ public final class KftcFinancialInstitutionInfoSet
     // ------------------------------------------------------------------------------------------------------------ list
 
     // ------------------------------------------------------------------------------------------------------------- map
+
+    /**
+     * Returns an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
+     *
+     * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
+     */
     public Map<String, KftcFinancialInstitutionInfo> getMap() {
         if (map == null) {
             map();
@@ -98,6 +106,12 @@ public final class KftcFinancialInstitutionInfoSet
         return map;
     }
 
+    /**
+     * Returns the info whose {@link KftcFinancialInstitutionInfo#getCode() code} property matches specified value.
+     *
+     * @param code the {@link KftcFinancialInstitutionInfo#getCode() code} property value to match.
+     * @return an optional of matched value; {@link Optional#empty() empty} when none matches.
+     */
     public Optional<KftcFinancialInstitutionInfo> get(final String code) {
         return Optional.ofNullable(getMap().get(code));
     }

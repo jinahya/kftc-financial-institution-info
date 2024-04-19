@@ -9,10 +9,7 @@ Financial institution information, provided by [KFTC](https://www.kftc.or.kr/kft
 
 금융결재원에서 제공하는 금융기관들에 대한 정보를 조회할 수 있는 API이다.
 
-## Links
-
-* [금융회사코드 조회](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do) (금융결재원)
-
+---
 
 ## Build environment
 
@@ -40,11 +37,12 @@ Requires `21` for building while the module targets `11`.
   <!-- Check the badge above for the latest version -->
 </dependency>
 ```
+---
 
 ## Usages
 
 ```java
-// 금융기관 정보
+// 금융기관 정보 조회
 final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
 assert info != null;
 assert info.getCode().equals("001");
@@ -52,9 +50,21 @@ assert info.getName().equals("한국은행");
 ```
 
 ```java
-// 금융기관 지점 정보
+// 금융기관 지점 정보 조회
 final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
 assert info != null;
 assert info.getBranchCode().equals("0010003");
 assert info.getFinancialInstitutionName().equals("한국");
 ```
+
+---
+
+## Links
+
+### www.kftc.org.kr
+
+* [금융회사코드 조회](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do) (금융결재원)
+
+### issues.apache.org
+
+* https://issues.apache.org/jira/browse/MJAVADOC-728

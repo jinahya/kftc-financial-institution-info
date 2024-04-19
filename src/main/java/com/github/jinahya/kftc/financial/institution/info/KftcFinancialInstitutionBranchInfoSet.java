@@ -23,7 +23,10 @@ package com.github.jinahya.kftc.financial.institution.info;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -72,7 +75,6 @@ public final class KftcFinancialInstitutionBranchInfoSet
     KftcFinancialInstitutionBranchInfoSet(final List<KftcFinancialInstitutionBranchInfo> list) {
         super();
         this.list = Objects.requireNonNull(list, "list is null");
-        new HashMap<String, String>();
     }
 
     // -----------------------------------------------------------------------------------------------------------------
