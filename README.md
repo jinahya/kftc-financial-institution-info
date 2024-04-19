@@ -42,14 +42,14 @@ Requires `21` for building while the module targets `11`.
 ## Usages
 
 ```java
-final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001");
+final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
 assert info != null;
 assert info.getCode().equals("001");
 assert info.getName().equals("한국은행");
 ```
 
 ```java
-final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003");
+final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
 assert info != null;
 assert info.getBranchCode().equals("0010003");
 assert info.getFinancialInstitutionName().equals("한국");

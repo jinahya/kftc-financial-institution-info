@@ -1,5 +1,25 @@
 package com.github.jinahya.kftc.financial.institution.codes;
 
+/*-
+ * #%L
+ * kftc-financial-institution-info
+ * %%
+ * Copyright (C) 2024 Jinahya, Inc.
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
@@ -61,9 +81,11 @@ class KftcFinancialInstitutionBranchInfoSet_Resource_Test {
                             );
                             return info;
                         })
-                        .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode, Function.identity()));
+                        .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode,
+                                                  Function.identity()));
                 log.debug("names: {}",
-                          map.values().stream().map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName).distinct().toList());
+                          map.values().stream().map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
+                                  .distinct().toList());
                 log.debug("statuses: {}",
                           map.values().stream().map(KftcFinancialInstitutionBranchInfo::getStatus).distinct().toList());
                 log.debug("branchCode.length.statistics: {}",
@@ -84,7 +106,8 @@ class KftcFinancialInstitutionBranchInfoSet_Resource_Test {
                 .normalize();
         Files.createDirectories(directory);
         final var path = directory.resolve(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
-        final var list = map.values().stream().sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
+        final var list = map.values().stream()
+                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
                 .toList();
         final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
         _IoUtils.write(path, infoSet);

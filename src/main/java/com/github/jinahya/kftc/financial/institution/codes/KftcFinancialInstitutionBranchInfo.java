@@ -1,5 +1,25 @@
 package com.github.jinahya.kftc.financial.institution.codes;
 
+/*-
+ * #%L
+ * kftc-financial-institution-info
+ * %%
+ * Copyright (C) 2024 Jinahya, Inc.
+ * %%
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * #L%
+ */
+
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -16,7 +36,7 @@ public final class KftcFinancialInstitutionBranchInfo
 
     // ---------------------------------------------------------------------------------------------------------- status
 
-    public static final String STATUS_RAW_VALUE_NORMAL = "정상";
+    public static final String STATUS_RAW_VALUE_ACTIVE = "정상";
 
     public static final String STATUS_RAW_VALUE_TEMPORARILY_CLOSED = "잠정폐쇄";
 
@@ -28,9 +48,9 @@ public final class KftcFinancialInstitutionBranchInfo
     public enum Status {
 
         /**
-         * A value for {@value #STATUS_RAW_VALUE_NORMAL}.
+         * A value for {@value #STATUS_RAW_VALUE_ACTIVE}.
          */
-        NORMAL("정상"),
+        ACTIVE("정상"),
 
         /**
          * A value for {@value #STATUS_RAW_VALUE_TEMPORARILY_CLOSED}.
@@ -54,6 +74,7 @@ public final class KftcFinancialInstitutionBranchInfo
             throw new IllegalArgumentException("no value for the rawValue: " + rawValue);
         }
 
+        // ------------------------------------------------------------------------------------------------ CONSTRUCTORS
         Status(final String rawValue) {
             this.rawValue = rawValue;
         }
@@ -106,7 +127,13 @@ public final class KftcFinancialInstitutionBranchInfo
                 '}';
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------------------------------------------------------------ branchCode
+
+    /**
+     * {@code 지점코드} 값을 반환한다.
+     *
+     * @return {@code 지점코드} 값을 반환한다.
+     */
     public String getBranchCode() {
         return branchCode;
     }
@@ -115,8 +142,13 @@ public final class KftcFinancialInstitutionBranchInfo
         this.branchCode = string(branchCode);
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------- financialInstitutionName
 
+    /**
+     * {@code 금융회사명} 값을 반환한다.
+     *
+     * @return {@code 금융회사명} 값을 반환한다.
+     */
     public String getFinancialInstitutionName() {
         return financialInstitutionName;
     }
@@ -125,7 +157,13 @@ public final class KftcFinancialInstitutionBranchInfo
         this.financialInstitutionName = string(financialInstitutionName);
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------------------------------------------------------------ branchName
+
+    /**
+     * {@code 지점명} 값을 반환한다.
+     *
+     * @return {@code 지점명} 값을 반환한다.
+     */
     public String getBranchName() {
         return branchName;
     }
@@ -135,6 +173,12 @@ public final class KftcFinancialInstitutionBranchInfo
     }
 
     // ----------------------------------------------------------------------------------------------------- phoneNumber
+
+    /**
+     * {@code 전화번호} 값을 반환한다.
+     *
+     * @return {@code 전화번호} 값을 반환한다.
+     */
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -144,6 +188,12 @@ public final class KftcFinancialInstitutionBranchInfo
     }
 
     // ------------------------------------------------------------------------------------------------------- faxNumber
+
+    /**
+     * {@code 팩스번호} 값을 반환한다.
+     *
+     * @return {@code 팩스번호} 값을 반환한다.
+     */
     public String getFaxNumber() {
         return faxNumber;
     }
@@ -153,6 +203,12 @@ public final class KftcFinancialInstitutionBranchInfo
     }
 
     // ------------------------------------------------------------------------------------------------------ postalCode
+
+    /**
+     * {@code 우편번호} 값을 반환한다.
+     *
+     * @return {@code 우편번호} 값을 반환한다.
+     */
     public String getPostalCode() {
         return postalCode;
     }
@@ -162,6 +218,12 @@ public final class KftcFinancialInstitutionBranchInfo
     }
 
     // --------------------------------------------------------------------------------------------------------- address
+
+    /**
+     * {@code 주소} 값을 반환한다.
+     *
+     * @return {@code 주소} 값을 반환한다.
+     */
     public String getAddress() {
         return address;
     }
@@ -171,6 +233,12 @@ public final class KftcFinancialInstitutionBranchInfo
     }
 
     // ---------------------------------------------------------------------------------------------------------- status
+
+    /**
+     * {@code 상태(구분)} 값을 반환한다.
+     *
+     * @return {@code 상태(구분)} 값을 반환한다.
+     */
     public String getStatus() {
         return status;
     }
