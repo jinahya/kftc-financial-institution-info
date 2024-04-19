@@ -7,7 +7,7 @@
 
 Financial institution information, provided by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
-금융결재원에서 제공하는 금융기관들에 대한 정보를 제공하는 API이다.
+금융결재원에서 제공하는 금융기관들에 대한 정보를 조회할 수 있는 API이다.
 
 ## Links
 
