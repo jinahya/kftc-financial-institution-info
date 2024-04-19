@@ -35,9 +35,6 @@ public final class KftcFinancialInstitutionInfo
     private static final long serialVersionUID = 5345357074469188526L;
 
     // -----------------------------------------------------------------------------------------------------------------
-    static final String DELIMITER = "\u001d";
-
-    // -----------------------------------------------------------------------------------------------------------------
     private static String string(String string) {
         if (string == null) {
             return null;
@@ -74,7 +71,7 @@ public final class KftcFinancialInstitutionInfo
     public boolean equals(final Object obj) {
         if (this == obj) return true;
         if (!(obj instanceof KftcFinancialInstitutionInfo)) return false;
-        KftcFinancialInstitutionInfo that = (KftcFinancialInstitutionInfo) obj;
+        final var that = (KftcFinancialInstitutionInfo) obj;
         return Objects.equals(code, that.code);
     }
 
@@ -83,23 +80,13 @@ public final class KftcFinancialInstitutionInfo
         return Objects.hashCode(code);
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
-    static KftcFinancialInstitutionInfo parse(final String string) {
-        final var instance = new KftcFinancialInstitutionInfo();
-        final var split = string.split(DELIMITER);
-        instance.category = KftcFinancialInstitutionCategory.valueOf(split[0]);
-        instance.code = split[1];
-        instance.name = split[2];
-        instance.representative = Boolean.parseBoolean(split[3]);
-        return instance;
-    }
+    // -------------------------------------------------------------------------------------------------------- category
 
-    String toLine() {
-        return String.join(DELIMITER, category.toString(), code, name, Boolean.toString(representative));
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-
+    /**
+     * Returns current value of {@code category} property.
+     *
+     * @return current value of the {@code category} property.
+     */
     public KftcFinancialInstitutionCategory getCategory() {
         return category;
     }
@@ -108,7 +95,13 @@ public final class KftcFinancialInstitutionInfo
         this.category = category;
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------------------------------------------------------------------ code
+
+    /**
+     * Returns current value of {@code code} property.
+     *
+     * @return current value of the {@code code} property.
+     */
     public String getCode() {
         return code;
     }
@@ -117,7 +110,13 @@ public final class KftcFinancialInstitutionInfo
         this.code = string(code);
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    // ------------------------------------------------------------------------------------------------------------ name
+
+    /**
+     * Returns current value of {@code name} property.
+     *
+     * @return current value of the {@code name} property.
+     */
     public String getName() {
         return name;
     }
@@ -126,7 +125,13 @@ public final class KftcFinancialInstitutionInfo
         this.name = string(name);
     }
 
-    // -----------------------------------------------------------------------------------------------------------------
+    // -------------------------------------------------------------------------------------------------- representative
+
+    /**
+     * Returns current value of {@code representative} property.
+     *
+     * @return current value of the {@code representative} property.
+     */
     public boolean isRepresentative() {
         return representative;
     }
