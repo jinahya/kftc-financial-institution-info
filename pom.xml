@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>kftc-financial-institution-info</artifactId>
-  <version>0.0.4-SNAPSHOT</version>
+  <version>0.0.4</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
@@ -25,7 +25,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com:jinahya/${project.artifactId}</url>
-    <tag>HEAD</tag>
+    <tag>0.0.4</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issues</system>
@@ -59,7 +59,7 @@
     <version.org.mockito>5.11.0</version.org.mockito>
   </properties>
 
-  <dependencyManagement/>
+  <dependencyManagement />
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -181,7 +181,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence/>
+                <dependencyConvergence />
               </rules>
             </configuration>
             <goals>
