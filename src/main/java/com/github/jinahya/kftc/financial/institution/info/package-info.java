@@ -1,5 +1,5 @@
 /**
- * Provides class for accessing information of financial institutions provided by <a
+ * Provides classes for accessing information of financial institutions provided by <a
  * href="https://www.kftc.or.kr">KFTC</a>
  * <p>
  * {@snippet lang = java:
