@@ -30,7 +30,7 @@ class KftcFinancialInstitutionInfoSet_Test {
 
     @Test
     void __() {
-        final var instance = KftcFinancialInstitutionInfoSet.getInstance();
+        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
         log.debug("instance: {}", instance);
         assertThat(instance).isNotNull();
         assertThat(instance.getMap()).isNotEmpty();

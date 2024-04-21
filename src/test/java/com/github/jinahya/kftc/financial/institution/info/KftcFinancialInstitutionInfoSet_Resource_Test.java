@@ -40,7 +40,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 class KftcFinancialInstitutionInfoSet_Resource_Test {
 
     private static final Pattern pattern = Pattern.compile(
-            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
+//            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
+            "(\\d{3})\\s([\\p{L}()\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}()\\s]+)?");
 
     static void parse(final boolean[] representatives, final KftcFinancialInstitutionCategory[] categories,
                       final String text,
@@ -48,7 +49,6 @@ class KftcFinancialInstitutionInfoSet_Resource_Test {
         text.lines().forEach(l -> {
             try {
                 final var category = KftcFinancialInstitutionCategory.valueOfDelimiter(l);
-                log.debug("category <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<,<<: {}", category);
                 representatives[0] = false;
                 categories[0] = category;
             } catch (final IllegalArgumentException iae) {

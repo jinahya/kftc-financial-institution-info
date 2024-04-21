@@ -43,16 +43,14 @@ Requires `21` for building while the module targets `11`.
 
 ```java
 // 금융기관 정보 조회
-final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
-assert info != null;
+final var info = KftcFinancialInstitutionInfoSet.newInstance().get("001").orElseThrow();
 assert info.getCode().equals("001");
 assert info.getName().equals("한국은행");
 ```
 
 ```java
 // 금융기관 지점 정보 조회
-final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
-assert info != null;
+final var info = KftcFinancialInstitutionBranchInfoSet.newInstance().get("0010003").orElseThrow();
 assert info.getBranchCode().equals("0010003");
 assert info.getFinancialInstitutionName().equals("한국");
 ```

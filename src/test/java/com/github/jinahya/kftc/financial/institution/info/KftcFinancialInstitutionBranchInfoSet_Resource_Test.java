@@ -73,7 +73,8 @@ class KftcFinancialInstitutionBranchInfoSet_Resource_Test {
                             info.setManagingBranchCode(tokens[8]);
 //                            log.debug("info: {}", info);
                             assertThatCode(() -> {
-                                KftcFinancialInstitutionBranchInfo.Status.valueOfRawValue(info.getStatus());
+                                final var status =
+                                        KftcFinancialInstitutionBranchInfo.Status.valueOfRawValue(info.getStatus());
                             }).doesNotThrowAnyException();
                             assertThat(info.getManagingBranchCode()).satisfiesAnyOf(
                                     a -> assertThat(a).isNull(),

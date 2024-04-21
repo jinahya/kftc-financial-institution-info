@@ -41,37 +41,23 @@ public final class KftcFinancialInstitutionInfoSet
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "bankinfo.ser";
 
-    // -----------------------------------------------------------------------------------------------------------------
-    private static final class InstanceHolder {
-
-        private static final KftcFinancialInstitutionInfoSet INSTANCE;
-
-        static {
-            try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
-                if (resource == null) {
-                    throw new RuntimeException("no resource for " + RESOURCE_NAME);
-                }
-                INSTANCE = _IoUtils.read(resource);
-            } catch (final Exception e) {
-                throw new RuntimeException("failed to load resource", e);
-            }
-        }
-
-        private InstanceHolder() {
-            throw new AssertionError("instantiation is not allowed");
-        }
-    }
+    // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     /**
-     * Returns the instance of this class.
+     * Returns a new instance of this class.
      *
-     * @return the instance of this class.
+     * @return a new instance of this class.
      */
-    public static KftcFinancialInstitutionInfoSet getInstance() {
-        return InstanceHolder.INSTANCE;
+    public static KftcFinancialInstitutionInfoSet newInstance() {
+        try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
+            if (resource == null) {
+                throw new RuntimeException("no resource for " + RESOURCE_NAME);
+            }
+            return _IoUtils.read(resource);
+        } catch (final Exception e) {
+            throw new RuntimeException("failed to load", e);
+        }
     }
-
-    // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
     KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
@@ -88,11 +74,20 @@ public final class KftcFinancialInstitutionInfoSet
     }
 
     private void map() {
-        map = list.stream()
+        map = getList().stream()
                 .collect(Collectors.toMap(KftcFinancialInstitutionInfo::getCode, Function.identity()));
     }
 
     // ------------------------------------------------------------------------------------------------------------ list
+
+    /**
+     * Returns an <em>unmodifiable</em> list of institution info.
+     *
+     * @return an <em>unmodifiable</em> list of institution info.
+     */
+    public List<KftcFinancialInstitutionInfo> getList() {
+        return Collections.unmodifiableList(list);
+    }
 
     // ------------------------------------------------------------------------------------------------------------- map
 
