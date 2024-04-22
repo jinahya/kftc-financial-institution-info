@@ -36,9 +36,9 @@ public final class KftcFinancialInstitutionBranchInfo
 
     // ---------------------------------------------------------------------------------------------------------- status
 
-    public static final String STATUS_RAW_VALUE_ACTIVE = "정상";
+    private static final String STATUS_RAW_VALUE_ACTIVE = "정상";
 
-    public static final String STATUS_RAW_VALUE_TEMPORARILY_CLOSED = "잠정폐쇄";
+    private static final String STATUS_RAW_VALUE_TEMPORARILY_CLOSED = "잠정폐쇄";
 
     /**
      * Predefined constants for mapping {@code status}.
@@ -48,12 +48,12 @@ public final class KftcFinancialInstitutionBranchInfo
     public enum Status {
 
         /**
-         * A value for {@value #STATUS_RAW_VALUE_ACTIVE}.
+         * A value for {@code 정상}.
          */
         ACTIVE(STATUS_RAW_VALUE_ACTIVE),
 
         /**
-         * A value for {@value #STATUS_RAW_VALUE_TEMPORARILY_CLOSED}.
+         * A value for {@code 잠정폐쇄}.
          */
         TEMPORARILY_CLOSED(STATUS_RAW_VALUE_TEMPORARILY_CLOSED);
 

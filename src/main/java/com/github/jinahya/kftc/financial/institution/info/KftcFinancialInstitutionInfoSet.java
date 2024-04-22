@@ -47,7 +47,7 @@ public final class KftcFinancialInstitutionInfoSet
     // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     /**
-     * Returns the instance of this class.
+     * Returns a new instance of this class.
      *
      * @return the instance of this class.
      * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
@@ -60,7 +60,7 @@ public final class KftcFinancialInstitutionInfoSet
             }
             return _IoUtils.read(resource);
         } catch (final Exception e) {
-            throw new RuntimeException("failed to load resource", e);
+            throw new RuntimeException("failed to load", e);
         }
     }
 
@@ -85,11 +85,20 @@ public final class KftcFinancialInstitutionInfoSet
     }
 
     private void map() {
-        map = list.stream()
+        map = getList().stream()
                 .collect(Collectors.toMap(KftcFinancialInstitutionInfo::getCode, Function.identity()));
     }
 
     // ------------------------------------------------------------------------------------------------------------ list
+
+    /**
+     * Returns an <em>unmodifiable</em> list of institution info.
+     *
+     * @return an <em>unmodifiable</em> list of institution info.
+     */
+    public List<KftcFinancialInstitutionInfo> getList() {
+        return list;
+    }
 
     // ------------------------------------------------------------------------------------------------------------- map
 

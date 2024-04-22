@@ -32,7 +32,7 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
 
     @Test
     void __Agency() {
-        final var instance = KftcFinancialInstitutionBranchInfoSet.getInstance();
+        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
         instance.getMap().forEach((k, v) -> {
             Optional.ofNullable(v.getManagingBranchCode()).ifPresent(mbc -> {
                 final var managingBranch = instance.getMap().get(mbc);
@@ -45,7 +45,7 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
 
     @Test
     void __() {
-        final var instance = KftcFinancialInstitutionBranchInfoSet.getInstance();
+        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
         assertThat(instance).isNotNull();
         assertThat(instance.getMap()).isNotEmpty();
         assertThat(instance.getMap().get("0010003")).satisfies(i -> {

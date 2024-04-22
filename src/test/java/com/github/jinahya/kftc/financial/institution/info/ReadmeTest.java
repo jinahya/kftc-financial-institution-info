@@ -36,7 +36,7 @@ class ReadmeTest {
 
     @Test
     void __2() {
-        final var instance = KftcFinancialInstitutionBranchInfoSet.getInstance();
+        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
         final var info = instance.get("0010003").orElseThrow();
         assert info.getBranchCode().equals("0010003");
         assert info.getFinancialInstitutionName().equals("한국");

@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>kftc-financial-institution-info</artifactId>
-  <version>0.0.5-SNAPSHOT</version>
+  <version>0.0.6-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
@@ -121,7 +121,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.0</version>
+          <version>3.4.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -131,8 +131,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-<!--          <version>4.0.0-M13</version>-->
-          <version>3.12.1</version>
+          <version>4.0.0-M13</version>
+          <!--          <version>3.12.1</version>-->
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -265,7 +265,7 @@
             <goals>
               <goal>report</goal>
             </goals>
-<!--            <phase>verify</phase>-->
+            <!--            <phase>verify</phase>-->
             <configuration>
               <formats>
                 <format>XML</format>
@@ -295,10 +295,8 @@
         <version>3.6.3</version>
         <configuration>
           <additionalOptions>
-            <!--            <additionalOption>-Xdoclint:${doclint}</additionalOption>-->
+            <additionalOption>-Xdoclint:${doclint}</additionalOption>
           </additionalOptions>
-          <!--          <source>${maven.compiler.release}</source>-->
-          <!--          <release>${maven.compiler.testRelease}</release>-->
           <tags>
             <tag>
               <name>apiNote</name>

@@ -44,26 +44,7 @@ public final class KftcFinancialInstitutionBranchInfoSet
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "codefilex.ser";
 
-    // -----------------------------------------------------------------------------------------------------------------
-    private static final class InstanceHolder {
-
-        private static final KftcFinancialInstitutionBranchInfoSet INSTANCE;
-
-        static {
-            try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
-                if (resource == null) {
-                    throw new RuntimeException("no resource for " + RESOURCE_NAME);
-                }
-                INSTANCE = _IoUtils.read(resource);
-            } catch (final Exception e) {
-                throw new RuntimeException("failed to load resource", e);
-            }
-        }
-
-        private InstanceHolder() {
-            throw new AssertionError("instantiation is not allowed");
-        }
-    }
+    // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     /**
      * Returns the instance of this class.
@@ -72,11 +53,16 @@ public final class KftcFinancialInstitutionBranchInfoSet
      * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
      * store the result.
      */
-    public static KftcFinancialInstitutionBranchInfoSet getInstance() {
-        return InstanceHolder.INSTANCE;
+    public static KftcFinancialInstitutionBranchInfoSet newInstance() {
+        try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
+            if (resource == null) {
+                throw new RuntimeException("no resource for " + RESOURCE_NAME);
+            }
+            return _IoUtils.read(resource);
+        } catch (final Exception e) {
+            throw new RuntimeException("failed to load resource", e);
+        }
     }
-
-    // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
 
@@ -99,11 +85,20 @@ public final class KftcFinancialInstitutionBranchInfoSet
     }
 
     private void map() {
-        map = list.stream()
+        map = getList().stream()
                 .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode, Function.identity()));
     }
 
     // ------------------------------------------------------------------------------------------------------------ list
+
+    /**
+     * Returns an <em>unmodifiable</em> list of branch info.
+     *
+     * @return an <em>unmodifiable</em> list of branch info.
+     */
+    public List<KftcFinancialInstitutionBranchInfo> getList() {
+        return list;
+    }
 
     // ------------------------------------------------------------------------------------------------------------- map
 
