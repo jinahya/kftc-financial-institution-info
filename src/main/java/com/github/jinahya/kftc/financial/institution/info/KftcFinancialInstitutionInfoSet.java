@@ -23,7 +23,10 @@ package com.github.jinahya.kftc.financial.institution.info;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -41,42 +44,36 @@ public final class KftcFinancialInstitutionInfoSet
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "bankinfo.ser";
 
-    // -----------------------------------------------------------------------------------------------------------------
-    private static final class InstanceHolder {
-
-        private static final KftcFinancialInstitutionInfoSet INSTANCE;
-
-        static {
-            try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
-                if (resource == null) {
-                    throw new RuntimeException("no resource for " + RESOURCE_NAME);
-                }
-                INSTANCE = _IoUtils.read(resource);
-            } catch (final Exception e) {
-                throw new RuntimeException("failed to load resource", e);
-            }
-        }
-
-        private InstanceHolder() {
-            throw new AssertionError("instantiation is not allowed");
-        }
-    }
+    // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     /**
      * Returns the instance of this class.
      *
      * @return the instance of this class.
+     * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
+     * store the result.
      */
-    public static KftcFinancialInstitutionInfoSet getInstance() {
-        return InstanceHolder.INSTANCE;
+    public static KftcFinancialInstitutionInfoSet newInstance() {
+        try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
+            if (resource == null) {
+                throw new RuntimeException("no resource for " + RESOURCE_NAME);
+            }
+            return _IoUtils.read(resource);
+        } catch (final Exception e) {
+            throw new RuntimeException("failed to load resource", e);
+        }
     }
 
-    // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
-
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
+
+    /**
+     * Creates a new instance with specified list.
+     *
+     * @param list the list to hold.
+     */
     KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
         super();
-        this.list = Objects.requireNonNull(list, "list is null");
+        this.list = List.copyOf(Objects.requireNonNull(list, "list is null"));
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -119,6 +116,7 @@ public final class KftcFinancialInstitutionInfoSet
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+    @SuppressWarnings({"serial"})
     private final List<KftcFinancialInstitutionInfo> list;
 
     private transient Map<String, KftcFinancialInstitutionInfo> map;

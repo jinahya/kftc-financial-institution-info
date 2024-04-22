@@ -4,15 +4,15 @@
  * <p>
  * {@snippet lang = "java":
  * // 금융기관 정보
- * final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
- * assert info != null;
+ * final var instance = KftcFinancialInstitutionInfoSet.newInstance();
+ * final var info = instance.get("001").orElseThrow();
  * assert info.getCode().equals("001");
  * assert info.getName().equals("한국은행");
  *}
  * {@snippet lang = "java":
  * // 금융기관 지점 정보
- * final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
- * assert info != null;
+ * final var instance = KftcFinancialInstitutionBranchInfoSet.getInstance();
+ * final var info = instance.get("0010003").orElseThrow();
  * assert info.getBranchCode().equals("0010003");
  * assert info.getFinancialInstitutionName().equals("한국");
  *}

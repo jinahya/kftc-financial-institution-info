@@ -28,16 +28,16 @@ class ReadmeTest {
 
     @Test
     void __1() {
-        final var info = KftcFinancialInstitutionInfoSet.getInstance().get("001").orElseThrow();
-        assert info != null;
+        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
+        final var info = instance.get("001").orElseThrow();
         assert info.getCode().equals("001");
         assert info.getName().equals("한국은행");
     }
 
     @Test
     void __2() {
-        final var info = KftcFinancialInstitutionBranchInfoSet.getInstance().get("0010003").orElseThrow();
-        assert info != null;
+        final var instance = KftcFinancialInstitutionBranchInfoSet.getInstance();
+        final var info = instance.get("0010003").orElseThrow();
         assert info.getBranchCode().equals("0010003");
         assert info.getFinancialInstitutionName().equals("한국");
     }

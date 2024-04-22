@@ -69,6 +69,8 @@ public final class KftcFinancialInstitutionBranchInfoSet
      * Returns the instance of this class.
      *
      * @return the instance of this class.
+     * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
+     * store the result.
      */
     public static KftcFinancialInstitutionBranchInfoSet getInstance() {
         return InstanceHolder.INSTANCE;
@@ -77,9 +79,15 @@ public final class KftcFinancialInstitutionBranchInfoSet
     // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
+
+    /**
+     * Creates a new instance with specified list.
+     *
+     * @param list the list to hold.
+     */
     KftcFinancialInstitutionBranchInfoSet(final List<KftcFinancialInstitutionBranchInfo> list) {
         super();
-        this.list = Objects.requireNonNull(list, "list is null");
+        this.list = List.copyOf(Objects.requireNonNull(list, "list is null"));
     }
 
     // -----------------------------------------------------------------------------------------------------------------
@@ -124,6 +132,7 @@ public final class KftcFinancialInstitutionBranchInfoSet
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+    @SuppressWarnings({"serial"})
     private final List<KftcFinancialInstitutionBranchInfo> list;
 
     private transient Map<String, KftcFinancialInstitutionBranchInfo> map;
