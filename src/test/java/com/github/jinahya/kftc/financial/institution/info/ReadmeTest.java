@@ -23,6 +23,8 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
+
 @Slf4j
 class ReadmeTest {
 
@@ -31,8 +33,8 @@ class ReadmeTest {
         final var instance = KftcFinancialInstitutionInfoSet.newInstance();
         final var info = instance.get("001").orElseThrow();
         assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
-        assert info.getCode().equals("001");
-        assert info.getName().equals("한국은행");
+        assert Objects.equals(info.getCode(), "001");
+        assert Objects.equals(info.getName(), "한국은행");
         assert info.isRepresentative();
     }
 
@@ -50,14 +52,14 @@ class ReadmeTest {
     void __3() {
         final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
         final var info = instance.get("0010003").orElseThrow();
-        assert info.getBranchCode().equals("0010003");
-        assert info.getFinancialInstitutionName().equals("한국");
-        assert info.getBranchName().equals("본부총괄");
-        assert info.getPhoneNumber().equals("02  759 4114");
-        assert info.getFaxNumber().equals("02  759 4060");
-        assert info.getPostalCode().equals("100794");
-        assert info.getAddress().equals("서울특별시 중구 남대문로 39");
-        assert info.getStatus().equals("정상");
+        assert Objects.equals(info.getBranchCode(), "0010003");
+        assert Objects.equals(info.getFinancialInstitutionName(), "한국");
+        assert Objects.equals(info.getBranchName(), "본부총괄");
+        assert Objects.equals(info.getPhoneNumber(), "02  759 4114"); // mind multiple spaces
+        assert Objects.equals(info.getFaxNumber(), "02  759 4060");   // mind multiple spaces
+        assert Objects.equals(info.getPostalCode(), "100794");
+        assert Objects.equals(info.getAddress(), "서울특별시 중구 남대문로 39");
+        assert Objects.equals(info.getStatus(), "정상");
         assert info.getManagingBranchCode() == null;
     }
 
