@@ -5,9 +5,9 @@
 [![Maven Central Version](https://img.shields.io/maven-central/v/com.github.jinahya/kftc-financial-institution-info)](https://search.maven.org/artifact/com.github.jinahya/kftc-financial-institution-info)
 [![javadoc](https://javadoc.io/badge2/com.github.jinahya/kftc-financial-institution-info/javadoc.svg)](https://javadoc.io/doc/com.github.jinahya/kftc-financial-institution-info)
 
-Financial institution information, provided by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
+A simple library provides financial institution information, provided by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
-금융결재원에서 제공하는 금융기관들에 대한 정보를 조회할 수 있는 API이다.
+금융결재원에서 제공하는 금융기관 정보를 조회할 수 있는 API입니다. 변경이 필요하다고 판단되면 이슈를 올려주세요.
 
 ---
 
@@ -27,6 +27,8 @@ Requires `21` for building while the module targets `11`.
   <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
 </project>
 ```
+
+---
 
 ## Apache Maven Coordinates
 
