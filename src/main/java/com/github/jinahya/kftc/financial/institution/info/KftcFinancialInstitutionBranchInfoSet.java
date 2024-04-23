@@ -55,12 +55,10 @@ public final class KftcFinancialInstitutionBranchInfoSet
      */
     public static KftcFinancialInstitutionBranchInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
-            if (resource == null) {
-                throw new RuntimeException("no resource for " + RESOURCE_NAME);
-            }
+            assert resource != null;
             return _IoUtils.read(resource);
         } catch (final Exception e) {
-            throw new RuntimeException("failed to load resource", e);
+            throw new RuntimeException("failed to load data from the resource", e);
         }
     }
 
@@ -127,7 +125,6 @@ public final class KftcFinancialInstitutionBranchInfoSet
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    @SuppressWarnings({"serial"})
     private final List<KftcFinancialInstitutionBranchInfo> list;
 
     private transient Map<String, KftcFinancialInstitutionBranchInfo> map;
