@@ -23,16 +23,13 @@ package com.github.jinahya.kftc.financial.institution.info;
 import java.io.*;
 import java.nio.file.Path;
 import java.util.Objects;
-import java.util.zip.GZIPInputStream;
-import java.util.zip.GZIPOutputStream;
 
 @SuppressWarnings({"java:S101"})
 final class _IoUtils {
 
     static void write(final File file, final Object obj) throws IOException {
         try (var fos = new FileOutputStream(file);
-             var gzipos = new GZIPOutputStream(fos);
-             var oos = new ObjectOutputStream(gzipos)) {
+             var oos = new ObjectOutputStream(fos)) {
             oos.writeObject(obj);
             oos.flush();
         }
@@ -46,8 +43,7 @@ final class _IoUtils {
     @SuppressWarnings({"unchecked"})
     static <T> T read(final InputStream stream) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(stream, "stream is null");
-        try (var gzipos = new GZIPInputStream(stream);
-             var oos = new ObjectInputStream(gzipos)) {
+        try (var oos = new ObjectInputStream(stream)) {
             return (T) oos.readObject();
         }
     }
