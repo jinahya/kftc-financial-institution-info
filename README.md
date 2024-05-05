@@ -36,6 +36,16 @@ Requires `21` for building while the module targets `11`.
 </project>
 ```
 
+### Apache Maven
+
+This module, abnormally, generates main resources while testing. That's why **The Postman Always Rings Twice**.
+
+```shell
+$ mvn clean test && mvn clean test
+```
+
+
+
 ---
 
 ## Apache Maven Coordinates
