@@ -136,3 +136,5 @@ $ mvn -Pdb clean test
 ### garrit.xyz 
 
 * [Tracking SQLite Database Changes in Git](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)
+  * [Git hook for diff sqlite table
+    ](https://stackoverflow.com/a/21789167/330457)
