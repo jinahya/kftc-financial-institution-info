@@ -38,13 +38,11 @@ Requires `21` for building while the module targets `11`.
 
 ### Apache Maven
 
-This module, abnormally, generates main resources while testing. That's why **The Postman Always Rings Twice**.
+This module, abnormally, generates main resources while testing. That's why *The Postman Always Rings Twice*.
 
 ```shell
-$ mvn clean test && mvn clean test
+$ seq 2 | xargs -I -- mvn clean test
 ```
-
-
 
 ---
 
@@ -94,7 +92,11 @@ assert info.getManagingBranchCode() == null;
 
 ## SQLite db file
 
-A SQLite database file, with two tables, is created, while builds, as `db/kftc-financial-institution-info.sqlite3`.
+You can generate an SQLite database file, with two tables, while builds, into `db/kftc-financial-institution-info.sqlite3`.
+
+```shell
+$ mvn -Pdb clean test
+```
 
 ### `financial_institution`
 

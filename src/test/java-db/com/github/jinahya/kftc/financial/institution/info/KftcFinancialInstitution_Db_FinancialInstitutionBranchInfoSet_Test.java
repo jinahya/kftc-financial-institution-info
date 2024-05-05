@@ -21,10 +21,13 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
+import java.util.List;
 
+@Tag("db")
 @Slf4j
 class KftcFinancialInstitution_Db_FinancialInstitutionBranchInfoSet_Test
         extends KftcFinancialInstitution_Db__Test {
@@ -35,11 +38,42 @@ class KftcFinancialInstitution_Db_FinancialInstitutionBranchInfoSet_Test
     @Test
     void __() throws Exception {
         acceptConnection(c -> {
-            try (var statement = c.createStatement()) {
-                final int deleted = statement.executeUpdate("DELETE FROM " + TABLE_NAME);
-                log.debug("deleted: {}", deleted);
-            } catch (final SQLException sqle) {
-                throw new RuntimeException("failed to delete from " + TABLE_NAME, sqle);
+            {
+                final var sqls = List.of(
+                        """
+                                drop table if exists %1$s""".formatted(TABLE_NAME),
+                        """
+                                create table %1$s (
+                                    branch_code                TEXT not null primary key,
+                                    financial_institution_name TEXT not null,
+                                    branch_name                TEXT not null,
+                                    phone_number               TEXT,
+                                    fax_number                 TEXT,
+                                    postal_code                TEXT,
+                                    address                    TEXT,
+                                    status                     TEXT,
+                                    managing_branch_code       TEXT
+                                )""".formatted(TABLE_NAME),
+                        """
+                                create index idx_financial_institution_name_branch_name
+                                on %1$s (financial_institution_name, branch_name)""".formatted(TABLE_NAME)
+                );
+                for (final var sql : sqls) {
+                    try (var statement = c.createStatement()) {
+                        final int result = statement.executeUpdate(sql);
+//                        log.debug("result: {} <- {}", result, sql);
+                    } catch (final SQLException sqle) {
+                        throw new RuntimeException("failed to execute: " + sql, sqle);
+                    }
+                }
+            }
+            if (false) {
+                try (var statement = c.createStatement()) {
+                    final int deleted = statement.executeUpdate("DELETE FROM " + TABLE_NAME);
+                    log.debug("deleted: {}", deleted);
+                } catch (final SQLException sqle) {
+                    throw new RuntimeException("failed to delete from " + TABLE_NAME, sqle);
+                }
             }
             try (var statement = c.prepareStatement(
                     """
@@ -54,8 +88,7 @@ class KftcFinancialInstitution_Db_FinancialInstitutionBranchInfoSet_Test
                               status,
                               managing_branch_code
                             ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)""".formatted(TABLE_NAME))) {
-                for (var info :
-                        KftcFinancialInstitutionBranchInfoSet.newInstance().getList()) {
+                for (var info : KftcFinancialInstitutionBranchInfoSet.newInstance().getList()) {
                     statement.clearParameters();
                     int index = 0;
                     statement.setString(++index, info.getBranchCode());

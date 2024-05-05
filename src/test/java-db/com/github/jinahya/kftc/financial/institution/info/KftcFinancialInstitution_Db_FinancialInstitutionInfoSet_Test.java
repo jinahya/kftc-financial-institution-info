@@ -21,10 +21,13 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
+import java.util.List;
 
+@Tag("db")
 @Slf4j
 class KftcFinancialInstitution_Db_FinancialInstitutionInfoSet_Test
         extends KftcFinancialInstitution_Db__Test {
@@ -35,11 +38,40 @@ class KftcFinancialInstitution_Db_FinancialInstitutionInfoSet_Test
     @Test
     void __() throws Exception {
         acceptConnection(c -> {
-            try (var statement = c.createStatement()) {
-                final int deleted = statement.executeUpdate("DELETE FROM " + TABLE_NAME);
-                log.debug("deleted: {}", deleted);
-            } catch (final SQLException sqle) {
-                throw new RuntimeException("failed to delete from " + TABLE_NAME, sqle);
+            {
+                final var sqls = List.of(
+                        """
+                                drop table if exists %1$s""".formatted(TABLE_NAME),
+                        """
+                                create table %1$s (
+                                    code           TEXT    not null primary key,
+                                    name           TEXT    not null,
+                                    representative INTEGER not null,
+                                    category       TEXT    not null)""".formatted(TABLE_NAME),
+                        """
+                                create index idx_category_name
+                                on %1$s (category, name)""".formatted(TABLE_NAME),
+                        """
+                                create index idx_name
+                                on %1$s (name)""".formatted(TABLE_NAME)
+
+                );
+                for (final var sql : sqls) {
+                    try (var statement = c.createStatement()) {
+                        final int result = statement.executeUpdate(sql);
+//                        log.debug("result: {} <- {}", result, sql);
+                    } catch (final SQLException sqle) {
+                        throw new RuntimeException("failed to drop/create table", sqle);
+                    }
+                }
+            }
+            if (false) {
+                try (var statement = c.createStatement()) {
+                    final int deleted = statement.executeUpdate("DELETE FROM " + TABLE_NAME);
+                    log.debug("deleted: {}", deleted);
+                } catch (final SQLException sqle) {
+                    throw new RuntimeException("failed to delete from " + TABLE_NAME, sqle);
+                }
             }
             try (var statement = c.prepareStatement(
                     """
