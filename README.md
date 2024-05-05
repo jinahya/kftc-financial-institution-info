@@ -132,3 +132,7 @@ $ mvn -Pdb clean test
 ### issues.apache.org
 
 * https://issues.apache.org/jira/browse/MJAVADOC-728
+
+### garrit.xyz 
+
+* [Tracking SQLite Database Changes in Git](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)
