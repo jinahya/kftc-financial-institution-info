@@ -84,7 +84,7 @@ assert info.getManagingBranchCode() == null;
 
 ## SQLite db file
 
-Two tables are created in `db/kftc-financial-institution-info.sqlite3` file.
+A SQLite database file, with two tables, is created, while builds, as `db/kftc-financial-institution-info.sqlite3`.
 
 ### `financial_institution`
 
