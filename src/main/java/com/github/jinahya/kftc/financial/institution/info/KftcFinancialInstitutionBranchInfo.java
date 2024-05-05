@@ -22,6 +22,8 @@ package com.github.jinahya.kftc.financial.institution.info;
 
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Optional;
+import java.util.regex.Pattern;
 
 /**
  * Represents a financial institution branch managed by <a href="https://www.kftc.or.kr">KFTC</a>.
@@ -74,6 +76,8 @@ public final class KftcFinancialInstitutionBranchInfo
             throw new IllegalArgumentException("no value for the rawValue: " + rawValue);
         }
 
+        // -------------------------------------------------------------------------------------- STATIC_FACTORY_METHODS
+
         // ------------------------------------------------------------------------------------------------ CONSTRUCTORS
         Status(final String rawValue) {
             this.rawValue = rawValue;
@@ -104,6 +108,13 @@ public final class KftcFinancialInstitutionBranchInfo
             return null;
         }
         return string;
+    }
+
+    static final Pattern PATTERN_MULTIPLE_WHITESPACES = Pattern.compile("\\s{2,}");
+
+    private static String replaceAllMultipleWhitespaces(final String text, final String replacement) {
+        Objects.requireNonNull(text, "text is null");
+        return PATTERN_MULTIPLE_WHITESPACES.matcher(text).replaceAll(replacement);
     }
 
     // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
@@ -207,6 +218,13 @@ public final class KftcFinancialInstitutionBranchInfo
         this.phoneNumber = string(phoneNumber);
     }
 
+    public String getPhoneNumberNormalized(final String whitespacesReplacement) {
+        Objects.requireNonNull(whitespacesReplacement, "whitespacesReplacement is null");
+        return Optional.ofNullable(getPhoneNumber())
+                .map(v -> replaceAllMultipleWhitespaces(v, whitespacesReplacement))
+                .orElse(null);
+    }
+
     // ------------------------------------------------------------------------------------------------------- faxNumber
 
     /**
@@ -220,6 +238,13 @@ public final class KftcFinancialInstitutionBranchInfo
 
     void setFaxNumber(final String faxNumber) {
         this.faxNumber = string(faxNumber);
+    }
+
+    public String getFaxNumberNormalized(final String whitespacesReplacement) {
+        Objects.requireNonNull(whitespacesReplacement, "whitespacesReplacement is null");
+        return Optional.ofNullable(getFaxNumber())
+                .map(v -> replaceAllMultipleWhitespaces(v, whitespacesReplacement))
+                .orElse(null);
     }
 
     // ------------------------------------------------------------------------------------------------------ postalCode
@@ -250,6 +275,13 @@ public final class KftcFinancialInstitutionBranchInfo
 
     void setAddress(final String address) {
         this.address = string(address);
+    }
+
+    public String getAddressNormalized(final String whitespacesReplacement) {
+        Objects.requireNonNull(whitespacesReplacement, "whitespacesReplacement is null");
+        return Optional.ofNullable(getAddress())
+                .map(v -> replaceAllMultipleWhitespaces(v, whitespacesReplacement))
+                .orElse(null);
     }
 
     // ---------------------------------------------------------------------------------------------------------- status

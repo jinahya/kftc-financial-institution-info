@@ -27,6 +27,7 @@
  * @see <a href="https://www.kftc.or.kr/kftc/data/EgovBankList.do">금융회사코드 조회</a>
  */
 module com.github.jinahya.kftc.financial.institution.info {
-    requires static lombok;
+    requires static java.sql; // test
+    requires static lombok;   // provided
     exports com.github.jinahya.kftc.financial.institution.info;
 }

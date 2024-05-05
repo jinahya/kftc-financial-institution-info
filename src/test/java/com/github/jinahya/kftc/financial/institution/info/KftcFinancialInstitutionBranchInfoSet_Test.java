@@ -23,6 +23,7 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.util.Objects;
 import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -69,6 +70,135 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
             assertThat(i.getAddress()).isEqualTo("서울특별시 중구 남대문로 39");
             assertThat(i.getStatus()).isEqualTo("정상");
             assertThat(i.getManagingBranchCode()).isNull();
+        });
+        // -------------------------------------------------------------------------------------------------- branchCode
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getBranchCode)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+            ;
+        });
+        // ------------------------------------------------------------------------------------ financialInstitutionName
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // -------------------------------------------------------------------------------------------------- branchName
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getBranchName)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // ------------------------------------------------------------------------------------------------- phoneNumber
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getPhoneNumber)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        assertThat(
+                instance.getList().stream()
+                        .map(v -> v.getPhoneNumberNormalized(""))
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v).isNotBlank()
+                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // --------------------------------------------------------------------------------------------------- faxNumber
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getFaxNumber)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v).isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
+        });
+        assertThat(
+                instance.getList().stream()
+                        .map(v -> v.getFaxNumberNormalized(""))
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+            ;
+        });
+        // -------------------------------------------------------------------------------------------------- postalCode
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getPostalCode)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+            ;
+        });
+        // ----------------------------------------------------------------------------------------------------- address
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getAddress)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // ------------------------------------------------------------------------------------------- addressNormalized
+        assertThat(
+                instance.getList().stream()
+                        .map(e -> e.getAddressNormalized(" "))
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+            ;
+        });
+        // ------------------------------------------------------------------------------------------------------ status
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getStatus)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
+        });
+        // ------------------------------------------------------------------------------------------ managingBranchCode
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getManagingBranchCode)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v).isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
         });
     }
 }

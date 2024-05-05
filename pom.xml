@@ -104,6 +104,12 @@
       <version>${version.lombok}</version>
       <scope>provided</scope>
     </dependency>
+    <dependency>
+      <groupId>org.xerial</groupId>
+      <artifactId>sqlite-jdbc</artifactId>
+      <version>3.45.3.0</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -325,7 +331,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.21.2</version>
+        <version>3.22.0</version>
         <configuration>
           <!-- Unsupported targetJdk value '21'. -->
           <!--          <skip>true</skip>-->
