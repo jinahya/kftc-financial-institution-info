@@ -25,6 +25,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -48,6 +49,24 @@ abstract class KftcFinancialInstitution_Db__Test {
         applyConnection(c -> {
             consumer.accept(c);
             return null;
+        });
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    static void vacuum() throws Exception {
+        acceptConnection(c -> {
+            try {
+                {
+                    final int autoVacuum = c.createStatement().executeUpdate("PRAGMA auto_vacuum = FULL");
+                    log.debug("auto_vacuum: {}", autoVacuum);
+                }
+                {
+                    final int vacuum = c.createStatement().executeUpdate("VACUUM");
+                    log.debug("vacuum: {}", vacuum);
+                }
+            } catch (final SQLException sqle) {
+                throw new RuntimeException("failed to vacuum", sqle);
+            }
         });
     }
 }

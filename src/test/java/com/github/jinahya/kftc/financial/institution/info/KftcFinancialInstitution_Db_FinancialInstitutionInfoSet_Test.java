@@ -26,14 +26,15 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 
 @Slf4j
-class KftcFinancialInstitution_Db_FinancialInstitutionInfoSet_Test {
+class KftcFinancialInstitution_Db_FinancialInstitutionInfoSet_Test
+        extends KftcFinancialInstitution_Db__Test {
 
     private static final String TABLE_NAME = "financial_institution";
 
     // -----------------------------------------------------------------------------------------------------------------
     @Test
     void __() throws Exception {
-        KftcFinancialInstitution_Db__Test.acceptConnection(c -> {
+        acceptConnection(c -> {
             try (var statement = c.createStatement()) {
                 final int deleted = statement.executeUpdate("DELETE FROM " + TABLE_NAME);
                 log.debug("deleted: {}", deleted);
@@ -63,5 +64,6 @@ class KftcFinancialInstitution_Db_FinancialInstitutionInfoSet_Test {
                 throw new RuntimeException("failed to insert", sqle);
             }
         });
+        vacuum();
     }
 }

@@ -74,5 +74,6 @@ class KftcFinancialInstitution_Db_FinancialInstitutionBranchInfoSet_Test
                 throw new RuntimeException("failed to insert", sqle);
             }
         });
+        vacuum();
     }
 }
