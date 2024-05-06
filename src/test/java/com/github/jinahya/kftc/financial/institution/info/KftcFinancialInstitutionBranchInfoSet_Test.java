@@ -126,9 +126,6 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
                     .isNotBlank()
                     .doesNotContainAnyWhitespaces()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
-                    .satisfies(x -> {
-                        log.debug("phoneNumberNormalized: {}", x);
-                    })
             ;
         });
         // --------------------------------------------------------------------------------------------------- faxNumber
