@@ -54,8 +54,8 @@
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <version.maven-surefire>3.2.5</version.maven-surefire>
     <!-- https://search.maven.org/search?q=g:org.apache.pdfbox -->
-    <version.org.apache.pdfbox>3.0.2</version.org.apache.pdfbox>
-    <!--    <version.org.junit.jupiter>5.10.2</version.org.junit.jupiter>-->
+<!--    <version.org.apache.pdfbox>3.0.2</version.org.apache.pdfbox>-->
+    <version.org.apache.poi>5.2.5</version.org.apache.poi>
     <version.org.junit.jupiter>5.11.0-M1</version.org.junit.jupiter>
     <version.org.mockito>5.11.0</version.org.mockito>
   </properties>
@@ -80,6 +80,12 @@
     <!--      <version>${version.org.apache.pdfbox}</version>-->
     <!--      <scope>test</scope>-->
     <!--    </dependency>-->
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>${version.org.apache.poi}</version>
+      <scope>test</scope>
+    </dependency>
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>

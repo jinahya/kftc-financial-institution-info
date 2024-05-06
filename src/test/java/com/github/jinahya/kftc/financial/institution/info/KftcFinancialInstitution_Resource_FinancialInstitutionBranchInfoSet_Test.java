@@ -21,26 +21,44 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 
 @Slf4j
-class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test {
+class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
+        extends KftcFinancialInstitution_Resource__Test {
+
+    private static final int INDEX_BRANCH_CODE = 0;
+
+    private static final int INDEX_FINANCIAL_INSTITUTION_NAME = 1;
+
+    private static final int INDEX_BRANCH_NAME = 2;
+
+    private static final int INDEX_PHONE_NUMBER = 3;
+
+    private static final int INDEX_FAX_NUMBER = 4;
+
+    private static final int INDEX_POSTAL_CODE = 5;
+
+    private static final int INDEX_ADDRESS = 6;
+
+    private static final int INDEX_STATUS = 7;
+
+    private static final int INDEX_MANAGING_BRANCH_CODE = 8;
 
     @Test
     void __() throws IOException, URISyntaxException {
@@ -67,10 +85,10 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test {
                             info.setBranchName(tokens[2]);
                             info.setPhoneNumber(tokens[3]);
                             info.setFaxNumber(tokens[4]);
-                            info.setPostalCode(tokens[5]);
-                            info.setAddress(tokens[6]);
-                            info.setStatus(tokens[7]);
-                            info.setManagingBranchCode(tokens[8]);
+                            info.setPostalCode(tokens[INDEX_POSTAL_CODE]);
+                            info.setAddress(tokens[INDEX_ADDRESS]);
+                            info.setStatus(tokens[INDEX_STATUS]);
+                            info.setManagingBranchCode(tokens[INDEX_MANAGING_BRANCH_CODE]);
 //                            log.debug("info: {}", info);
                             assertThatCode(() -> {
                                 final var status =
@@ -98,19 +116,36 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test {
                 );
             }
         }
-        final var directory = Stream.concat(
-                        Stream.of("src", "main", "resources"),
-                        Arrays.stream(getClass().getPackage().getName().split("\\."))
-                )
-                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
-                .toAbsolutePath()
-                .normalize();
-        Files.createDirectories(directory);
-        final var path = directory.resolve(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
+        final var path = resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
         final var list = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
                 .toList();
         final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
         _IoUtils.write(path, infoSet);
+    }
+
+    @Test
+    void xlsx__() throws Exception {
+        try (var resource = getClass().getResourceAsStream("/codefilex.text.xlsx");
+             final var workbook = new XSSFWorkbook(resource)) {
+            final var formatter = new DataFormatter();
+            for (final var row : workbook.getSheetAt(0)) {
+                if (row.getRowNum() == 0) {
+                    continue;
+                }
+                final var info = new KftcFinancialInstitutionBranchInfo();
+                info.setBranchCode(formatter.formatCellValue(row.getCell(INDEX_BRANCH_CODE)));
+                info.setFinancialInstitutionName(
+                        formatter.formatCellValue(row.getCell(INDEX_FINANCIAL_INSTITUTION_NAME))
+                );
+                info.setBranchName(formatter.formatCellValue(row.getCell(INDEX_BRANCH_NAME)));
+                info.setPhoneNumber(formatter.formatCellValue(row.getCell(INDEX_PHONE_NUMBER)));
+                info.setFaxNumber(formatter.formatCellValue(row.getCell(INDEX_FAX_NUMBER)));
+                info.setPostalCode(formatter.formatCellValue(row.getCell(INDEX_POSTAL_CODE)));
+                info.setAddress(formatter.formatCellValue(row.getCell(INDEX_ADDRESS)));
+                info.setStatus(formatter.formatCellValue(row.getCell(INDEX_STATUS)));
+                info.setManagingBranchCode(formatter.formatCellValue(row.getCell(INDEX_MANAGING_BRANCH_CODE)));
+            }
+        }
     }
 }

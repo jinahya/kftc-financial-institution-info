@@ -20,9 +20,33 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Slf4j
 abstract class KftcFinancialInstitution_Resource__Test {
 
+    static Path resourceDirectory() throws IOException {
+        final var directory = Stream.concat(
+                        Stream.of("src", "main", "resources"),
+                        Arrays.stream(KftcFinancialInstitution_Resource__Test.class.getPackage().getName().split("\\."))
+                )
+                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
+                .toAbsolutePath()
+                .normalize();
+        Files.createDirectories(directory);
+        return directory;
+    }
+
+    static Path resourceFile(final String name) throws IOException {
+        return resourceDirectory().resolve(name);
+    }
 }

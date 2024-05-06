@@ -116,14 +116,19 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
             ;
         });
+        // ---------=----------------------------------------------------------------------------- phoneNumberNormalized
         assertThat(
                 instance.getList().stream()
-                        .map(v -> v.getPhoneNumberNormalized(""))
+                        .map(v -> v.getPhoneNumberNormalized("-"))
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
-            assertThat(v).isNotBlank()
-                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+            assertThat(v)
+                    .isNotBlank()
+                    .doesNotContainAnyWhitespaces()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .satisfies(x -> {
+                        log.debug("phoneNumberNormalized: {}", x);
+                    })
             ;
         });
         // --------------------------------------------------------------------------------------------------- faxNumber
@@ -132,18 +137,20 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
                         .map(KftcFinancialInstitutionBranchInfo::getFaxNumber)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
-            assertThat(v).isNotBlank()
+            assertThat(v)
+                    .isNotBlank()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
         });
+        // ----------------------------------------------------------------------------------------- faxNumberNormalized
         assertThat(
                 instance.getList().stream()
-                        .map(v -> v.getFaxNumberNormalized(""))
+                        .map(v -> v.getFaxNumberNormalized("-"))
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
             assertThat(v)
                     .isNotBlank()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
-                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+                    .doesNotContainAnyWhitespaces()
             ;
         });
         // -------------------------------------------------------------------------------------------------- postalCode
@@ -155,7 +162,6 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
             assertThat(v)
                     .isNotBlank()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
-                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
             ;
         });
         // ----------------------------------------------------------------------------------------------------- address
@@ -178,7 +184,7 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
             assertThat(v)
                     .isNotBlank()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
-                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+                    .doesNotContain("  ")
             ;
         });
         // ------------------------------------------------------------------------------------------------------ status
@@ -197,7 +203,8 @@ class KftcFinancialInstitutionBranchInfoSet_Test {
                         .map(KftcFinancialInstitutionBranchInfo::getManagingBranchCode)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
-            assertThat(v).isNotBlank()
+            assertThat(v)
+                    .isNotBlank()
                     .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
         });
     }

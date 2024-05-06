@@ -26,16 +26,17 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.*;
+import java.util.Comparator;
+import java.util.Map;
+import java.util.Objects;
+import java.util.TreeMap;
 import java.util.regex.Pattern;
-import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test {
+class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
+        extends KftcFinancialInstitution_Resource__Test {
 
     private static final Pattern pattern = Pattern.compile(
 //            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
@@ -168,15 +169,7 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test {
         ).isEqualTo(150);
         assertThat(map).hasSize(196);
         // -------------------------------------------------------------------------------------------------------------
-        final var directory = Stream.concat(
-                        Stream.of("src", "main", "resources"),
-                        Arrays.stream(getClass().getPackage().getName().split("\\."))
-                )
-                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
-                .toAbsolutePath()
-                .normalize();
-        Files.createDirectories(directory);
-        final var path = directory.resolve(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
+        final var path = resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
         final var list = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
                 .toList();

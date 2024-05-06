@@ -110,7 +110,7 @@ public final class KftcFinancialInstitutionBranchInfo
         return string;
     }
 
-    static final Pattern PATTERN_MULTIPLE_WHITESPACES = Pattern.compile("\\s{2,}");
+    static final Pattern PATTERN_MULTIPLE_WHITESPACES = Pattern.compile("\\s+");
 
     private static String replaceAllMultipleWhitespaces(final String text, final String replacement) {
         Objects.requireNonNull(text, "text is null");

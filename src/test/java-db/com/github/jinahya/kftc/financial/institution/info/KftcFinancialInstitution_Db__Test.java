@@ -37,7 +37,6 @@ abstract class KftcFinancialInstitution_Db__Test {
     // -----------------------------------------------------------------------------------------------------------------
     static <R> R applyConnection(final Function<? super Connection, ? extends R> function) throws Exception {
         final var path = Paths.get("db").resolve(FILE_NAME).toAbsolutePath().toFile().getCanonicalPath();
-        log.debug("path: {}", path);
         final var url = "jdbc:sqlite:" + path;
         Class.forName("org.sqlite.JDBC");
         try (var connection = DriverManager.getConnection(url)) {
