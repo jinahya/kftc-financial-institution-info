@@ -14,8 +14,6 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 * 2024-05-05
 
-변경이 필요하다고 판단되면 이슈를 올려주세요.
-
 ---
 
 ## Build environment
@@ -92,7 +90,7 @@ assert info.getManagingBranchCode() == null;
 
 ## SQLite db file
 
-You can generate an SQLite database file, with two tables, while builds, into `db/kftc-financial-institution-info.sqlite3`.
+You can generate an SQLite database file, while builds, into `db/kftc-financial-institution-info.sqlite3`.
 
 
 ```shell
