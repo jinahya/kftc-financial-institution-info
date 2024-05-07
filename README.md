@@ -61,7 +61,7 @@ $ seq 2 | xargs -I -- mvn clean test
 
 ```java
 // 금융기관 정보 조회
-final var instance = KftcFinancialInstitutionInfoSet.newInstance();
+static final var instance = KftcFinancialInstitutionInfoSet.newInstance();
 
 final var info = instance.get("001").orElseThrow();
 assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
@@ -72,7 +72,7 @@ assert info.isRepresentative();
 
 ```java
 // 금융기관 지점 정보 조회
-final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
+static final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
 
 final var info = instance.get("0010003").orElseThrow();
 assert info.getBranchCode().equals("0010003");

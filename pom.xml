@@ -46,6 +46,7 @@
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
     <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
     <doclint>none</doclint>
+<!--    <doclint>all</doclint>-->
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>jinahya-github</sonar.organization>
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>

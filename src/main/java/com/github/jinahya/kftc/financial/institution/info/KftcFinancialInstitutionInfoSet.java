@@ -75,6 +75,14 @@ public final class KftcFinancialInstitutionInfoSet
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * Reads an object. from specified stream.
+     *
+     * @param ois the stream from which an object is read.
+     * @throws IOException            if an I/O error occurs.
+     * @throws ClassNotFoundException if thrown.
+     */
     // https://stackoverflow.com/a/3343314/330457
     private void readObject(final ObjectInputStream ois) throws IOException, ClassNotFoundException {
         ois.defaultReadObject();
@@ -123,7 +131,14 @@ public final class KftcFinancialInstitutionInfoSet
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * the list.
+     */
     private final List<KftcFinancialInstitutionInfo> list;
 
+    /**
+     * the map.
+     */
     private transient Map<String, KftcFinancialInstitutionInfo> map;
 }
