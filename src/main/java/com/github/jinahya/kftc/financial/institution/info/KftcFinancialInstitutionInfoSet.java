@@ -102,6 +102,10 @@ public final class KftcFinancialInstitutionInfoSet {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * the list.
+     */
     private final List<KftcFinancialInstitutionInfo> list;
 
     private final Map<String, KftcFinancialInstitutionInfo> map;
