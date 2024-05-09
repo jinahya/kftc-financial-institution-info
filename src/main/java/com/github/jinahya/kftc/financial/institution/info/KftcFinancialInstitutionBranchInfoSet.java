@@ -20,13 +20,7 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -36,10 +30,7 @@ import java.util.stream.Collectors;
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  * @see KftcFinancialInstitutionBranchInfo
  */
-public final class KftcFinancialInstitutionBranchInfoSet
-        implements Serializable {
-
-    private static final long serialVersionUID = 3830614459747984712L;
+public final class KftcFinancialInstitutionBranchInfoSet {
 
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "codefilex.ser";
@@ -56,7 +47,9 @@ public final class KftcFinancialInstitutionBranchInfoSet
     public static KftcFinancialInstitutionBranchInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
             assert resource != null;
-            return _IoUtils.read(resource);
+            final var loaded = (Object[]) _IoUtils.read(resource);
+            final var array = Arrays.copyOf(loaded, loaded.length, KftcFinancialInstitutionBranchInfo[].class);
+            return new KftcFinancialInstitutionBranchInfoSet(Arrays.asList(array));
         } catch (final Exception e) {
             throw new RuntimeException("failed to load data from the resource", e);
         }
@@ -71,20 +64,12 @@ public final class KftcFinancialInstitutionBranchInfoSet
      */
     KftcFinancialInstitutionBranchInfoSet(final List<KftcFinancialInstitutionBranchInfo> list) {
         super();
-        this.list = List.copyOf(Objects.requireNonNull(list, "list is null"));
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
-    // https://stackoverflow.com/a/3343314/330457
-    private void readObject(final ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        ois.defaultReadObject();
-        assert list != null;
-        map();
-    }
-
-    private void map() {
-        map = getList().stream()
-                .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode, Function.identity()));
+        this.list = Objects.requireNonNull(list, "list is null");
+        map = this.list.stream()
+                .collect(Collectors.toUnmodifiableMap(
+                        KftcFinancialInstitutionBranchInfo::getBranchCode,
+                        Function.identity())
+                );
     }
 
     // ------------------------------------------------------------------------------------------------------------ list
@@ -106,9 +91,6 @@ public final class KftcFinancialInstitutionBranchInfoSet
      * @return an <em>unmodifiable</em> map of branch codes and branch info.
      */
     public Map<String, KftcFinancialInstitutionBranchInfo> getMap() {
-        if (map == null) {
-            map();
-        }
         return map;
     }
 
@@ -127,5 +109,5 @@ public final class KftcFinancialInstitutionBranchInfoSet
     // -----------------------------------------------------------------------------------------------------------------
     private final List<KftcFinancialInstitutionBranchInfo> list;
 
-    private transient Map<String, KftcFinancialInstitutionBranchInfo> map;
+    private final Map<String, KftcFinancialInstitutionBranchInfo> map;
 }

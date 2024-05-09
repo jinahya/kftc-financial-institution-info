@@ -8,9 +8,7 @@
 A simple library provides financial institution information, provided
 by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
-금융결재원에서 제공하는 금융기관 정보를 조회할 수 있는 API입니다.
-
-## 최근 갱신 일자
+## Latest dates loaded
 
 * 2024-05-05
 

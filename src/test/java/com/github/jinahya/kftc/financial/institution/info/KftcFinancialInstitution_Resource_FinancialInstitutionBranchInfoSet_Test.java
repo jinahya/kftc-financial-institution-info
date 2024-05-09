@@ -117,11 +117,15 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
             }
         }
         final var path = resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
-        final var list = map.values().stream()
+//        final var list = map.values().stream()
+//                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
+//                .toList();
+//        final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
+//        _IoUtils.write(path, infoSet);
+        final var array = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
-                .toList();
-        final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
-        _IoUtils.write(path, infoSet);
+                .toArray();
+        _IoUtils.write(path, array);
     }
 
     @Test

@@ -170,10 +170,14 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
         assertThat(map).hasSize(196);
         // -------------------------------------------------------------------------------------------------------------
         final var path = resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
-        final var list = map.values().stream()
+//        final var list = map.values().stream()
+//                .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+//                .toList();
+//        final var infoSet = new KftcFinancialInstitutionInfoSet(list);
+//        _IoUtils.write(path, infoSet);
+        final var array = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
-                .toList();
-        final var infoSet = new KftcFinancialInstitutionInfoSet(list);
-        _IoUtils.write(path, infoSet);
+                .toArray();
+        _IoUtils.write(path, array);
     }
 }
