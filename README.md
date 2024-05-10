@@ -109,8 +109,14 @@ See `db/kftc-financial-institution-info.sqlite3.md` for more information.
 
 * https://issues.apache.org/jira/browse/MJAVADOC-728
 
+* [Resource plugin's handling of symbolic links changed in 3.0.x, broke existing behavior](https://issues.apache.org/jira/browse/MRESOURCES-237)
+
 ### garrit.xyz 
 
 * [Tracking SQLite Database Changes in Git](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)
   * [Git hook for diff sqlite table
     ](https://stackoverflow.com/a/21789167/330457)
+
+### stackoverflow.com
+
+* [https://stackoverflow.com/q/40346225/330457](https://stackoverflow.com/q/40346225/330457)

@@ -64,8 +64,11 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
     void __() throws IOException, URISyntaxException {
         final Map<String, KftcFinancialInstitutionBranchInfo> map;
         {
-            final var resource = getClass().getResource("/codefilex.text");
-            assertThat(resource).isNotNull();
+            final var name = "/codefilex.text";
+            final var resource = getClass().getResource(name);
+            assertThat(resource)
+                    .as("resource for '%1$s'", name)
+                    .isNotNull();
             final var path = Paths.get(resource.toURI());
             final var charset = Charset.forName("EUC-KR");
             try (var lines = Files.lines(path, charset)) {
@@ -130,8 +133,13 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
 
     @Test
     void xlsx__() throws Exception {
-        try (var resource = getClass().getResourceAsStream("/codefilex.text.xlsx");
-             final var workbook = new XSSFWorkbook(resource)) {
+        final var name = "/codefilex.text.xlsx";
+        final var resource = getClass().getResource(name);
+        assertThat(resource)
+                .as("resource for '%1$s'", name)
+                .isNotNull();
+        try (final var stream = resource.openStream();
+             final var workbook = new XSSFWorkbook(stream)) {
             final var formatter = new DataFormatter();
             for (final var row : workbook.getSheetAt(0)) {
                 if (row.getRowNum() == 0) {

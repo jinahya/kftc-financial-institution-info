@@ -46,7 +46,7 @@
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
     <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
     <doclint>none</doclint>
-<!--    <doclint>all</doclint>-->
+    <!--    <doclint>all</doclint>-->
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     <sonar.organization>jinahya-github</sonar.organization>
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
@@ -61,7 +61,7 @@
     <version.org.mockito>5.11.0</version.org.mockito>
   </properties>
 
-  <dependencyManagement />
+  <dependencyManagement/>
   <dependencies>
     <dependency>
       <groupId>ch.qos.logback</groupId>
@@ -120,6 +120,20 @@
   </dependencies>
 
   <build>
+<!--    <testResources>-->
+<!--      <testResource>-->
+<!--        &lt;!&ndash; https://stackoverflow.com/q/40346225/330457 &ndash;&gt;-->
+<!--        &lt;!&ndash; https://issues.apache.org/jira/browse/MRESOURCES-237 &ndash;&gt;-->
+<!--        &lt;!&ndash; https://stackoverflow.com/a/75839154/330457 &ndash;&gt;-->
+<!--        <directory>${project.basedir}/src/test/resources</directory>-->
+<!--        <filtering>true</filtering>-->
+<!--        <includes>-->
+<!--          <include>bankinfo.hwp.pdf</include>-->
+<!--          <include>codefilex.text</include>-->
+<!--          <include>codefilex.text.xlsx</include>-->
+<!--        </includes>-->
+<!--      </testResource>-->
+<!--    </testResources>-->
     <pluginManagement>
       <plugins>
         <plugin>
@@ -144,13 +158,13 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>4.0.0-M14</version>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.3.1</version>
         </plugin>
         <plugin>
-          <groupId>org.codehaus.mojo</groupId>
-          <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.5.0</version>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>4.0.0-M14</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -200,7 +214,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -368,48 +382,6 @@
       <properties>
         <groups>db</groups>
       </properties>
-      <build>
-        <testResources>
-          <testResource>
-            <directory>src/test/resources-persistence</directory>
-            <filtering>true</filtering>
-          </testResource>
-        </testResources>
-        <plugins>
-          <plugin>
-            <groupId>org.codehaus.mojo</groupId>
-            <artifactId>build-helper-maven-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>add-test-source-persistence</id>
-                <phase>generate-test-sources</phase>
-                <goals>
-                  <goal>add-test-source</goal>
-                </goals>
-                <configuration>
-                  <sources>
-                    <source>${project.basedir}/src/test/java-db</source>
-                  </sources>
-                </configuration>
-              </execution>
-              <execution>
-                <id>add-test-resource-persistence</id>
-                <phase>generate-test-resources</phase>
-                <goals>
-                  <goal>add-test-resource</goal>
-                </goals>
-                <configuration>
-                  <resources>
-                    <resource>
-                      <directory>${project.basedir}/src/test/resources-persistence</directory>
-                    </resource>
-                  </resources>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
     </profile>
   </profiles>
 </project>
