@@ -128,9 +128,9 @@
 <!--        <directory>${project.basedir}/src/test/resources</directory>-->
 <!--        <filtering>true</filtering>-->
 <!--        <includes>-->
-<!--          <include>bankinfo.hwp.pdf</include>-->
-<!--          <include>codefilex.text</include>-->
-<!--          <include>codefilex.text.xlsx</include>-->
+<!--          <include>bankinfo.hwp_5a2c09f97b5c31bf6756fe74c075549e.hwp.pdf</include>-->
+<!--          <include>codefilex.text_b3be7574c6fa3e1ba1563b71ffd37a1a.text</include>-->
+<!--          <include>codefilex.text_b3be7574c6fa3e1ba1563b71ffd37a1a.text.xlsx</include>-->
 <!--        </includes>-->
 <!--      </testResource>-->
 <!--    </testResources>-->
