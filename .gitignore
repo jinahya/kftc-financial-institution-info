@@ -34,5 +34,6 @@ buildNumber.properties
 .DS_Store
 
 
+db/kftc-financial-institution-info.sqlite3
 db/kftc-financial-institution-info.sqlite3.md
 db/kftc-financial-institution-info.sqlite3.sh
