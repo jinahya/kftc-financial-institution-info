@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package com.github.jinahya.kftc.financial.institution.info.proto;
+
+message KftcFinancialInstitutionBranchInfo {
+  string branchCode = 1;
+  string financialInstitutionName = 2;
+  string branchName = 3;
+  string phoneNumber = 4;
+  string faxNumber = 5;
+  string postalCode = 6;
+  string address = 7;
+  string status = 8;
+  string managingBranchCode = 9;
+}

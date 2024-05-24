@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.github.jinahya.kftc.financial.institution.info.proto;
+
+message KftcFinancialInstitutionInfo {
+  string category = 1;
+  string code = 2;
+  string name = 3;
+  bool representative = 4;
+}
