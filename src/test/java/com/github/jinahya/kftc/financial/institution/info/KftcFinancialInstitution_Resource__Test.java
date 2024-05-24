@@ -49,4 +49,32 @@ abstract class KftcFinancialInstitution_Resource__Test {
     static Path resourceFile(final String name) throws IOException {
         return resourceDirectory().resolve(name);
     }
+
+    static Path testResourceDirectory() throws IOException {
+        final var directory = Stream.concat(
+                        Stream.of("src", "test", "resources"),
+                        Arrays.stream(KftcFinancialInstitution_Resource__Test.class.getPackage().getName().split("\\."))
+                )
+                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
+                .toAbsolutePath()
+                .normalize();
+        Files.createDirectories(directory);
+        return directory;
+    }
+
+    static Path testResourceFile(final String name) throws IOException {
+        return testResourceDirectory().resolve(name);
+    }
+
+    static Path buildOutputDirectory() throws IOException {
+        final var directory = Path.of("target")
+                .toAbsolutePath()
+                .normalize();
+        Files.createDirectories(directory);
+        return directory;
+    }
+
+    static Path buildOutputFile(final String name) throws IOException {
+        return buildOutputDirectory().resolve(name);
+    }
 }

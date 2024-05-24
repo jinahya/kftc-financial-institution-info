@@ -20,14 +20,16 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import jakarta.json.bind.JsonbBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.Test;
 
-import java.io.IOException;
-import java.net.URISyntaxException;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Comparator;
@@ -61,7 +63,7 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
     private static final int INDEX_MANAGING_BRANCH_CODE = 8;
 
     @Test
-    void __() throws IOException, URISyntaxException {
+    void __() throws Exception {
         final Map<String, KftcFinancialInstitutionBranchInfo> map;
         {
             final var name = "/codefilex.text";
@@ -119,16 +121,28 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
                 );
             }
         }
-        final var path = resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
+        // -------------------------------------------------------------------------------------------------------------
+        final var array = map.values().stream()
+                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
+                .toArray();
+        // -------------------------------------------------------------------------------------------------------------
+        {
+            final var path = resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
 //        final var list = map.values().stream()
 //                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
 //                .toList();
 //        final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
 //        _IoUtils.write(path, infoSet);
-        final var array = map.values().stream()
-                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
-                .toArray();
-        _IoUtils.write(path, array);
+            _IoUtils.write(path, array);
+        }
+        {
+            final var path = buildOutputFile("codefilex.json");
+            try (var stream = new FileOutputStream(path.toFile());
+                 var writer = new OutputStreamWriter(stream, StandardCharsets.UTF_8);
+                 final var jsonb = JsonbBuilder.create()) {
+                jsonb.toJson(array, writer);
+            }
+        }
     }
 
     @Test

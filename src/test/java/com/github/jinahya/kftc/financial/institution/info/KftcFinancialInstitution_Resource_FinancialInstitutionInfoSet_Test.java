@@ -22,10 +22,14 @@ package com.github.jinahya.kftc.financial.institution.info;
 
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.parser.PdfTextExtractor;
+import jakarta.json.bind.JsonbBuilder;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.Objects;
@@ -168,16 +172,28 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
                         .count()
         ).isEqualTo(150);
         assertThat(map).hasSize(196);
+        // -----------------------------------------------------------------------------------------------------------------
+        final var array = map.values().stream()
+                .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+                .toArray();
         // -------------------------------------------------------------------------------------------------------------
-        final var path = resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
+        {
+            final var path = resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
 //        final var list = map.values().stream()
 //                .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
 //                .toList();
 //        final var infoSet = new KftcFinancialInstitutionInfoSet(list);
 //        _IoUtils.write(path, infoSet);
-        final var array = map.values().stream()
-                .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
-                .toArray();
-        _IoUtils.write(path, array);
+            _IoUtils.write(path, array);
+        }
+        // -------------------------------------------------------------------------------------------------------------
+        {
+            final var path = buildOutputFile("bankinfo.json");
+            try (var stream = new FileOutputStream(path.toFile());
+                 var writer = new OutputStreamWriter(stream, StandardCharsets.UTF_8);
+                 final var jsonb = JsonbBuilder.create()) {
+                jsonb.toJson(array, writer);
+            }
+        }
     }
 }
