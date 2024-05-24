@@ -32,7 +32,8 @@ $ grep maven.compiler\\. pom.xml
 
 ### Apache Maven
 
-This module, abnormally and weirdly, generates main resources while testing. That's why *The Postman Always Rings Twice*.
+This module, abnormally and weirdly, generates main resources while testing. That's why *The Postman Always Rings
+Twice*.
 
 ```shell
 $ seq 2 | xargs -I -- mvn clean test
@@ -53,47 +54,26 @@ $ seq 2 | xargs -I -- mvn clean test
 
 ---
 
-## Usages
+### More output formats.
 
-```java
-// 금융기관 정보 조회
-static final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-
-final var info = instance.get("001").orElseThrow();
-assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
-assert info.getCode().equals("001");
-assert info.getName().equals("한국은행");
-assert info.isRepresentative();
-```
-
-```java
-// 금융기관 지점 정보 조회
-static final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
-
-final var info = instance.get("0010003").orElseThrow();
-assert info.getBranchCode().equals("0010003");
-assert info.getFinancialInstitutionName().equals("한국");
-assert info.getBranchName().equals("본부총괄");
-assert info.getPhoneNumber().equals("02  759 4114"); // mind multiple spaces
-assert info.getFaxNumber().equals("02  759 4060");   // mind multiple spaces
-assert info.getPostalCode().equals("100794");
-assert info.getAddress().equals("서울특별시 중구 남대문로 39");
-assert info.getStatus().equals("정상");
-assert info.getManagingBranchCode() == null;
-```
-
----
-
-## SQLite db file
+### SQLite DB file
 
 You can generate an SQLite database file, while builds, into `db/kftc-financial-institution-info.sqlite3`.
-
 
 ```shell
 $ mvn -Pdb clean test
 ```
 
 See `db/kftc-financial-institution-info.sqlite3.md` for more information.
+
+### JSON files
+
+Two JSON files are generated in `target` directory.
+
+| name             | description | notes |
+|------------------|-------------|-------|
+| `bankinfo.json`  | 금융기관 정보     |       |
+| `codefilex.json` | 금융기관 지점 정보  |       |
 
 ---
 
@@ -109,11 +89,11 @@ See `db/kftc-financial-institution-info.sqlite3.md` for more information.
 
 * [Resource plugin's handling of symbolic links changed in 3.0.x, broke existing behavior](https://issues.apache.org/jira/browse/MRESOURCES-237)
 
-### garrit.xyz 
+### garrit.xyz
 
 * [Tracking SQLite Database Changes in Git](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)
-  * [Git hook for diff sqlite table
-    ](https://stackoverflow.com/a/21789167/330457)
+    * [Git hook for diff sqlite table
+      ](https://stackoverflow.com/a/21789167/330457)
 
 ### stackoverflow.com
 
