@@ -10,7 +10,7 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 ## Latest date loaded from the KFTC
 
-* 2024-05-14
+* 2024-05-17
 
 ---
 
@@ -28,15 +28,6 @@ $ grep maven.compiler\\. pom.xml
   <maven.compiler.testSource>21</maven.compiler.testSource>
   <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
   <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
-```
-
-### Apache Maven
-
-This module, abnormally and weirdly, generates main resources while testing. That's why *The Postman Always Rings
-Twice*.
-
-```shell
-$ seq 2 | xargs -I -- mvn clean test
 ```
 
 ---

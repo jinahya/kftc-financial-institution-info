@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package com.github.jinahya.kftc.financial.institution.info.proto;
 
-message KftcFinancialInstitutionBranchInfo {
+message KftcFinancialInstitutionBranchInfoProto {
   string branchCode = 1;
   string financialInstitutionName = 2;
   string branchName = 3;

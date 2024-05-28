@@ -32,7 +32,7 @@ import java.util.stream.Stream;
 
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Slf4j
-abstract class KftcFinancialInstitution_Resource__Test {
+public abstract class KftcFinancialInstitution_Resource__Test {
 
     static Path resourceDirectory() throws IOException {
         final var directory = Stream.concat(
@@ -74,7 +74,7 @@ abstract class KftcFinancialInstitution_Resource__Test {
         return directory;
     }
 
-    static Path buildOutputFile(final String name) throws IOException {
+    public static Path buildOutputFile(final String name) throws IOException {
         return buildOutputDirectory().resolve(name);
     }
 }

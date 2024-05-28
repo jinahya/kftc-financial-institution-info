@@ -2,9 +2,13 @@ syntax = "proto3";
 
 package com.github.jinahya.kftc.financial.institution.info.proto;
 
-message KftcFinancialInstitutionInfo {
+message KftcFinancialInstitutionInfoProto {
   string category = 1;
   string code = 2;
   string name = 3;
   bool representative = 4;
+}
+
+message KftcFinancialInstitutionInfoProtoRepeated {
+  repeated KftcFinancialInstitutionInfoProto objects = 1;
 }

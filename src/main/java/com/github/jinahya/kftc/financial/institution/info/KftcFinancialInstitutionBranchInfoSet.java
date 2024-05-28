@@ -38,9 +38,9 @@ public final class KftcFinancialInstitutionBranchInfoSet {
     // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
 
     /**
-     * Returns the instance of this class.
+     * Returns a new instance of this class.
      *
-     * @return the instance of this class.
+     * @return a new instance of this class.
      * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
      * store the result.
      */
