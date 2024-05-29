@@ -11,7 +11,9 @@ ORDER BY code ASC
 
 SELECT *
 FROM financial_institution
-WHERE category = 'BANK' AND name = '하나은행' AND representative IS TRUE
+WHERE category = 'BANK'
+  AND name = '하나은행'
+  AND representative IS TRUE
 ;
 
 -- ------------------------------------------------------------------------------------------------------ representative

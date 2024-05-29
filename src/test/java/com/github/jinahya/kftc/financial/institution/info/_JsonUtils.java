@@ -20,8 +20,6 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import jakarta.json.bind.JsonbBuilder;
-
 import java.nio.file.Path;
 import java.util.Collection;
 
