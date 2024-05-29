@@ -11,5 +11,9 @@ message KftcFinancialInstitutionBranchInfoProto {
   string postalCode = 6;
   string address = 7;
   string status = 8;
-  string managingBranchCode = 9;
+  optional string managingBranchCode = 9;
+}
+
+message KftcFinancialInstitutionBranchInfoProtoRepeated {
+  repeated KftcFinancialInstitutionBranchInfoProto objects = 1;
 }

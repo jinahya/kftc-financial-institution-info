@@ -125,12 +125,17 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
         getStatusBytes();
 
     /**
-     * <code>string managingBranchCode = 9;</code>
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return Whether the managingBranchCode field is set.
+     */
+    boolean hasManagingBranchCode();
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
      * @return The managingBranchCode.
      */
     java.lang.String getManagingBranchCode();
     /**
-     * <code>string managingBranchCode = 9;</code>
+     * <code>optional string managingBranchCode = 9;</code>
      * @return The bytes for managingBranchCode.
      */
     com.google.protobuf.ByteString
@@ -182,6 +187,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
               com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BRANCHCODE_FIELD_NUMBER = 1;
     @SuppressWarnings("serial")
     private volatile java.lang.Object branchCode_ = "";
@@ -498,7 +504,15 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
     @SuppressWarnings("serial")
     private volatile java.lang.Object managingBranchCode_ = "";
     /**
-     * <code>string managingBranchCode = 9;</code>
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return Whether the managingBranchCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagingBranchCode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
      * @return The managingBranchCode.
      */
     @java.lang.Override
@@ -515,7 +529,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
       }
     }
     /**
-     * <code>string managingBranchCode = 9;</code>
+     * <code>optional string managingBranchCode = 9;</code>
      * @return The bytes for managingBranchCode.
      */
     @java.lang.Override
@@ -571,7 +585,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 8, status_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(managingBranchCode_)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         com.google.protobuf.GeneratedMessage.writeString(output, 9, managingBranchCode_);
       }
       getUnknownFields().writeTo(output);
@@ -607,7 +621,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
       if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(8, status_);
       }
-      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(managingBranchCode_)) {
+      if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(9, managingBranchCode_);
       }
       size += getUnknownFields().getSerializedSize();
@@ -641,8 +655,11 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
           .equals(other.getAddress())) return false;
       if (!getStatus()
           .equals(other.getStatus())) return false;
-      if (!getManagingBranchCode()
-          .equals(other.getManagingBranchCode())) return false;
+      if (hasManagingBranchCode() != other.hasManagingBranchCode()) return false;
+      if (hasManagingBranchCode()) {
+        if (!getManagingBranchCode()
+            .equals(other.getManagingBranchCode())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -670,8 +687,10 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
       hash = (53 * hash) + getAddress().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
       hash = (53 * hash) + getStatus().hashCode();
-      hash = (37 * hash) + MANAGINGBRANCHCODE_FIELD_NUMBER;
-      hash = (53 * hash) + getManagingBranchCode().hashCode();
+      if (hasManagingBranchCode()) {
+        hash = (37 * hash) + MANAGINGBRANCHCODE_FIELD_NUMBER;
+        hash = (53 * hash) + getManagingBranchCode().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -869,9 +888,12 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
         if (((from_bitField0_ & 0x00000080) != 0)) {
           result.status_ = status_;
         }
+        int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000100) != 0)) {
           result.managingBranchCode_ = managingBranchCode_;
+          to_bitField0_ |= 0x00000001;
         }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -926,7 +948,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
           bitField0_ |= 0x00000080;
           onChanged();
         }
-        if (!other.getManagingBranchCode().isEmpty()) {
+        if (other.hasManagingBranchCode()) {
           managingBranchCode_ = other.managingBranchCode_;
           bitField0_ |= 0x00000100;
           onChanged();
@@ -1597,7 +1619,14 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
 
       private java.lang.Object managingBranchCode_ = "";
       /**
-       * <code>string managingBranchCode = 9;</code>
+       * <code>optional string managingBranchCode = 9;</code>
+       * @return Whether the managingBranchCode field is set.
+       */
+      public boolean hasManagingBranchCode() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
        * @return The managingBranchCode.
        */
       public java.lang.String getManagingBranchCode() {
@@ -1613,7 +1642,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
         }
       }
       /**
-       * <code>string managingBranchCode = 9;</code>
+       * <code>optional string managingBranchCode = 9;</code>
        * @return The bytes for managingBranchCode.
        */
       public com.google.protobuf.ByteString
@@ -1630,7 +1659,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
         }
       }
       /**
-       * <code>string managingBranchCode = 9;</code>
+       * <code>optional string managingBranchCode = 9;</code>
        * @param value The managingBranchCode to set.
        * @return This builder for chaining.
        */
@@ -1643,7 +1672,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
         return this;
       }
       /**
-       * <code>string managingBranchCode = 9;</code>
+       * <code>optional string managingBranchCode = 9;</code>
        * @return This builder for chaining.
        */
       public Builder clearManagingBranchCode() {
@@ -1653,7 +1682,7 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
         return this;
       }
       /**
-       * <code>string managingBranchCode = 9;</code>
+       * <code>optional string managingBranchCode = 9;</code>
        * @param value The bytes for managingBranchCode to set.
        * @return This builder for chaining.
        */
@@ -1718,11 +1747,756 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
 
   }
 
+  public interface KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> 
+        getObjectsList();
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(int index);
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    int getObjectsCount();
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+        getObjectsOrBuilderList();
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated}
+   */
+  public static final class KftcFinancialInstitutionBranchInfoProtoRepeated extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+      KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 26,
+        /* patch= */ 1,
+        /* suffix= */ "",
+        KftcFinancialInstitutionBranchInfoProtoRepeated.class.getName());
+    }
+    // Use KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder() to construct.
+    private KftcFinancialInstitutionBranchInfoProtoRepeated(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private KftcFinancialInstitutionBranchInfoProtoRepeated() {
+      objects_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.Builder.class);
+    }
+
+    public static final int OBJECTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> objects_;
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> getObjectsList() {
+      return objects_;
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+        getObjectsOrBuilderList() {
+      return objects_;
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public int getObjectsCount() {
+      return objects_.size();
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(int index) {
+      return objects_.get(index);
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
+        int index) {
+      return objects_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < objects_.size(); i++) {
+        output.writeMessage(1, objects_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < objects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, objects_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated)) {
+        return super.equals(obj);
+      }
+      com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated other = (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) obj;
+
+      if (!getObjectsList()
+          .equals(other.getObjectsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getObjectsCount() > 0) {
+        hash = (37 * hash) + OBJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.Builder.class);
+      }
+
+      // Construct using com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (objectsBuilder_ == null) {
+          objects_ = java.util.Collections.emptyList();
+        } else {
+          objects_ = null;
+          objectsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstanceForType() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated build() {
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated buildPartial() {
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result = new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result) {
+        if (objectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            objects_ = java.util.Collections.unmodifiableList(objects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.objects_ = objects_;
+        } else {
+          result.objects_ = objectsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) {
+          return mergeFrom((com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated other) {
+        if (other == com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.getDefaultInstance()) return this;
+        if (objectsBuilder_ == null) {
+          if (!other.objects_.isEmpty()) {
+            if (objects_.isEmpty()) {
+              objects_ = other.objects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureObjectsIsMutable();
+              objects_.addAll(other.objects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.objects_.isEmpty()) {
+            if (objectsBuilder_.isEmpty()) {
+              objectsBuilder_.dispose();
+              objectsBuilder_ = null;
+              objects_ = other.objects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              objectsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getObjectsFieldBuilder() : null;
+            } else {
+              objectsBuilder_.addAllMessages(other.objects_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto m =
+                    input.readMessage(
+                        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.parser(),
+                        extensionRegistry);
+                if (objectsBuilder_ == null) {
+                  ensureObjectsIsMutable();
+                  objects_.add(m);
+                } else {
+                  objectsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> objects_ =
+        java.util.Collections.emptyList();
+      private void ensureObjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          objects_ = new java.util.ArrayList<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto>(objects_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> objectsBuilder_;
+
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> getObjectsList() {
+        if (objectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(objects_);
+        } else {
+          return objectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public int getObjectsCount() {
+        if (objectsBuilder_ == null) {
+          return objects_.size();
+        } else {
+          return objectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(int index) {
+        if (objectsBuilder_ == null) {
+          return objects_.get(index);
+        } else {
+          return objectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder setObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
+        if (objectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectsIsMutable();
+          objects_.set(index, value);
+          onChanged();
+        } else {
+          objectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder setObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
+        if (objectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectsIsMutable();
+          objects_.add(value);
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
+        if (objectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectsIsMutable();
+          objects_.add(index, value);
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(
+          com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addAllObjects(
+          java.lang.Iterable<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> values) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, objects_);
+          onChanged();
+        } else {
+          objectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder clearObjects() {
+        if (objectsBuilder_ == null) {
+          objects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          objectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder removeObjects(int index) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.remove(index);
+          onChanged();
+        } else {
+          objectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder getObjectsBuilder(
+          int index) {
+        return getObjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
+          int index) {
+        if (objectsBuilder_ == null) {
+          return objects_.get(index);  } else {
+          return objectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+           getObjectsOrBuilderList() {
+        if (objectsBuilder_ != null) {
+          return objectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(objects_);
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder addObjectsBuilder() {
+        return getObjectsFieldBuilder().addBuilder(
+            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder addObjectsBuilder(
+          int index) {
+        return getObjectsFieldBuilder().addBuilder(
+            index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder> 
+           getObjectsBuilderList() {
+        return getObjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+          getObjectsFieldBuilder() {
+        if (objectsBuilder_ == null) {
+          objectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>(
+                  objects_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          objects_ = null;
+        }
+        return objectsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+    private static final com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated();
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated>
+        PARSER = new com.google.protobuf.AbstractParser<KftcFinancialInstitutionBranchInfoProtoRepeated>() {
+      @java.lang.Override
+      public KftcFinancialInstitutionBranchInfoProtoRepeated parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -1735,13 +2509,18 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
       "\nFsrc/test/resources-proto/KftcFinancial" +
       "InstitutionBranchInfoProto.proto\0228com.gi" +
       "thub.jinahya.kftc.financial.institution." +
-      "info.proto\"\354\001\n\'KftcFinancialInstitutionB" +
+      "info.proto\"\210\002\n\'KftcFinancialInstitutionB" +
       "ranchInfoProto\022\022\n\nbranchCode\030\001 \001(\t\022 \n\030fi" +
       "nancialInstitutionName\030\002 \001(\t\022\022\n\nbranchNa" +
       "me\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022\021\n\tfaxNumb" +
       "er\030\005 \001(\t\022\022\n\npostalCode\030\006 \001(\t\022\017\n\007address\030" +
-      "\007 \001(\t\022\016\n\006status\030\010 \001(\t\022\032\n\022managingBranchC" +
-      "ode\030\t \001(\tb\006proto3"
+      "\007 \001(\t\022\016\n\006status\030\010 \001(\t\022\037\n\022managingBranchC" +
+      "ode\030\t \001(\tH\000\210\001\001B\025\n\023_managingBranchCode\"\245\001" +
+      "\n/KftcFinancialInstitutionBranchInfoProt" +
+      "oRepeated\022r\n\007objects\030\001 \003(\0132a.com.github." +
+      "jinahya.kftc.financial.institution.info." +
+      "proto.KftcFinancialInstitutionBranchInfo" +
+      "Protob\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -1753,6 +2532,12 @@ public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor,
         new java.lang.String[] { "BranchCode", "FinancialInstitutionName", "BranchName", "PhoneNumber", "FaxNumber", "PostalCode", "Address", "Status", "ManagingBranchCode", });
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor,
+        new java.lang.String[] { "Objects", });
     descriptor.resolveAllFeaturesImmutable();
   }
 
