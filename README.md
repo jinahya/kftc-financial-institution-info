@@ -57,25 +57,6 @@ $ mvn -Pdb clean test
 
 See `db/kftc-financial-institution-info.sqlite3.md` for more information.
 
-### JSON files
-
-Two JSON files are generated in `target` directory.
-
-| name             | description | notes |
-|------------------|-------------|-------|
-| `bankinfo.json`  | 금융기관 정보     |       |
-| `codefilex.json` | 금융기관 지점 정보  |       |
-
-### Protocol Buffers
-
-See [KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto)
-and [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto).
-
-```commandline
-$ sh ./.protoc.sh
-$ mvn -Pproto clean test
-```
-
 ---
 
 ## Links
