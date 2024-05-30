@@ -133,7 +133,7 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
 //                .toList();
 //        final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
 //        _IoUtils.write(path, infoSet);
-            _IoUtils.write(path, array);
+            _IoTestUtils.write(path, array);
         }
         {
             final var path = buildOutputFile("codefilex.json");

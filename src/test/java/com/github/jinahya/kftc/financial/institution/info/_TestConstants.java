@@ -21,10 +21,11 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 @SuppressWarnings({"java:S101"})
-// TODO: remove; unused
-final class _Constants {
+final class _TestConstants {
 
-    private _Constants() {
+    static final String DELIMITER_REPR = "■ 대표코드";
+
+    private _TestConstants() {
         throw new AssertionError("instantiation is not allowed");
     }
 }

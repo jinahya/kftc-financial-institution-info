@@ -108,5 +108,8 @@ public final class KftcFinancialInstitutionInfoSet {
      */
     private final List<KftcFinancialInstitutionInfo> list;
 
+    /**
+     * a map grouped by the {@code code}.
+     */
     private final Map<String, KftcFinancialInstitutionInfo> map;
 }
