@@ -5,10 +5,10 @@
 [![Maven Central Version](https://img.shields.io/maven-central/v/com.github.jinahya/kftc-financial-institution-info)](https://search.maven.org/artifact/com.github.jinahya/kftc-financial-institution-info)
 [![javadoc](https://javadoc.io/badge2/com.github.jinahya/kftc-financial-institution-info/javadoc.svg)](https://javadoc.io/doc/com.github.jinahya/kftc-financial-institution-info)
 
-A simple library provides financial institution information, provided
+A simple, zero-dependency, library provides financial institution information, provided
 by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
-## Latest date loaded from the KFTC
+## Latest date (down)loaded from the KFTC
 
 * 2024-05-17
 
@@ -45,7 +45,7 @@ $ grep maven.compiler\\. pom.xml
 
 ---
 
-### More output formats.
+## More output formats.
 
 ### SQLite DB file
 
@@ -55,7 +55,7 @@ You can generate an SQLite database file, while builds, into `db/kftc-financial-
 $ mvn -Pdb clean test
 ```
 
-See `db/kftc-financial-institution-info.sqlite3.md` for more information.
+See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-info.sqlite3.md) for more information.
 
 ---
 

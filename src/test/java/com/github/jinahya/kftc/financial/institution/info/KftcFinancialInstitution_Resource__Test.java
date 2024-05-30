@@ -50,6 +50,7 @@ public abstract class KftcFinancialInstitution_Resource__Test {
         return resourceDirectory().resolve(name);
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
     static Path testResourceDirectory() throws IOException {
         final var directory = Stream.concat(
                         Stream.of("src", "test", "resources"),
@@ -66,6 +67,7 @@ public abstract class KftcFinancialInstitution_Resource__Test {
         return testResourceDirectory().resolve(name);
     }
 
+    // -----------------------------------------------------------------------------------------------------------------
     static Path buildOutputDirectory() throws IOException {
         final var directory = Path.of("target")
                 .toAbsolutePath()
