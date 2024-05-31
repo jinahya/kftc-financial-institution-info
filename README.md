@@ -67,9 +67,9 @@ See `db/kftc-financial-institution-info.sqlite3.md` for more information.
 
 ### issues.apache.org
 
-* https://issues.apache.org/jira/browse/MJAVADOC-728
-
-* [Resource plugin's handling of symbolic links changed in 3.0.x, broke existing behavior](https://issues.apache.org/jira/browse/MRESOURCES-237)
+* [\[MJAVADOC-728\] Dependencies not resolved for aggregate-jar
+  ](https://issues.apache.org/jira/browse/MJAVADOC-728)
+* [\[MRESOURCES-237\] Resource plugin's handling of symbolic links changed in 3.0.x, broke existing behavior](https://issues.apache.org/jira/browse/MRESOURCES-237)
 
 ### garrit.xyz
 
