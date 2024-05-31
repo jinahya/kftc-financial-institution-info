@@ -59,18 +59,22 @@ public final class KftcFinancialInstitutionInfo
 
     @Override
     public String toString() {
-        return super.toString() + '{' +
-                "category=" + category +
-                ",code=" + code +
-                ",name=" + name +
-                ",representative=" + representative +
-                '}';
+        return super.toString() + '{'
+                + "category=" + category
+                + ",code=" + code
+                + ",name=" + name
+                + ",representative=" + representative
+                + '}';
     }
 
     @Override
     public boolean equals(final Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof KftcFinancialInstitutionInfo)) return false;
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof KftcFinancialInstitutionInfo)) {
+            return false;
+        }
         final var that = (KftcFinancialInstitutionInfo) obj;
         return Objects.equals(code, that.code);
     }

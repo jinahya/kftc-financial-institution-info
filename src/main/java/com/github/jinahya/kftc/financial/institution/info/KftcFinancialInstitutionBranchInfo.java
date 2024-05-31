@@ -132,23 +132,27 @@ public final class KftcFinancialInstitutionBranchInfo
 
     @Override
     public String toString() {
-        return super.toString() + '{' +
-                "branchCode=" + branchCode +
-                ",financialInstitutionName=" + financialInstitutionName +
-                ",branchName=" + branchName +
-                ",phoneNumber=" + phoneNumber +
-                ",faxNumber=" + faxNumber +
-                ",postalCode=" + postalCode +
-                ",address=" + address +
-                ",status=" + status +
-                ",managingBranchCode=" + managingBranchCode +
-                '}';
+        return super.toString() + '{'
+                + "branchCode=" + branchCode
+                + ",financialInstitutionName=" + financialInstitutionName
+                + ",branchName=" + branchName
+                + ",phoneNumber=" + phoneNumber
+                + ",faxNumber=" + faxNumber
+                + ",postalCode=" + postalCode
+                + ",address=" + address
+                + ",status=" + status
+                + ",managingBranchCode=" + managingBranchCode
+                + '}';
     }
 
     @Override
     public boolean equals(final Object obj) {
-        if (this == obj) return true;
-        if (!(obj instanceof KftcFinancialInstitutionBranchInfo)) return false;
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof KftcFinancialInstitutionBranchInfo)) {
+            return false;
+        }
         final var that = (KftcFinancialInstitutionBranchInfo) obj;
         return Objects.equals(branchCode, that.branchCode);
     }
