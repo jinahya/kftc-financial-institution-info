@@ -57,8 +57,8 @@
     <!-- https://search.maven.org/search?q=g:org.apache.pdfbox -->
     <!--    <version.org.apache.pdfbox>3.0.2</version.org.apache.pdfbox>-->
     <version.org.apache.poi>5.2.5</version.org.apache.poi>
-    <version.org.junit.jupiter>5.11.0-M1</version.org.junit.jupiter>
-    <version.org.mockito>5.11.0</version.org.mockito>
+    <version.org.junit.jupiter>5.11.0-M2</version.org.junit.jupiter>
+    <version.org.mockito>5.12.0</version.org.mockito>
   </properties>
 
   <dependencyManagement>
@@ -105,7 +105,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.25.3</version>
+      <version>3.26.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -135,7 +135,7 @@
     <dependency>
       <groupId>org.xerial</groupId>
       <artifactId>sqlite-jdbc</artifactId>
-      <version>3.45.3.0</version>
+      <version>3.46.0.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -207,7 +207,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
-          <version>3.3.1</version>
+<!--          <version>3.3.1</version>--> <!-- https://issues.apache.org/jira/browse/MRESOURCES-237 -->
+          <version>2.7</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -255,7 +256,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.4.1</version>
+        <version>3.5.0</version>
         <executions>
           <execution>
             <id>enforce-dependency-convergence</id>
