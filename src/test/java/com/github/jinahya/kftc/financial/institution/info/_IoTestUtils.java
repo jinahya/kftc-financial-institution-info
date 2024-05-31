@@ -25,7 +25,19 @@ import java.nio.file.Path;
 import java.util.Objects;
 
 @SuppressWarnings({"java:S101"})
-final class _IoUtils {
+final class _IoTestUtils {
+
+    static void write(final File file, final Object obj) throws IOException {
+        try (var fos = new FileOutputStream(file);
+             var oos = new ObjectOutputStream(fos)) {
+            oos.writeObject(obj);
+            oos.flush();
+        }
+    }
+
+    static void write(final Path path, final Object obj) throws IOException {
+        write(path.toFile(), obj);
+    }
 
     // -----------------------------------------------------------------------------------------------------------------
     @SuppressWarnings({"unchecked"})
@@ -43,14 +55,13 @@ final class _IoUtils {
         }
     }
 
-    // TODO: remove; unused
     static <T> T read(final Path path) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(path, "path is null");
         return read(path.toFile());
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    private _IoUtils() {
+    private _IoTestUtils() {
         throw new AssertionError("instantiation is not allowed");
     }
 }

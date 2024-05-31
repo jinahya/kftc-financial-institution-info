@@ -20,16 +20,8 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.nio.file.Path;
-import java.util.Collection;
-
 @SuppressWarnings({"java:S101"})
 final class _JsonUtils {
-
-    static <E> void write(final Path path, Collection<? extends E> collection, Class<E> runtimeType) {
-//        final var jsonb = JsonbBuilder.create();
-//        jsonb.toJson(collection, runtimeType, );
-    }
 
     // -----------------------------------------------------------------------------------------------------------------
     private _JsonUtils() {

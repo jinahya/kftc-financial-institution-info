@@ -66,7 +66,7 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
                             categories[0] = category;
                         } catch (final IllegalArgumentException iae) {
                         }
-                        if (Objects.equals(_Constants.DELIMITER_REPR, l)) {
+                        if (Objects.equals(_TestConstants.DELIMITER_REPR, l)) {
                             log.debug("................... 대표코드!!!");
                             representatives[0] = true;
                         }
@@ -184,7 +184,7 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
 //                .toList();
 //        final var infoSet = new KftcFinancialInstitutionInfoSet(list);
 //        _IoUtils.write(path, infoSet);
-            _IoUtils.write(path, array);
+            _IoTestUtils.write(path, array);
         }
         // -------------------------------------------------------------------------------------------------------------
         {
