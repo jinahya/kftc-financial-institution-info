@@ -10,7 +10,10 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 ## Latest date (down)loaded from the KFTC
 
-* 2024-05-17
+| date         | info      | hash                               | notes |
+|--------------|-----------|------------------------------------|-------|
+| `2024-06-03` | bankinfo  | `b1db0be8aa26f73eba6609f0b1b25f34` |       |
+|              | codefilex | `b642a224f50a06fa19bd1c32f0d61565` |       |
 
 ---
 
