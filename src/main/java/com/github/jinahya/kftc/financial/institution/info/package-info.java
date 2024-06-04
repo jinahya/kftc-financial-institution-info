@@ -4,7 +4,7 @@
  * <p>
  * {@snippet lang = "java":
  * // 금융기관 정보
- * final var instance = KftcFinancialInstitutionInfoSet.newInstance();
+ * final var instance = KftcFinancialInstitutionInfoSet.newInstance(); // TODO: cache!
  * final var info = instance.get("001").orElseThrow();
  * assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
  * assert info.getCode().equals("001");
@@ -13,7 +13,7 @@
  *}
  * {@snippet lang = "java":
  * // 금융기관 지점 정보 조회
- * final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
+ * final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance(); // TODO: cache!
  * final var info = instance.get("0010003").orElseThrow();
  * assert info.getBranchCode().equals("0010003");
  * assert info.getFinancialInstitutionName().equals("한국");

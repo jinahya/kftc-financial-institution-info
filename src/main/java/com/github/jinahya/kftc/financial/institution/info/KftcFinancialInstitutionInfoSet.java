@@ -28,6 +28,7 @@ import java.util.stream.Collectors;
  * A class for accessing instances of {@link KftcFinancialInstitutionInfo}.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
+ * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionInfo
  */
 public final class KftcFinancialInstitutionInfoSet {
@@ -41,8 +42,8 @@ public final class KftcFinancialInstitutionInfoSet {
      * Returns a new instance of this class.
      *
      * @return a new instance of this class.
-     * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
-     * store the result.
+     * @implSpec This method, whenever invoked, loads a resource from the classpath. Callees are recommended to store
+     * the result.
      */
     public static KftcFinancialInstitutionInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
@@ -92,7 +93,8 @@ public final class KftcFinancialInstitutionInfoSet {
     }
 
     /**
-     * Returns the info whose {@link KftcFinancialInstitutionInfo#getCode() code} property matches specified value.
+     * Returns the info whose current value of {@link KftcFinancialInstitutionInfo#getCode() code} property matches
+     * specified value.
      *
      * @param code the {@link KftcFinancialInstitutionInfo#getCode() code} property value to match.
      * @return an optional of matched value; {@link Optional#empty() empty} when none matches.

@@ -28,9 +28,11 @@ import java.util.stream.Collectors;
  * A class for accessing instances of {@link KftcFinancialInstitutionBranchInfo}.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
+ * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionBranchInfo
  */
-public final class KftcFinancialInstitutionBranchInfoSet {
+public final class KftcFinancialInstitutionBranchInfoSet
+        implements _InfoSet<KftcFinancialInstitutionBranchInfo> {
 
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "codefilex.ser";
@@ -41,8 +43,8 @@ public final class KftcFinancialInstitutionBranchInfoSet {
      * Returns a new instance of this class.
      *
      * @return a new instance of this class.
-     * @implSpec This method, everytime it's called, loads a resource from the classpath. Callees are recommended to
-     * store the result.
+     * @implSpec This method, whenever invoked, loads a resource from the classpath. Callees are recommended to store
+     * the result.
      */
     public static KftcFinancialInstitutionBranchInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
@@ -72,6 +74,10 @@ public final class KftcFinancialInstitutionBranchInfoSet {
                 );
     }
 
+    // ------------------------------------------------------------------------------------------------ java.lang.Object
+
+    // -------------------------------------------------------------------------------------------------------- _InfoSet
+
     // ------------------------------------------------------------------------------------------------------------ list
 
     /**
@@ -95,13 +101,14 @@ public final class KftcFinancialInstitutionBranchInfoSet {
     }
 
     /**
-     * Returns the branch info whose {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property
-     * matches specified value.
+     * Returns the branch info whose current value of
+     * {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property matches specified value.
      *
      * @param branchCode the {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property value to
      *                   match.
      * @return an optional of matched branch info; {@link Optional#empty() empty} when none matches.
      */
+    @Override
     public Optional<KftcFinancialInstitutionBranchInfo> get(final String branchCode) {
         return Optional.ofNullable(getMap().get(branchCode));
     }

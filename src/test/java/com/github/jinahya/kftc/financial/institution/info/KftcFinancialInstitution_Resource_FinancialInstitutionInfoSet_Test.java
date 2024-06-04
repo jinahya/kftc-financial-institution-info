@@ -46,6 +46,7 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
 //            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
             "(\\d{3})\\s([\\p{L}()\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}()\\s]+)?");
 
+
     @Test
     void __() throws Exception {
         final var file = new File(getClass().getResource("/bankinfo.hwp.pdf").toURI());
@@ -172,18 +173,13 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
                         .count()
         ).isEqualTo(150);
         assertThat(map).hasSize(196);
-        // -----------------------------------------------------------------------------------------------------------------
+        // -------------------------------------------------------------------------------------------------------------
         final var array = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
                 .toArray();
         // -------------------------------------------------------------------------------------------------------------
         {
             final var path = resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
-//        final var list = map.values().stream()
-//                .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
-//                .toList();
-//        final var infoSet = new KftcFinancialInstitutionInfoSet(list);
-//        _IoUtils.write(path, infoSet);
             _IoTestUtils.write(path, array);
         }
         // -------------------------------------------------------------------------------------------------------------

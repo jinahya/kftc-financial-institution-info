@@ -29,10 +29,11 @@ import java.util.regex.Pattern;
  * Represents a financial institution branch managed by <a href="https://www.kftc.or.kr">KFTC</a>.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
+ * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionBranchInfoSet
  */
 public final class KftcFinancialInstitutionBranchInfo
-        implements Serializable {
+        implements Serializable, _Info {
 
     private static final long serialVersionUID = -5372735657084376790L;
 
@@ -281,6 +282,13 @@ public final class KftcFinancialInstitutionBranchInfo
         this.address = string(address);
     }
 
+    /**
+     * Returns the value of {@link #getAddress()} as its all consecutive white spaces are replaced with specified
+     * value.
+     *
+     * @param whitespacesReplacement the value for each consecutive white spaces.
+     * @return the value of {@link #getAddress()} as normalized.
+     */
     public String getAddressNormalized(final String whitespacesReplacement) {
         Objects.requireNonNull(whitespacesReplacement, "whitespacesReplacement is null");
         return Optional.ofNullable(getAddress())

@@ -27,6 +27,7 @@ import java.util.Objects;
  * Represents an information of a financial institution assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
+ * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionInfoSet
  */
 public final class KftcFinancialInstitutionInfo
@@ -34,19 +35,7 @@ public final class KftcFinancialInstitutionInfo
 
     private static final long serialVersionUID = 5345357074469188526L;
 
-    // -----------------------------------------------------------------------------------------------------------------
-    private static String string(String string) {
-        if (string == null) {
-            return null;
-        }
-        string = string.strip();
-        if (string.isEmpty() || string.isBlank()) {
-            return null;
-        }
-        return string;
-    }
-
-    // -----------------------------------------------------------------------------------------------------------------
+    // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
 
     /**
      * Creates a new instance.
@@ -111,7 +100,7 @@ public final class KftcFinancialInstitutionInfo
     }
 
     void setCode(final String code) {
-        this.code = string(code);
+        this.code = code;
     }
 
     // ------------------------------------------------------------------------------------------------------------ name
@@ -126,7 +115,7 @@ public final class KftcFinancialInstitutionInfo
     }
 
     void setName(final String name) {
-        this.name = string(name);
+        this.name = name;
     }
 
     // -------------------------------------------------------------------------------------------------- representative

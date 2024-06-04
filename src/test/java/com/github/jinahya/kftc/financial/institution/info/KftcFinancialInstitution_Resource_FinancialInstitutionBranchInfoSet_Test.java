@@ -78,23 +78,18 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
             }
             try (var lines = Files.lines(path, charset)) {
                 map = lines.map(l -> {
-//                log.debug("line: {}", l);
                             final var tokens = l.split("\\|");
                             assertThat(tokens).hasSize(9);
-                            for (final var token : tokens) {
-//                    log.debug("\ttoken: {}", token);
-                            }
                             final var info = new KftcFinancialInstitutionBranchInfo();
-                            info.setBranchCode(tokens[0]);
-                            info.setFinancialInstitutionName(tokens[1]);
-                            info.setBranchName(tokens[2]);
-                            info.setPhoneNumber(tokens[3]);
-                            info.setFaxNumber(tokens[4]);
+                            info.setBranchCode(tokens[INDEX_BRANCH_CODE]);
+                            info.setFinancialInstitutionName(tokens[INDEX_FINANCIAL_INSTITUTION_NAME]);
+                            info.setBranchName(tokens[INDEX_BRANCH_NAME]);
+                            info.setPhoneNumber(tokens[INDEX_PHONE_NUMBER]);
+                            info.setFaxNumber(tokens[INDEX_FAX_NUMBER]);
                             info.setPostalCode(tokens[INDEX_POSTAL_CODE]);
                             info.setAddress(tokens[INDEX_ADDRESS]);
                             info.setStatus(tokens[INDEX_STATUS]);
                             info.setManagingBranchCode(tokens[INDEX_MANAGING_BRANCH_CODE]);
-//                            log.debug("info: {}", info);
                             assertThatCode(() -> {
                                 final var status =
                                         KftcFinancialInstitutionBranchInfo.Status.valueOfRawValue(info.getStatus());
@@ -108,10 +103,17 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
                         .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode,
                                                   Function.identity()));
                 log.debug("names: {}",
-                          map.values().stream().map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
-                                  .distinct().toList());
+                          map.values().stream()
+                                  .map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
+                                  .distinct()
+                                  .toList()
+                );
                 log.debug("statuses: {}",
-                          map.values().stream().map(KftcFinancialInstitutionBranchInfo::getStatus).distinct().toList());
+                          map.values().stream()
+                                  .map(KftcFinancialInstitutionBranchInfo::getStatus)
+                                  .distinct()
+                                  .toList()
+                );
                 log.debug("branchCode.length.statistics: {}",
                           map.values().stream()
                                   .map(KftcFinancialInstitutionBranchInfo::getBranchCode)
@@ -128,11 +130,6 @@ class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
         // -------------------------------------------------------------------------------------------------------------
         {
             final var path = resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
-//        final var list = map.values().stream()
-//                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
-//                .toList();
-//        final var infoSet = new KftcFinancialInstitutionBranchInfoSet(list);
-//        _IoUtils.write(path, infoSet);
             _IoTestUtils.write(path, array);
         }
         {
