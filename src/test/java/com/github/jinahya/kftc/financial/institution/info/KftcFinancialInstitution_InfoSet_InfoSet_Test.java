@@ -26,7 +26,8 @@ import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitutionInfoSet_Test {
+class KftcFinancialInstitution_InfoSet_InfoSet_Test
+        extends KftcFinancialInstitution_InfoSet__Test {
 
     @Test
     void __() {

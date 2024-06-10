@@ -41,7 +41,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatCode;
 
 @Slf4j
-class KftcFinancialInstitution_Resource_FinancialInstitutionBranchInfoSet_Test
+class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         extends KftcFinancialInstitution_Resource__Test {
 
     private static final int INDEX_BRANCH_CODE = 0;

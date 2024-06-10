@@ -29,7 +29,8 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitutionBranchInfoSet_Test {
+class KftcFinancialInstitution_InfoSet_BranchInfoSet_Test
+        extends KftcFinancialInstitution_InfoSet__Test {
 
     @Test
     void __Agency() {

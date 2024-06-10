@@ -39,7 +39,7 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitution_Resource_FinancialInstitutionInfoSet_Test
+class KftcFinancialInstitution_Resource_InfoSet_Test
         extends KftcFinancialInstitution_Resource__Test {
 
     private static final Pattern pattern = Pattern.compile(
