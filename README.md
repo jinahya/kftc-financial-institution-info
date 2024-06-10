@@ -125,7 +125,7 @@ See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-i
 
 ### www.kftc.org.kr
 
-* [금융회사코드 조회](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do) (금융결재원)
+* [금융회사코드 조회](https://www.kftc.or.kr/archive/bankListByCode) (금융결재원)
 
 ### issues.apache.org
 
@@ -141,4 +141,4 @@ See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-i
 
 ### stackoverflow.com
 
-* [https://stackoverflow.com/q/40346225/330457](https://stackoverflow.com/q/40346225/330457)
+* [Maven Resources Plugin symbolic link handling](https://stackoverflow.com/q/40346225/330457)
