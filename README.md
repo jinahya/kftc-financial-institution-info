@@ -81,7 +81,11 @@ class ReadmeTest {
         assert Objects.equals(info.getFinancialInstitutionName(), "한국");
         assert Objects.equals(info.getBranchName(), "본부총괄");
         assert Objects.equals(info.getPhoneNumber(), "02  759 4114"); // mind multiple spaces
+        assert Objects.equals(info.getPhoneNumberNormalized(" "), "02 759 4114");
+        assert Objects.equals(info.getPhoneNumberNormalized("-"), "02-759-4114");
         assert Objects.equals(info.getFaxNumber(), "02  759 4060");   // mind multiple spaces
+        assert Objects.equals(info.getFaxNumberNormalized(" "), "02 759 4060");
+        assert Objects.equals(info.getFaxNumberNormalized("-"), "02-759-4060");
         assert Objects.equals(info.getPostalCode(), "100794");
         assert Objects.equals(info.getAddress(), "서울특별시 중구 남대문로 39");
         assert Objects.equals(info.getStatus(), "정상");
@@ -95,7 +99,9 @@ class ReadmeTest {
         assert info.getBranchCode().equals("4920018");
         assert info.getFinancialInstitutionName().equals("중소벤처기업진흥공단");
         assert info.getBranchName().equals("성장융합금융처");
-        assert info.getPhoneNumber().equals("02  32115603");
+        assert info.getPhoneNumber().equals("02  32115603"); // mind multiple spaces
+        assert info.getPhoneNumberNormalized(" ").equals("02 32115603");
+        assert info.getPhoneNumberNormalized("").equals("0232115603");
         assert info.getFaxNumber().equals("0505047 4412");
         assert info.getPostalCode().equals("52851");
         assert info.getAddress().equals("경상남도 진주시 동진로 430 (충무공동) 중소벤처기업진흥공단");
@@ -136,8 +142,7 @@ See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-i
 ### garrit.xyz
 
 * [Tracking SQLite Database Changes in Git](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)
-    * [Git hook for diff sqlite table
-      ](https://stackoverflow.com/a/21789167/330457)
+    * [Git hook for diff sqlite table](https://stackoverflow.com/a/21789167/330457)
 
 ### stackoverflow.com
 
