@@ -21,8 +21,11 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import java.io.*;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 @SuppressWarnings({"java:S101"})
 final class _IoTestUtils {
@@ -58,6 +61,53 @@ final class _IoTestUtils {
     static <T> T read(final Path path) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(path, "path is null");
         return read(path.toFile());
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    static Path resourceDirectory() throws IOException {
+        final var directory = Stream.concat(
+                        Stream.of("src", "main", "resources"),
+                        Arrays.stream(KftcFinancialInstitutionTestUtils.class.getPackage().getName().split("\\."))
+                )
+                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
+                .toAbsolutePath()
+                .normalize();
+        Files.createDirectories(directory);
+        return directory;
+    }
+
+    static Path resourceFile(final String name) throws IOException {
+        return resourceDirectory().resolve(name);
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    static Path testResourceDirectory() throws IOException {
+        final var directory = Stream.concat(
+                        Stream.of("src", "test", "resources"),
+                        Arrays.stream(KftcFinancialInstitutionTestUtils.class.getPackage().getName().split("\\."))
+                )
+                .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
+                .toAbsolutePath()
+                .normalize();
+        Files.createDirectories(directory);
+        return directory;
+    }
+
+    static Path testResourceFile(final String name) throws IOException {
+        return testResourceDirectory().resolve(name);
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    static Path buildOutputDirectory() throws IOException {
+        final var directory = Path.of("target")
+                .toAbsolutePath()
+                .normalize();
+        Files.createDirectories(directory);
+        return directory;
+    }
+
+    public static Path buildOutputFile(final String name) throws IOException {
+        return buildOutputDirectory().resolve(name);
     }
 
     // -----------------------------------------------------------------------------------------------------------------

@@ -64,9 +64,21 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
+        <groupId>com.fasterxml.jackson</groupId>
+        <artifactId>jackson-bom</artifactId>
+        <version>2.17.1</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java</artifactId>
         <version>4.27.0</version>
+      </dependency>
+      <dependency>
+        <groupId>de.escalon.hypermedia</groupId>
+        <artifactId>hydra-jsonld</artifactId>
+        <version>0.4.2</version>
       </dependency>
       <dependency>
         <groupId>jakarta.platform</groupId>
@@ -141,20 +153,6 @@
   </dependencies>
 
   <build>
-    <!--    <testResources>-->
-    <!--      <testResource>-->
-    <!--        &lt;!&ndash; https://stackoverflow.com/q/40346225/330457 &ndash;&gt;-->
-    <!--        &lt;!&ndash; https://issues.apache.org/jira/browse/MRESOURCES-237 &ndash;&gt;-->
-    <!--        &lt;!&ndash; https://stackoverflow.com/a/75839154/330457 &ndash;&gt;-->
-    <!--        <directory>${project.basedir}/src/test/resources</directory>-->
-    <!--        <filtering>true</filtering>-->
-    <!--        <includes>-->
-    <!--          <include>bankinfo.hwp_5a2c09f97b5c31bf6756fe74c075549e.hwp.pdf</include>-->
-    <!--          <include>codefilex.text_b3be7574c6fa3e1ba1563b71ffd37a1a.text</include>-->
-    <!--          <include>codefilex.text_b3be7574c6fa3e1ba1563b71ffd37a1a.text.xlsx</include>-->
-    <!--        </includes>-->
-    <!--      </testResource>-->
-    <!--    </testResources>-->
     <pluginManagement>
       <plugins>
         <plugin>
@@ -219,6 +217,11 @@
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
+          <artifactId>build-helper-maven-plugin</artifactId>
+          <version>3.6.0</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
           <version>2.16.2</version>
         </plugin>
@@ -266,7 +269,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -432,6 +435,103 @@
       </build>
     </profile>
     <profile>
+      <id>json</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>add-test-source-json</id>
+                <phase>generate-test-sources</phase>
+                <goals>
+                  <goal>add-test-source</goal>
+                </goals>
+                <configuration>
+                  <sources>
+                    <source>${project.basedir}/src/test/java-json</source>
+                  </sources>
+                </configuration>
+              </execution>
+              <execution>
+                <id>add-test-resource-json</id>
+                <phase>generate-test-resources</phase>
+                <goals>
+                  <goal>add-test-resource</goal>
+                </goals>
+                <configuration>
+                  <resources>
+                    <resource>
+                      <directory>src/test/resources-json</directory>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>jsonl</id>
+      <dependencies>
+        <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>de.escalon.hypermedia</groupId>
+          <artifactId>hydra-jsonld</artifactId>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>build-helper-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>add-test-source-jsonl</id>
+                <phase>generate-test-sources</phase>
+                <goals>
+                  <goal>add-test-source</goal>
+                </goals>
+                <configuration>
+                  <sources>
+                    <source>${project.basedir}/src/test/java-jsonl</source>
+                  </sources>
+                </configuration>
+              </execution>
+              <execution>
+                <id>add-test-resource-jsonl</id>
+                <phase>generate-test-resources</phase>
+                <goals>
+                  <goal>add-test-resource</goal>
+                </goals>
+                <configuration>
+                  <resources>
+                    <resource>
+                      <directory>src/test/resources-jsonl</directory>
+                    </resource>
+                  </resources>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
       <id>proto</id>
       <dependencies>
         <dependency>
@@ -445,7 +545,6 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
-            <version>3.5.0</version>
             <executions>
               <execution>
                 <id>add-test-source-proto</id>
