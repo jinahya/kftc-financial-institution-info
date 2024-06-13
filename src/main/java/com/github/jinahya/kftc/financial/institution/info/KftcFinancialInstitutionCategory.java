@@ -57,10 +57,11 @@ public enum KftcFinancialInstitutionCategory {
     /**
      * A constant for {@code 기타}.
      */
+    // https://blog-ko.engram.us/etcetera/
     @SuppressWarnings({
             "java:S115" // ..._
     })
-    ETC_("■ 기 타");
+    OTHE("■ 기 타");
 
     // -----------------------------------------------------------------------------------------------------------------
     static KftcFinancialInstitutionCategory valueOfDelimiter(final String delimiter) {
