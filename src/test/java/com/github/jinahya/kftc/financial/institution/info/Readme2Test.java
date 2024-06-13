@@ -26,27 +26,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Objects;
 
 @Slf4j
-class ReadmeTest {
-
-    @Test
-    void __1() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = instance.get("001").orElseThrow();
-        assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
-        assert Objects.equals(info.getCode(), "001");
-        assert Objects.equals(info.getName(), "한국은행");
-        assert info.isRepresentative();
-    }
-
-    @Test
-    void __2() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = instance.get("094").orElseThrow();
-        assert info.getCategory() == KftcFinancialInstitutionCategory.MISC;
-        assert info.getCode().equals("094");
-        assert info.getName().equals("서울보증보험");
-        assert info.isRepresentative();
-    }
+class Readme2Test {
 
     @Test
     void __3() {
