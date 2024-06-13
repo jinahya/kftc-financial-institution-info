@@ -51,6 +51,7 @@
     <sonar.organization>jinahya-github</sonar.organization>
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
+    <version.com.google.protobuf>4.27.1</version.com.google.protobuf>
     <version.lombok>1.18.32</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <version.maven-surefire>3.2.5</version.maven-surefire>
@@ -73,7 +74,12 @@
       <dependency>
         <groupId>com.google.protobuf</groupId>
         <artifactId>protobuf-java</artifactId>
-        <version>4.27.0</version>
+        <version>${version.com.google.protobuf}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.protobuf</groupId>
+        <artifactId>protobuf-java-util</artifactId>
+        <version>${version.com.google.protobuf}</version>
       </dependency>
       <dependency>
         <groupId>de.escalon.hypermedia</groupId>
@@ -407,6 +413,9 @@
   <profiles>
     <profile>
       <id>db</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
       <properties>
         <groups>db</groups>
       </properties>
@@ -436,6 +445,9 @@
     </profile>
     <profile>
       <id>json</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <dependencies>
         <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
@@ -482,6 +494,9 @@
     </profile>
     <profile>
       <id>jsonl</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
       <dependencies>
         <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
@@ -533,10 +548,18 @@
     </profile>
     <profile>
       <id>proto</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+      </activation>
       <dependencies>
         <dependency>
           <groupId>com.google.protobuf</groupId>
           <artifactId>protobuf-java</artifactId>
+          <scope>test</scope>
+        </dependency>
+        <dependency>
+          <groupId>com.google.protobuf</groupId>
+          <artifactId>protobuf-java-util</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>

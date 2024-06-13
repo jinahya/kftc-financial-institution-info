@@ -23,6 +23,7 @@ package com.github.jinahya.kftc.financial.institution.info;
 import java.util.Optional;
 
 @SuppressWarnings({
+        "java:S114", // interface _...
         "java:S119"
 })
 interface _InfoSet<INFO extends _Info> {

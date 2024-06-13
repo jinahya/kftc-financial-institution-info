@@ -20,6 +20,9 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+@SuppressWarnings({
+        "java:S114" // interface _...
+})
 interface _Info {
 
 }

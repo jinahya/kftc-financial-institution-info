@@ -49,11 +49,11 @@ public final class KftcFinancialInstitutionBranchInfoSet
     public static KftcFinancialInstitutionBranchInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
             assert resource != null;
-            final var loaded = (Object[]) _IoUtils.read(resource);
+            final var loaded = (Object[]) _IoUtils.readObject(resource);
             final var array = Arrays.copyOf(loaded, loaded.length, KftcFinancialInstitutionBranchInfo[].class);
             return new KftcFinancialInstitutionBranchInfoSet(Arrays.asList(array));
         } catch (final Exception e) {
-            throw new RuntimeException("failed to load data from the resource", e);
+            throw new RuntimeException("failed to load resource for " + RESOURCE_NAME, e);
         }
     }
 

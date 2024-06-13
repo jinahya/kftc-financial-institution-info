@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target({ElementType.FIELD})
 // TODO: remove; unused
-public @interface _Column {
+@interface _Column {
 
     String value();
 }

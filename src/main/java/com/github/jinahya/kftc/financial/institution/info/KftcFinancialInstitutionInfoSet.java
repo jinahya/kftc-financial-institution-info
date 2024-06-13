@@ -48,11 +48,11 @@ public final class KftcFinancialInstitutionInfoSet {
     public static KftcFinancialInstitutionInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
             assert resource != null;
-            final var loaded = (Object[]) _IoUtils.read(resource);
+            final var loaded = (Object[]) _IoUtils.readObject(resource);
             final var array = Arrays.copyOf(loaded, loaded.length, KftcFinancialInstitutionInfo[].class);
             return new KftcFinancialInstitutionInfoSet(Arrays.asList(array));
         } catch (final Exception e) {
-            throw new RuntimeException("failed to load data from the resource", e);
+            throw new RuntimeException("failed to load resource for " + RESOURCE_NAME, e);
         }
     }
 

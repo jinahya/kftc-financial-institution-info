@@ -29,24 +29,26 @@ final class _IoUtils {
 
     // -----------------------------------------------------------------------------------------------------------------
     @SuppressWarnings({"unchecked"})
-    static <T> T read(final InputStream stream) throws IOException, ClassNotFoundException {
+    static <T> T readObject(final InputStream stream) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(stream, "stream is null");
         try (var oos = new ObjectInputStream(stream)) {
             return (T) oos.readObject();
         }
     }
 
-    static <T> T read(final File file) throws IOException, ClassNotFoundException {
-        Objects.requireNonNull(file, "file is null");
+    static <T> T readObject(final File file) throws IOException, ClassNotFoundException {
+        if (!Objects.requireNonNull(file, "file is null").isFile()) {
+            throw new IllegalArgumentException("not a normal file: " + file);
+        }
         try (var fos = new FileInputStream(file)) {
-            return read(fos);
+            return readObject(fos);
         }
     }
 
     // TODO: remove; unused
-    static <T> T read(final Path path) throws IOException, ClassNotFoundException {
+    static <T> T readObject(final Path path) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(path, "path is null");
-        return read(path.toFile());
+        return readObject(path.toFile());
     }
 
     // -----------------------------------------------------------------------------------------------------------------

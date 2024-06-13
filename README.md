@@ -10,10 +10,10 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 ## Latest date (down)loaded from the KFTC
 
-| date         | info           | hash                               | notes |
-|--------------|----------------|------------------------------------|-------|
-| `2024-06-10` | bankinfo.ser   | `b1db0be8aa26f73eba6609f0b1b25f34` |       |
-|              | codefilex.ser  | `96a51bb96aa81819cbd3fc0a621540e0` |       |
+| date         | info          | hash                               | notes |
+|--------------|---------------|------------------------------------|-------|
+| `2024-06-10` | bankinfo.ser  | `b1db0be8aa26f73eba6609f0b1b25f34` |       |
+|              | codefilex.ser | `96a51bb96aa81819cbd3fc0a621540e0` |       |
 
 ---
 
@@ -124,6 +124,33 @@ $ mvn -Pdb clean test
 ```
 
 See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-info.sqlite3.md) for more information.
+
+### Protobuf
+
+Two `.proto` files are
+prepared. One
+is [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto)
+and the other is
+[KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
+
+```commandline
+$ mvn -Pproto test
+$ ls -l target/*.*pb
+```
+
+### JSON
+
+```commandline
+$ mvn -Pjson test
+$ ls -l target/*.json
+```
+
+### JSON Lines
+
+```commandline
+$ mvn -Pjsonl test
+$ ls -l target/*.jsonl
+```
 
 ---
 

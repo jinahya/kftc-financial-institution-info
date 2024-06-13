@@ -28,7 +28,7 @@ import java.util.Objects;
 import java.util.stream.Stream;
 
 @SuppressWarnings({"java:S101"})
-final class _IoTestUtils {
+public final class _IoTestUtils {
 
     static void write(final File file, final Object obj) throws IOException {
         try (var fos = new FileOutputStream(file);
