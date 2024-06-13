@@ -33,6 +33,15 @@ $ grep maven.compiler\\. pom.xml
   <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
 ```
 
+### Notes
+
+This module generates resource files while testing which are, in turn, required by some other tests, hence, a fresh clone might need to be build twice.
+
+<!-- https://serverfault.com/a/737269/113357 -->
+```commandline
+$ seq 2 | xargs -I -- mvn clean test 
+```
+
 ---
 
 ## Apache Maven Coordinates
@@ -49,6 +58,8 @@ $ grep maven.compiler\\. pom.xml
 ---
 
 ## Usages
+
+### 금융 기관 정보
 
 ```java
 class Readme1Test {
@@ -78,6 +89,8 @@ class Readme1Test {
     }
 }
 ```
+
+### 금융 기관 지점 정보
 
 ```java
 class Readme2Test {
@@ -117,6 +130,25 @@ class Readme2Test {
         assert info.getStatus().equals("정상");
         assert info.getManagingBranchCode() == null;
     }
+}
+```
+
+### Notes
+
+Those `newInstance()` methods, whenever invoked, load data from resource files in the classpath. Callers may (or should) cache the result.
+
+```java
+class KftcService {
+
+    // few hundreds elements.
+    // the set and its elements are all immutable and thread-safe
+    public static final KftcFinancialInstitutionInfoSet INFO_SET
+            = KftcFinancialInstitutionInfoSet.newInstance();
+
+    // more than 20 thousands elements!
+    // do not load at all, if not required 
+    public static final KftcFinancialInstitutionBranchInfoSet BRANCH_INFO_SET
+            = KftcFinancialInstitutionBranchInfoSet.newInstance();
 }
 ```
 
