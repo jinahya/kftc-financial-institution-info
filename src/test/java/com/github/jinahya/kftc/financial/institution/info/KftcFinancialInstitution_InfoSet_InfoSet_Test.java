@@ -21,28 +21,23 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import java.util.Comparator;
+import java.util.List;
 
 @Slf4j
-class KftcFinancialInstitution_InfoSet_InfoSet_Test
+abstract class KftcFinancialInstitution_InfoSet_InfoSet_Test
         extends KftcFinancialInstitution_InfoSet__Test {
 
-    @Test
-    void __() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        log.debug("instance: {}", instance);
-        assertThat(instance).isNotNull();
-        assertThat(instance.getMap()).isNotEmpty();
-        assertThat(instance.getMap().get("001")).satisfies(i -> {
-            log.debug("i: {}", i);
-            assertThat(i.getCode()).isEqualTo("001");
-            assertThat(i.getName()).isEqualTo("한국은행");
-        });
-        assertThat(instance.get("001")).hasValueSatisfying(i -> {
-            assertThat(i.getCode()).isEqualTo("001");
-            assertThat(i.getName()).isEqualTo("한국은행");
-        });
+    private static final KftcFinancialInstitutionInfoSet INSTANCE = KftcFinancialInstitutionInfoSet.newInstance();
+
+    private static List<KftcFinancialInstitutionInfo> list;
+
+    protected static List<KftcFinancialInstitutionInfo> list() {
+        if (list == null) {
+            list = INSTANCE.getList().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+                    .toList();
+        }
+        return list;
     }
 }

@@ -30,7 +30,7 @@ import java.util.stream.Stream;
 @SuppressWarnings({"java:S101"})
 public final class _IoTestUtils {
 
-    static void write(final File file, final Object obj) throws IOException {
+    static void writeObject(final File file, final Object obj) throws IOException {
         try (var fos = new FileOutputStream(file);
              var oos = new ObjectOutputStream(fos)) {
             oos.writeObject(obj);
@@ -38,29 +38,29 @@ public final class _IoTestUtils {
         }
     }
 
-    static void write(final Path path, final Object obj) throws IOException {
-        write(path.toFile(), obj);
+    static void writeObject(final Path path, final Object obj) throws IOException {
+        writeObject(path.toFile(), obj);
     }
 
     // -----------------------------------------------------------------------------------------------------------------
     @SuppressWarnings({"unchecked"})
-    static <T> T read(final InputStream stream) throws IOException, ClassNotFoundException {
+    static <T> T readObject(final InputStream stream) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(stream, "stream is null");
         try (var oos = new ObjectInputStream(stream)) {
             return (T) oos.readObject();
         }
     }
 
-    static <T> T read(final File file) throws IOException, ClassNotFoundException {
+    static <T> T readObject(final File file) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(file, "file is null");
         try (var fos = new FileInputStream(file)) {
-            return read(fos);
+            return readObject(fos);
         }
     }
 
-    static <T> T read(final Path path) throws IOException, ClassNotFoundException {
+    static <T> T readObject(final Path path) throws IOException, ClassNotFoundException {
         Objects.requireNonNull(path, "path is null");
-        return read(path.toFile());
+        return readObject(path.toFile());
     }
 
     // -----------------------------------------------------------------------------------------------------------------

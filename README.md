@@ -10,10 +10,10 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 ## Latest date (down)loaded from the KFTC
 
-| date         | info          | hash                               | notes |
-|--------------|---------------|------------------------------------|-------|
-| `2024-06-10` | bankinfo.ser  | `b1db0be8aa26f73eba6609f0b1b25f34` |       |
-|              | codefilex.ser | `96a51bb96aa81819cbd3fc0a621540e0` |       |
+| date         | info          | hash                               | notes      |
+|--------------|---------------|------------------------------------|------------|
+| `2024-06-10` | bankinfo.ser  | `b1db0be8aa26f73eba6609f0b1b25f34` | 금융기관 정보    |
+|              | codefilex.ser | `96a51bb96aa81819cbd3fc0a621540e0` | 금융기관 지점 정보 |
 
 ---
 
@@ -51,32 +51,41 @@ $ grep maven.compiler\\. pom.xml
 ## Usages
 
 ```java
-class ReadmeTest {
+class Readme1Test {
 
     @Test
-    void __1() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = instance.get("001").orElseThrow();
-        assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
-        assert Objects.equals(info.getCode(), "001");
-        assert Objects.equals(info.getName(), "한국은행");
-        assert info.isRepresentative();
+    void __001() {
+        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
+        final var info = infoSet.get("001");
+        assertThat(info).hasValueSatisfying(i -> {
+            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.BANK);
+            assertThat(i.getCode()).isEqualTo("001");
+            assertThat(i.getName()).isEqualTo("한국은행");
+            assertThat(i.isRepresentative()).isTrue();
+        });
     }
 
     @Test
-    void __2() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = instance.get("094").orElseThrow();
-        assert info.getCategory() == KftcFinancialInstitutionCategory.MISC;
-        assert info.getCode().equals("094");
-        assert info.getName().equals("서울보증보험");
-        assert info.isRepresentative();
+    void __101() {
+        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
+        final var info = infoSet.get("101");
+        assertThat(info).hasValueSatisfying(i -> {
+            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.MISC);
+            assertThat(i.getCode()).isEqualTo("101");
+            assertThat(i.getName()).isEqualTo("한국신용정보원");
+            assertThat(i.isRepresentative()).isTrue();
+        });
     }
+}
+```
+
+```java
+class Readme2Test {
 
     @Test
     void __3() {
-        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var info = instance.get("0010003").orElseThrow();
+        final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        final var info = infoSet.get("0010003").orElseThrow();
         assert Objects.equals(info.getBranchCode(), "0010003");
         assert Objects.equals(info.getFinancialInstitutionName(), "한국");
         assert Objects.equals(info.getBranchName(), "본부총괄");
@@ -94,8 +103,8 @@ class ReadmeTest {
 
     @Test
     void __4() {
-        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var info = instance.get("4920018").orElseThrow();
+        final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        final var info = infoSet.get("4920018").orElseThrow();
         assert info.getBranchCode().equals("4920018");
         assert info.getFinancialInstitutionName().equals("중소벤처기업진흥공단");
         assert info.getBranchName().equals("성장융합금융처");
@@ -113,7 +122,7 @@ class ReadmeTest {
 
 ---
 
-## More output formats.
+## More output formats
 
 ### SQLite DB file
 
@@ -135,6 +144,8 @@ and the other is
 [KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
 
 ```commandline
+$ sh ./.protoc.sh
+$ ls -l src/test/java-proto/com/github/jinahya/kftc/financial/institution/info/proto/*ProtoOuterClass.java
 $ mvn -Pproto test
 $ ls -l target/*.*pb
 ```
@@ -146,7 +157,7 @@ $ mvn -Pjson test
 $ ls -l target/*.json
 ```
 
-### JSON Lines
+### [JSON Lines](https://jsonlines.org/)
 
 ```commandline
 $ mvn -Pjsonl test

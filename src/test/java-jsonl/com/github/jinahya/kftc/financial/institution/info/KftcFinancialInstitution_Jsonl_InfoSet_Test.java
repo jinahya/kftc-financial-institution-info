@@ -4,6 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.util.Comparator;
 
 @Slf4j
 class KftcFinancialInstitution_Jsonl_InfoSet_Test
@@ -12,7 +13,7 @@ class KftcFinancialInstitution_Jsonl_InfoSet_Test
     @Test
     void __() throws IOException {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var list = infoSet.getList();
+        final var list = infoSet.getList().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode)).toList();
         final var path = _IoTestUtils.buildOutputFile("bankinfo.jsonl");
         writeValues(list, path.toFile());
     }

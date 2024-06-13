@@ -129,11 +129,11 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
                 .toArray();
         // -------------------------------------------------------------------------------------------------------------
         {
-            final var path = resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
-            _IoTestUtils.write(path, array);
+            final var path = _IoTestUtils.resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
+            _IoTestUtils.writeObject(path, array);
         }
         {
-            final var path = buildOutputFile("codefilex.json");
+            final var path = _IoTestUtils.buildOutputFile("codefilex.json");
             try (var stream = new FileOutputStream(path.toFile());
                  var writer = new OutputStreamWriter(stream, StandardCharsets.UTF_8);
                  final var jsonb = JsonbBuilder.create()) {

@@ -21,13 +21,12 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 import java.util.List;
 
-@Tag("db")
+//@Tag("db")
 @Slf4j
 class KftcFinancialInstitution_Db_FinancialInstitutionBranchInfoSet_Test
         extends KftcFinancialInstitution_Db__Test {

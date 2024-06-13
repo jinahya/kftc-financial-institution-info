@@ -46,7 +46,6 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
 //            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
             "(\\d{3})\\s([\\p{L}()\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}()\\s]+)?");
 
-
     @Test
     void __() throws Exception {
         final var file = new File(getClass().getResource("/bankinfo.hwp.pdf").toURI());
@@ -179,12 +178,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
                 .toArray();
         // -------------------------------------------------------------------------------------------------------------
         {
-            final var path = resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
-            _IoTestUtils.write(path, array);
+            final var path = _IoTestUtils.resourceFile(KftcFinancialInstitutionInfoSet.RESOURCE_NAME);
+            _IoTestUtils.writeObject(path, array);
         }
         // -------------------------------------------------------------------------------------------------------------
         {
-            final var path = buildOutputFile("bankinfo.json");
+            final var path = _IoTestUtils.buildOutputFile("bankinfo.json");
             try (var stream = new FileOutputStream(path.toFile());
                  var writer = new OutputStreamWriter(stream, StandardCharsets.UTF_8);
                  final var jsonb = JsonbBuilder.create()) {

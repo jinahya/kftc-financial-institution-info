@@ -23,28 +23,32 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.util.Objects;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 class Readme1Test {
 
     @Test
-    void __1() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = instance.get("001").orElseThrow();
-        assert info.getCategory() == KftcFinancialInstitutionCategory.BANK;
-        assert Objects.equals(info.getCode(), "001");
-        assert Objects.equals(info.getName(), "한국은행");
-        assert info.isRepresentative();
+    void __001() {
+        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
+        final var info = infoSet.get("001");
+        assertThat(info).hasValueSatisfying(i -> {
+            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.BANK);
+            assertThat(i.getCode()).isEqualTo("001");
+            assertThat(i.getName()).isEqualTo("한국은행");
+            assertThat(i.isRepresentative()).isTrue();
+        });
     }
 
     @Test
-    void __2() {
-        final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = instance.get("094").orElseThrow();
-        assert info.getCategory() == KftcFinancialInstitutionCategory.MISC;
-        assert info.getCode().equals("094");
-        assert info.getName().equals("서울보증보험");
-        assert info.isRepresentative();
+    void __101() {
+        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
+        final var info = infoSet.get("101");
+        assertThat(info).hasValueSatisfying(i -> {
+            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.MISC);
+            assertThat(i.getCode()).isEqualTo("101");
+            assertThat(i.getName()).isEqualTo("한국신용정보원");
+            assertThat(i.isRepresentative()).isTrue();
+        });
     }
 }
