@@ -121,11 +121,12 @@ You can generate an SQLite database file, while builds, into `db/kftc-financial-
 
 ```shell
 $ mvn -Pdb clean test
+$ ls -l db
 ```
 
 See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-info.sqlite3.md) for more information.
 
-### Protobuf
+### Protocol Buffers
 
 Two `.proto` files are
 prepared. One
