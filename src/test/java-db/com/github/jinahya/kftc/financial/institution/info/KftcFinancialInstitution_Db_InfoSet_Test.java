@@ -28,7 +28,7 @@ import java.util.List;
 
 //@Tag("db")
 @Slf4j
-class KftcFinancialInstitution_Db_FinancialInstitutionInfoSet_Test
+class KftcFinancialInstitution_Db_InfoSet_Test
         extends KftcFinancialInstitution_Db__Test {
 
     private static final String TABLE_NAME = "financial_institution";
