@@ -58,9 +58,6 @@ public enum KftcFinancialInstitutionCategory {
      * A constant for {@code 기타}.
      */
     // https://blog-ko.engram.us/etcetera/
-    @SuppressWarnings({
-            "java:S115" // ..._
-    })
     OTHE("■ 기 타");
 
     // -----------------------------------------------------------------------------------------------------------------
