@@ -45,7 +45,7 @@ class Readme1Test {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
         final var info = infoSet.get("101");
         assertThat(info).hasValueSatisfying(i -> {
-            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.MISC);
+            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.ETC_);
             assertThat(i.getCode()).isEqualTo("101");
             assertThat(i.getName()).isEqualTo("한국신용정보원");
             assertThat(i.isRepresentative()).isTrue();

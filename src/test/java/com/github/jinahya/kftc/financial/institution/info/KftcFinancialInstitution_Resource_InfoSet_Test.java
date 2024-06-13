@@ -163,7 +163,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
         ).isEqualTo(35);
         assertThat(
                 map.values().stream()
-                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.MISC)
+                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.ETC_)
                         .count()
         ).isEqualTo(5);
         assertThat(
