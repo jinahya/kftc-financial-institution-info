@@ -20,7 +20,7 @@ class KftcFinancialInstitution_ResultSet_BranchInfoSet_Test
                              ORDER BY %2$s""".formatted(
                              KftcFinancialInstitutionBranchInfoResultSet.TABLE_NAME,
                              KftcFinancialInstitutionBranchInfoResultSet.COLUMN_NAME_BRANCH_CODE))) {
-            final var instances = KftcFinancialInstitutionBranchInfoResultSet.getAllInstances(resultSet);
+            final var instances = KftcFinancialInstitutionBranchInfoResultSet.fetchAllInstances(resultSet);
             instances.forEach(v -> {
 //                log.debug("instance: {}", v);
             });
@@ -38,7 +38,7 @@ class KftcFinancialInstitution_ResultSet_BranchInfoSet_Test
                                  ORDER BY %2$s""".formatted(
                                  KftcFinancialInstitutionBranchInfoResultSet.TABLE_NAME,
                                  KftcFinancialInstitutionBranchInfoResultSet.COLUMN_NAME_BRANCH_CODE))) {
-                return KftcFinancialInstitutionBranchInfoResultSet.getAllInstances(resultSet);
+                return KftcFinancialInstitutionBranchInfoResultSet.fetchAllInstances(resultSet);
             } catch (final SQLException sqle) {
                 throw new RuntimeException(sqle);
             }

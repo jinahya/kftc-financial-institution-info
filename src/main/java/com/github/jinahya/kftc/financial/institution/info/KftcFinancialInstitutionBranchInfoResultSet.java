@@ -29,7 +29,7 @@ import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 /**
- * A class for accessing instances of {@link KftcFinancialInstitutionInfo}.
+ * A class for accessing database for instances of {@link KftcFinancialInstitutionInfo}.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
@@ -70,9 +70,10 @@ public final class KftcFinancialInstitutionBranchInfoResultSet {
      * @return a new instance.
      * @throws SQLException if a database error occurs.
      */
-    public static <R> R getInstance(final ResultSet resultSet,
-                                    final UnaryOperator<String> columnMapper,
-                                    final Function<? super KftcFinancialInstitutionBranchInfo, ? extends R> valueMapper)
+    public static <R> R fetchInstance(
+            final ResultSet resultSet,
+            final UnaryOperator<String> columnMapper,
+            final Function<? super KftcFinancialInstitutionBranchInfo, ? extends R> valueMapper)
             throws SQLException {
         Objects.requireNonNull(resultSet, "resultSet is null");
         Objects.requireNonNull(columnMapper, "columnMapper is null");
@@ -92,14 +93,25 @@ public final class KftcFinancialInstitutionBranchInfoResultSet {
         return valueMapper.apply(instance);
     }
 
-    public static <R> List<R> getAllInstances(
+    // -----------------------------------------------------------------------------------------------------------------
+    /**
+     * Returns a list of all instances fetched from specified result set.
+     *
+     * @param resultSet    the result set.
+     * @param columnMapper a function for mapping column labels.
+     * @param valueMapper  a function for mapping value.
+     * @return a list of all instances.
+     * @throws SQLException if a database error occurs.
+     */
+    public static <R> List<R> fetchAllInstances(
             final ResultSet resultSet,
             final UnaryOperator<String> columnMapper,
             final Function<? super KftcFinancialInstitutionBranchInfo, ? extends R> valueMapper)
             throws SQLException {
-        final List<R> instances = new ArrayList<>();
+        Objects.requireNonNull(resultSet, "resultSet is null");
+        final var instances = new ArrayList<R>();
         while (resultSet.next()) {
-            instances.add(getInstance(resultSet, columnMapper, valueMapper));
+            instances.add(fetchInstance(resultSet, columnMapper, valueMapper));
         }
         return instances;
     }
@@ -111,9 +123,9 @@ public final class KftcFinancialInstitutionBranchInfoResultSet {
      * @return a list of all instances.
      * @throws SQLException if a database error occurs.
      */
-    public static List<KftcFinancialInstitutionBranchInfo> getAllInstances(final ResultSet resultSet)
+    public static List<KftcFinancialInstitutionBranchInfo> fetchAllInstances(final ResultSet resultSet)
             throws SQLException {
-        return getAllInstances(
+        return fetchAllInstances(
                 resultSet,
                 UnaryOperator.identity(),
                 UnaryOperator.identity()

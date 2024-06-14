@@ -81,7 +81,7 @@ class Readme1Test {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
         final var info = infoSet.get("101");
         assertThat(info).hasValueSatisfying(i -> {
-            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.MISC);
+            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.OTHE);
             assertThat(i.getCode()).isEqualTo("101");
             assertThat(i.getName()).isEqualTo("한국신용정보원");
             assertThat(i.isRepresentative()).isTrue();
@@ -135,18 +135,18 @@ class Readme2Test {
 
 ### Notes
 
-Those `newInstance()` methods, whenever invoked, load data from resource files in the classpath. Callers may (or should) cache the result.
+Those `newInstance()` methods, whenever invoked, load data from resources in the classpath. Callers are recommended to (or should) cache the result.
 
 ```java
 class KftcService {
 
-    // few hundreds elements.
-    // the set and its elements are all immutable and thread-safe
+    // less than two hundreds values
+    // the set and its values are all immutable and thread-safe
     public static final KftcFinancialInstitutionInfoSet INFO_SET
             = KftcFinancialInstitutionInfoSet.newInstance();
 
-    // more than 20 thousands elements!
-    // do not load at all, if not required 
+    // more than 20 thousands values!
+    // do not load at all, if it's not required 
     public static final KftcFinancialInstitutionBranchInfoSet BRANCH_INFO_SET
             = KftcFinancialInstitutionBranchInfoSet.newInstance();
 }

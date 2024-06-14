@@ -20,16 +20,18 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 /**
- * A class for accessing instances of {@link KftcFinancialInstitutionInfo}.
+ * A class for accessing database for instances of {@link KftcFinancialInstitutionInfo}.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
@@ -37,8 +39,10 @@ import java.util.function.UnaryOperator;
  */
 public final class KftcFinancialInstitutionInfoResultSet {
 
+    // -----------------------------------------------------------------------------------------------------------------
     public static final String TABLE_NAME = "financial_institution";
 
+    // -----------------------------------------------------------------------------------------------------------------
     public static final String COLUMN_NAME_CODE = "code";
 
     public static final String COLUMN_NAME_NAME = "name";
@@ -47,60 +51,231 @@ public final class KftcFinancialInstitutionInfoResultSet {
 
     public static final String COLUMN_NAME_CATEGORY = "category";
 
+    // -----------------------------------------------------------------------------------------------------------------
+    private static final String SQL_SELECT_ALL = "SELECT *"
+            + " FROM " + TABLE_NAME
+            + " ORDER BY " + COLUMN_NAME_CODE;
+
+    private static final String SQL_SELECT_ONE =
+            "SELECT *"
+                    + " FROM " + TABLE_NAME
+                    + " WHERE " + COLUMN_NAME_CODE + " = ?";
+
+    // -----------------------------------------------------------------------------------------------------------------
+    private static final String SQL_SELECT_ALL_BY_CATEGORY_ANE_NAME =
+            "SELECT *"
+                    + " FROM " + TABLE_NAME
+                    + " WHERE " + COLUMN_NAME_CATEGORY + " = ? AND " + COLUMN_NAME_NAME + " = ?";
+
+    private static final String SQL_SELECT_ALL_BY_CATEGORY_ANE_NAME_LIKE =
+            "SELECT *"
+                    + " FROM " + TABLE_NAME
+                    + " WHERE " + COLUMN_NAME_CATEGORY + " = ? AND " + COLUMN_NAME_NAME + " LIKE ?";
+
+    // -----------------------------------------------------------------------------------------------------------------
+    private static final String SQL_SELECT_ALL_BY_NAME =
+            "SELECT *"
+                    + " FROM " + TABLE_NAME
+                    + " WHERE " + COLUMN_NAME_NAME + " = ?";
+
+    // https://github.com/felixfbecker/node-sql-template-strings/issues/163#issuecomment-1087007560
+    private static final String SQL_SELECT_ALL_BY_NAME_LIKE =
+            "SELECT *"
+                    + " FROM " + TABLE_NAME
+                    + " WHERE " + COLUMN_NAME_NAME + " LIKE ?";
+
     // ------------------------------------------------------------------------------------------ STATIC_FACTORY_METHODS
-
-    /**
-     * Returns a new instance whose fields are set with fetched data from the current row of specified result set, and
-     * returns a new instance.
-     *
-     * @param resultSet    the result set.
-     * @param columnMapper a function for mapping column labels and column names.
-     * @param valueMapper  a function for mapping result.
-     * @param <R>          result type parameter
-     * @return a new instance.
-     * @throws SQLException if a database error occurs.
-     */
-    public static <R> R getInstance(final ResultSet resultSet,
-                                    final UnaryOperator<String> columnMapper,
-                                    final Function<? super KftcFinancialInstitutionInfo, ? extends R> valueMapper)
+    private static <R> R fetch(final ResultSet results,
+                               final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
             throws SQLException {
-        Objects.requireNonNull(resultSet, "resultSet is null");
-        Objects.requireNonNull(columnMapper, "columnMapper is null");
-        Objects.requireNonNull(valueMapper, "valueMapper is null");
         final var instance = new KftcFinancialInstitutionInfo();
-        instance.setCode(resultSet.getString(columnMapper.apply(COLUMN_NAME_CODE)));
-        instance.setName(resultSet.getString(columnMapper.apply(COLUMN_NAME_NAME)));
-        instance.setRepresentative(resultSet.getBoolean(columnMapper.apply(COLUMN_NAME_REPRESENTATIVE)));
-        instance.setCategory(KftcFinancialInstitutionCategory.valueOf(
-                resultSet.getString(columnMapper.apply(COLUMN_NAME_CATEGORY))
-        ));
-        return valueMapper.apply(instance);
+        instance.setCode(results.getString(COLUMN_NAME_CODE));
+        instance.setName(results.getString(COLUMN_NAME_NAME));
+        instance.setRepresentative(results.getBoolean(COLUMN_NAME_REPRESENTATIVE));
+        instance.setCategory(KftcFinancialInstitutionCategory.valueOf(results.getString(COLUMN_NAME_CATEGORY)));
+        return mapper.apply(instance);
     }
 
-    public static <R> List<R> getAllInstances(
-            final ResultSet resultSet,
-            final UnaryOperator<String> columnMapper,
-            final Function<? super KftcFinancialInstitutionInfo, ? extends R> valueMapper)
+    // -----------------------------------------------------------------------------------------------------------------
+    public static <R> List<R> selectAll(final Connection connection,
+                                        final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
             throws SQLException {
-        final List<R> instances = new ArrayList<>();
-        while (resultSet.next()) {
-            instances.add(getInstance(resultSet, columnMapper, valueMapper));
+        Objects.requireNonNull(connection, "connection is null");
+        Objects.requireNonNull(mapper, "mapper is null");
+        try (var statement = connection.createStatement();
+             var resultSet = statement.executeQuery(SQL_SELECT_ALL)) {
+            final var instances = new ArrayList<R>();
+            while (resultSet.next()) {
+                instances.add(fetch(resultSet, mapper));
+            }
+            return instances;
         }
-        return instances;
     }
 
-    /**
-     * Returns a list of all instances fetched from specified result set.
-     *
-     * @param resultSet the result set.
-     * @return a list of all instances.
-     * @throws SQLException if a database error occurs.
-     */
-    public static List<KftcFinancialInstitutionInfo> getAllInstances(final ResultSet resultSet)
+    public static List<KftcFinancialInstitutionInfo> selectAll(final Connection connection)
             throws SQLException {
-        return getAllInstances(
-                resultSet,
-                UnaryOperator.identity(),
+        return selectAll(
+                connection,
+                UnaryOperator.identity()
+        );
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    public static <R> Optional<R> selectOneByCode(
+            final Connection connection, final String code,
+            final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
+            throws SQLException {
+        Objects.requireNonNull(connection, "connection is null");
+        Objects.requireNonNull(code, "code is null");
+        Objects.requireNonNull(mapper, "mapper is null");
+        try (var statement = connection.prepareStatement(SQL_SELECT_ONE)) {
+            statement.setString(1, code);
+            try (var resultSet = statement.executeQuery()) {
+                if (!resultSet.next()) {
+                    return Optional.empty();
+                }
+                return Optional.of(
+                        fetch(resultSet, mapper)
+                );
+            }
+        }
+    }
+
+    public static Optional<KftcFinancialInstitutionInfo> selectOneByCode(final Connection connection, final String code)
+            throws SQLException {
+        return selectOneByCode(
+                connection,
+                code,
+                UnaryOperator.identity()
+        );
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    public static <R> List<R> selectAllByCategoryAndName(
+            final Connection connection, final KftcFinancialInstitutionCategory category, final String name,
+            final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
+            throws SQLException {
+        Objects.requireNonNull(connection, "connection is null");
+        Objects.requireNonNull(category, "category is null");
+        Objects.requireNonNull(name, "name is null");
+        Objects.requireNonNull(mapper, "mapper is null");
+        try (var statement = connection.prepareStatement(SQL_SELECT_ALL_BY_CATEGORY_ANE_NAME)) {
+            int index = 0;
+            statement.setString(++index, category.name());
+            statement.setString(++index, name);
+            try (var resultSet = statement.executeQuery()) {
+                final var list = new ArrayList<R>();
+                while (resultSet.next()) {
+                    list.add(fetch(resultSet, mapper));
+                }
+                return list;
+            }
+        }
+    }
+
+    public static List<KftcFinancialInstitutionInfo> selectAllByCategoryAndName(
+            final Connection connection, final KftcFinancialInstitutionCategory category, final String name)
+            throws SQLException {
+        return selectAllByCategoryAndName(
+                connection,
+                category,
+                name,
+                UnaryOperator.identity()
+        );
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    public static <R> List<R> selectAllByCategoryAndNameLike(
+            final Connection connection, final KftcFinancialInstitutionCategory category, final String pattern,
+            final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
+            throws SQLException {
+        Objects.requireNonNull(connection, "connection is null");
+        Objects.requireNonNull(category, "category is null");
+        Objects.requireNonNull(pattern, "pattern is null");
+        Objects.requireNonNull(mapper, "mapper is null");
+        try (var statement = connection.prepareStatement(SQL_SELECT_ALL_BY_CATEGORY_ANE_NAME_LIKE)) {
+            var index = 0;
+            statement.setString(++index, category.name());
+            statement.setString(++index, pattern);
+            try (var resultSet = statement.executeQuery()) {
+                final var list = new ArrayList<R>();
+                while (resultSet.next()) {
+                    list.add(fetch(resultSet, mapper));
+                }
+                return list;
+            }
+        }
+    }
+
+    public static List<KftcFinancialInstitutionInfo> selectAllByCategoryAndNameLike(
+            final Connection connection,
+            final KftcFinancialInstitutionCategory category,
+            final String pattern)
+            throws SQLException {
+        return selectAllByCategoryAndNameLike(
+                connection,
+                category,
+                pattern,
+                UnaryOperator.identity()
+        );
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    public static <R> List<R> selectAllByName(
+            final Connection connection, final String name,
+            final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
+            throws SQLException {
+        Objects.requireNonNull(connection, "connection is null");
+        Objects.requireNonNull(name, "name is null");
+        Objects.requireNonNull(mapper, "mapper is null");
+        try (var statement = connection.prepareStatement(SQL_SELECT_ALL_BY_NAME)) {
+            statement.setString(1, name);
+            try (var resultSet = statement.executeQuery()) {
+                final var list = new ArrayList<R>();
+                while (resultSet.next()) {
+                    list.add(fetch(resultSet, mapper));
+                }
+                return list;
+            }
+        }
+    }
+
+    public static List<KftcFinancialInstitutionInfo> selectAllByName(final Connection connection,
+                                                                     final String name)
+            throws SQLException {
+        return selectAllByName(
+                connection,
+                name,
+                UnaryOperator.identity()
+        );
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    public static <R> List<R> selectAllByNameLike(
+            final Connection connection, final String pattern,
+            final Function<? super KftcFinancialInstitutionInfo, ? extends R> mapper)
+            throws SQLException {
+        Objects.requireNonNull(connection, "connection is null");
+        Objects.requireNonNull(pattern, "pattern is null");
+        Objects.requireNonNull(mapper, "mapper is null");
+        try (var statement = connection.prepareStatement(SQL_SELECT_ALL_BY_NAME_LIKE)) {
+            statement.setString(1, pattern);
+            try (var resultSet = statement.executeQuery()) {
+                final var list = new ArrayList<R>();
+                while (resultSet.next()) {
+                    list.add(fetch(resultSet, mapper));
+                }
+                return list;
+            }
+        }
+    }
+
+    public static List<KftcFinancialInstitutionInfo> selectAllByNameLike(final Connection connection,
+                                                                         final String pattern)
+            throws SQLException {
+        return selectAllByNameLike(
+                connection,
+                pattern,
                 UnaryOperator.identity()
         );
     }
