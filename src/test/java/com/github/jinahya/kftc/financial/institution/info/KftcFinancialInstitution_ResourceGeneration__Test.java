@@ -20,24 +20,12 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Comparator;
-import java.util.List;
-
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Slf4j
-abstract class KftcFinancialInstitution_InfoSet_InfoSet_Test
-        extends KftcFinancialInstitution_InfoSet__Test {
+public abstract class KftcFinancialInstitution_ResourceGeneration__Test {
 
-    private static final KftcFinancialInstitutionInfoSet INSTANCE = KftcFinancialInstitutionInfoSet.newInstance();
-
-    private static List<KftcFinancialInstitutionInfo> list;
-
-    protected static List<KftcFinancialInstitutionInfo> list() {
-        if (list == null) {
-            list = INSTANCE.getList().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
-                    .toList();
-        }
-        return list;
-    }
 }

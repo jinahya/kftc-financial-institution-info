@@ -20,155 +20,208 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import jakarta.json.bind.JsonbBuilder;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.poi.ss.usermodel.DataFormatter;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.Test;
 
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Comparator;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.Objects;
+import java.util.Optional;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatCode;
 
 @Slf4j
 class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         extends KftcFinancialInstitution_Resource__Test {
 
-    private static final int INDEX_BRANCH_CODE = 0;
-
-    private static final int INDEX_FINANCIAL_INSTITUTION_NAME = 1;
-
-    private static final int INDEX_BRANCH_NAME = 2;
-
-    private static final int INDEX_PHONE_NUMBER = 3;
-
-    private static final int INDEX_FAX_NUMBER = 4;
-
-    private static final int INDEX_POSTAL_CODE = 5;
-
-    private static final int INDEX_ADDRESS = 6;
-
-    private static final int INDEX_STATUS = 7;
-
-    private static final int INDEX_MANAGING_BRANCH_CODE = 8;
-
     @Test
-    void __() throws Exception {
-        final Map<String, KftcFinancialInstitutionBranchInfo> map;
-        {
-            final var name = "/codefilex.text";
-            final var resource = getClass().getResource(name);
-            assertThat(resource)
-                    .as("resource for '%1$s'", name)
-                    .isNotNull();
-            final var path = Paths.get(resource.toURI());
-            final var charset = Charset.forName("EUC-KR");
-            try (var lines = Files.lines(path, charset)) {
-                log.debug("lines: {}", lines.count());
-            }
-            try (var lines = Files.lines(path, charset)) {
-                map = lines.map(l -> {
-                            final var tokens = l.split("\\|");
-                            assertThat(tokens).hasSize(9);
-                            final var info = new KftcFinancialInstitutionBranchInfo();
-                            info.setBranchCode(tokens[INDEX_BRANCH_CODE]);
-                            info.setFinancialInstitutionName(tokens[INDEX_FINANCIAL_INSTITUTION_NAME]);
-                            info.setBranchName(tokens[INDEX_BRANCH_NAME]);
-                            info.setPhoneNumber(tokens[INDEX_PHONE_NUMBER]);
-                            info.setFaxNumber(tokens[INDEX_FAX_NUMBER]);
-                            info.setPostalCode(tokens[INDEX_POSTAL_CODE]);
-                            info.setAddress(tokens[INDEX_ADDRESS]);
-                            info.setStatus(tokens[INDEX_STATUS]);
-                            info.setManagingBranchCode(tokens[INDEX_MANAGING_BRANCH_CODE]);
-                            assertThatCode(() -> {
-                                final var status =
-                                        KftcFinancialInstitutionBranchInfo.Status.valueOfRawValue(info.getStatus());
-                            }).doesNotThrowAnyException();
-                            assertThat(info.getManagingBranchCode()).satisfiesAnyOf(
-                                    a -> assertThat(a).isNull(),
-                                    a -> assertThat(a).isNotEmpty()
-                            );
-                            return info;
-                        })
-                        .collect(Collectors.toMap(KftcFinancialInstitutionBranchInfo::getBranchCode,
-                                                  Function.identity()));
-                log.debug("names: {}",
-                          map.values().stream()
-                                  .map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
-                                  .distinct()
-                                  .toList()
-                );
-                log.debug("statuses: {}",
-                          map.values().stream()
-                                  .map(KftcFinancialInstitutionBranchInfo::getStatus)
-                                  .distinct()
-                                  .toList()
-                );
-                log.debug("branchCode.length.statistics: {}",
-                          map.values().stream()
-                                  .map(KftcFinancialInstitutionBranchInfo::getBranchCode)
-                                  .mapToLong(String::length)
-                                  .distinct()
-                                  .summaryStatistics()
-                );
-            }
-        }
-        // -------------------------------------------------------------------------------------------------------------
-        final var array = map.values().stream()
-                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
-                .toArray();
-        // -------------------------------------------------------------------------------------------------------------
-        {
-            final var path = _IoTestUtils.resourceFile(KftcFinancialInstitutionBranchInfoSet.RESOURCE_NAME);
-            _IoTestUtils.writeObject(path, array);
-        }
-        {
-            final var path = _IoTestUtils.buildOutputFile("codefilex.json");
-            try (var stream = new FileOutputStream(path.toFile());
-                 var writer = new OutputStreamWriter(stream, StandardCharsets.UTF_8);
-                 final var jsonb = JsonbBuilder.create()) {
-                jsonb.toJson(array, writer);
-            }
-        }
+    void __Agency() {
+        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        instance.getMap().forEach((k, v) -> {
+            Optional.ofNullable(v.getManagingBranchCode()).ifPresent(mbc -> {
+                final var managingBranch = instance.getMap().get(mbc);
+                if (managingBranch == null) {
+                    log.warn("managingBranch not found: {}", mbc);
+                }
+            });
+        });
     }
 
     @Test
-    void xlsx__() throws Exception {
-        final var name = "/codefilex.text.xlsx";
-        final var resource = getClass().getResource(name);
-        assertThat(resource)
-                .as("resource for '%1$s'", name)
-                .isNotNull();
-        try (final var stream = resource.openStream();
-             final var workbook = new XSSFWorkbook(stream)) {
-            final var formatter = new DataFormatter();
-            for (final var row : workbook.getSheetAt(0)) {
-                if (row.getRowNum() == 0) {
-                    continue;
-                }
-                final var info = new KftcFinancialInstitutionBranchInfo();
-                info.setBranchCode(formatter.formatCellValue(row.getCell(INDEX_BRANCH_CODE)));
-                info.setFinancialInstitutionName(
-                        formatter.formatCellValue(row.getCell(INDEX_FINANCIAL_INSTITUTION_NAME))
-                );
-                info.setBranchName(formatter.formatCellValue(row.getCell(INDEX_BRANCH_NAME)));
-                info.setPhoneNumber(formatter.formatCellValue(row.getCell(INDEX_PHONE_NUMBER)));
-                info.setFaxNumber(formatter.formatCellValue(row.getCell(INDEX_FAX_NUMBER)));
-                info.setPostalCode(formatter.formatCellValue(row.getCell(INDEX_POSTAL_CODE)));
-                info.setAddress(formatter.formatCellValue(row.getCell(INDEX_ADDRESS)));
-                info.setStatus(formatter.formatCellValue(row.getCell(INDEX_STATUS)));
-                info.setManagingBranchCode(formatter.formatCellValue(row.getCell(INDEX_MANAGING_BRANCH_CODE)));
+    void __() {
+        final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        assertThat(instance).isNotNull();
+        assertThat(instance.getMap()).isNotEmpty();
+        assertThat(instance.getMap().get("0010003")).satisfies(i -> {
+            log.debug("i: {}", i);
+            assertThat(i.getFinancialInstitutionName()).isEqualTo("한국");
+            assertThat(i.getBranchName()).isEqualTo("본부총괄");
+            assertThat(i.getPhoneNumber()).isEqualTo("02  759 4114");
+            assertThat(i.getFaxNumber()).isEqualTo("02  759 4060");
+            assertThat(i.getPostalCode()).isEqualTo("100794");
+            assertThat(i.getAddress()).isEqualTo("서울특별시 중구 남대문로 39");
+            assertThat(i.getStatus()).isEqualTo("정상");
+            assertThat(i.getManagingBranchCode()).isNull();
+        });
+        assertThat(instance.get("0010003")).hasValueSatisfying(i -> {
+            log.debug("i: {}", i);
+            assertThat(i.getFinancialInstitutionName()).isEqualTo("한국");
+            assertThat(i.getBranchName()).isEqualTo("본부총괄");
+            assertThat(i.getPhoneNumber()).isEqualTo("02  759 4114");
+            assertThat(i.getFaxNumber()).isEqualTo("02  759 4060");
+            assertThat(i.getPostalCode()).isEqualTo("100794");
+            assertThat(i.getAddress()).isEqualTo("서울특별시 중구 남대문로 39");
+            assertThat(i.getStatus()).isEqualTo("정상");
+            assertThat(i.getManagingBranchCode()).isNull();
+        });
+        // -------------------------------------------------------------------------------------------------- branchCode
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getBranchCode)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContainPattern(KftcFinancialInstitutionBranchInfo.PATTERN_MULTIPLE_WHITESPACES)
+            ;
+        });
+        // ------------------------------------------------------------------------------------ financialInstitutionName
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // -------------------------------------------------------------------------------------------------- branchName
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getBranchName)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // ------------------------------------------------------------------------------------------------- phoneNumber
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getPhoneNumber)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // ---------=----------------------------------------------------------------------------- phoneNumberNormalized
+        assertThat(
+                instance.getList().stream()
+                        .map(v -> v.getPhoneNumberNormalized("-"))
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .doesNotContainAnyWhitespaces()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // --------------------------------------------------------------------------------------------------- faxNumber
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getFaxNumber)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
+        });
+        // ----------------------------------------------------------------------------------------- faxNumberNormalized
+        assertThat(
+                instance.getList().stream()
+                        .map(v -> v.getFaxNumberNormalized("-"))
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContainAnyWhitespaces()
+            ;
+        });
+        // -------------------------------------------------------------------------------------------------- postalCode
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getPostalCode)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // ----------------------------------------------------------------------------------------------------- address
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getAddress)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+            ;
+        });
+        // ------------------------------------------------------------------------------------------- addressNormalized
+        assertThat(
+                instance.getList().stream()
+                        .map(e -> e.getAddressNormalized(" "))
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v))
+                    .doesNotContain("  ")
+            ;
+        });
+        // ------------------------------------------------------------------------------------------------------ status
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getStatus)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
+        });
+        // ------------------------------------------------------------------------------------------ managingBranchCode
+        assertThat(
+                instance.getList().stream()
+                        .map(KftcFinancialInstitutionBranchInfo::getManagingBranchCode)
+                        .filter(Objects::nonNull)
+        ).allSatisfy(v -> {
+            assertThat(v)
+                    .isNotBlank()
+                    .satisfies(x -> assertThat(x.strip()).isEqualTo(v));
+        });
+    }
+
+    @Test
+    void _infoSet_branchCode() {
+        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
+        final var branchInfoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        branchInfoSet.getList().forEach(b -> {
+            final var branchCode = b.getBranchCode();
+            final var code = branchCode.substring(0, 3);
+            final var info = infoSet.get(code).orElse(null);
+//            if (info == null && !code.startsWith("0")) {
+            if (info == null) {
+                // 099xxx: 금융결제원
+                // 4920018/중소벤처기업진흥공단/성장융합금융처
+                log.warn("no info for {}/{}/{}", b.getBranchCode(), b.getFinancialInstitutionName(), b.getBranchName());
+                return;
             }
-        }
+        });
     }
 }
