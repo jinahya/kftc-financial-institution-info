@@ -23,14 +23,16 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 Requires `21` for building while the module targets `11`.
 
-```text
-$ grep maven.compiler\\. pom.xml
+<!-- $ grep maven.compiler\\. pom.xml -->
+```xml
+<project>
   <maven.compiler.source>11</maven.compiler.source>
   <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
   <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
   <maven.compiler.testSource>21</maven.compiler.testSource>
   <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
   <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
+</project>
 ```
 
 ### Notes
