@@ -10,10 +10,12 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 
 ## Latest date (down)loaded from the KFTC
 
-| date         | info          | hash                               | notes      |
-|--------------|---------------|------------------------------------|------------|
-| `2024-06-10` | bankinfo.ser  | `b1db0be8aa26f73eba6609f0b1b25f34` | 금융기관 정보    |
-|              | codefilex.ser | `96a51bb96aa81819cbd3fc0a621540e0` | 금융기관 지점 정보 |
+| date         | info           | hash                               | notes      |
+|--------------|----------------|------------------------------------|------------|
+| `2024-06-17` | bankinfo.hwp   | `5a2c09f97b5c31bf6756fe74c075549e` | 금융기관 정보    |
+|              | codefilex.text | `bad482f4b9a61ddf2fc7e3f1fc94e46d` | 금융기관 지점 정보 |
+| `2024-06-10` | bankinfo.hwp   | `5a2c09f97b5c31bf6756fe74c075549e` | 금융기관 정보    |
+|              | codefilex.text | `b7cf392a32f1a0dd5b66f419ebfc5eac` | 금융기관 지점 정보 |
 
 ---
 
@@ -24,7 +26,9 @@ by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do).
 Requires `21` for building while the module targets `11`.
 
 <!-- $ grep maven.compiler\\. pom.xml -->
+
 ```xml
+
 <project>
   <maven.compiler.source>11</maven.compiler.source>
   <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
@@ -37,9 +41,12 @@ Requires `21` for building while the module targets `11`.
 
 ### Notes
 
-This module generates resource files while testing which are, in turn, required by some other tests, hence, a fresh clone might need to be build twice.
+This module generates resource files while testing which are, in turn, required by some other tests, hence, a fresh
+clone might need to be build twice. And that's
+why [The Postman Always Rings Twice](https://en.wikipedia.org/wiki/The_Postman_Always_Rings_Twice_(1981_film)).
 
 <!-- https://serverfault.com/a/737269/113357 -->
+
 ```commandline
 $ seq 2 | xargs -I -- mvn clean test 
 ```
@@ -137,7 +144,8 @@ class Readme2Test {
 
 ### Notes
 
-Those `newInstance()` methods, whenever invoked, load data from resources in the classpath. Callers are recommended to (or should) cache the result.
+Those `newInstance()` methods, whenever invoked, load data from resources in the classpath. Callers are recommended to (
+or should) cache the result.
 
 ```java
 class KftcService {
