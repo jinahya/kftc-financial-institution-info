@@ -2,7 +2,6 @@ package com.github.jinahya.kftc.financial.institution.info.proto;
 
 import com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionCategory;
 import com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfo;
-import com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionInfoProtoOuterClass.KftcFinancialInstitutionInfoProto;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Objects;
@@ -10,9 +9,9 @@ import java.util.Objects;
 @Slf4j
 final class KftcFinancialInstitutionInfoProtoOuterClassUtils {
 
-    static KftcFinancialInstitutionInfoProto from(final KftcFinancialInstitutionInfo source) {
+    static KftcFinancialInstitutionInfoProtoOuterClass.KftcFinancialInstitutionInfoProto from(final KftcFinancialInstitutionInfo source) {
         Objects.requireNonNull(source, "source is null");
-        return KftcFinancialInstitutionInfoProto.newBuilder()
+        return KftcFinancialInstitutionInfoProtoOuterClass.KftcFinancialInstitutionInfoProto.newBuilder()
                 .setCategory(source.getCategory().name())
                 .setCode(source.getCode())
                 .setName(source.getName())
@@ -20,7 +19,7 @@ final class KftcFinancialInstitutionInfoProtoOuterClassUtils {
                 .build();
     }
 
-    static KftcFinancialInstitutionInfo from(final KftcFinancialInstitutionInfoProto source)
+    static KftcFinancialInstitutionInfo from(final KftcFinancialInstitutionInfoProtoOuterClass.KftcFinancialInstitutionInfoProto source)
             throws Exception {
         final var constructor = KftcFinancialInstitutionInfo.class.getDeclaredConstructor();
         constructor.setAccessible(true);

@@ -1,7 +1,6 @@
 package com.github.jinahya.kftc.financial.institution.info.proto;
 
 import com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionBranchInfoSet;
-import com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfoSet;
 import com.github.jinahya.kftc.financial.institution.info._IoTestUtils;
 import com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated;
 import com.google.protobuf.TextFormat;
