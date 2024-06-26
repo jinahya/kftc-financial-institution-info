@@ -428,6 +428,7 @@
       </activation>
       <properties>
         <!--        <groups>db</groups>-->
+        <kftc-financial-institution-info.sqlite3.path>${project.basedir}/db/kftc-financial-institution-info.sqlite3</kftc-financial-institution-info.sqlite3.path>
       </properties>
       <dependencies>
         <dependency>
@@ -452,6 +453,7 @@
                   <resources>
                     <resource>
                       <directory>src/test/resources-db</directory>
+                      <filtering>true</filtering>
                     </resource>
                   </resources>
                 </configuration>

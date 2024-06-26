@@ -7,7 +7,7 @@
   <package>com.github.jinahya.kftc.financial.institution.info</package>
 
   <entity class="com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfo" name="KftcFinancialInstitutionInfo">
-    <table name="financial_instituion"/>
+    <table name="financial_institution"/>
     <attributes>
       <id name="code">
         <column name="code" nullable="false" insertable="true" updatable="true"/>

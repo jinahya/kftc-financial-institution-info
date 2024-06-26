@@ -223,6 +223,10 @@ $ ls -l target/*.jsonl
   ](https://issues.apache.org/jira/browse/MJAVADOC-728)
 * [\[MRESOURCES-237\] Resource plugin's handling of symbolic links changed in 3.0.x, broke existing behavior](https://issues.apache.org/jira/browse/MRESOURCES-237)
 
+### jakarta.ee
+
+* [Jakarta Persistence XML Schemas](https://jakarta.ee/xml/ns/persistence/)
+
 ### garrit.xyz
 
 * [Tracking SQLite Database Changes in Git](https://garrit.xyz/posts/2023-11-01-tracking-sqlite-database-changes-in-git)

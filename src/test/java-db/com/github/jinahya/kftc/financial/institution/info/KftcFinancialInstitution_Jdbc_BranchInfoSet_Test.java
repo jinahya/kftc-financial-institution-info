@@ -21,17 +21,19 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 import java.util.List;
 
+//@Disabled("KftcFinancialInstitution_Persistence_BranchInfoSet_Test")
 //@Tag("db")
 @Slf4j
-class KftcFinancialInstitution_Db_InfoSet_Test
-        extends KftcFinancialInstitution_Db__Test {
+class KftcFinancialInstitution_Jdbc_BranchInfoSet_Test
+        extends KftcFinancialInstitution_Jdbc__Test {
 
-    private static final String TABLE_NAME = "financial_institution";
+    private static final String TABLE_NAME = "financial_institution_branch";
 
     // -----------------------------------------------------------------------------------------------------------------
     @Test
@@ -43,24 +45,26 @@ class KftcFinancialInstitution_Db_InfoSet_Test
                                 drop table if exists %1$s""".formatted(TABLE_NAME),
                         """
                                 create table %1$s (
-                                    code           TEXT    not null primary key,
-                                    name           TEXT    not null,
-                                    representative INTEGER not null,
-                                    category       TEXT    not null)""".formatted(TABLE_NAME),
+                                    branch_code                TEXT not null primary key,
+                                    financial_institution_name TEXT not null,
+                                    branch_name                TEXT not null,
+                                    phone_number               TEXT,
+                                    fax_number                 TEXT,
+                                    postal_code                TEXT,
+                                    address                    TEXT,
+                                    status                     TEXT,
+                                    managing_branch_code       TEXT
+                                )""".formatted(TABLE_NAME),
                         """
-                                create index idx_category_name
-                                on %1$s (category, name)""".formatted(TABLE_NAME),
-                        """
-                                create index idx_name
-                                on %1$s (name)""".formatted(TABLE_NAME)
-
+                                create index idx_financial_institution_name_branch_name
+                                on %1$s (financial_institution_name, branch_name)""".formatted(TABLE_NAME)
                 );
                 for (final var sql : sqls) {
                     try (var statement = c.createStatement()) {
                         final int result = statement.executeUpdate(sql);
 //                        log.debug("result: {} <- {}", result, sql);
                     } catch (final SQLException sqle) {
-                        throw new RuntimeException("failed to drop/create table", sqle);
+                        throw new RuntimeException("failed to execute: " + sql, sqle);
                     }
                 }
             }
@@ -75,19 +79,28 @@ class KftcFinancialInstitution_Db_InfoSet_Test
             try (var statement = c.prepareStatement(
                     """
                             INSERT INTO %1$s (
-                              code,
-                              name,
-                              representative,
-                              category
-                            ) VALUES(?, ?, ?, ?)""".formatted(TABLE_NAME))) {
-                for (var info :
-                        KftcFinancialInstitutionInfoSet.newInstance().getList()) {
+                              branch_code,
+                              financial_institution_name,
+                              branch_name,
+                              phone_number,
+                              fax_number,
+                              postal_code,
+                              address,
+                              status,
+                              managing_branch_code
+                            ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)""".formatted(TABLE_NAME))) {
+                for (var info : KftcFinancialInstitutionBranchInfoSet.newInstance().getList()) {
                     statement.clearParameters();
                     int index = 0;
-                    statement.setString(++index, info.getCode());
-                    statement.setString(++index, info.getName());
-                    statement.setBoolean(++index, info.isRepresentative());
-                    statement.setString(++index, info.getCategory().name());
+                    statement.setString(++index, info.getBranchCode());
+                    statement.setString(++index, info.getFinancialInstitutionName());
+                    statement.setString(++index, info.getBranchName());
+                    statement.setString(++index, info.getPhoneNumber());
+                    statement.setString(++index, info.getFaxNumber());
+                    statement.setString(++index, info.getPostalCode());
+                    statement.setString(++index, info.getAddress());
+                    statement.setString(++index, info.getStatus());
+                    statement.setString(++index, info.getManagingBranchCode());
                     final var inserted = statement.executeUpdate();
                     assert inserted == 1;
                 }

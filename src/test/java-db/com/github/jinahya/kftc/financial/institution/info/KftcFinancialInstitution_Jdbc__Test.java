@@ -30,7 +30,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 @Slf4j
-abstract class KftcFinancialInstitution_Db__Test {
+abstract class KftcFinancialInstitution_Jdbc__Test {
 
     private static final String FILE_NAME = "kftc-financial-institution-info.sqlite3";
 
@@ -38,6 +38,7 @@ abstract class KftcFinancialInstitution_Db__Test {
     static <R> R applyConnection(final Function<? super Connection, ? extends R> function) throws Exception {
         final var path = Paths.get("db").resolve(FILE_NAME).toAbsolutePath().toFile().getCanonicalPath();
         final var url = "jdbc:sqlite:" + path;
+        log.debug("url: {}", url);
         Class.forName("org.sqlite.JDBC");
         try (var connection = DriverManager.getConnection(url)) {
             return function.apply(connection);
