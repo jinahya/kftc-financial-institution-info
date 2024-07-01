@@ -36,7 +36,7 @@ class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
     @Test
     void __() {
         final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        applyEntityManager(em -> {
+        acceptEntityManager(em -> {
             final var transaction = em.getTransaction();
             try {
                 transaction.begin();
@@ -46,19 +46,16 @@ class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
                 log.error("failed to update", e);
                 transaction.rollback();
             }
-            return null;
         });
         final var copy = new ArrayList<>(instance.getList());
-        applyEntityManager(em -> {
-            em.createQuery(
-                            """
-                                    SELECT e
-                                    FROM %1$s AS e""".formatted(ENTITY_NAME))
+        acceptEntityManager(em -> {
+            em.createQuery("""
+                                   SELECT e
+                                   FROM %1$s AS e""".formatted(ENTITY_NAME))
                     .getResultList()
                     .forEach(e -> {
                         assertThat(copy.remove(e)).isTrue();
                     });
-            return null;
         });
         assertThat(copy).isEmpty();
     }
