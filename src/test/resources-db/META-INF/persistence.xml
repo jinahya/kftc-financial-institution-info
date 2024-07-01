@@ -6,14 +6,14 @@
   <persistence-unit name="kftcFinancialInstitutionInfoPU">
     <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <class>com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfo</class>
-    <!--    <class>com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionBranchInfo</class>-->
+    <class>com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionBranchInfo</class>
     <properties>
       <property name="jakarta.persistence.jdbc.driver" value="org.sqlite.JDBC"/>
       <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlite:${kftc-financial-institution-info.sqlite3.path}"/>
       <!--      <property name="jakarta.persistence.jdbc.user" value="sa" />-->
       <!--      <property name="jakarta.persistence.jdbc.password" value="" />-->
       <property name="hibernate.dialect" value="org.hibernate.community.dialect.SQLiteDialect"/>
-      <property name="hibernate.hbm2ddl.auto" value="create" />
+      <property name="hibernate.hbm2ddl.auto" value="create"/>
       <property name="hibernate.show_sql" value="true"/>
     </properties>
   </persistence-unit>

@@ -6,24 +6,58 @@
   <description>JPA Mapping file</description>
   <package>com.github.jinahya.kftc.financial.institution.info</package>
 
-  <entity class="com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfo" name="KftcFinancialInstitutionInfo">
+  <entity class="com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfo"
+          name="KftcFinancialInstitutionInfo">
     <table name="financial_institution"/>
     <attributes>
       <id name="code">
-        <column name="code" nullable="false" insertable="true" updatable="true"/>
+        <column name="code" nullable="false" insertable="true" updatable="false"/>
       </id>
       <basic name="name">
-        <column name="name" nullable="false" insertable="true" updatable="true"/>
+        <column name="name" nullable="false" insertable="true" updatable="false"/>
       </basic>
       <basic name="representative">
-        <column name="representative" nullable="false" insertable="true" updatable="true"/>
+        <column name="representative" nullable="false" insertable="true" updatable="false"/>
       </basic>
       <basic name="representative">
-        <column name="representative" nullable="false" insertable="true" updatable="true"/>
+        <column name="representative" nullable="false" insertable="true" updatable="false"/>
       </basic>
       <basic name="category">
-        <column name="category" nullable="false" insertable="true" updatable="true"/>
+        <column name="category" nullable="false" insertable="true" updatable="false"/>
         <enumerated>STRING</enumerated>
+      </basic>
+    </attributes>
+  </entity>
+  <entity class="com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionBranchInfo"
+          name="KftcFinancialInstitutionBranchInfo">
+    <table name="financial_institution_branch"/>
+    <attributes>
+      <id name="branchCode">
+        <column name="branch_code" nullable="false" insertable="true" updatable="false"/>
+      </id>
+      <basic name="financialInstitutionName">
+        <column name="financial_instituion_name" nullable="false" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="branchName">
+        <column name="branch_name" nullable="false" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="phoneNumber">
+        <column name="phone_number" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="faxNumber">
+        <column name="fax_number" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="postalCode">
+        <column name="postal_code" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="address">
+        <column name="address" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="status">
+        <column name="status" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="managingBranchCode">
+        <column name="managing_branch_code" nullable="true" insertable="true" updatable="false"/>
       </basic>
     </attributes>
   </entity>

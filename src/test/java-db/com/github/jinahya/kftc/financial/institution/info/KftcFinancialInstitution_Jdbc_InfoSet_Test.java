@@ -28,7 +28,6 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Disabled("KftcFinancialInstitution_Persistence_InfoSet_Test")
-//@Tag("db")
 @Slf4j
 class KftcFinancialInstitution_Jdbc_InfoSet_Test
         extends KftcFinancialInstitution_Jdbc__Test {

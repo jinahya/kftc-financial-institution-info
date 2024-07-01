@@ -23,10 +23,15 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-//@Tag("db")
+import java.util.ArrayList;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
 @Slf4j
 class KftcFinancialInstitution_Persistence_InfoSet_Test
         extends KftcFinancialInstitution_Persistence__Test {
+
+    private static final String ENTITY_NAME = KftcFinancialInstitutionInfo.class.getSimpleName();
 
     @Test
     void __() {
@@ -47,5 +52,18 @@ class KftcFinancialInstitution_Persistence_InfoSet_Test
             }
             return null;
         });
+        final var copy = new ArrayList<>(instance.getList());
+        applyEntityManager(em -> {
+            em.createQuery(
+                            """
+                                    SELECT e
+                                    FROM %1$s AS e""".formatted(ENTITY_NAME))
+                    .getResultList()
+                    .forEach(e -> {
+                        assertThat(copy.remove(e)).isTrue();
+                    });
+            return null;
+        });
+        assertThat(copy).isEmpty();
     }
 }
