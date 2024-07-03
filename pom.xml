@@ -52,16 +52,17 @@
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <version.com.google.protobuf>4.27.1</version.com.google.protobuf>
-<!--    <version.lombok>1.18.32</version.lombok>-->
+    <!--    <version.lombok>1.18.32</version.lombok>-->
     <version.lombok>1.18.34</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <version.maven-surefire>3.2.5</version.maven-surefire>
     <!-- https://search.maven.org/search?q=g:org.apache.pdfbox -->
     <!--    <version.org.apache.pdfbox>3.0.2</version.org.apache.pdfbox>-->
-<!--    <version.org.apache.poi>5.2.5</version.org.apache.poi>-->
+    <!--    <version.org.apache.poi>5.2.5</version.org.apache.poi>-->
     <version.org.apache.poi>5.3.0</version.org.apache.poi>
     <!-- https://search.maven.org/search?q=g:org.hibernate.orm -->
     <version.org.hibernate.orm>7.0.0.Alpha3</version.org.hibernate.orm>
+    <!--    <version.org.hibernate.orm>6.5.2.Final</version.org.hibernate.orm>-->
     <version.org.junit.jupiter>5.11.0-M2</version.org.junit.jupiter>
     <version.org.mockito>5.12.0</version.org.mockito>
   </properties>
@@ -112,7 +113,7 @@
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>itextpdf</artifactId>
-<!--      <version>5.5.13.3</version>-->
+      <!--      <version>5.5.13.3</version>-->
       <version>5.5.13.4</version>
       <scope>test</scope>
     </dependency>
@@ -288,7 +289,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -345,6 +346,10 @@
           <excludes>
             <exclude>**/*IT.java</exclude> <!-- 이게 왜 필요한지 확인 필요 -->
           </excludes>
+          <systemPropertyVariables>
+            <!-- https://qiita.com/hanohrs/items/2bade076e38ce0844403 -->
+            <org.jboss.logging.provider>slf4j</org.jboss.logging.provider>
+          </systemPropertyVariables>
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
