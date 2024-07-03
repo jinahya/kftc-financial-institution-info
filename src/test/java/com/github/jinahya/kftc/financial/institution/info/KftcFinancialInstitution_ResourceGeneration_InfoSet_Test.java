@@ -143,7 +143,7 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.FIIN)
                         .count()
-        ).isEqualTo(47);
+        ).isEqualTo(48);
         assertThat(
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CAPI)
@@ -170,8 +170,8 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
                 map.values().stream()
                         .filter(KftcFinancialInstitutionInfo::isRepresentative)
                         .count()
-        ).isEqualTo(150);
-        assertThat(map).hasSize(196);
+        ).isEqualTo(151);
+        assertThat(map).hasSize(197);
         // -------------------------------------------------------------------------------------------------------------
         final var array = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))

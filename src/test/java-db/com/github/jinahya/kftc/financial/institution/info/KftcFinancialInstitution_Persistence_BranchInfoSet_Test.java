@@ -49,9 +49,7 @@ class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
         });
         final var copy = new ArrayList<>(instance.getList());
         acceptEntityManager(em -> {
-            em.createQuery("""
-                                   SELECT e
-                                   FROM %1$s AS e""".formatted(ENTITY_NAME))
+            em.createQuery("SELECT e FROM %1$s AS e" .formatted(ENTITY_NAME), KftcFinancialInstitutionBranchInfo.class)
                     .getResultList()
                     .forEach(e -> {
                         assertThat(copy.remove(e)).isTrue();

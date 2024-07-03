@@ -10,16 +10,17 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.kftc.or.kr%2Farchive%2FbankListByCode&label=%EA%B8%88%EC%9C%B5%ED%9A%8C%EC%82%AC%EC%BD%94%EB%93%9C%EC%A1%B0%ED%9A%8C)](https://www.kftc.or.kr/archive/bankListByCode)
 
 A simple, zero-dependency, library for accessing financial institution information provided
-by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do)(금융결제원, 金融決濟院, Korea Financial Telecommunications and Clearings Institute).
+by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do)(금융결제원, 金融決濟院, Korea Financial Telecommunications
+and Clearings Institute).
 
 ## Latest date (down)loaded from the KFTC
 
-| date         | info           | hash                               | notes      |
-|--------------|----------------|------------------------------------|------------|
-| `2024-06-17` | bankinfo.hwp   | `5a2c09f97b5c31bf6756fe74c075549e` | 금융기관 정보    |
-|              | codefilex.text | `bad482f4b9a61ddf2fc7e3f1fc94e46d` | 금융기관 지점 정보 |
-| `2024-06-10` | bankinfo.hwp   | `5a2c09f97b5c31bf6756fe74c075549e` | 금융기관 정보    |
-|              | codefilex.text | `b7cf392a32f1a0dd5b66f419ebfc5eac` | 금융기관 지점 정보 |
+| date loaded  | file           | date specified | hash                               | notes      |
+|--------------|----------------|----------------|------------------------------------|------------|
+| `2024-07-03` | bankinfo.hwp   | `2024-06-18`   | `a567a16a427fe420c2e1aff50b51a56f` | 금융기관 정보    |
+|              | codefilex.text |                | `17efb18e35b48f37c8de8a43f788f727` | 금융기관 지점 정보 |
+| `2024-06-17` | bankinfo.hwp   | `2024-03-29`   | `5a2c09f97b5c31bf6756fe74c075549e` | 금융기관 정보    |
+|              | codefilex.text |                | `bad482f4b9a61ddf2fc7e3f1fc94e46d` | 금융기관 지점 정보 |
 
 ---
 
