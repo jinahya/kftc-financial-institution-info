@@ -46,6 +46,17 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
 //            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");
             "(\\d{3})\\s([\\p{L}()\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}()\\s]+)?");
 
+    private static final Map<String, Integer> MAP = Map.of(
+            "은행", 80,
+            "금융투자회사", 48,
+            "캐피탈사", 14,
+            "카드사", 15,
+            "보험사", 35,
+            "기타", 5,
+            "총기관코드수", 197,
+            "대표코드수", 150
+    );
+
     @Test
     void __() throws Exception {
         final var file = new File(getClass().getResource("/bankinfo.hwp.pdf").toURI());
@@ -138,40 +149,40 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.BANK)
                         .count()
-        ).isEqualTo(80);
+        ).isEqualTo(Long.valueOf(MAP.get("은행")));
         assertThat(
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.FIIN)
                         .count()
-        ).isEqualTo(48);
+        ).isEqualTo(Long.valueOf(MAP.get("금융투자회사")));
         assertThat(
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CAPI)
                         .count()
-        ).isEqualTo(14);
+        ).isEqualTo(Long.valueOf(MAP.get("캐피탈사")));
         assertThat(
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CARD)
                         .count()
         )
                 .as("count of %1$s", KftcFinancialInstitutionCategory.CARD)
-                .isEqualTo(15);
+                .isEqualTo(Long.valueOf(MAP.get("카드사")));
         assertThat(
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.INSU)
                         .count()
-        ).isEqualTo(35);
+        ).isEqualTo(Long.valueOf(MAP.get("보험사")));
         assertThat(
                 map.values().stream()
                         .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.OTHE)
                         .count()
-        ).isEqualTo(5);
+        ).isEqualTo(Long.valueOf(MAP.get("기타")));
         assertThat(
                 map.values().stream()
                         .filter(KftcFinancialInstitutionInfo::isRepresentative)
                         .count()
-        ).isEqualTo(151);
-        assertThat(map).hasSize(197);
+        ).isEqualTo(Long.valueOf(MAP.get("대표코드수")));
+        assertThat(map).hasSize(MAP.get("총기관코드수"));
         // -------------------------------------------------------------------------------------------------------------
         final var array = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
