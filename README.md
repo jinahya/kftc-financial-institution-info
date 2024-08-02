@@ -13,15 +13,6 @@ A simple, zero-dependency, library for accessing financial institution informati
 by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do)(금융결제원, 金融決濟院, Korea Financial Telecommunications
 and Clearings Institute).
 
-## Latest date (down)loaded from the KFTC
-
-| date loaded  | file           | date specified | hash                               | notes      |
-|--------------|----------------|----------------|------------------------------------|------------|
-| `2024-07-03` | bankinfo.hwp   | `2024-06-18`   | `a567a16a427fe420c2e1aff50b51a56f` | 금융기관 정보    |
-|              | codefilex.text |                | `17efb18e35b48f37c8de8a43f788f727` | 금융기관 지점 정보 |
-| `2024-06-17` | bankinfo.hwp   | `2024-03-29`   | `5a2c09f97b5c31bf6756fe74c075549e` | 금융기관 정보    |
-|              | codefilex.text |                | `bad482f4b9a61ddf2fc7e3f1fc94e46d` | 금융기관 지점 정보 |
-
 ---
 
 ## Build environment
@@ -42,18 +33,6 @@ Requires `21` for building while the module targets `11`.
   <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
   <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
 </project>
-```
-
-### Notes
-
-This module generates resource files while testing which are, in turn, required by some other tests, hence, a fresh
-clone might need to be build twice. And that's
-why [The Postman Always Rings Twice](https://en.wikipedia.org/wiki/The_Postman_Always_Rings_Twice_(1981_film)).
-
-<!-- https://serverfault.com/a/737269/113357 -->
-
-```commandline
-$ seq 2 | xargs -I -- mvn clean test 
 ```
 
 ---
