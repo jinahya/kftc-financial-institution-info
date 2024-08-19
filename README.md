@@ -161,6 +161,21 @@ $ ls -l db
 
 See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-info.sqlite3.md) for more information.
 
+
+### JSON
+
+```commandline
+$ mvn -Pjson test
+$ ls -l target/*.json
+```
+
+### [NDJSON](https://github.com/ndjson/ndjson-spec)
+
+```commandline
+$ mvn -Pndjson test
+$ ls -l target/*.ndjson
+```
+
 ### Protocol Buffers
 
 Two `.proto` files are
@@ -170,23 +185,10 @@ and the other is
 [KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
 
 ```commandline
-$ mvn -Pproto test
+$ sh ./.proto.sh
 $ ls -l src/test/java-proto/com/github/jinahya/kftc/financial/institution/info/proto/*ProtoOuterClass.java
+$ mvn -Pproto test
 $ ls -l target/*.*pb
-```
-
-### JSON
-
-```commandline
-$ mvn -Pjson test
-$ ls -l target/*.json
-```
-
-### [JSON Lines](https://jsonlines.org/)
-
-```commandline
-$ mvn -Pjsonl test
-$ ls -l target/*.jsonl
 ```
 
 ---
@@ -196,6 +198,7 @@ $ ls -l target/*.jsonl
 ### www.kftc.org.kr
 
 * [금융회사코드 조회](https://www.kftc.or.kr/archive/bankListByCode) (금융결재원)
+
 
 ### issues.apache.org
 

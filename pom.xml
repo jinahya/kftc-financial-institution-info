@@ -49,7 +49,8 @@
     <sonar.organization>jinahya-github</sonar.organization>
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <version.com.google.protobuf>4.27.1</version.com.google.protobuf>
+    <!-- https://search.maven.org/search?q=g:com.google.protobuf -->
+    <version.com.google.protobuf>4.27.3</version.com.google.protobuf>
     <version.lombok>1.18.34</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <version.maven-surefire>3.2.5</version.maven-surefire>
@@ -102,7 +103,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.5.6</version>
+      <version>1.5.7</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -126,7 +127,7 @@
     <dependency>
       <groupId>org.eclipse</groupId>
       <artifactId>yasson</artifactId>
-      <version>3.0.3</version>
+      <version>3.0.4</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -522,7 +523,7 @@
       </build>
     </profile>
     <profile>
-      <id>jsonl</id>
+      <id>ndjson</id>
       <activation>
         <activeByDefault>false</activeByDefault>
       </activation>
@@ -540,19 +541,19 @@
             <artifactId>build-helper-maven-plugin</artifactId>
             <executions>
               <execution>
-                <id>add-test-source-jsonl</id>
+                <id>add-test-source-ndjson</id>
                 <phase>generate-test-sources</phase>
                 <goals>
                   <goal>add-test-source</goal>
                 </goals>
                 <configuration>
                   <sources>
-                    <source>${project.basedir}/src/test/java-jsonl</source>
+                    <source>${project.basedir}/src/test/java-ndjson</source>
                   </sources>
                 </configuration>
               </execution>
               <execution>
-                <id>add-test-resource-jsonl</id>
+                <id>add-test-resource-ndjson</id>
                 <phase>generate-test-resources</phase>
                 <goals>
                   <goal>add-test-resource</goal>
@@ -560,7 +561,7 @@
                 <configuration>
                   <resources>
                     <resource>
-                      <directory>src/test/resources-jsonl</directory>
+                      <directory>src/test/resources-ndjson</directory>
                     </resource>
                   </resources>
                 </configuration>

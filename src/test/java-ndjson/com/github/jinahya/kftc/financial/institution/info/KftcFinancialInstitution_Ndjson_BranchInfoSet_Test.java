@@ -7,8 +7,8 @@ import java.io.IOException;
 import java.util.Comparator;
 
 @Slf4j
-class KftcFinancialInstitution_Jsonl_BranchInfoSet_Test
-        extends KftcFinancialInstitution_Jsonl__Test {
+class KftcFinancialInstitution_Ndjson_BranchInfoSet_Test
+        extends KftcFinancialInstitution_Ndjson__Test {
 
     @Test
     void __() throws IOException {
@@ -16,7 +16,7 @@ class KftcFinancialInstitution_Jsonl_BranchInfoSet_Test
         final var list = infoSet.getList().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
                 .toList();
-        final var path = _IoTestUtils.buildOutputFile("codefilex.jsonl");
+        final var path = _IoTestUtils.buildOutputFile("codefilex.ndjson");
         writeValues(list, path.toFile());
     }
 }
