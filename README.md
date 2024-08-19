@@ -161,19 +161,6 @@ $ ls -l db
 
 See [kftc-financial-institution-info.sqlite3.md](db/kftc-financial-institution-info.sqlite3.md) for more information.
 
-### Protocol Buffers
-
-Two `.proto` files are
-prepared. One
-is [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto)
-and the other is
-[KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
-
-```commandline
-$ mvn -Pproto test
-$ ls -l src/test/java-proto/com/github/jinahya/kftc/financial/institution/info/proto/*ProtoOuterClass.java
-$ ls -l target/*.*pb
-```
 
 ### JSON
 
@@ -189,6 +176,27 @@ $ mvn -Pjsonl test
 $ ls -l target/*.jsonl
 ```
 
+### [NDJSON](https://github.com/ndjson/ndjson-spec)
+
+```commandline
+$ mvn -Pndjson test
+$ ls -l target/*.ndjson
+```
+
+### Protocol Buffers
+
+Two `.proto` files are
+prepared. One
+is [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto)
+and the other is
+[KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
+
+```commandline
+$ mvn -Pproto test
+$ ls -l src/test/java-proto/com/github/jinahya/kftc/financial/institution/info/proto/*ProtoOuterClass.java
+$ ls -l target/*.*pb
+```
+
 ---
 
 ## Links
@@ -196,6 +204,7 @@ $ ls -l target/*.jsonl
 ### www.kftc.org.kr
 
 * [금융회사코드 조회](https://www.kftc.or.kr/archive/bankListByCode) (금융결재원)
+
 
 ### issues.apache.org
 

@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
 import java.io.IOException;
 
-abstract class KftcFinancialInstitution_Jsonl__Test {
+abstract class KftcFinancialInstitution_Ndjson__Test {
 
     // https://cowtowncoder.medium.com/line-delimited-json-with-jackson-69c9e4cb6c00
     static void writeValues(final Iterable<?> values, final File file) throws IOException {
@@ -21,5 +21,4 @@ abstract class KftcFinancialInstitution_Jsonl__Test {
             });
         }
     }
-
 }
