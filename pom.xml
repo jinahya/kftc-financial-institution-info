@@ -53,13 +53,13 @@
     <version.com.google.protobuf>4.27.3</version.com.google.protobuf>
     <version.lombok>1.18.34</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
-    <version.maven-surefire>3.2.5</version.maven-surefire>
+    <version.maven-surefire>3.4.0</version.maven-surefire>
     <!-- https://search.maven.org/search?q=g:org.apache.pdfbox -->
     <!--    <version.org.apache.poi>5.2.5</version.org.apache.poi>-->
     <version.org.apache.poi>5.3.0</version.org.apache.poi>
     <!-- https://search.maven.org/search?q=g:org.hibernate.orm -->
     <version.org.hibernate.orm>7.0.0.Alpha3</version.org.hibernate.orm>
-    <version.org.junit.jupiter>5.11.0-RC1</version.org.junit.jupiter>
+    <version.org.junit.jupiter>5.11.0</version.org.junit.jupiter>
     <version.org.junit>${version.org.junit.jupiter}</version.org.junit>
     <version.org.mockito>5.12.0</version.org.mockito>
   </properties>
@@ -155,7 +155,7 @@
     <dependency>
       <groupId>org.xerial</groupId>
       <artifactId>sqlite-jdbc</artifactId>
-      <version>3.46.0.1</version>
+      <version>3.46.1.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -171,12 +171,12 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.1</version>
+          <version>3.4.2</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.7.0</version>
+          <version>3.8.0</version>
           <configuration>
             <additionalOptions>
               <additionalOption>-Xdoclint:none</additionalOption>
@@ -204,7 +204,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
-          <version>3.5.0</version>
+          <version>3.7.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -227,7 +227,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.16.2</version>
+          <version>2.17.2</version>
         </plugin>
         <plugin>
           <groupId>org.jacoco</groupId>
@@ -377,17 +377,17 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.8.5.0</version>
+        <version>4.8.6.2</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.5.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-checkstyle-plugin</artifactId>
-        <version>3.4.0</version>
+        <version>3.5.0</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -399,7 +399,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.23.0</version>
+        <version>3.24.0</version>
         <configuration>
           <!-- Unsupported targetJdk value '21'. -->
           <!--          <skip>true</skip>-->
