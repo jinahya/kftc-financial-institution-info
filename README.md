@@ -54,81 +54,11 @@ Requires `21` for building while the module targets `11`.
 
 ### 금융 기관 정보
 
-https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme1Test.java
-
-```java
-class Readme1Test {
-
-    @Test
-    void __001() {
-        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = infoSet.get("001");
-        assertThat(info).hasValueSatisfying(i -> {
-            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.BANK);
-            assertThat(i.getCode()).isEqualTo("001");
-            assertThat(i.getName()).isEqualTo("한국은행");
-            assertThat(i.isRepresentative()).isTrue();
-        });
-    }
-
-    @Test
-    void __101() {
-        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = infoSet.get("101");
-        assertThat(info).hasValueSatisfying(i -> {
-            assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.OTHE);
-            assertThat(i.getCode()).isEqualTo("101");
-            assertThat(i.getName()).isEqualTo("한국신용정보원");
-            assertThat(i.isRepresentative()).isTrue();
-        });
-    }
-}
-```
+https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme1Test.java#L31-L53
 
 ### 금융 기관 지점 정보
 
-https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java
-
-```java
-class Readme2Test {
-
-    @Test
-    void __3() {
-        final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var info = infoSet.get("0010003").orElseThrow();
-        assert Objects.equals(info.getBranchCode(), "0010003");
-        assert Objects.equals(info.getFinancialInstitutionName(), "한국");
-        assert Objects.equals(info.getBranchName(), "본부총괄");
-        assert Objects.equals(info.getPhoneNumber(), "02  759 4114"); // mind multiple spaces
-        assert Objects.equals(info.getPhoneNumberNormalized(" "), "02 759 4114");
-        assert Objects.equals(info.getPhoneNumberNormalized("-"), "02-759-4114");
-        assert Objects.equals(info.getFaxNumber(), "02  759 4060");   // mind multiple spaces
-        assert Objects.equals(info.getFaxNumberNormalized(" "), "02 759 4060");
-        assert Objects.equals(info.getFaxNumberNormalized("-"), "02-759-4060");
-        assert Objects.equals(info.getPostalCode(), "100794");
-        assert Objects.equals(info.getAddress(), "서울특별시 중구 남대문로 39");
-        assert Objects.equals(info.getStatus(), "정상");
-        assert info.getManagingBranchCode() == null;
-    }
-
-    @Test
-    void __4() {
-        final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var info = infoSet.get("4920018").orElseThrow();
-        assert info.getBranchCode().equals("4920018");
-        assert info.getFinancialInstitutionName().equals("중소벤처기업진흥공단");
-        assert info.getBranchName().equals("성장융합금융처");
-        assert info.getPhoneNumber().equals("02  32115603"); // mind multiple spaces
-        assert info.getPhoneNumberNormalized(" ").equals("02 32115603");
-        assert info.getPhoneNumberNormalized("").equals("0232115603");
-        assert info.getFaxNumber().equals("0505047 4412");
-        assert info.getPostalCode().equals("52851");
-        assert info.getAddress().equals("경상남도 진주시 동진로 430 (충무공동) 중소벤처기업진흥공단");
-        assert info.getStatus().equals("정상");
-        assert info.getManagingBranchCode() == null;
-    }
-}
-```
+https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L31-L65
 
 ### Notes
 
