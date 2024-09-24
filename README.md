@@ -3,8 +3,8 @@
 [![Java CI with Maven](https://github.com/jinahya/kftc-financial-institution-info/actions/workflows/maven.yml/badge.svg)](https://github.com/jinahya/kftc-financial-institution-info/actions/workflows/maven.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=jinahya_kftc-financial-institution-info&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=jinahya_kftc-financial-institution-info)
 
-[![Maven Central Version](https://img.shields.io/maven-central/v/com.github.jinahya/kftc-financial-institution-info)](https://search.maven.org/artifact/com.github.jinahya/kftc-financial-institution-info)
-[![javadoc](https://javadoc.io/badge2/com.github.jinahya/kftc-financial-institution-info/javadoc.svg)](https://javadoc.io/doc/com.github.jinahya/kftc-financial-institution-info)
+[![Maven Central Version](https://img.shields.io/maven-central/v/io.github.jinahya/kftc-financial-institution-info)](https://search.maven.org/artifact/io.github.jinahya/kftc-financial-institution-info)
+[![javadoc](https://javadoc.io/badge2/io.github.jinahya/kftc-financial-institution-info/javadoc.svg)](https://javadoc.io/doc/io.github.jinahya/kftc-financial-institution-info)
 
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.kftc.or.kr&label=%EA%B8%88%EC%9C%B5%EA%B2%B0%EC%A0%9C%EC%9B%90)](https://www.kftc.or.kr)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.kftc.or.kr%2Farchive%2FbankListByCode&label=%EA%B8%88%EC%9C%B5%ED%9A%8C%EC%82%AC%EC%BD%94%EB%93%9C%EC%A1%B0%ED%9A%8C)](https://www.kftc.or.kr/archive/bankListByCode)
@@ -42,7 +42,7 @@ Requires `21` for building while the module targets `11`.
 ```xml
 
 <dependency>
-  <groupId>com.github.jinahya</groupId>
+  <groupId>io.github.jinahya</groupId>
   <artifactId>kftc-financial-institution-info</artifactId>
   <!-- Check the badge above for the latest version -->
 </dependency>
