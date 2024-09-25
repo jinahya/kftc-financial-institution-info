@@ -5,10 +5,9 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>jinahya-parent</artifactId>
-    <version>0.9.5</version>
+    <version>0.9.6</version>
   </parent>
 
-  <groupId>io.github.jinahya</groupId>
   <artifactId>kftc-financial-institution-info</artifactId>
   <version>0.1.1+20240924.1315-SNAPSHOT</version>
   <packaging>jar</packaging>
