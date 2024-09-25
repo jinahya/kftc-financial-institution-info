@@ -41,15 +41,18 @@ class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
             try {
                 transaction.begin();
                 instance.getList().forEach(em::persist);
+                em.flush();
                 transaction.commit();
+                log.debug("committed");
             } catch (final Exception e) {
                 log.error("failed to update", e);
+                log.error("rolling back...");
                 transaction.rollback();
             }
         });
         final var copy = new ArrayList<>(instance.getList());
         acceptEntityManager(em -> {
-            em.createQuery("SELECT e FROM %1$s AS e" .formatted(ENTITY_NAME), KftcFinancialInstitutionBranchInfo.class)
+            em.createQuery("SELECT e FROM %1$s AS e".formatted(ENTITY_NAME), KftcFinancialInstitutionBranchInfo.class)
                     .getResultList()
                     .forEach(e -> {
                         assertThat(copy.remove(e)).isTrue();

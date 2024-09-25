@@ -61,7 +61,6 @@ class KftcFinancialInstitution_Jdbc_BranchInfoSet_Test
                 for (final var sql : sqls) {
                     try (var statement = c.createStatement()) {
                         final int result = statement.executeUpdate(sql);
-//                        log.debug("result: {} <- {}", result, sql);
                     } catch (final SQLException sqle) {
                         throw new RuntimeException("failed to execute: " + sql, sqle);
                     }

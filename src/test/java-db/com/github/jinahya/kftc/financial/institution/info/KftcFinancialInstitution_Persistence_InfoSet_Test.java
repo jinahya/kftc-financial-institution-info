@@ -40,12 +40,10 @@ class KftcFinancialInstitution_Persistence_InfoSet_Test
             final var transaction = em.getTransaction();
             try {
                 transaction.begin();
-//                final int removed = em
-//                        .createQuery("DELETE FROM " + KftcFinancialInstitutionInfo.class.getSimpleName())
-//                        .executeUpdate();
-//                log.debug("removed: {}", removed);
                 instance.getList().forEach(em::persist);
+                em.flush();
                 transaction.commit();
+                log.debug("committed");
             } catch (final Exception e) {
                 log.error("failed to update", e);
                 transaction.rollback();

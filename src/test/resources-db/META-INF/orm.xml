@@ -36,7 +36,7 @@
         <column name="branch_code" nullable="false" insertable="true" updatable="false"/>
       </id>
       <basic name="financialInstitutionName">
-        <column name="financial_instituion_name" nullable="false" insertable="true" updatable="false"/>
+        <column name="financial_institution_name" nullable="false" insertable="true" updatable="false"/>
       </basic>
       <basic name="branchName">
         <column name="branch_name" nullable="false" insertable="true" updatable="false"/>
