@@ -45,13 +45,13 @@ class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
                 transaction.commit();
                 log.debug("committed");
             } catch (final Exception e) {
-                log.error("failed to update", e);
-                log.error("rolling back...");
+                log.error("failed to update; rolling back...", e);
                 transaction.rollback();
             }
         });
         final var copy = new ArrayList<>(instance.getList());
         acceptEntityManager(em -> {
+            em.clear();
             em.createQuery("SELECT e FROM %1$s AS e".formatted(ENTITY_NAME), KftcFinancialInstitutionBranchInfo.class)
                     .getResultList()
                     .forEach(e -> {

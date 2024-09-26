@@ -19,9 +19,6 @@
       <basic name="representative">
         <column name="representative" nullable="false" insertable="true" updatable="false"/>
       </basic>
-      <basic name="representative">
-        <column name="representative" nullable="false" insertable="true" updatable="false"/>
-      </basic>
       <basic name="category">
         <column name="category" nullable="false" insertable="true" updatable="false"/>
         <enumerated>STRING</enumerated>

@@ -39,7 +39,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
             Optional.ofNullable(v.getManagingBranchCode()).ifPresent(mbc -> {
                 final var managingBranch = instance.getMap().get(mbc);
                 if (managingBranch == null) {
-                    log.warn("managingBranch not found: {}", mbc);
+//                    log.warn("managingBranch not found: {}", mbc);
                 }
             });
         });
@@ -219,7 +219,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
             if (info == null) {
                 // 099xxx: 금융결제원
                 // 4920018/중소벤처기업진흥공단/성장융합금융처
-                log.warn("no info for {}/{}/{}", b.getBranchCode(), b.getFinancialInstitutionName(), b.getBranchName());
+//                log.warn("no info for {}/{}/{}", b.getBranchCode(), b.getFinancialInstitutionName(), b.getBranchName());
                 return;
             }
         });

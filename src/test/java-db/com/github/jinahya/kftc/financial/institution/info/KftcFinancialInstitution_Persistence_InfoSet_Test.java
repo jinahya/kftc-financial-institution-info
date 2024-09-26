@@ -45,7 +45,7 @@ class KftcFinancialInstitution_Persistence_InfoSet_Test
                 transaction.commit();
                 log.debug("committed");
             } catch (final Exception e) {
-                log.error("failed to update", e);
+                log.error("failed to update; rolling back...", e);
                 transaction.rollback();
             }
         });
