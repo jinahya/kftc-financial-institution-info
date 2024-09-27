@@ -76,7 +76,7 @@ class KftcService {
             = KftcFinancialInstitutionInfoSet.newInstance();
 
     // more than 20 thousands values!
-    // do not load at all, if it's not required 
+    // do not load if it's not required 
     public static final KftcFinancialInstitutionBranchInfoSet BRANCH_INFO_SET
             = KftcFinancialInstitutionBranchInfoSet.newInstance();
 }
