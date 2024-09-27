@@ -54,13 +54,13 @@ Requires `21` for building while the module targets `11`.
 
 ### 금융 기관 정보
 
-https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme1Test.java#L31-L53
 https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme1Test.java#L31-L41
 https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme1Test.java#L43-L53
 
 ### 금융 기관 지점 정보
 
-https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L31-L65
+https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L31-L48
+https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L50-L65
 
 ### Notes
 
