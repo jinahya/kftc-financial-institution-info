@@ -59,8 +59,8 @@ https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd
 
 ### 금융 기관 지점 정보
 
-https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L31-L48
-https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L50-L65
+https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L33-L47
+https://github.com/jinahya/kftc-financial-institution-info/blob/0cd82778dfb142dd7fc51e5379a74bc8841991e7/src/test/java/com/github/jinahya/kftc/financial/institution/info/Readme2Test.java#L52-L64
 
 ### Notes
 
