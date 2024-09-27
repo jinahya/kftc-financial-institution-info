@@ -28,7 +28,9 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.sql.SQLException;
 import java.util.Objects;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
@@ -68,6 +70,21 @@ abstract class KftcFinancialInstitution_Persistence__Test {
             consumer.accept(em);
             return null;
         });
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    static void vacuum() {
+        if (ThreadLocalRandom.current().nextBoolean()) {
+            acceptEntityManager(em -> {
+                try {
+                    KftcFinancialInstitution_Persistence__TestUtils.vacuum1(em);
+                } catch (final SQLException sqle) {
+                    throw new RuntimeException(sqle);
+                }
+            });
+        } else {
+            acceptEntityManager(KftcFinancialInstitution_Persistence__TestUtils::vacuum2);
+        }
     }
 
     // -----------------------------------------------------------------------------------------------------------------

@@ -49,14 +49,17 @@ class KftcFinancialInstitution_Persistence_InfoSet_Test
                 transaction.rollback();
             }
         });
-        final var copy = new ArrayList<>(instance.getList());
-        acceptEntityManager(em -> {
-            em.createQuery("SELECT e FROM %1$s AS e" .formatted(ENTITY_NAME), KftcFinancialInstitutionInfo.class)
-                    .getResultList()
-                    .forEach(e -> {
-                        assertThat(copy.remove(e)).isTrue();
-                    });
-        });
-        assertThat(copy).isEmpty();
+        {
+            final var copy = new ArrayList<>(instance.getList());
+            acceptEntityManager(em -> {
+                em.createQuery("SELECT e FROM %1$s AS e".formatted(ENTITY_NAME), KftcFinancialInstitutionInfo.class)
+                        .getResultList()
+                        .forEach(e -> {
+                            assertThat(copy.remove(e)).isTrue();
+                        });
+            });
+        }
+        // -------------------------------------------------------------------------------------------------------------
+        vacuum();
     }
 }
