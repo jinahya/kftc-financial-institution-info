@@ -23,16 +23,14 @@ Requires `21` for building while the module targets `11`.
 
 <!-- $ grep maven.compiler\\. pom.xml -->
 
-```xml
-
-<project>
-  <maven.compiler.source>11</maven.compiler.source>
-  <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
-  <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
-  <maven.compiler.testSource>21</maven.compiler.testSource>
-  <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
-  <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
-</project>
+```commandline
+$ grep '<maven.compiler' pom.xml                                                                                                                                                                                                         ‹git:develop ✔› 13:48.57 Fri Sep 27 2024 >>> 
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
+    <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
+    <maven.compiler.testSource>21</maven.compiler.testSource>
+    <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
+    <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
 ```
 
 ---
