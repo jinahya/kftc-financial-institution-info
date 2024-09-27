@@ -89,7 +89,7 @@ class KftcService {
 You can generate an SQLite database file, while builds, into `db/kftc-financial-institution-info.sqlite3`.
 
 ```shell
-$ mvn -Pdb clean test
+$ mvn -Pdb process-test-resources test
 $ ls -l db
 ```
 
@@ -113,13 +113,10 @@ $ ls -l target/*.ndjson
 ### Protocol Buffers
 
 Two `.proto` files are
-prepared. One
-is [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto)
-and the other is
-[KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
+prepared. One is [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto) and the other is [KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
 
 ```commandline
-$ sh ./.proto.sh
+$ sh ./.protoc.sh
 $ ls -l src/test/java-proto/com/github/jinahya/kftc/financial/institution/info/proto/*ProtoOuterClass.java
 $ mvn -Pproto test
 $ ls -l target/*.*pb
