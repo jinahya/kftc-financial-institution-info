@@ -116,8 +116,6 @@ Two `.proto` files are
 prepared. One is [KftcFinancialInstitutionBranchInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto) and the other is [KftcFinancialInstitutionInfoProto.proto](src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto).
 
 ```commandline
-$ sh ./.protoc.sh
-$ ls -l src/test/java-proto/com/github/jinahya/kftc/financial/institution/info/proto/*ProtoOuterClass.java
 $ mvn -Pproto test
 $ ls -l target/*.*pb
 ```
