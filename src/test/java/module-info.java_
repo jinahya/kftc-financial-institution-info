@@ -1,0 +1,14 @@
+module com.github.jinahya.kftc.financial.institution.info.test {
+//    exports com.github.jinahya.kftc.financial.institution.info;
+    requires com.github.jinahya.kftc.financial.institution.info;
+//    requires itextpdf;
+//    requires jakarta.json.bind;
+//    requires jakarta.persistence;
+    requires java.sql;
+    requires static lombok;
+//    requires nl.jqno.equalsverifier;
+//    requires org.apache.poi.ooxml;
+//    requires org.apache.poi.poi;
+//    requires org.hibernate.orm.core;
+//    requires org.junit.jupiter.api;
+}

@@ -218,6 +218,29 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>3.10.0</version>
+          <configuration>
+            <additionalOptions>
+              <additionalOption>-Xdoclint:none</additionalOption>
+              <!--            <additionalOptions>-package</additionalOptions>-->
+            </additionalOptions>
+            <tags>
+              <tag>
+                <name>apiNote</name>
+                <placement>a</placement>
+                <head>API Note:</head>
+              </tag>
+              <tag>
+                <name>implSpec</name>
+                <placement>a</placement>
+                <head>Implementation Requirements:</head>
+              </tag>
+              <tag>
+                <name>implNote</name>
+                <placement>a</placement>
+                <head>Implementation Note:</head>
+              </tag>
+            </tags>
+          </configuration>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -343,29 +366,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <configuration>
-          <additionalOptions>
-            <additionalOption>-Xdoclint:none</additionalOption>
-            <!--            <additionalOptions>-package</additionalOptions>-->
-          </additionalOptions>
-          <tags>
-            <tag>
-              <name>apiNote</name>
-              <placement>a</placement>
-              <head>API Note:</head>
-            </tag>
-            <tag>
-              <name>implSpec</name>
-              <placement>a</placement>
-              <head>Implementation Requirements:</head>
-            </tag>
-            <tag>
-              <name>implNote</name>
-              <placement>a</placement>
-              <head>Implementation Note:</head>
-            </tag>
-          </tags>
-        </configuration>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -393,6 +393,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${version.maven-surefire}</version>
         <configuration>
+          <!-- https://stackoverflow.com/a/71506847/330457 -->
           <useModulePath>false</useModulePath>
           <excludes>
             <exclude>**/*IT.java</exclude> <!-- 이게 왜 필요한지 확인 필요 -->
@@ -445,6 +446,10 @@
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
         <version>4.8.6.4</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
