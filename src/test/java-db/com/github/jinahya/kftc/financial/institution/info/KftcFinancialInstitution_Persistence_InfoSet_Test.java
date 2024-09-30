@@ -36,18 +36,9 @@ class KftcFinancialInstitution_Persistence_InfoSet_Test
     @Test
     void __() {
         final var instance = KftcFinancialInstitutionInfoSet.newInstance();
-        acceptEntityManager(em -> {
-            final var transaction = em.getTransaction();
-            try {
-                transaction.begin();
-                instance.getList().forEach(em::persist);
-                em.flush();
-                transaction.commit();
-                log.debug("committed");
-            } catch (final Exception e) {
-                log.error("failed to update; rolling back...", e);
-                transaction.rollback();
-            }
+        acceptEntityManagerInTransaction(em -> {
+            final var deleted = clear(em, KftcFinancialInstitutionInfo.class);
+            instance.getList().forEach(em::persist);
         });
         {
             final var copy = new ArrayList<>(instance.getList());

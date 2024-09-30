@@ -72,6 +72,44 @@ abstract class KftcFinancialInstitution_Persistence__Test {
         });
     }
 
+    static <R> R applyEntityManagerInTransaction(final Function<? super EntityManager, ? extends R> function) {
+        Objects.requireNonNull(function, "function is null");
+        return applyEntityManager(em -> {
+            final var transaction = em.getTransaction();
+            try {
+                transaction.begin();
+                final R result;
+                result = function.apply(em);
+                transaction.commit();
+                log.debug("committed");
+                return result;
+            } catch (final Exception e) {
+                log.error("failed to update; rolling back...", e);
+                transaction.rollback();
+                throw new RuntimeException(e);
+            }
+        });
+    }
+
+    static void acceptEntityManagerInTransaction(final Consumer<? super EntityManager> consumer) {
+        Objects.requireNonNull(consumer, "consumer is null");
+        applyEntityManagerInTransaction(em -> {
+            consumer.accept(em);
+            return null;
+        });
+    }
+
+    static <T> int clear(final EntityManager entityManager, final Class<T> entityClass) {
+        final var builder = entityManager.getCriteriaBuilder();
+        final var delete = builder.createCriteriaDelete(entityClass);
+        final var root = delete.from(entityClass);
+        return entityManager.createQuery(delete).executeUpdate();
+    }
+
+    static <T> int clear(final Class<T> entityClass) {
+        return applyEntityManagerInTransaction(em -> clear(em, entityClass));
+    }
+
     // -----------------------------------------------------------------------------------------------------------------
     static void vacuum() {
         if (ThreadLocalRandom.current().nextBoolean()) {

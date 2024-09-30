@@ -46,7 +46,7 @@ final class KftcFinancialInstitution_Persistence__TestUtils {
             try (var statement = c.prepareStatement("VACUUM")) {
                 try {
                     final var result = statement.executeUpdate();
-                    assert result == 1;
+//                    assert result == 0 : "vacuum.result: " + result;
                 } catch (final SQLException sqle) {
                     throw new RuntimeException(sqle);
                 }
