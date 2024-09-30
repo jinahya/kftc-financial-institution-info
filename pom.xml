@@ -9,7 +9,7 @@
   </parent>
 
   <artifactId>kftc-financial-institution-info</artifactId>
-  <version>0.1.0+20240930</version>
+  <version>0.1.1+20240930-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
@@ -46,7 +46,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com:jinahya/${project.artifactId}</url>
-    <tag>0.1.0+20240930</tag>
+    <tag>HEAD</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issues</system>
