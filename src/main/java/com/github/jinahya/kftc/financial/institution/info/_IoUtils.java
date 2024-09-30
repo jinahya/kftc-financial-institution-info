@@ -20,8 +20,9 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.io.*;
-import java.nio.file.Path;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.util.Objects;
 
 @SuppressWarnings({"java:S101"})
@@ -34,21 +35,6 @@ final class _IoUtils {
         try (var oos = new ObjectInputStream(stream)) {
             return (T) oos.readObject();
         }
-    }
-
-    static <T> T readObject(final File file) throws IOException, ClassNotFoundException {
-        if (!Objects.requireNonNull(file, "file is null").isFile()) {
-            throw new IllegalArgumentException("not a normal file: " + file);
-        }
-        try (var fos = new FileInputStream(file)) {
-            return readObject(fos);
-        }
-    }
-
-    // TODO: remove; unused
-    static <T> T readObject(final Path path) throws IOException, ClassNotFoundException {
-        Objects.requireNonNull(path, "path is null");
-        return readObject(path.toFile());
     }
 
     // -----------------------------------------------------------------------------------------------------------------
