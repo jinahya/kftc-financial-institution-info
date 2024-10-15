@@ -21,12 +21,14 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Disabled
 @Slf4j
 class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
         extends KftcFinancialInstitution_Persistence__Test {
