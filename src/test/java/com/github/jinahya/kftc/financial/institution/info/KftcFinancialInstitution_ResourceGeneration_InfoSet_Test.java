@@ -47,14 +47,14 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
             "(\\d{3})\\s([\\p{L}()\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}()\\s]+)?");
 
     private static final Map<String, Integer> MAP = Map.of(
-            "은행", 80,
+            "은행", 81,
             "금융투자회사", 48,
             "캐피탈사", 14,
             "카드사", 15,
             "보험사", 35,
             "기타", 5,
-            "총기관코드수", 197,
-            "대표코드수", 150
+            "총기관코드수", 198,
+            "대표코드수", 151
     );
 
     @Test
