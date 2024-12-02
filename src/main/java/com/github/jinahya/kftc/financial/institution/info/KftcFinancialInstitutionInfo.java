@@ -21,6 +21,7 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import java.io.Serializable;
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
@@ -34,6 +35,14 @@ public final class KftcFinancialInstitutionInfo
         implements Serializable {
 
     private static final long serialVersionUID = 5345357074469188526L;
+
+    // -----------------------------------------------------------------------------------------------------------------
+
+    /**
+     * A comparator comparing {@link #getCode() code}.
+     */
+    public static final Comparator<KftcFinancialInstitutionInfo> COMPARING_CODE =
+            Comparator.comparing(KftcFinancialInstitutionInfo::getCode);
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
 

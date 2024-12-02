@@ -22,6 +22,8 @@ package com.github.jinahya.kftc.financial.institution.info;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.EnumSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -50,5 +52,18 @@ class Readme1Test {
             assertThat(i.getName()).isEqualTo("한국신용정보원");
             assertThat(i.isRepresentative()).isTrue();
         });
+    }
+
+    @EnumSource(KftcFinancialInstitutionCategory.class)
+    @ParameterizedTest
+    void __BANK(KftcFinancialInstitutionCategory category) {
+        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
+        infoSet.getList().stream()
+                .filter(i -> i.getCategory() == category)
+                .filter(KftcFinancialInstitutionInfo::isRepresentative)
+                .sorted(KftcFinancialInstitutionInfo.COMPARING_CODE)
+                .forEach(i -> {
+                    log.debug("{}: {} {}", category.name(), i.getCode(), i.getName());
+                });
     }
 }
