@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+  #%L
+  kftc-financial-institution-info
+  %%
+  Copyright (C) 2024 Jinahya, Inc.
+  %%
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+  
+       http://www.apache.org/licenses/LICENSE-2.0
+  
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+  #L%
+  -->
+
+<entity-mappings xmlns="https://jakarta.ee/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence/orm https://jakarta.ee/xml/ns/persistence/orm/orm_3_2.xsd"
+                 version="3.2">
+  <description>JPA Mapping file</description>
+  <package>com.github.jinahya.kftc.financial.institution.info</package>
+
+  <entity class="com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionInfo"
+          name="KftcFinancialInstitutionInfo">
+    <table name="financial_institution"/>
+    <attributes>
+      <id name="code">
+        <column name="code" nullable="false" insertable="true" updatable="false"/>
+      </id>
+      <basic name="name">
+        <column name="name" nullable="false" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="representative">
+        <column name="representative" nullable="false" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="category">
+        <column name="category" nullable="false" insertable="true" updatable="false"/>
+        <enumerated>STRING</enumerated>
+      </basic>
+    </attributes>
+  </entity>
+  <entity class="com.github.jinahya.kftc.financial.institution.info.KftcFinancialInstitutionBranchInfo"
+          name="KftcFinancialInstitutionBranchInfo">
+    <table name="financial_institution_branch"/>
+    <attributes>
+      <id name="branchCode">
+        <column name="branch_code" nullable="false" insertable="true" updatable="false"/>
+      </id>
+      <basic name="financialInstitutionName">
+        <column name="financial_institution_name" nullable="false" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="branchName">
+        <column name="branch_name" nullable="false" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="phoneNumber">
+        <column name="phone_number" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="faxNumber">
+        <column name="fax_number" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="postalCode">
+        <column name="postal_code" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="address">
+        <column name="address" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="status">
+        <column name="status" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+      <basic name="managingBranchCode">
+        <column name="managing_branch_code" nullable="true" insertable="true" updatable="false"/>
+      </basic>
+    </attributes>
+  </entity>
+</entity-mappings>
