@@ -31,7 +31,7 @@ import java.util.List;
 class KftcFinancialInstitution_Jdbc_InfoSet_Test
         extends KftcFinancialInstitution_Jdbc__Test {
 
-    private static final String TABLE_NAME = "financial_institution";
+    static final String TABLE_NAME = "financial_institution";
 
     // -----------------------------------------------------------------------------------------------------------------
     @Test

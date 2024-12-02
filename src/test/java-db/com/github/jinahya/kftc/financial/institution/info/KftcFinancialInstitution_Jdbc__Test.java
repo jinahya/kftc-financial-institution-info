@@ -22,6 +22,8 @@ package com.github.jinahya.kftc.financial.institution.info;
 
 import lombok.extern.slf4j.Slf4j;
 
+import java.io.IOException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -32,11 +34,17 @@ import java.util.function.Function;
 @Slf4j
 abstract class KftcFinancialInstitution_Jdbc__Test {
 
-    private static final String FILE_NAME = "kftc-financial-institution-info.sqlite3";
+    static final String NAME = "kftc-financial-institution-info.sqlite3";
+
+    static final Path PATH = Paths.get("db").resolve(NAME);
+
+    static String canonicalPath() throws IOException {
+        return PATH.toAbsolutePath().toFile().getCanonicalPath();
+    }
 
     // -----------------------------------------------------------------------------------------------------------------
     static <R> R applyConnection(final Function<? super Connection, ? extends R> function) throws Exception {
-        final var path = Paths.get("db").resolve(FILE_NAME).toAbsolutePath().toFile().getCanonicalPath();
+        final var path = canonicalPath();
         final var url = "jdbc:sqlite:" + path;
         log.debug("url: {}", url);
         Class.forName("org.sqlite.JDBC");
