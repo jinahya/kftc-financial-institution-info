@@ -23,13 +23,20 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
+import java.util.Comparator;
+
 @Slf4j
-class KftcFinancialInstitution_Db_BranchInfoSet_Test
-        extends KftcFinancialInstitution_Db__Test {
+class KftcFinancialInstitution_Resource_Ndjson_BranchInfoSet_Test
+        extends KftcFinancialInstitution_Resource_Ndjson__Test {
 
     @Test
-    void __() throws Exception {
-        KftcFinancialInstitution_Jdbc__Test.acceptConnection(c -> {
-        });
+    void __() throws IOException {
+        final var set = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        final var list = set.getList().stream()
+                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
+                .toList();
+        final var path = _IoTestUtils.buildOutputFile("codefilex.ndjson");
+        writeValues(list, path.toFile());
     }
 }

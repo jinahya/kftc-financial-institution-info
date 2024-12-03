@@ -20,25 +20,18 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import com.fasterxml.jackson.core.util.DefaultIndenter;
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
+import com.fasterxml.jackson.databind.SerializationFeature;
 
-import java.io.File;
-import java.io.IOException;
+abstract class KftcFinancialInstitution_Resource_Json__Test {
 
-abstract class KftcFinancialInstitution_Ndjson__Test {
-
-    // https://cowtowncoder.medium.com/line-delimited-json-with-jackson-69c9e4cb6c00
-    static void writeValues(final Iterable<?> values, final File file) throws IOException {
-        try (var writer = new ObjectMapper().writer()
-                .withRootValueSeparator("\n") // Important! Default value separator is single space
-                .writeValues(file)) {
-            values.forEach(v -> {
-                try {
-                    writer.write(v);
-                } catch (final IOException ioe) {
-                    throw new RuntimeException(ioe);
-                }
-            });
-        }
+    static ObjectWriter prettyPrinter(final ObjectMapper mapper) {
+        mapper.enable(SerializationFeature.INDENT_OUTPUT);
+        final var printer = new DefaultPrettyPrinter();
+        printer.indentArraysWith(DefaultIndenter.SYSTEM_LINEFEED_INSTANCE);
+        return mapper.writer(printer);
     }
 }

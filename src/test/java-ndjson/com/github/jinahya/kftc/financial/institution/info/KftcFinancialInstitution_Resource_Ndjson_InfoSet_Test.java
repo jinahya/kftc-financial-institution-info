@@ -23,26 +23,20 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
-import java.sql.SQLException;
+import java.io.IOException;
+import java.util.Comparator;
 
 @Slf4j
-class KftcFinancialInstitution_Db_InfoSet_Test
-        extends KftcFinancialInstitution_Db__Test {
+class KftcFinancialInstitution_Resource_Ndjson_InfoSet_Test
+        extends KftcFinancialInstitution_Resource_Ndjson__Test {
 
     @Test
-    void __() throws Exception {
-        final var sql = """
-                SELECT * FROM %s"""
-                .formatted(
-                        KftcFinancialInstitution_Jdbc_InfoSet_Test.TABLE_NAME
-                );
-        KftcFinancialInstitution_Jdbc__Test.acceptConnection(c -> {
-            try (var statement = c.createStatement()) {
-                try (var results = statement.executeQuery(sql)) {
-                }
-            } catch (final SQLException sqle) {
-                throw new RuntimeException(sqle);
-            }
-        });
+    void __() throws IOException {
+        final var set = KftcFinancialInstitutionInfoSet.newInstance();
+        final var list = set.getList().stream()
+                .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+                .toList();
+        final var path = _IoTestUtils.buildOutputFile("bankinfo.ndjson");
+        writeValues(list, path.toFile());
     }
 }

@@ -20,22 +20,33 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.util.Comparator;
 
 @Slf4j
-class KftcFinancialInstitution_Ndjson_InfoSet_Test
-        extends KftcFinancialInstitution_Ndjson__Test {
+class KftcFinancialInstitution_Resource_Json_BranchInfoSet_Test
+        extends KftcFinancialInstitution_Resource_Json__Test {
 
     @Test
     void __() throws IOException {
-        final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var list = infoSet.getList().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+        final var set = KftcFinancialInstitutionBranchInfoSet.newInstance();
+        final var list = set.getList().stream()
+                .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
                 .toList();
-        final var path = _IoTestUtils.buildOutputFile("bankinfo.ndjson");
-        writeValues(list, path.toFile());
+        {
+            final var string = new ObjectMapper().writeValueAsString(list);
+            final var path = _IoTestUtils.buildOutputFile("codefilex.json");
+            Files.writeString(path, string);
+        }
+        {
+            final var string = prettyPrinter(new ObjectMapper()).writeValueAsString(list);
+            final var path = _IoTestUtils.buildOutputFile("codefilex_formatted.json");
+            Files.writeString(path, string);
+        }
     }
 }

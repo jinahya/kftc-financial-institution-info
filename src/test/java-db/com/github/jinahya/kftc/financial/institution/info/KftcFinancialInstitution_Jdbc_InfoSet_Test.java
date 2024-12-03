@@ -23,78 +23,42 @@ package com.github.jinahya.kftc.financial.institution.info;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 
+import java.sql.JDBCType;
 import java.sql.SQLException;
-import java.util.List;
 
-//@Disabled("KftcFinancialInstitution_Persistence_InfoSet_Test")
 @Slf4j
 class KftcFinancialInstitution_Jdbc_InfoSet_Test
         extends KftcFinancialInstitution_Jdbc__Test {
 
-    static final String TABLE_NAME = "financial_institution";
-
-    // -----------------------------------------------------------------------------------------------------------------
     @Test
     void __() throws Exception {
-        acceptConnection(c -> {
-            {
-                final var sqls = List.of(
-                        """
-                                drop table if exists %1$s""".formatted(TABLE_NAME),
-                        """
-                                create table %1$s (
-                                    code           TEXT    not null primary key,
-                                    name           TEXT    not null,
-                                    representative INTEGER not null,
-                                    category       TEXT    not null)""".formatted(TABLE_NAME),
-                        """
-                                create index idx_category_name
-                                on %1$s (category, name)""".formatted(TABLE_NAME),
-                        """
-                                create index idx_name
-                                on %1$s (name)""".formatted(TABLE_NAME)
-
+        final var sql = """
+                SELECT * FROM %s
+                ORDER BY category ASC"""
+                .formatted(
+                        KftcFinancialInstitution_Resource_Jdbc_InfoSet_Test.TABLE_NAME
                 );
-                for (final var sql : sqls) {
-                    try (var statement = c.createStatement()) {
-                        final int result = statement.executeUpdate(sql);
-//                        log.debug("result: {} <- {}", result, sql);
-                    } catch (final SQLException sqle) {
-                        throw new RuntimeException("failed to drop/create table", sqle);
+        KftcFinancialInstitution_Resource_Jdbc__Test.acceptConnection(c -> {
+            try (var statement = c.createStatement()) {
+                try (var results = statement.executeQuery(sql)) {
+                    final var metadata = results.getMetaData();
+                    final var count = metadata.getColumnCount();
+                    for (int i = 1; i <= count; i++) {
+                        final var label = metadata.getColumnLabel(i);
+                        final var type = metadata.getColumnType(i);
+                        log.debug("label: {}, type: {}", label, JDBCType.valueOf(type));
+                    }
+                    while (results.next()) {
+                        final var code = results.getString("code");
+                        final var name = results.getString("name");
+                        final var representative = results.getInt("representative");
+                        final var category = KftcFinancialInstitutionCategory.valueOf(results.getString("category"));
+                        log.debug("{}, {}, {}, {}", code, name, representative, category);
                     }
                 }
-            }
-            if (false) {
-                try (var statement = c.createStatement()) {
-                    final int deleted = statement.executeUpdate("DELETE FROM " + TABLE_NAME);
-                    log.debug("deleted: {}", deleted);
-                } catch (final SQLException sqle) {
-                    throw new RuntimeException("failed to delete from " + TABLE_NAME, sqle);
-                }
-            }
-            try (var statement = c.prepareStatement(
-                    """
-                            INSERT INTO %1$s (
-                              code,
-                              name,
-                              representative,
-                              category
-                            ) VALUES(?, ?, ?, ?)""".formatted(TABLE_NAME))) {
-                for (var info :
-                        KftcFinancialInstitutionInfoSet.newInstance().getList()) {
-                    statement.clearParameters();
-                    int index = 0;
-                    statement.setString(++index, info.getCode());
-                    statement.setString(++index, info.getName());
-                    statement.setBoolean(++index, info.isRepresentative());
-                    statement.setString(++index, info.getCategory().name());
-                    final var inserted = statement.executeUpdate();
-                    assert inserted == 1;
-                }
             } catch (final SQLException sqle) {
-                throw new RuntimeException("failed to insert", sqle);
+                throw new RuntimeException(sqle);
             }
         });
-        vacuum();
     }
 }
