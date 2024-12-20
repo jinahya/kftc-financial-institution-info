@@ -52,8 +52,8 @@ Requires `21` for building while the module targets `11`.
 
 <!-- $ grep maven.compiler\\. pom.xml -->
 
-```commandline
-$ grep '<maven.compiler' pom.xml                                                                                                                                                                                                         ‹git:develop ✔› 13:48.57 Fri Sep 27 2024 >>> 
+```xml
+<!-- $ grep '<maven.compiler' pom.xml -->
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
