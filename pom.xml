@@ -71,7 +71,8 @@
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <!-- https://search.maven.org/search?q=g:com.google.protobuf -->
-    <version.com.google.protobuf>4.29.0</version.com.google.protobuf>
+<!--    <version.com.google.protobuf>4.29.0</version.com.google.protobuf>-->
+    <version.com.google.protobuf>4.29.2</version.com.google.protobuf>
     <version.lombok>1.18.36</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <!--    <version.maven-surefire>3.4.0</version.maven-surefire>-->
@@ -82,7 +83,7 @@
     <!-- https://central.sonatype.com/artifact/org.hibernate.orm/hibernate-platform -->
     <version.org.hibernate.orm>7.0.0.Beta1</version.org.hibernate.orm>
     <!-- https://search.maven.org/artifact/org.junit/junit-bom -->
-    <version.org.junit>5.11.3</version.org.junit>
+    <version.org.junit>5.11.4</version.org.junit>
     <version.org.mockito>5.14.2</version.org.mockito>
   </properties>
 
@@ -126,7 +127,7 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.5.12</version>
+      <version>1.5.14</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -138,7 +139,7 @@
     <dependency>
       <groupId>nl.jqno.equalsverifier</groupId>
       <artifactId>equalsverifier-nodep</artifactId>
-      <version>3.17.4</version>
+      <version>3.17.5</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -150,7 +151,7 @@
     <dependency>
       <groupId>org.assertj</groupId>
       <artifactId>assertj-core</artifactId>
-      <version>3.26.3</version>
+      <version>3.27.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -215,7 +216,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.11.1</version>
+          <version>3.11.2</version>
           <configuration>
             <additionalOptions>
               <additionalOption>-Xdoclint:none</additionalOption>
