@@ -33,7 +33,7 @@ and Clearings Institute).
     - [[NDJSON](https://github.com/ndjson/ndjson-spec)](#ndjsonhttpsgithubcomndjsonndjson-spec)
     - [Protocol Buffers](#protocol-buffers)
   - [Links](#links)
-    - [www.kftc.org.kr](#wwwkftcorgkr)
+    - [www.kftc.or.kr](#wwwkftcorkr)
     - [issues.apache.org](#issuesapacheorg)
     - [jakarta.ee](#jakartaee)
     - [garrit.xyz](#garritxyz)
