@@ -9,7 +9,7 @@
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.kftc.or.kr&label=%EA%B8%88%EC%9C%B5%EA%B2%B0%EC%A0%9C%EC%9B%90)](https://www.kftc.or.kr)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fwww.kftc.or.kr%2Farchive%2FbankListByCode&label=%EA%B8%88%EC%9C%B5%ED%9A%8C%EC%82%AC%EC%BD%94%EB%93%9C%EC%A1%B0%ED%9A%8C)](https://www.kftc.or.kr/archive/bankListByCode)
 
-A simple, no-depes, library for accessing financial institution information provided
+A simple, no-deps, library for accessing financial institution information provided
 by [KFTC](https://www.kftc.or.kr/kftc/data/EgovBankListMove.do)(금융결제원, 金融決濟院, Korea Financial Telecommunications
 and Clearings Institute).
 

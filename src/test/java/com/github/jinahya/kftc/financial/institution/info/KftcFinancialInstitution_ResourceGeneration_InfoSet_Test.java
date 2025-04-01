@@ -48,10 +48,10 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
 
     private static final Map<String, Integer> MAP = Map.of(
             "은행", 81,
-            "금융투자회사", 48,
+            "금융투자회사", 47,
             "캐피탈사", 14,
             "카드사", 15,
-            "보험사", 35,
+            "보험사", 36,
             "기타", 6,
             "총기관코드수", 199,
             "대표코드수", 152
