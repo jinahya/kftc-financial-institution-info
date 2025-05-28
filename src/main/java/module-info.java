@@ -20,7 +20,7 @@
 
 /**
  * Defines packages for accessing information of financial institutions provided by <a
- * href="https://www.kftc.or.kr">융결재원 (KFTC)</a>
+ * href="https://www.kftc.or.kr">금융결재원 (KFTC)</a>
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  * @see <a href="https://www.kftc.or.kr">금융결재원(KFTC)</a>
@@ -28,7 +28,7 @@
  * @see <a href="https://github.com/jinahya/kftc-financial-institution-info">GitHub</a>
  */
 module com.github.jinahya.kftc.financial.institution.info {
-    requires transitive java.sql;
+//    requires transitive java.sql;
 //    requires static lombok;   // provided
     exports com.github.jinahya.kftc.financial.institution.info;
 }

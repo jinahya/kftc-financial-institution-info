@@ -230,7 +230,7 @@
           <version>3.11.2</version>
           <configuration>
             <additionalOptions>
-              <additionalOption>-Xdoclint:none</additionalOption>
+<!--              <additionalOption>-Xdoclint:none</additionalOption>-->
               <!--            <additionalOptions>-package</additionalOptions>-->
             </additionalOptions>
             <tags>
@@ -251,6 +251,17 @@
               </tag>
             </tags>
           </configuration>
+          <executions>
+            <execution>
+              <id>default-cli</id>
+              <goals>
+                <goal>test-aggregate-no-fork</goal>
+              </goals>
+              <configuration>
+                <show>package</show>
+              </configuration>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -267,7 +278,8 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>4.0.0-M16</version>
+          <version>3.21.0</version>
+<!--          <version>4.0.0-M16</version>-->
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -337,7 +349,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
