@@ -21,9 +21,13 @@ package com.github.jinahya.kftc.financial.institution.info;
  */
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.Comparator;
 import java.util.List;
+
+import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
 class KftcFinancialInstitution_Resource_InfoSet_Test
@@ -39,5 +43,138 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
                     .toList();
         }
         return list;
+    }
+
+    // -----------------------------------------------------------------------------------------------------------------
+    @CsvSource(value = {
+            "001, 한국은행",
+            "077, 기술보증기금",
+            "076, 신용보증기금",
+            "272, NH선물",
+            "273, 코리아에셋투자증권",
+            "373, 제주카드",
+            "372, 전북카드",
+            "494, 한국자산관리공사",
+    })
+    @ParameterizedTest
+    void __대표코드(final String code, final String name) {
+        assertThat(INSTANCE.get(code)).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getName()).isEqualTo(name);
+        });
+    }
+
+    @CsvSource(value = {
+            "001, 한국은행", "042,",
+            "002, 산업은행", "043, 기업은행",
+            "0404,", "084, 우리은행",
+            "085, 새마을금고", "089, 케이뱅크",
+            "088, 신한은행", "152, 인도네시아느가라은행"
+    })
+    @ParameterizedTest
+    void __은행(final String code, final String name) {
+        final var value = INSTANCE.get(code);
+        if (name == null) {
+            assertThat(value).isEmpty();
+            return;
+        }
+        assertThat(value).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.BANK);
+            assertThat(v.getName()).isEqualTo(name);
+        });
+    }
+
+    @CsvSource(value = {
+            "209, 유안타증권", "266, SK증권",
+            "265, 엘에스증권"
+    })
+    @ParameterizedTest
+    void __금융투자회사(final String code, final String name) {
+        final var value = INSTANCE.get(code);
+        if (name == null) {
+            assertThat(value).isEmpty();
+            return;
+        }
+        assertThat(value).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.FIIN);
+            assertThat(v.getName()).isEqualTo(name);
+        });
+    }
+
+    @CsvSource(value = {
+            "299, 우리금융캐피탈", "307, 애큐온캐피탈",
+            "306, NH농협캐피탈", "313, 한국투자캐피탈"
+    })
+    @ParameterizedTest
+    void __캐피탈사(final String code, final String name) {
+        final var value = INSTANCE.get(code);
+        if (name == null) {
+            assertThat(value).isEmpty();
+            return;
+        }
+        assertThat(value).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.CAPI);
+            assertThat(v.getName()).isEqualTo(name);
+        });
+    }
+
+    @CsvSource(value = {
+            "041, 우리카드", "369, 수협카드",
+            "368, 롯데카드"
+    })
+    @ParameterizedTest
+    void __카드사(final String code, final String name) {
+        final var value = INSTANCE.get(code);
+        if (name == null) {
+            assertThat(value).isEmpty();
+            return;
+        }
+        assertThat(value).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.CARD);
+            assertThat(v.getName()).isEqualTo(name);
+        });
+    }
+
+    @CsvSource(value = {
+            "401, 하나생명보험", "442, 현대해상",
+            "438, 신한라이프생명보험", "457, DB생명보험",
+            "439, KB라이프", "458, KDB생명보험",
+            "441, 삼성화재", "460, 처브라이프생명보험"
+    })
+    @ParameterizedTest
+    void __보험사(final String code, final String name) {
+        final var value = INSTANCE.get(code);
+        if (name == null) {
+            assertThat(value).isEmpty();
+            return;
+        }
+        assertThat(value).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.INSU);
+            assertThat(v.getName()).isEqualTo(name);
+        });
+    }
+
+    @CsvSource(value = {
+            "076, 신용보증기금", "101, 한국신용정보원",
+            "077, 기술보증기금", "492, 중소벤처기업진흥공단",
+            "094, 서울보증보험", "494, 한국자산관리공사",
+    })
+    @ParameterizedTest
+    void __기타(final String code, final String name) {
+        final var value = INSTANCE.get(code);
+        if (name == null) {
+            assertThat(value).isEmpty();
+            return;
+        }
+        assertThat(value).hasValueSatisfying(v -> {
+            assertThat(v.getCode()).isEqualTo(code);
+            assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.OTHE);
+            assertThat(v.getName()).isEqualTo(name);
+        });
     }
 }
