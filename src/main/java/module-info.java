@@ -29,6 +29,6 @@
  */
 module com.github.jinahya.kftc.financial.institution.info {
     requires transitive java.sql;
-    requires static lombok;   // provided
+//    requires static lombok;   // provided
     exports com.github.jinahya.kftc.financial.institution.info;
 }
