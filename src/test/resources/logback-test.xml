@@ -31,7 +31,7 @@
     <appender-ref ref="console"/>
   </root>
 
-<!--  <logger name="com.github.jinahya" level="debug" additivity="false"/>-->
+  <!--  <logger name="com.github.jinahya" level="debug" additivity="false"/>-->
   <logger name="com.github.jinahya" level="debug"/>
 
   <!-- https://thorben-janssen.com/hibernate-logging-guide/ -->
@@ -39,13 +39,13 @@
 
   <!-- https://stackoverflow.com/a/1713464/330457 -->
   <!-- https://www.muehlencord.de/wordpress/2023/08/30/log-queries-with-parameters-in-hibernate-5-and-6/ -->
-<!--  <logger name="org.hibernate.SQL" level="debug"/>-->
-<!--  <logger name="org.hibernate.state" level="debug" additivity="false"/>-->
-<!--  <logger name="org.hibernate.type" level="trace" additivity="false"/>-->
-<!--  <logger name="org.hibernate.type.descriptor.jdbc.BasicBinder" level="trace" additivity="false"/>-->
-<!--  <logger name="org.hibernate.type.descriptor.sql" level="trace"/>--> <!-- hibernate 4 and 5 -->
+  <!--  <logger name="org.hibernate.SQL" level="debug"/>-->
+  <!--  <logger name="org.hibernate.state" level="debug" additivity="false"/>-->
+  <!--  <logger name="org.hibernate.type" level="trace" additivity="false"/>-->
+  <!--  <logger name="org.hibernate.type.descriptor.jdbc.BasicBinder" level="trace" additivity="false"/>-->
+  <!--  <logger name="org.hibernate.type.descriptor.sql" level="trace"/>--> <!-- hibernate 4 and 5 -->
 
-<!--  <logger name="org.hibernate.orm.jdbc.bind" level="trace"/> &lt;!&ndash; hibernate 6 &ndash;&gt;-->
-<!--  <logger name="org.hibernate.orm.jdbc.extract" level="trace"/> &lt;!&ndash; hibernate 6 &ndash;&gt;-->
+  <!--  <logger name="org.hibernate.orm.jdbc.bind" level="trace"/> &lt;!&ndash; hibernate 6 &ndash;&gt;-->
+  <!--  <logger name="org.hibernate.orm.jdbc.extract" level="trace"/> &lt;!&ndash; hibernate 6 &ndash;&gt;-->
 
 </configuration>
