@@ -284,7 +284,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>3.6.0</version>
+          <version>3.6.1</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -532,7 +532,8 @@
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
               <compilerArgs>
-                <arg>--add-module java.sql</arg>
+                <arg>--add-modules</arg>
+                <arg>java.sql</arg>
               </compilerArgs>
             </configuration>
           </plugin>
