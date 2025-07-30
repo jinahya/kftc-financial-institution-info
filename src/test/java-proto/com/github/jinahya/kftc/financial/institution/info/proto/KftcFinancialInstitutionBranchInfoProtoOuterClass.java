@@ -6,2966 +6,2541 @@
 package com.github.jinahya.kftc.financial.institution.info.proto;
 
 public final class KftcFinancialInstitutionBranchInfoProtoOuterClass {
+  private KftcFinancialInstitutionBranchInfoProtoOuterClass() {}
+  static {
+    com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+      com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+      /* major= */ 4,
+      /* minor= */ 29,
+      /* patch= */ 3,
+      /* suffix= */ "",
+      KftcFinancialInstitutionBranchInfoProtoOuterClass.class.getName());
+  }
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistryLite registry) {
+  }
 
-    private KftcFinancialInstitutionBranchInfoProtoOuterClass() {
-    }
+  public static void registerAllExtensions(
+      com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions(
+        (com.google.protobuf.ExtensionRegistryLite) registry);
+  }
+  public interface KftcFinancialInstitutionBranchInfoProtoOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
+      com.google.protobuf.MessageOrBuilder {
 
-    static {
-        com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-                com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-                /* major= */ 4,
-                /* minor= */ 29,
-                /* patch= */ 3,
-                /* suffix= */ "",
-                KftcFinancialInstitutionBranchInfoProtoOuterClass.class.getName());
-    }
-
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistryLite registry) {
-    }
-
-    public static void registerAllExtensions(
-            com.google.protobuf.ExtensionRegistry registry) {
-        registerAllExtensions(
-                (com.google.protobuf.ExtensionRegistryLite) registry);
-    }
-
-    public interface KftcFinancialInstitutionBranchInfoProtoOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
-                    com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>string branchCode = 1;</code>
-         *
-         * @return The branchCode.
-         */
-        java.lang.String getBranchCode();
-
-        /**
-         * <code>string branchCode = 1;</code>
-         *
-         * @return The bytes for branchCode.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string branchCode = 1;</code>
+     * @return The branchCode.
+     */
+    java.lang.String getBranchCode();
+    /**
+     * <code>string branchCode = 1;</code>
+     * @return The bytes for branchCode.
+     */
+    com.google.protobuf.ByteString
         getBranchCodeBytes();
 
-        /**
-         * <code>string financialInstitutionName = 2;</code>
-         *
-         * @return The financialInstitutionName.
-         */
-        java.lang.String getFinancialInstitutionName();
-
-        /**
-         * <code>string financialInstitutionName = 2;</code>
-         *
-         * @return The bytes for financialInstitutionName.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string financialInstitutionName = 2;</code>
+     * @return The financialInstitutionName.
+     */
+    java.lang.String getFinancialInstitutionName();
+    /**
+     * <code>string financialInstitutionName = 2;</code>
+     * @return The bytes for financialInstitutionName.
+     */
+    com.google.protobuf.ByteString
         getFinancialInstitutionNameBytes();
 
-        /**
-         * <code>string branchName = 3;</code>
-         *
-         * @return The branchName.
-         */
-        java.lang.String getBranchName();
-
-        /**
-         * <code>string branchName = 3;</code>
-         *
-         * @return The bytes for branchName.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string branchName = 3;</code>
+     * @return The branchName.
+     */
+    java.lang.String getBranchName();
+    /**
+     * <code>string branchName = 3;</code>
+     * @return The bytes for branchName.
+     */
+    com.google.protobuf.ByteString
         getBranchNameBytes();
 
-        /**
-         * <code>string phoneNumber = 4;</code>
-         *
-         * @return The phoneNumber.
-         */
-        java.lang.String getPhoneNumber();
-
-        /**
-         * <code>string phoneNumber = 4;</code>
-         *
-         * @return The bytes for phoneNumber.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string phoneNumber = 4;</code>
+     * @return The phoneNumber.
+     */
+    java.lang.String getPhoneNumber();
+    /**
+     * <code>string phoneNumber = 4;</code>
+     * @return The bytes for phoneNumber.
+     */
+    com.google.protobuf.ByteString
         getPhoneNumberBytes();
 
-        /**
-         * <code>string faxNumber = 5;</code>
-         *
-         * @return The faxNumber.
-         */
-        java.lang.String getFaxNumber();
-
-        /**
-         * <code>string faxNumber = 5;</code>
-         *
-         * @return The bytes for faxNumber.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string faxNumber = 5;</code>
+     * @return The faxNumber.
+     */
+    java.lang.String getFaxNumber();
+    /**
+     * <code>string faxNumber = 5;</code>
+     * @return The bytes for faxNumber.
+     */
+    com.google.protobuf.ByteString
         getFaxNumberBytes();
 
-        /**
-         * <code>string postalCode = 6;</code>
-         *
-         * @return The postalCode.
-         */
-        java.lang.String getPostalCode();
-
-        /**
-         * <code>string postalCode = 6;</code>
-         *
-         * @return The bytes for postalCode.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string postalCode = 6;</code>
+     * @return The postalCode.
+     */
+    java.lang.String getPostalCode();
+    /**
+     * <code>string postalCode = 6;</code>
+     * @return The bytes for postalCode.
+     */
+    com.google.protobuf.ByteString
         getPostalCodeBytes();
 
-        /**
-         * <code>string address = 7;</code>
-         *
-         * @return The address.
-         */
-        java.lang.String getAddress();
-
-        /**
-         * <code>string address = 7;</code>
-         *
-         * @return The bytes for address.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string address = 7;</code>
+     * @return The address.
+     */
+    java.lang.String getAddress();
+    /**
+     * <code>string address = 7;</code>
+     * @return The bytes for address.
+     */
+    com.google.protobuf.ByteString
         getAddressBytes();
 
-        /**
-         * <code>string status = 8;</code>
-         *
-         * @return The status.
-         */
-        java.lang.String getStatus();
-
-        /**
-         * <code>string status = 8;</code>
-         *
-         * @return The bytes for status.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>string status = 8;</code>
+     * @return The status.
+     */
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
         getStatusBytes();
 
-        /**
-         * <code>optional string managingBranchCode = 9;</code>
-         *
-         * @return Whether the managingBranchCode field is set.
-         */
-        boolean hasManagingBranchCode();
-
-        /**
-         * <code>optional string managingBranchCode = 9;</code>
-         *
-         * @return The managingBranchCode.
-         */
-        java.lang.String getManagingBranchCode();
-
-        /**
-         * <code>optional string managingBranchCode = 9;</code>
-         *
-         * @return The bytes for managingBranchCode.
-         */
-        com.google.protobuf.ByteString
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return Whether the managingBranchCode field is set.
+     */
+    boolean hasManagingBranchCode();
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return The managingBranchCode.
+     */
+    java.lang.String getManagingBranchCode();
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return The bytes for managingBranchCode.
+     */
+    com.google.protobuf.ByteString
         getManagingBranchCodeBytes();
-    }
-
-    /**
-     * Protobuf type
-     * {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto}
-     */
-    public static final class KftcFinancialInstitutionBranchInfoProto
-            extends
-            com.google.protobuf.GeneratedMessage
-            implements
-            // @@protoc_insertion_point(message_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
-                    KftcFinancialInstitutionBranchInfoProtoOrBuilder {
-
-        private static final long serialVersionUID = 0L;
-
-        static {
-            com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-                    com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-                    /* major= */ 4,
-                    /* minor= */ 29,
-                    /* patch= */ 3,
-                    /* suffix= */ "",
-                    KftcFinancialInstitutionBranchInfoProto.class.getName());
-        }
-
-        // Use KftcFinancialInstitutionBranchInfoProto.newBuilder() to construct.
-        private KftcFinancialInstitutionBranchInfoProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-        }
-
-        private KftcFinancialInstitutionBranchInfoProto() {
-            branchCode_ = "";
-            financialInstitutionName_ = "";
-            branchName_ = "";
-            phoneNumber_ = "";
-            faxNumber_ = "";
-            postalCode_ = "";
-            address_ = "";
-            status_ = "";
-            managingBranchCode_ = "";
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.class,
-                            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder.class);
-        }
-
-        private int bitField0_;
-
-        public static final int BRANCHCODE_FIELD_NUMBER = 1;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object branchCode_ = "";
-
-        /**
-         * <code>string branchCode = 1;</code>
-         *
-         * @return The branchCode.
-         */
-        @java.lang.Override
-        public java.lang.String getBranchCode() {
-            java.lang.Object ref = branchCode_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                branchCode_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string branchCode = 1;</code>
-         *
-         * @return The bytes for branchCode.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getBranchCodeBytes() {
-            java.lang.Object ref = branchCode_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                branchCode_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int FINANCIALINSTITUTIONNAME_FIELD_NUMBER = 2;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object financialInstitutionName_ = "";
-
-        /**
-         * <code>string financialInstitutionName = 2;</code>
-         *
-         * @return The financialInstitutionName.
-         */
-        @java.lang.Override
-        public java.lang.String getFinancialInstitutionName() {
-            java.lang.Object ref = financialInstitutionName_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                financialInstitutionName_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string financialInstitutionName = 2;</code>
-         *
-         * @return The bytes for financialInstitutionName.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getFinancialInstitutionNameBytes() {
-            java.lang.Object ref = financialInstitutionName_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                financialInstitutionName_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int BRANCHNAME_FIELD_NUMBER = 3;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object branchName_ = "";
-
-        /**
-         * <code>string branchName = 3;</code>
-         *
-         * @return The branchName.
-         */
-        @java.lang.Override
-        public java.lang.String getBranchName() {
-            java.lang.Object ref = branchName_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                branchName_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string branchName = 3;</code>
-         *
-         * @return The bytes for branchName.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getBranchNameBytes() {
-            java.lang.Object ref = branchName_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                branchName_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int PHONENUMBER_FIELD_NUMBER = 4;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object phoneNumber_ = "";
-
-        /**
-         * <code>string phoneNumber = 4;</code>
-         *
-         * @return The phoneNumber.
-         */
-        @java.lang.Override
-        public java.lang.String getPhoneNumber() {
-            java.lang.Object ref = phoneNumber_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                phoneNumber_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string phoneNumber = 4;</code>
-         *
-         * @return The bytes for phoneNumber.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getPhoneNumberBytes() {
-            java.lang.Object ref = phoneNumber_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                phoneNumber_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int FAXNUMBER_FIELD_NUMBER = 5;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object faxNumber_ = "";
-
-        /**
-         * <code>string faxNumber = 5;</code>
-         *
-         * @return The faxNumber.
-         */
-        @java.lang.Override
-        public java.lang.String getFaxNumber() {
-            java.lang.Object ref = faxNumber_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                faxNumber_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string faxNumber = 5;</code>
-         *
-         * @return The bytes for faxNumber.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getFaxNumberBytes() {
-            java.lang.Object ref = faxNumber_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                faxNumber_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int POSTALCODE_FIELD_NUMBER = 6;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object postalCode_ = "";
-
-        /**
-         * <code>string postalCode = 6;</code>
-         *
-         * @return The postalCode.
-         */
-        @java.lang.Override
-        public java.lang.String getPostalCode() {
-            java.lang.Object ref = postalCode_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                postalCode_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string postalCode = 6;</code>
-         *
-         * @return The bytes for postalCode.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getPostalCodeBytes() {
-            java.lang.Object ref = postalCode_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                postalCode_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int ADDRESS_FIELD_NUMBER = 7;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object address_ = "";
-
-        /**
-         * <code>string address = 7;</code>
-         *
-         * @return The address.
-         */
-        @java.lang.Override
-        public java.lang.String getAddress() {
-            java.lang.Object ref = address_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                address_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string address = 7;</code>
-         *
-         * @return The bytes for address.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getAddressBytes() {
-            java.lang.Object ref = address_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                address_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int STATUS_FIELD_NUMBER = 8;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object status_ = "";
-
-        /**
-         * <code>string status = 8;</code>
-         *
-         * @return The status.
-         */
-        @java.lang.Override
-        public java.lang.String getStatus() {
-            java.lang.Object ref = status_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                status_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>string status = 8;</code>
-         *
-         * @return The bytes for status.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getStatusBytes() {
-            java.lang.Object ref = status_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                status_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        public static final int MANAGINGBRANCHCODE_FIELD_NUMBER = 9;
-
-        @SuppressWarnings("serial")
-        private volatile java.lang.Object managingBranchCode_ = "";
-
-        /**
-         * <code>optional string managingBranchCode = 9;</code>
-         *
-         * @return Whether the managingBranchCode field is set.
-         */
-        @java.lang.Override
-        public boolean hasManagingBranchCode() {
-            return ((bitField0_ & 0x00000001) != 0);
-        }
-
-        /**
-         * <code>optional string managingBranchCode = 9;</code>
-         *
-         * @return The managingBranchCode.
-         */
-        @java.lang.Override
-        public java.lang.String getManagingBranchCode() {
-            java.lang.Object ref = managingBranchCode_;
-            if (ref instanceof java.lang.String) {
-                return (java.lang.String) ref;
-            } else {
-                com.google.protobuf.ByteString bs =
-                        (com.google.protobuf.ByteString) ref;
-                java.lang.String s = bs.toStringUtf8();
-                managingBranchCode_ = s;
-                return s;
-            }
-        }
-
-        /**
-         * <code>optional string managingBranchCode = 9;</code>
-         *
-         * @return The bytes for managingBranchCode.
-         */
-        @java.lang.Override
-        public com.google.protobuf.ByteString
-        getManagingBranchCodeBytes() {
-            java.lang.Object ref = managingBranchCode_;
-            if (ref instanceof java.lang.String) {
-                com.google.protobuf.ByteString b =
-                        com.google.protobuf.ByteString.copyFromUtf8(
-                                (java.lang.String) ref);
-                managingBranchCode_ = b;
-                return b;
-            } else {
-                return (com.google.protobuf.ByteString) ref;
-            }
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchCode_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 1, branchCode_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(financialInstitutionName_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 2, financialInstitutionName_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchName_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 3, branchName_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 4, phoneNumber_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(faxNumber_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 5, faxNumber_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(postalCode_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 6, postalCode_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 7, address_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 8, status_);
-            }
-            if (((bitField0_ & 0x00000001) != 0)) {
-                com.google.protobuf.GeneratedMessage.writeString(output, 9, managingBranchCode_);
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchCode_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(1, branchCode_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(financialInstitutionName_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(2, financialInstitutionName_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchName_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(3, branchName_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(4, phoneNumber_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(faxNumber_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(5, faxNumber_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(postalCode_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(6, postalCode_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(7, address_);
-            }
-            if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(8, status_);
-            }
-            if (((bitField0_ & 0x00000001) != 0)) {
-                size += com.google.protobuf.GeneratedMessage.computeStringSize(9, managingBranchCode_);
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto)) {
-                return super.equals(obj);
-            }
-            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto
-                    other =
-                    (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto) obj;
-
-            if (!getBranchCode()
-                    .equals(other.getBranchCode())) return false;
-            if (!getFinancialInstitutionName()
-                    .equals(other.getFinancialInstitutionName())) return false;
-            if (!getBranchName()
-                    .equals(other.getBranchName())) return false;
-            if (!getPhoneNumber()
-                    .equals(other.getPhoneNumber())) return false;
-            if (!getFaxNumber()
-                    .equals(other.getFaxNumber())) return false;
-            if (!getPostalCode()
-                    .equals(other.getPostalCode())) return false;
-            if (!getAddress()
-                    .equals(other.getAddress())) return false;
-            if (!getStatus()
-                    .equals(other.getStatus())) return false;
-            if (hasManagingBranchCode() != other.hasManagingBranchCode()) return false;
-            if (hasManagingBranchCode()) {
-                if (!getManagingBranchCode()
-                        .equals(other.getManagingBranchCode())) return false;
-            }
-            if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            hash = (37 * hash) + BRANCHCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getBranchCode().hashCode();
-            hash = (37 * hash) + FINANCIALINSTITUTIONNAME_FIELD_NUMBER;
-            hash = (53 * hash) + getFinancialInstitutionName().hashCode();
-            hash = (37 * hash) + BRANCHNAME_FIELD_NUMBER;
-            hash = (53 * hash) + getBranchName().hashCode();
-            hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
-            hash = (53 * hash) + getPhoneNumber().hashCode();
-            hash = (37 * hash) + FAXNUMBER_FIELD_NUMBER;
-            hash = (53 * hash) + getFaxNumber().hashCode();
-            hash = (37 * hash) + POSTALCODE_FIELD_NUMBER;
-            hash = (53 * hash) + getPostalCode().hashCode();
-            hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-            hash = (53 * hash) + getAddress().hashCode();
-            hash = (37 * hash) + STATUS_FIELD_NUMBER;
-            hash = (53 * hash) + getStatus().hashCode();
-            if (hasManagingBranchCode()) {
-                hash = (37 * hash) + MANAGINGBRANCHCODE_FIELD_NUMBER;
-                hash = (53 * hash) + getManagingBranchCode().hashCode();
-            }
-            hash = (29 * hash) + getUnknownFields().hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseDelimitedFrom(
-                java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type
-         * {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto}
-         */
-        public static final class Builder
-                extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
-                        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder {
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.class,
-                                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder.class);
-            }
-
-            // Construct using com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.newBuilder()
-            private Builder() {
-
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                bitField0_ = 0;
-                branchCode_ = "";
-                financialInstitutionName_ = "";
-                branchName_ = "";
-                phoneNumber_ = "";
-                faxNumber_ = "";
-                postalCode_ = "";
-                address_ = "";
-                status_ = "";
-                managingBranchCode_ = "";
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
-            }
-
-            @java.lang.Override
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getDefaultInstanceForType() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto build() {
-                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto
-                        result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto buildPartial() {
-                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto
-                        result =
-                        new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto(
-                                this);
-                if (bitField0_ != 0) {
-                    buildPartial0(result);
-                }
-                onBuilt();
-                return result;
-            }
-
-            private void buildPartial0(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto result) {
-                int from_bitField0_ = bitField0_;
-                if (((from_bitField0_ & 0x00000001) != 0)) {
-                    result.branchCode_ = branchCode_;
-                }
-                if (((from_bitField0_ & 0x00000002) != 0)) {
-                    result.financialInstitutionName_ = financialInstitutionName_;
-                }
-                if (((from_bitField0_ & 0x00000004) != 0)) {
-                    result.branchName_ = branchName_;
-                }
-                if (((from_bitField0_ & 0x00000008) != 0)) {
-                    result.phoneNumber_ = phoneNumber_;
-                }
-                if (((from_bitField0_ & 0x00000010) != 0)) {
-                    result.faxNumber_ = faxNumber_;
-                }
-                if (((from_bitField0_ & 0x00000020) != 0)) {
-                    result.postalCode_ = postalCode_;
-                }
-                if (((from_bitField0_ & 0x00000040) != 0)) {
-                    result.address_ = address_;
-                }
-                if (((from_bitField0_ & 0x00000080) != 0)) {
-                    result.status_ = status_;
-                }
-                int to_bitField0_ = 0;
-                if (((from_bitField0_ & 0x00000100) != 0)) {
-                    result.managingBranchCode_ = managingBranchCode_;
-                    to_bitField0_ |= 0x00000001;
-                }
-                result.bitField0_ |= to_bitField0_;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto) {
-                    return mergeFrom(
-                            (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto other) {
-                if (other == com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance())
-                    return this;
-                if (!other.getBranchCode().isEmpty()) {
-                    branchCode_ = other.branchCode_;
-                    bitField0_ |= 0x00000001;
-                    onChanged();
-                }
-                if (!other.getFinancialInstitutionName().isEmpty()) {
-                    financialInstitutionName_ = other.financialInstitutionName_;
-                    bitField0_ |= 0x00000002;
-                    onChanged();
-                }
-                if (!other.getBranchName().isEmpty()) {
-                    branchName_ = other.branchName_;
-                    bitField0_ |= 0x00000004;
-                    onChanged();
-                }
-                if (!other.getPhoneNumber().isEmpty()) {
-                    phoneNumber_ = other.phoneNumber_;
-                    bitField0_ |= 0x00000008;
-                    onChanged();
-                }
-                if (!other.getFaxNumber().isEmpty()) {
-                    faxNumber_ = other.faxNumber_;
-                    bitField0_ |= 0x00000010;
-                    onChanged();
-                }
-                if (!other.getPostalCode().isEmpty()) {
-                    postalCode_ = other.postalCode_;
-                    bitField0_ |= 0x00000020;
-                    onChanged();
-                }
-                if (!other.getAddress().isEmpty()) {
-                    address_ = other.address_;
-                    bitField0_ |= 0x00000040;
-                    onChanged();
-                }
-                if (!other.getStatus().isEmpty()) {
-                    status_ = other.status_;
-                    bitField0_ |= 0x00000080;
-                    onChanged();
-                }
-                if (other.hasManagingBranchCode()) {
-                    managingBranchCode_ = other.managingBranchCode_;
-                    bitField0_ |= 0x00000100;
-                    onChanged();
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                if (extensionRegistry == null) {
-                    throw new java.lang.NullPointerException();
-                }
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            case 10: {
-                                branchCode_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000001;
-                                break;
-                            } // case 10
-                            case 18: {
-                                financialInstitutionName_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000002;
-                                break;
-                            } // case 18
-                            case 26: {
-                                branchName_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000004;
-                                break;
-                            } // case 26
-                            case 34: {
-                                phoneNumber_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000008;
-                                break;
-                            } // case 34
-                            case 42: {
-                                faxNumber_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000010;
-                                break;
-                            } // case 42
-                            case 50: {
-                                postalCode_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000020;
-                                break;
-                            } // case 50
-                            case 58: {
-                                address_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000040;
-                                break;
-                            } // case 58
-                            case 66: {
-                                status_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000080;
-                                break;
-                            } // case 66
-                            case 74: {
-                                managingBranchCode_ = input.readStringRequireUtf8();
-                                bitField0_ |= 0x00000100;
-                                break;
-                            } // case 74
-                            default: {
-                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                                    done = true; // was an endgroup tag
-                                }
-                                break;
-                            } // default:
-                        } // switch (tag)
-                    } // while (!done)
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.unwrapIOException();
-                } finally {
-                    onChanged();
-                } // finally
-                return this;
-            }
-
-            private int bitField0_;
-
-            private java.lang.Object branchCode_ = "";
-
-            /**
-             * <code>string branchCode = 1;</code>
-             *
-             * @return The branchCode.
-             */
-            public java.lang.String getBranchCode() {
-                java.lang.Object ref = branchCode_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    branchCode_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string branchCode = 1;</code>
-             *
-             * @return The bytes for branchCode.
-             */
-            public com.google.protobuf.ByteString
-            getBranchCodeBytes() {
-                java.lang.Object ref = branchCode_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    branchCode_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string branchCode = 1;</code>
-             *
-             * @param value The branchCode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBranchCode(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                branchCode_ = value;
-                bitField0_ |= 0x00000001;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string branchCode = 1;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearBranchCode() {
-                branchCode_ = getDefaultInstance().getBranchCode();
-                bitField0_ = (bitField0_ & ~0x00000001);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string branchCode = 1;</code>
-             *
-             * @param value The bytes for branchCode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBranchCodeBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                branchCode_ = value;
-                bitField0_ |= 0x00000001;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object financialInstitutionName_ = "";
-
-            /**
-             * <code>string financialInstitutionName = 2;</code>
-             *
-             * @return The financialInstitutionName.
-             */
-            public java.lang.String getFinancialInstitutionName() {
-                java.lang.Object ref = financialInstitutionName_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    financialInstitutionName_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string financialInstitutionName = 2;</code>
-             *
-             * @return The bytes for financialInstitutionName.
-             */
-            public com.google.protobuf.ByteString
-            getFinancialInstitutionNameBytes() {
-                java.lang.Object ref = financialInstitutionName_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    financialInstitutionName_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string financialInstitutionName = 2;</code>
-             *
-             * @param value The financialInstitutionName to set.
-             * @return This builder for chaining.
-             */
-            public Builder setFinancialInstitutionName(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                financialInstitutionName_ = value;
-                bitField0_ |= 0x00000002;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string financialInstitutionName = 2;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearFinancialInstitutionName() {
-                financialInstitutionName_ = getDefaultInstance().getFinancialInstitutionName();
-                bitField0_ = (bitField0_ & ~0x00000002);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string financialInstitutionName = 2;</code>
-             *
-             * @param value The bytes for financialInstitutionName to set.
-             * @return This builder for chaining.
-             */
-            public Builder setFinancialInstitutionNameBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                financialInstitutionName_ = value;
-                bitField0_ |= 0x00000002;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object branchName_ = "";
-
-            /**
-             * <code>string branchName = 3;</code>
-             *
-             * @return The branchName.
-             */
-            public java.lang.String getBranchName() {
-                java.lang.Object ref = branchName_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    branchName_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string branchName = 3;</code>
-             *
-             * @return The bytes for branchName.
-             */
-            public com.google.protobuf.ByteString
-            getBranchNameBytes() {
-                java.lang.Object ref = branchName_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    branchName_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string branchName = 3;</code>
-             *
-             * @param value The branchName to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBranchName(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                branchName_ = value;
-                bitField0_ |= 0x00000004;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string branchName = 3;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearBranchName() {
-                branchName_ = getDefaultInstance().getBranchName();
-                bitField0_ = (bitField0_ & ~0x00000004);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string branchName = 3;</code>
-             *
-             * @param value The bytes for branchName to set.
-             * @return This builder for chaining.
-             */
-            public Builder setBranchNameBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                branchName_ = value;
-                bitField0_ |= 0x00000004;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object phoneNumber_ = "";
-
-            /**
-             * <code>string phoneNumber = 4;</code>
-             *
-             * @return The phoneNumber.
-             */
-            public java.lang.String getPhoneNumber() {
-                java.lang.Object ref = phoneNumber_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    phoneNumber_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string phoneNumber = 4;</code>
-             *
-             * @return The bytes for phoneNumber.
-             */
-            public com.google.protobuf.ByteString
-            getPhoneNumberBytes() {
-                java.lang.Object ref = phoneNumber_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    phoneNumber_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string phoneNumber = 4;</code>
-             *
-             * @param value The phoneNumber to set.
-             * @return This builder for chaining.
-             */
-            public Builder setPhoneNumber(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                phoneNumber_ = value;
-                bitField0_ |= 0x00000008;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string phoneNumber = 4;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearPhoneNumber() {
-                phoneNumber_ = getDefaultInstance().getPhoneNumber();
-                bitField0_ = (bitField0_ & ~0x00000008);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string phoneNumber = 4;</code>
-             *
-             * @param value The bytes for phoneNumber to set.
-             * @return This builder for chaining.
-             */
-            public Builder setPhoneNumberBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                phoneNumber_ = value;
-                bitField0_ |= 0x00000008;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object faxNumber_ = "";
-
-            /**
-             * <code>string faxNumber = 5;</code>
-             *
-             * @return The faxNumber.
-             */
-            public java.lang.String getFaxNumber() {
-                java.lang.Object ref = faxNumber_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    faxNumber_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string faxNumber = 5;</code>
-             *
-             * @return The bytes for faxNumber.
-             */
-            public com.google.protobuf.ByteString
-            getFaxNumberBytes() {
-                java.lang.Object ref = faxNumber_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    faxNumber_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string faxNumber = 5;</code>
-             *
-             * @param value The faxNumber to set.
-             * @return This builder for chaining.
-             */
-            public Builder setFaxNumber(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                faxNumber_ = value;
-                bitField0_ |= 0x00000010;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string faxNumber = 5;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearFaxNumber() {
-                faxNumber_ = getDefaultInstance().getFaxNumber();
-                bitField0_ = (bitField0_ & ~0x00000010);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string faxNumber = 5;</code>
-             *
-             * @param value The bytes for faxNumber to set.
-             * @return This builder for chaining.
-             */
-            public Builder setFaxNumberBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                faxNumber_ = value;
-                bitField0_ |= 0x00000010;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object postalCode_ = "";
-
-            /**
-             * <code>string postalCode = 6;</code>
-             *
-             * @return The postalCode.
-             */
-            public java.lang.String getPostalCode() {
-                java.lang.Object ref = postalCode_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    postalCode_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string postalCode = 6;</code>
-             *
-             * @return The bytes for postalCode.
-             */
-            public com.google.protobuf.ByteString
-            getPostalCodeBytes() {
-                java.lang.Object ref = postalCode_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    postalCode_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string postalCode = 6;</code>
-             *
-             * @param value The postalCode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setPostalCode(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                postalCode_ = value;
-                bitField0_ |= 0x00000020;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string postalCode = 6;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearPostalCode() {
-                postalCode_ = getDefaultInstance().getPostalCode();
-                bitField0_ = (bitField0_ & ~0x00000020);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string postalCode = 6;</code>
-             *
-             * @param value The bytes for postalCode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setPostalCodeBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                postalCode_ = value;
-                bitField0_ |= 0x00000020;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object address_ = "";
-
-            /**
-             * <code>string address = 7;</code>
-             *
-             * @return The address.
-             */
-            public java.lang.String getAddress() {
-                java.lang.Object ref = address_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    address_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string address = 7;</code>
-             *
-             * @return The bytes for address.
-             */
-            public com.google.protobuf.ByteString
-            getAddressBytes() {
-                java.lang.Object ref = address_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    address_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string address = 7;</code>
-             *
-             * @param value The address to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAddress(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                address_ = value;
-                bitField0_ |= 0x00000040;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string address = 7;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearAddress() {
-                address_ = getDefaultInstance().getAddress();
-                bitField0_ = (bitField0_ & ~0x00000040);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string address = 7;</code>
-             *
-             * @param value The bytes for address to set.
-             * @return This builder for chaining.
-             */
-            public Builder setAddressBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                address_ = value;
-                bitField0_ |= 0x00000040;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object status_ = "";
-
-            /**
-             * <code>string status = 8;</code>
-             *
-             * @return The status.
-             */
-            public java.lang.String getStatus() {
-                java.lang.Object ref = status_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    status_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>string status = 8;</code>
-             *
-             * @return The bytes for status.
-             */
-            public com.google.protobuf.ByteString
-            getStatusBytes() {
-                java.lang.Object ref = status_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    status_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>string status = 8;</code>
-             *
-             * @param value The status to set.
-             * @return This builder for chaining.
-             */
-            public Builder setStatus(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                status_ = value;
-                bitField0_ |= 0x00000080;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string status = 8;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearStatus() {
-                status_ = getDefaultInstance().getStatus();
-                bitField0_ = (bitField0_ & ~0x00000080);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>string status = 8;</code>
-             *
-             * @param value The bytes for status to set.
-             * @return This builder for chaining.
-             */
-            public Builder setStatusBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                status_ = value;
-                bitField0_ |= 0x00000080;
-                onChanged();
-                return this;
-            }
-
-            private java.lang.Object managingBranchCode_ = "";
-
-            /**
-             * <code>optional string managingBranchCode = 9;</code>
-             *
-             * @return Whether the managingBranchCode field is set.
-             */
-            public boolean hasManagingBranchCode() {
-                return ((bitField0_ & 0x00000100) != 0);
-            }
-
-            /**
-             * <code>optional string managingBranchCode = 9;</code>
-             *
-             * @return The managingBranchCode.
-             */
-            public java.lang.String getManagingBranchCode() {
-                java.lang.Object ref = managingBranchCode_;
-                if (!(ref instanceof java.lang.String)) {
-                    com.google.protobuf.ByteString bs =
-                            (com.google.protobuf.ByteString) ref;
-                    java.lang.String s = bs.toStringUtf8();
-                    managingBranchCode_ = s;
-                    return s;
-                } else {
-                    return (java.lang.String) ref;
-                }
-            }
-
-            /**
-             * <code>optional string managingBranchCode = 9;</code>
-             *
-             * @return The bytes for managingBranchCode.
-             */
-            public com.google.protobuf.ByteString
-            getManagingBranchCodeBytes() {
-                java.lang.Object ref = managingBranchCode_;
-                if (ref instanceof String) {
-                    com.google.protobuf.ByteString b =
-                            com.google.protobuf.ByteString.copyFromUtf8(
-                                    (java.lang.String) ref);
-                    managingBranchCode_ = b;
-                    return b;
-                } else {
-                    return (com.google.protobuf.ByteString) ref;
-                }
-            }
-
-            /**
-             * <code>optional string managingBranchCode = 9;</code>
-             *
-             * @param value The managingBranchCode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setManagingBranchCode(
-                    java.lang.String value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                managingBranchCode_ = value;
-                bitField0_ |= 0x00000100;
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>optional string managingBranchCode = 9;</code>
-             *
-             * @return This builder for chaining.
-             */
-            public Builder clearManagingBranchCode() {
-                managingBranchCode_ = getDefaultInstance().getManagingBranchCode();
-                bitField0_ = (bitField0_ & ~0x00000100);
-                onChanged();
-                return this;
-            }
-
-            /**
-             * <code>optional string managingBranchCode = 9;</code>
-             *
-             * @param value The bytes for managingBranchCode to set.
-             * @return This builder for chaining.
-             */
-            public Builder setManagingBranchCodeBytes(
-                    com.google.protobuf.ByteString value) {
-                if (value == null) {
-                    throw new NullPointerException();
-                }
-                checkByteStringIsUtf8(value);
-                managingBranchCode_ = value;
-                bitField0_ |= 0x00000100;
-                onChanged();
-                return this;
-            }
-
-            // @@protoc_insertion_point(builder_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
-        }
-
-        // @@protoc_insertion_point(class_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
-        private static final com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto();
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProto>
-                PARSER = new com.google.protobuf.AbstractParser<KftcFinancialInstitutionBranchInfoProto>() {
-            @java.lang.Override
-            public KftcFinancialInstitutionBranchInfoProto parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Builder builder = newBuilder();
-                try {
-                    builder.mergeFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(builder.buildPartial());
-                } catch (com.google.protobuf.UninitializedMessageException e) {
-                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                            .setUnfinishedMessage(builder.buildPartial());
-                }
-                return builder.buildPartial();
-            }
-        };
-
-        public static com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProto> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProto> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-    }
-
-    public interface KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder
-            extends
-            // @@protoc_insertion_point(interface_extends:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
-                    com.google.protobuf.MessageOrBuilder {
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto>
-        getObjectsList();
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(
-                int index);
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        int getObjectsCount();
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>
-        getObjectsOrBuilderList();
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
-                int index);
-    }
-
-    /**
-     * Protobuf type
-     * {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated}
-     */
-    public static final class KftcFinancialInstitutionBranchInfoProtoRepeated
-            extends
-            com.google.protobuf.GeneratedMessage
-            implements
-            // @@protoc_insertion_point(message_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
-                    KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder {
-
-        private static final long serialVersionUID = 0L;
-
-        static {
-            com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
-                    com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
-                    /* major= */ 4,
-                    /* minor= */ 29,
-                    /* patch= */ 3,
-                    /* suffix= */ "",
-                    KftcFinancialInstitutionBranchInfoProtoRepeated.class.getName());
-        }
-
-        // Use KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder() to construct.
-        private KftcFinancialInstitutionBranchInfoProtoRepeated(
-                com.google.protobuf.GeneratedMessage.Builder<?> builder) {
-            super(builder);
-        }
-
-        private KftcFinancialInstitutionBranchInfoProtoRepeated() {
-            objects_ = java.util.Collections.emptyList();
-        }
-
-        public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-            return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
-        }
-
-        @java.lang.Override
-        protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-            return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable
-                    .ensureFieldAccessorsInitialized(
-                            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.class,
-                            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.Builder.class);
-        }
-
-        public static final int OBJECTS_FIELD_NUMBER = 1;
-
-        @SuppressWarnings("serial")
-        private java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto>
-                objects_;
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        @java.lang.Override
-        public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> getObjectsList() {
-            return objects_;
-        }
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        @java.lang.Override
-        public java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>
-        getObjectsOrBuilderList() {
-            return objects_;
-        }
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        @java.lang.Override
-        public int getObjectsCount() {
-            return objects_.size();
-        }
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        @java.lang.Override
-        public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(
-                int index) {
-            return objects_.get(index);
-        }
-
-        /**
-         * <code>repeated
-         * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects =
-         * 1;</code>
-         */
-        @java.lang.Override
-        public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
-                int index) {
-            return objects_.get(index);
-        }
-
-        private byte memoizedIsInitialized = -1;
-
-        @java.lang.Override
-        public final boolean isInitialized() {
-            byte isInitialized = memoizedIsInitialized;
-            if (isInitialized == 1) return true;
-            if (isInitialized == 0) return false;
-
-            memoizedIsInitialized = 1;
-            return true;
-        }
-
-        @java.lang.Override
-        public void writeTo(com.google.protobuf.CodedOutputStream output)
-                throws java.io.IOException {
-            for (int i = 0; i < objects_.size(); i++) {
-                output.writeMessage(1, objects_.get(i));
-            }
-            getUnknownFields().writeTo(output);
-        }
-
-        @java.lang.Override
-        public int getSerializedSize() {
-            int size = memoizedSize;
-            if (size != -1) return size;
-
-            size = 0;
-            for (int i = 0; i < objects_.size(); i++) {
-                size += com.google.protobuf.CodedOutputStream
-                        .computeMessageSize(1, objects_.get(i));
-            }
-            size += getUnknownFields().getSerializedSize();
-            memoizedSize = size;
-            return size;
-        }
-
-        @java.lang.Override
-        public boolean equals(final java.lang.Object obj) {
-            if (obj == this) {
-                return true;
-            }
-            if (!(obj instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated)) {
-                return super.equals(obj);
-            }
-            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated
-                    other =
-                    (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) obj;
-
-            if (!getObjectsList()
-                    .equals(other.getObjectsList())) return false;
-            if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-            return true;
-        }
-
-        @java.lang.Override
-        public int hashCode() {
-            if (memoizedHashCode != 0) {
-                return memoizedHashCode;
-            }
-            int hash = 41;
-            hash = (19 * hash) + getDescriptor().hashCode();
-            if (getObjectsCount() > 0) {
-                hash = (37 * hash) + OBJECTS_FIELD_NUMBER;
-                hash = (53 * hash) + getObjectsList().hashCode();
-            }
-            hash = (29 * hash) + getUnknownFields().hashCode();
-            memoizedHashCode = hash;
-            return hash;
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                java.nio.ByteBuffer data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                java.nio.ByteBuffer data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                com.google.protobuf.ByteString data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                com.google.protobuf.ByteString data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                byte[] data)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                byte[] data,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws com.google.protobuf.InvalidProtocolBufferException {
-            return PARSER.parseFrom(data, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseDelimitedFrom(
-                java.io.InputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseDelimitedWithIOException(PARSER, input);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseDelimitedFrom(
-                java.io.InputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                com.google.protobuf.CodedInputStream input)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input);
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
-                com.google.protobuf.CodedInputStream input,
-                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                throws java.io.IOException {
-            return com.google.protobuf.GeneratedMessage
-                    .parseWithIOException(PARSER, input, extensionRegistry);
-        }
-
-        @java.lang.Override
-        public Builder newBuilderForType() {
-            return newBuilder();
-        }
-
-        public static Builder newBuilder() {
-            return DEFAULT_INSTANCE.toBuilder();
-        }
-
-        public static Builder newBuilder(
-                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated prototype) {
-            return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-        }
-
-        @java.lang.Override
-        public Builder toBuilder() {
-            return this == DEFAULT_INSTANCE
-                    ? new Builder() : new Builder().mergeFrom(this);
-        }
-
-        @java.lang.Override
-        protected Builder newBuilderForType(
-                com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-            Builder builder = new Builder(parent);
-            return builder;
-        }
-
-        /**
-         * Protobuf type
-         * {@code
-         * com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated}
-         */
-        public static final class Builder
-                extends
-                com.google.protobuf.GeneratedMessage.Builder<Builder>
-                implements
-                // @@protoc_insertion_point(builder_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
-                        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder {
-
-            public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
-            }
-
-            @java.lang.Override
-            protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internalGetFieldAccessorTable() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable
-                        .ensureFieldAccessorsInitialized(
-                                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.class,
-                                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.Builder.class);
-            }
-
-            // Construct using com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder()
-            private Builder() {
-
-            }
-
-            private Builder(
-                    com.google.protobuf.GeneratedMessage.BuilderParent parent) {
-                super(parent);
-
-            }
-
-            @java.lang.Override
-            public Builder clear() {
-                super.clear();
-                bitField0_ = 0;
-                if (objectsBuilder_ == null) {
-                    objects_ = java.util.Collections.emptyList();
-                } else {
-                    objects_ = null;
-                    objectsBuilder_.clear();
-                }
-                bitField0_ = (bitField0_ & ~0x00000001);
-                return this;
-            }
-
-            @java.lang.Override
-            public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
-            }
-
-            @java.lang.Override
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstanceForType() {
-                return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.getDefaultInstance();
-            }
-
-            @java.lang.Override
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated build() {
-                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated
-                        result = buildPartial();
-                if (!result.isInitialized()) {
-                    throw newUninitializedMessageException(result);
-                }
-                return result;
-            }
-
-            @java.lang.Override
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated buildPartial() {
-                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated
-                        result =
-                        new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated(
-                                this);
-                buildPartialRepeatedFields(result);
-                if (bitField0_ != 0) {
-                    buildPartial0(result);
-                }
-                onBuilt();
-                return result;
-            }
-
-            private void buildPartialRepeatedFields(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result) {
-                if (objectsBuilder_ == null) {
-                    if (((bitField0_ & 0x00000001) != 0)) {
-                        objects_ = java.util.Collections.unmodifiableList(objects_);
-                        bitField0_ = (bitField0_ & ~0x00000001);
-                    }
-                    result.objects_ = objects_;
-                } else {
-                    result.objects_ = objectsBuilder_.build();
-                }
-            }
-
-            private void buildPartial0(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result) {
-                int from_bitField0_ = bitField0_;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(com.google.protobuf.Message other) {
-                if (other instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) {
-                    return mergeFrom(
-                            (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) other);
-                } else {
-                    super.mergeFrom(other);
-                    return this;
-                }
-            }
-
-            public Builder mergeFrom(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated other) {
-                if (other == com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.getDefaultInstance())
-                    return this;
-                if (objectsBuilder_ == null) {
-                    if (!other.objects_.isEmpty()) {
-                        if (objects_.isEmpty()) {
-                            objects_ = other.objects_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                        } else {
-                            ensureObjectsIsMutable();
-                            objects_.addAll(other.objects_);
-                        }
-                        onChanged();
-                    }
-                } else {
-                    if (!other.objects_.isEmpty()) {
-                        if (objectsBuilder_.isEmpty()) {
-                            objectsBuilder_.dispose();
-                            objectsBuilder_ = null;
-                            objects_ = other.objects_;
-                            bitField0_ = (bitField0_ & ~0x00000001);
-                            objectsBuilder_ =
-                                    com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
-                                            getObjectsFieldBuilder() : null;
-                        } else {
-                            objectsBuilder_.addAllMessages(other.objects_);
-                        }
-                    }
-                }
-                this.mergeUnknownFields(other.getUnknownFields());
-                onChanged();
-                return this;
-            }
-
-            @java.lang.Override
-            public final boolean isInitialized() {
-                return true;
-            }
-
-            @java.lang.Override
-            public Builder mergeFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws java.io.IOException {
-                if (extensionRegistry == null) {
-                    throw new java.lang.NullPointerException();
-                }
-                try {
-                    boolean done = false;
-                    while (!done) {
-                        int tag = input.readTag();
-                        switch (tag) {
-                            case 0:
-                                done = true;
-                                break;
-                            case 10: {
-                                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto
-                                        m =
-                                        input.readMessage(
-                                                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.parser(),
-                                                extensionRegistry);
-                                if (objectsBuilder_ == null) {
-                                    ensureObjectsIsMutable();
-                                    objects_.add(m);
-                                } else {
-                                    objectsBuilder_.addMessage(m);
-                                }
-                                break;
-                            } // case 10
-                            default: {
-                                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                                    done = true; // was an endgroup tag
-                                }
-                                break;
-                            } // default:
-                        } // switch (tag)
-                    } // while (!done)
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.unwrapIOException();
-                } finally {
-                    onChanged();
-                } // finally
-                return this;
-            }
-
-            private int bitField0_;
-
-            private java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto>
-                    objects_ =
-                    java.util.Collections.emptyList();
-
-            private void ensureObjectsIsMutable() {
-                if (!((bitField0_ & 0x00000001) != 0)) {
-                    objects_ =
-                            new java.util.ArrayList<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto>(
-                                    objects_);
-                    bitField0_ |= 0x00000001;
-                }
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilder<
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>
-                    objectsBuilder_;
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> getObjectsList() {
-                if (objectsBuilder_ == null) {
-                    return java.util.Collections.unmodifiableList(objects_);
-                } else {
-                    return objectsBuilder_.getMessageList();
-                }
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public int getObjectsCount() {
-                if (objectsBuilder_ == null) {
-                    return objects_.size();
-                } else {
-                    return objectsBuilder_.getCount();
-                }
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(
-                    int index) {
-                if (objectsBuilder_ == null) {
-                    return objects_.get(index);
-                } else {
-                    return objectsBuilder_.getMessage(index);
-                }
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder setObjects(
-                    int index,
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
-                if (objectsBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureObjectsIsMutable();
-                    objects_.set(index, value);
-                    onChanged();
-                } else {
-                    objectsBuilder_.setMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder setObjects(
-                    int index,
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
-                if (objectsBuilder_ == null) {
-                    ensureObjectsIsMutable();
-                    objects_.set(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    objectsBuilder_.setMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder addObjects(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
-                if (objectsBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureObjectsIsMutable();
-                    objects_.add(value);
-                    onChanged();
-                } else {
-                    objectsBuilder_.addMessage(value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder addObjects(
-                    int index,
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
-                if (objectsBuilder_ == null) {
-                    if (value == null) {
-                        throw new NullPointerException();
-                    }
-                    ensureObjectsIsMutable();
-                    objects_.add(index, value);
-                    onChanged();
-                } else {
-                    objectsBuilder_.addMessage(index, value);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder addObjects(
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
-                if (objectsBuilder_ == null) {
-                    ensureObjectsIsMutable();
-                    objects_.add(builderForValue.build());
-                    onChanged();
-                } else {
-                    objectsBuilder_.addMessage(builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder addObjects(
-                    int index,
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
-                if (objectsBuilder_ == null) {
-                    ensureObjectsIsMutable();
-                    objects_.add(index, builderForValue.build());
-                    onChanged();
-                } else {
-                    objectsBuilder_.addMessage(index, builderForValue.build());
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder addAllObjects(
-                    java.lang.Iterable<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> values) {
-                if (objectsBuilder_ == null) {
-                    ensureObjectsIsMutable();
-                    com.google.protobuf.AbstractMessageLite.Builder.addAll(
-                            values, objects_);
-                    onChanged();
-                } else {
-                    objectsBuilder_.addAllMessages(values);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder clearObjects() {
-                if (objectsBuilder_ == null) {
-                    objects_ = java.util.Collections.emptyList();
-                    bitField0_ = (bitField0_ & ~0x00000001);
-                    onChanged();
-                } else {
-                    objectsBuilder_.clear();
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public Builder removeObjects(int index) {
-                if (objectsBuilder_ == null) {
-                    ensureObjectsIsMutable();
-                    objects_.remove(index);
-                    onChanged();
-                } else {
-                    objectsBuilder_.remove(index);
-                }
-                return this;
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder getObjectsBuilder(
-                    int index) {
-                return getObjectsFieldBuilder().getBuilder(index);
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
-                    int index) {
-                if (objectsBuilder_ == null) {
-                    return objects_.get(index);
-                } else {
-                    return objectsBuilder_.getMessageOrBuilder(index);
-                }
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>
-            getObjectsOrBuilderList() {
-                if (objectsBuilder_ != null) {
-                    return objectsBuilder_.getMessageOrBuilderList();
-                } else {
-                    return java.util.Collections.unmodifiableList(objects_);
-                }
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder addObjectsBuilder() {
-                return getObjectsFieldBuilder().addBuilder(
-                        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder addObjectsBuilder(
-                    int index) {
-                return getObjectsFieldBuilder().addBuilder(
-                        index,
-                        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance());
-            }
-
-            /**
-             * <code>repeated
-             * .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects
-             * = 1;</code>
-             */
-            public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder>
-            getObjectsBuilderList() {
-                return getObjectsFieldBuilder().getBuilderList();
-            }
-
-            private com.google.protobuf.RepeatedFieldBuilder<
-                    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>
-            getObjectsFieldBuilder() {
-                if (objectsBuilder_ == null) {
-                    objectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
-                            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>(
-                            objects_,
-                            ((bitField0_ & 0x00000001) != 0),
-                            getParentForChildren(),
-                            isClean());
-                    objects_ = null;
-                }
-                return objectsBuilder_;
-            }
-
-            // @@protoc_insertion_point(builder_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
-        }
-
-        // @@protoc_insertion_point(class_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
-        private static final com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated
-                DEFAULT_INSTANCE;
-
-        static {
-            DEFAULT_INSTANCE =
-                    new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated();
-        }
-
-        public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstance() {
-            return DEFAULT_INSTANCE;
-        }
-
-        private static final com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated>
-                PARSER = new com.google.protobuf.AbstractParser<KftcFinancialInstitutionBranchInfoProtoRepeated>() {
-            @java.lang.Override
-            public KftcFinancialInstitutionBranchInfoProtoRepeated parsePartialFrom(
-                    com.google.protobuf.CodedInputStream input,
-                    com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-                    throws com.google.protobuf.InvalidProtocolBufferException {
-                Builder builder = newBuilder();
-                try {
-                    builder.mergeFrom(input, extensionRegistry);
-                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-                    throw e.setUnfinishedMessage(builder.buildPartial());
-                } catch (com.google.protobuf.UninitializedMessageException e) {
-                    throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-                } catch (java.io.IOException e) {
-                    throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                            .setUnfinishedMessage(builder.buildPartial());
-                }
-                return builder.buildPartial();
-            }
-        };
-
-        public static com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated> parser() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated> getParserForType() {
-            return PARSER;
-        }
-
-        @java.lang.Override
-        public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstanceForType() {
-            return DEFAULT_INSTANCE;
-        }
-
-    }
-
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
-
-    private static final
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable;
-
-    private static final com.google.protobuf.Descriptors.Descriptor
-            internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
-
-    private static final
-    com.google.protobuf.GeneratedMessage.FieldAccessorTable
-            internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable;
-
-    public static com.google.protobuf.Descriptors.FileDescriptor
-    getDescriptor() {
-        return descriptor;
-    }
-
-    private static com.google.protobuf.Descriptors.FileDescriptor
-            descriptor;
-
+  }
+  /**
+   * Protobuf type {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto}
+   */
+  public static final class KftcFinancialInstitutionBranchInfoProto extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
+      KftcFinancialInstitutionBranchInfoProtoOrBuilder {
+  private static final long serialVersionUID = 0L;
     static {
-        java.lang.String[] descriptorData = {
-                "\nFsrc/test/resources-proto/KftcFinancial" +
-                        "InstitutionBranchInfoProto.proto\0228com.gi" +
-                        "thub.jinahya.kftc.financial.institution." +
-                        "info.proto\"\210\002\n\'KftcFinancialInstitutionB" +
-                        "ranchInfoProto\022\022\n\nbranchCode\030\001 \001(\t\022 \n\030fi" +
-                        "nancialInstitutionName\030\002 \001(\t\022\022\n\nbranchNa" +
-                        "me\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022\021\n\tfaxNumb" +
-                        "er\030\005 \001(\t\022\022\n\npostalCode\030\006 \001(\t\022\017\n\007address\030" +
-                        "\007 \001(\t\022\016\n\006status\030\010 \001(\t\022\037\n\022managingBranchC" +
-                        "ode\030\t \001(\tH\000\210\001\001B\025\n\023_managingBranchCode\"\245\001" +
-                        "\n/KftcFinancialInstitutionBranchInfoProt" +
-                        "oRepeated\022r\n\007objects\030\001 \003(\0132a.com.github." +
-                        "jinahya.kftc.financial.institution.info." +
-                        "proto.KftcFinancialInstitutionBranchInfo" +
-                        "Protob\006proto3"
-        };
-        descriptor = com.google.protobuf.Descriptors.FileDescriptor
-                .internalBuildGeneratedFileFrom(descriptorData,
-                                                new com.google.protobuf.Descriptors.FileDescriptor[]{
-                                                });
-        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor =
-                getDescriptor().getMessageTypes().get(0);
-        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable =
-                new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor,
-                        new java.lang.String[]{"BranchCode", "FinancialInstitutionName", "BranchName", "PhoneNumber", "FaxNumber", "PostalCode", "Address", "Status", "ManagingBranchCode",});
-        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor =
-                getDescriptor().getMessageTypes().get(1);
-        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable =
-                new
-                        com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-                        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor,
-                        new java.lang.String[]{"Objects",});
-        descriptor.resolveAllFeaturesImmutable();
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        KftcFinancialInstitutionBranchInfoProto.class.getName());
+    }
+    // Use KftcFinancialInstitutionBranchInfoProto.newBuilder() to construct.
+    private KftcFinancialInstitutionBranchInfoProto(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private KftcFinancialInstitutionBranchInfoProto() {
+      branchCode_ = "";
+      financialInstitutionName_ = "";
+      branchName_ = "";
+      phoneNumber_ = "";
+      faxNumber_ = "";
+      postalCode_ = "";
+      address_ = "";
+      status_ = "";
+      managingBranchCode_ = "";
     }
 
-    // @@protoc_insertion_point(outer_class_scope)
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int BRANCHCODE_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object branchCode_ = "";
+    /**
+     * <code>string branchCode = 1;</code>
+     * @return The branchCode.
+     */
+    @java.lang.Override
+    public java.lang.String getBranchCode() {
+      java.lang.Object ref = branchCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        branchCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string branchCode = 1;</code>
+     * @return The bytes for branchCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBranchCodeBytes() {
+      java.lang.Object ref = branchCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        branchCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FINANCIALINSTITUTIONNAME_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object financialInstitutionName_ = "";
+    /**
+     * <code>string financialInstitutionName = 2;</code>
+     * @return The financialInstitutionName.
+     */
+    @java.lang.Override
+    public java.lang.String getFinancialInstitutionName() {
+      java.lang.Object ref = financialInstitutionName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        financialInstitutionName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string financialInstitutionName = 2;</code>
+     * @return The bytes for financialInstitutionName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFinancialInstitutionNameBytes() {
+      java.lang.Object ref = financialInstitutionName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        financialInstitutionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BRANCHNAME_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object branchName_ = "";
+    /**
+     * <code>string branchName = 3;</code>
+     * @return The branchName.
+     */
+    @java.lang.Override
+    public java.lang.String getBranchName() {
+      java.lang.Object ref = branchName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        branchName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string branchName = 3;</code>
+     * @return The bytes for branchName.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBranchNameBytes() {
+      java.lang.Object ref = branchName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        branchName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PHONENUMBER_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object phoneNumber_ = "";
+    /**
+     * <code>string phoneNumber = 4;</code>
+     * @return The phoneNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getPhoneNumber() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phoneNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string phoneNumber = 4;</code>
+     * @return The bytes for phoneNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPhoneNumberBytes() {
+      java.lang.Object ref = phoneNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phoneNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FAXNUMBER_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object faxNumber_ = "";
+    /**
+     * <code>string faxNumber = 5;</code>
+     * @return The faxNumber.
+     */
+    @java.lang.Override
+    public java.lang.String getFaxNumber() {
+      java.lang.Object ref = faxNumber_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        faxNumber_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string faxNumber = 5;</code>
+     * @return The bytes for faxNumber.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getFaxNumberBytes() {
+      java.lang.Object ref = faxNumber_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        faxNumber_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int POSTALCODE_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object postalCode_ = "";
+    /**
+     * <code>string postalCode = 6;</code>
+     * @return The postalCode.
+     */
+    @java.lang.Override
+    public java.lang.String getPostalCode() {
+      java.lang.Object ref = postalCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        postalCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string postalCode = 6;</code>
+     * @return The bytes for postalCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getPostalCodeBytes() {
+      java.lang.Object ref = postalCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        postalCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESS_FIELD_NUMBER = 7;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object address_ = "";
+    /**
+     * <code>string address = 7;</code>
+     * @return The address.
+     */
+    @java.lang.Override
+    public java.lang.String getAddress() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        address_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string address = 7;</code>
+     * @return The bytes for address.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAddressBytes() {
+      java.lang.Object ref = address_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        address_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int STATUS_FIELD_NUMBER = 8;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object status_ = "";
+    /**
+     * <code>string status = 8;</code>
+     * @return The status.
+     */
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MANAGINGBRANCHCODE_FIELD_NUMBER = 9;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object managingBranchCode_ = "";
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return Whether the managingBranchCode field is set.
+     */
+    @java.lang.Override
+    public boolean hasManagingBranchCode() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return The managingBranchCode.
+     */
+    @java.lang.Override
+    public java.lang.String getManagingBranchCode() {
+      java.lang.Object ref = managingBranchCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        managingBranchCode_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string managingBranchCode = 9;</code>
+     * @return The bytes for managingBranchCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getManagingBranchCodeBytes() {
+      java.lang.Object ref = managingBranchCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        managingBranchCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, branchCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(financialInstitutionName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, financialInstitutionName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchName_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, branchName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 4, phoneNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(faxNumber_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, faxNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(postalCode_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 6, postalCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 7, address_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 8, status_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 9, managingBranchCode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, branchCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(financialInstitutionName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, financialInstitutionName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(branchName_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, branchName_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(phoneNumber_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(4, phoneNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(faxNumber_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, faxNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(postalCode_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(6, postalCode_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(address_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(7, address_);
+      }
+      if (!com.google.protobuf.GeneratedMessage.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(8, status_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(9, managingBranchCode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto)) {
+        return super.equals(obj);
+      }
+      com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto other = (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto) obj;
+
+      if (!getBranchCode()
+          .equals(other.getBranchCode())) return false;
+      if (!getFinancialInstitutionName()
+          .equals(other.getFinancialInstitutionName())) return false;
+      if (!getBranchName()
+          .equals(other.getBranchName())) return false;
+      if (!getPhoneNumber()
+          .equals(other.getPhoneNumber())) return false;
+      if (!getFaxNumber()
+          .equals(other.getFaxNumber())) return false;
+      if (!getPostalCode()
+          .equals(other.getPostalCode())) return false;
+      if (!getAddress()
+          .equals(other.getAddress())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (hasManagingBranchCode() != other.hasManagingBranchCode()) return false;
+      if (hasManagingBranchCode()) {
+        if (!getManagingBranchCode()
+            .equals(other.getManagingBranchCode())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + BRANCHCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getBranchCode().hashCode();
+      hash = (37 * hash) + FINANCIALINSTITUTIONNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getFinancialInstitutionName().hashCode();
+      hash = (37 * hash) + BRANCHNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getBranchName().hashCode();
+      hash = (37 * hash) + PHONENUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneNumber().hashCode();
+      hash = (37 * hash) + FAXNUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getFaxNumber().hashCode();
+      hash = (37 * hash) + POSTALCODE_FIELD_NUMBER;
+      hash = (53 * hash) + getPostalCode().hashCode();
+      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
+      hash = (53 * hash) + getAddress().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      if (hasManagingBranchCode()) {
+        hash = (37 * hash) + MANAGINGBRANCHCODE_FIELD_NUMBER;
+        hash = (53 * hash) + getManagingBranchCode().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder.class);
+      }
+
+      // Construct using com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        branchCode_ = "";
+        financialInstitutionName_ = "";
+        branchName_ = "";
+        phoneNumber_ = "";
+        faxNumber_ = "";
+        postalCode_ = "";
+        address_ = "";
+        status_ = "";
+        managingBranchCode_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getDefaultInstanceForType() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto build() {
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto buildPartial() {
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto result = new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.branchCode_ = branchCode_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.financialInstitutionName_ = financialInstitutionName_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.branchName_ = branchName_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.phoneNumber_ = phoneNumber_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.faxNumber_ = faxNumber_;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.postalCode_ = postalCode_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.address_ = address_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.status_ = status_;
+        }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.managingBranchCode_ = managingBranchCode_;
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto) {
+          return mergeFrom((com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto other) {
+        if (other == com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance()) return this;
+        if (!other.getBranchCode().isEmpty()) {
+          branchCode_ = other.branchCode_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getFinancialInstitutionName().isEmpty()) {
+          financialInstitutionName_ = other.financialInstitutionName_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getBranchName().isEmpty()) {
+          branchName_ = other.branchName_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getPhoneNumber().isEmpty()) {
+          phoneNumber_ = other.phoneNumber_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (!other.getFaxNumber().isEmpty()) {
+          faxNumber_ = other.faxNumber_;
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        if (!other.getPostalCode().isEmpty()) {
+          postalCode_ = other.postalCode_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
+        if (!other.getAddress().isEmpty()) {
+          address_ = other.address_;
+          bitField0_ |= 0x00000040;
+          onChanged();
+        }
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
+          bitField0_ |= 0x00000080;
+          onChanged();
+        }
+        if (other.hasManagingBranchCode()) {
+          managingBranchCode_ = other.managingBranchCode_;
+          bitField0_ |= 0x00000100;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                branchCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                financialInstitutionName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                branchName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                phoneNumber_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                faxNumber_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              case 50: {
+                postalCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 50
+              case 58: {
+                address_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 58
+              case 66: {
+                status_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 66
+              case 74: {
+                managingBranchCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 74
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object branchCode_ = "";
+      /**
+       * <code>string branchCode = 1;</code>
+       * @return The branchCode.
+       */
+      public java.lang.String getBranchCode() {
+        java.lang.Object ref = branchCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          branchCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string branchCode = 1;</code>
+       * @return The bytes for branchCode.
+       */
+      public com.google.protobuf.ByteString
+          getBranchCodeBytes() {
+        java.lang.Object ref = branchCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          branchCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string branchCode = 1;</code>
+       * @param value The branchCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBranchCode(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        branchCode_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string branchCode = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBranchCode() {
+        branchCode_ = getDefaultInstance().getBranchCode();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string branchCode = 1;</code>
+       * @param value The bytes for branchCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBranchCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        branchCode_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object financialInstitutionName_ = "";
+      /**
+       * <code>string financialInstitutionName = 2;</code>
+       * @return The financialInstitutionName.
+       */
+      public java.lang.String getFinancialInstitutionName() {
+        java.lang.Object ref = financialInstitutionName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          financialInstitutionName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string financialInstitutionName = 2;</code>
+       * @return The bytes for financialInstitutionName.
+       */
+      public com.google.protobuf.ByteString
+          getFinancialInstitutionNameBytes() {
+        java.lang.Object ref = financialInstitutionName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          financialInstitutionName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string financialInstitutionName = 2;</code>
+       * @param value The financialInstitutionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinancialInstitutionName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        financialInstitutionName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string financialInstitutionName = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFinancialInstitutionName() {
+        financialInstitutionName_ = getDefaultInstance().getFinancialInstitutionName();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string financialInstitutionName = 2;</code>
+       * @param value The bytes for financialInstitutionName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFinancialInstitutionNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        financialInstitutionName_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object branchName_ = "";
+      /**
+       * <code>string branchName = 3;</code>
+       * @return The branchName.
+       */
+      public java.lang.String getBranchName() {
+        java.lang.Object ref = branchName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          branchName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string branchName = 3;</code>
+       * @return The bytes for branchName.
+       */
+      public com.google.protobuf.ByteString
+          getBranchNameBytes() {
+        java.lang.Object ref = branchName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          branchName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string branchName = 3;</code>
+       * @param value The branchName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBranchName(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        branchName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string branchName = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearBranchName() {
+        branchName_ = getDefaultInstance().getBranchName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string branchName = 3;</code>
+       * @param value The bytes for branchName to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBranchNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        branchName_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object phoneNumber_ = "";
+      /**
+       * <code>string phoneNumber = 4;</code>
+       * @return The phoneNumber.
+       */
+      public java.lang.String getPhoneNumber() {
+        java.lang.Object ref = phoneNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phoneNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string phoneNumber = 4;</code>
+       * @return The bytes for phoneNumber.
+       */
+      public com.google.protobuf.ByteString
+          getPhoneNumberBytes() {
+        java.lang.Object ref = phoneNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phoneNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string phoneNumber = 4;</code>
+       * @param value The phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumber(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        phoneNumber_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string phoneNumber = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPhoneNumber() {
+        phoneNumber_ = getDefaultInstance().getPhoneNumber();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string phoneNumber = 4;</code>
+       * @param value The bytes for phoneNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPhoneNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        phoneNumber_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object faxNumber_ = "";
+      /**
+       * <code>string faxNumber = 5;</code>
+       * @return The faxNumber.
+       */
+      public java.lang.String getFaxNumber() {
+        java.lang.Object ref = faxNumber_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          faxNumber_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string faxNumber = 5;</code>
+       * @return The bytes for faxNumber.
+       */
+      public com.google.protobuf.ByteString
+          getFaxNumberBytes() {
+        java.lang.Object ref = faxNumber_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          faxNumber_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string faxNumber = 5;</code>
+       * @param value The faxNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFaxNumber(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        faxNumber_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string faxNumber = 5;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearFaxNumber() {
+        faxNumber_ = getDefaultInstance().getFaxNumber();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string faxNumber = 5;</code>
+       * @param value The bytes for faxNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFaxNumberBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        faxNumber_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object postalCode_ = "";
+      /**
+       * <code>string postalCode = 6;</code>
+       * @return The postalCode.
+       */
+      public java.lang.String getPostalCode() {
+        java.lang.Object ref = postalCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          postalCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string postalCode = 6;</code>
+       * @return The bytes for postalCode.
+       */
+      public com.google.protobuf.ByteString
+          getPostalCodeBytes() {
+        java.lang.Object ref = postalCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          postalCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string postalCode = 6;</code>
+       * @param value The postalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPostalCode(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        postalCode_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string postalCode = 6;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearPostalCode() {
+        postalCode_ = getDefaultInstance().getPostalCode();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string postalCode = 6;</code>
+       * @param value The bytes for postalCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPostalCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        postalCode_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object address_ = "";
+      /**
+       * <code>string address = 7;</code>
+       * @return The address.
+       */
+      public java.lang.String getAddress() {
+        java.lang.Object ref = address_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          address_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string address = 7;</code>
+       * @return The bytes for address.
+       */
+      public com.google.protobuf.ByteString
+          getAddressBytes() {
+        java.lang.Object ref = address_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          address_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string address = 7;</code>
+       * @param value The address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddress(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        address_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 7;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddress() {
+        address_ = getDefaultInstance().getAddress();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string address = 7;</code>
+       * @param value The bytes for address to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddressBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        address_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object status_ = "";
+      /**
+       * <code>string status = 8;</code>
+       * @return The status.
+       */
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          status_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string status = 8;</code>
+       * @return The bytes for status.
+       */
+      public com.google.protobuf.ByteString
+          getStatusBytes() {
+        java.lang.Object ref = status_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          status_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string status = 8;</code>
+       * @param value The status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatus(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        status_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 8;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
+        bitField0_ = (bitField0_ & ~0x00000080);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string status = 8;</code>
+       * @param value The bytes for status to set.
+       * @return This builder for chaining.
+       */
+      public Builder setStatusBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        status_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object managingBranchCode_ = "";
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
+       * @return Whether the managingBranchCode field is set.
+       */
+      public boolean hasManagingBranchCode() {
+        return ((bitField0_ & 0x00000100) != 0);
+      }
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
+       * @return The managingBranchCode.
+       */
+      public java.lang.String getManagingBranchCode() {
+        java.lang.Object ref = managingBranchCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          managingBranchCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
+       * @return The bytes for managingBranchCode.
+       */
+      public com.google.protobuf.ByteString
+          getManagingBranchCodeBytes() {
+        java.lang.Object ref = managingBranchCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          managingBranchCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
+       * @param value The managingBranchCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagingBranchCode(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        managingBranchCode_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearManagingBranchCode() {
+        managingBranchCode_ = getDefaultInstance().getManagingBranchCode();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string managingBranchCode = 9;</code>
+       * @param value The bytes for managingBranchCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setManagingBranchCodeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        managingBranchCode_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto)
+    private static final com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto();
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProto>
+        PARSER = new com.google.protobuf.AbstractParser<KftcFinancialInstitutionBranchInfoProto>() {
+      @java.lang.Override
+      public KftcFinancialInstitutionBranchInfoProto parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProto> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProto> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> 
+        getObjectsList();
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(int index);
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    int getObjectsCount();
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+        getObjectsOrBuilderList();
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
+        int index);
+  }
+  /**
+   * Protobuf type {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated}
+   */
+  public static final class KftcFinancialInstitutionBranchInfoProtoRepeated extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+      KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder {
+  private static final long serialVersionUID = 0L;
+    static {
+      com.google.protobuf.RuntimeVersion.validateProtobufGencodeVersion(
+        com.google.protobuf.RuntimeVersion.RuntimeDomain.PUBLIC,
+        /* major= */ 4,
+        /* minor= */ 29,
+        /* patch= */ 3,
+        /* suffix= */ "",
+        KftcFinancialInstitutionBranchInfoProtoRepeated.class.getName());
+    }
+    // Use KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder() to construct.
+    private KftcFinancialInstitutionBranchInfoProtoRepeated(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private KftcFinancialInstitutionBranchInfoProtoRepeated() {
+      objects_ = java.util.Collections.emptyList();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.Builder.class);
+    }
+
+    public static final int OBJECTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> objects_;
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> getObjectsList() {
+      return objects_;
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+        getObjectsOrBuilderList() {
+      return objects_;
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public int getObjectsCount() {
+      return objects_.size();
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(int index) {
+      return objects_.get(index);
+    }
+    /**
+     * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+     */
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
+        int index) {
+      return objects_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < objects_.size(); i++) {
+        output.writeMessage(1, objects_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < objects_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, objects_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated)) {
+        return super.equals(obj);
+      }
+      com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated other = (com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) obj;
+
+      if (!getObjectsList()
+          .equals(other.getObjectsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getObjectsCount() > 0) {
+        hash = (37 * hash) + OBJECTS_FIELD_NUMBER;
+        hash = (53 * hash) + getObjectsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeatedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.class, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.Builder.class);
+      }
+
+      // Construct using com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (objectsBuilder_ == null) {
+          objects_ = java.util.Collections.emptyList();
+        } else {
+          objects_ = null;
+          objectsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstanceForType() {
+        return com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated build() {
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated buildPartial() {
+        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result = new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result) {
+        if (objectsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            objects_ = java.util.Collections.unmodifiableList(objects_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.objects_ = objects_;
+        } else {
+          result.objects_ = objectsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated) {
+          return mergeFrom((com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated other) {
+        if (other == com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated.getDefaultInstance()) return this;
+        if (objectsBuilder_ == null) {
+          if (!other.objects_.isEmpty()) {
+            if (objects_.isEmpty()) {
+              objects_ = other.objects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureObjectsIsMutable();
+              objects_.addAll(other.objects_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.objects_.isEmpty()) {
+            if (objectsBuilder_.isEmpty()) {
+              objectsBuilder_.dispose();
+              objectsBuilder_ = null;
+              objects_ = other.objects_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              objectsBuilder_ = 
+                com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders ?
+                   getObjectsFieldBuilder() : null;
+            } else {
+              objectsBuilder_.addAllMessages(other.objects_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto m =
+                    input.readMessage(
+                        com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.parser(),
+                        extensionRegistry);
+                if (objectsBuilder_ == null) {
+                  ensureObjectsIsMutable();
+                  objects_.add(m);
+                } else {
+                  objectsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> objects_ =
+        java.util.Collections.emptyList();
+      private void ensureObjectsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          objects_ = new java.util.ArrayList<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto>(objects_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> objectsBuilder_;
+
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> getObjectsList() {
+        if (objectsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(objects_);
+        } else {
+          return objectsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public int getObjectsCount() {
+        if (objectsBuilder_ == null) {
+          return objects_.size();
+        } else {
+          return objectsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto getObjects(int index) {
+        if (objectsBuilder_ == null) {
+          return objects_.get(index);
+        } else {
+          return objectsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder setObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
+        if (objectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectsIsMutable();
+          objects_.set(index, value);
+          onChanged();
+        } else {
+          objectsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder setObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
+        if (objectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectsIsMutable();
+          objects_.add(value);
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto value) {
+        if (objectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureObjectsIsMutable();
+          objects_.add(index, value);
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(
+          com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.add(builderForValue.build());
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addObjects(
+          int index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder builderForValue) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          objectsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder addAllObjects(
+          java.lang.Iterable<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto> values) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, objects_);
+          onChanged();
+        } else {
+          objectsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder clearObjects() {
+        if (objectsBuilder_ == null) {
+          objects_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          objectsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public Builder removeObjects(int index) {
+        if (objectsBuilder_ == null) {
+          ensureObjectsIsMutable();
+          objects_.remove(index);
+          onChanged();
+        } else {
+          objectsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder getObjectsBuilder(
+          int index) {
+        return getObjectsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder getObjectsOrBuilder(
+          int index) {
+        if (objectsBuilder_ == null) {
+          return objects_.get(index);  } else {
+          return objectsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public java.util.List<? extends com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+           getObjectsOrBuilderList() {
+        if (objectsBuilder_ != null) {
+          return objectsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(objects_);
+        }
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder addObjectsBuilder() {
+        return getObjectsFieldBuilder().addBuilder(
+            com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder addObjectsBuilder(
+          int index) {
+        return getObjectsFieldBuilder().addBuilder(
+            index, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProto objects = 1;</code>
+       */
+      public java.util.List<com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder> 
+           getObjectsBuilderList() {
+        return getObjectsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilder<
+          com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder> 
+          getObjectsFieldBuilder() {
+        if (objectsBuilder_ == null) {
+          objectsBuilder_ = new com.google.protobuf.RepeatedFieldBuilder<
+              com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProto.Builder, com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoOrBuilder>(
+                  objects_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          objects_ = null;
+        }
+        return objectsBuilder_;
+      }
+
+      // @@protoc_insertion_point(builder_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoRepeated)
+    private static final com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated();
+    }
+
+    public static com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated>
+        PARSER = new com.google.protobuf.AbstractParser<KftcFinancialInstitutionBranchInfoProtoRepeated>() {
+      @java.lang.Override
+      public KftcFinancialInstitutionBranchInfoProtoRepeated parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<KftcFinancialInstitutionBranchInfoProtoRepeated> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.github.jinahya.kftc.financial.institution.info.proto.KftcFinancialInstitutionBranchInfoProtoOuterClass.KftcFinancialInstitutionBranchInfoProtoRepeated getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable;
+
+  public static com.google.protobuf.Descriptors.FileDescriptor
+      getDescriptor() {
+    return descriptor;
+  }
+  private static  com.google.protobuf.Descriptors.FileDescriptor
+      descriptor;
+  static {
+    java.lang.String[] descriptorData = {
+      "\nFsrc/test/resources-proto/KftcFinancial" +
+      "InstitutionBranchInfoProto.proto\0228com.gi" +
+      "thub.jinahya.kftc.financial.institution." +
+      "info.proto\"\210\002\n\'KftcFinancialInstitutionB" +
+      "ranchInfoProto\022\022\n\nbranchCode\030\001 \001(\t\022 \n\030fi" +
+      "nancialInstitutionName\030\002 \001(\t\022\022\n\nbranchNa" +
+      "me\030\003 \001(\t\022\023\n\013phoneNumber\030\004 \001(\t\022\021\n\tfaxNumb" +
+      "er\030\005 \001(\t\022\022\n\npostalCode\030\006 \001(\t\022\017\n\007address\030" +
+      "\007 \001(\t\022\016\n\006status\030\010 \001(\t\022\037\n\022managingBranchC" +
+      "ode\030\t \001(\tH\000\210\001\001B\025\n\023_managingBranchCode\"\245\001" +
+      "\n/KftcFinancialInstitutionBranchInfoProt" +
+      "oRepeated\022r\n\007objects\030\001 \003(\0132a.com.github." +
+      "jinahya.kftc.financial.institution.info." +
+      "proto.KftcFinancialInstitutionBranchInfo" +
+      "Protob\006proto3"
+    };
+    descriptor = com.google.protobuf.Descriptors.FileDescriptor
+      .internalBuildGeneratedFileFrom(descriptorData,
+        new com.google.protobuf.Descriptors.FileDescriptor[] {
+        });
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor =
+      getDescriptor().getMessageTypes().get(0);
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProto_descriptor,
+        new java.lang.String[] { "BranchCode", "FinancialInstitutionName", "BranchName", "PhoneNumber", "FaxNumber", "PostalCode", "Address", "Status", "ManagingBranchCode", });
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_github_jinahya_kftc_financial_institution_info_proto_KftcFinancialInstitutionBranchInfoProtoRepeated_descriptor,
+        new java.lang.String[] { "Objects", });
+    descriptor.resolveAllFeaturesImmutable();
+  }
+
+  // @@protoc_insertion_point(outer_class_scope)
 }

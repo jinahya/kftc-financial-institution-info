@@ -52,9 +52,9 @@ class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
             "캐피탈사", 14,
             "카드사", 15,
             "보험사", 36,
-            "기타", 6,
-            "총기관코드수", 199,
-            "대표코드수", 152
+            "기타", 7,
+            "총기관코드수", 200,
+            "대표코드수", 153
     );
 
     @Test
