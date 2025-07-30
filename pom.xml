@@ -230,7 +230,7 @@
           <version>3.11.2</version>
           <configuration>
             <additionalOptions>
-<!--              <additionalOption>-Xdoclint:none</additionalOption>-->
+              <!--              <additionalOption>-Xdoclint:none</additionalOption>-->
               <!--            <additionalOptions>-package</additionalOptions>-->
             </additionalOptions>
             <tags>
@@ -255,7 +255,7 @@
             <execution>
               <id>default-cli</id>
               <goals>
-                <goal>test-aggregate-no-fork</goal>
+                <goal>test-aggregate</goal>
               </goals>
               <configuration>
                 <show>package</show>
@@ -278,8 +278,9 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.21.0</version>
-          <!--          <version>4.0.0-M16</version>-->
+          <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-site-plugin/versions -->
+          <!--          <version>3.21.0</version>-->
+          <version>4.0.0-M16</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -342,14 +343,14 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.5.0</version>
+        <version>3.6.1</version>
         <executions>
           <execution>
             <id>enforce-dependency-convergence</id>
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -433,7 +434,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
-        <version>2.5.0</version>
+        <version>2.6.0</version>
         <configuration>
           <licenseName>apache_v2</licenseName>
         </configuration>
@@ -470,11 +471,43 @@
       <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.9.3.0</version>
+        <version>4.9.3.2</version>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <reportSets>
+          <reportSet><!-- by default, id = "default" -->
+            <reports><!-- select non-aggregate reports -->
+              <report>javadoc</report>
+            </reports>
+          </reportSet>
+          <reportSet><!-- by default, id = "default" -->
+            <reports><!-- select non-aggregate reports -->
+              <report>test-javadoc</report>
+            </reports>
+            <configuration>
+              <show>package</show>
+            </configuration>
+          </reportSet>
+          <reportSet>
+            <id>aggregate</id>
+            <inherited>true</inherited>
+            <reports>
+              <report>aggregate</report>
+            </reports>
+          </reportSet>
+          <reportSet>
+            <id>test-aggregate</id>
+            <inherited>true</inherited>
+            <reports>
+              <report>test-aggregate</report>
+            </reports>
+            <configuration>
+              <show>package</show>
+            </configuration>
+          </reportSet>
+        </reportSets>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -489,7 +522,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.26.0</version>
+        <version>3.27.0</version>
         <configuration>
           <!-- Unsupported targetJdk value '21'. -->
           <!--          <skip>true</skip>-->
