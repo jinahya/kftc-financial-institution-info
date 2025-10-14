@@ -20,6 +20,7 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
+import java.lang.ref.SoftReference;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -46,32 +47,63 @@ public final class KftcFinancialInstitutionInfoSet {
      * Returns a new instance of this class.
      *
      * @return a new instance of this class.
-     * @implSpec This method, whenever invoked, loads a resource from the classpath. Callees are recommended to store
-     * the result.
+     * @implSpec This method, whenever invoked, loads a resource from the classpath. Callees are recommended to
+     *         store the result.
      */
     public static KftcFinancialInstitutionInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
             assert resource != null;
             final var loaded = (Object[]) _IoUtils.readObject(resource);
             final var array = Arrays.copyOf(loaded, loaded.length, KftcFinancialInstitutionInfo[].class);
-            return new KftcFinancialInstitutionInfoSet(Arrays.asList(array));
+            return new KftcFinancialInstitutionInfoSet(array);
         } catch (final Exception e) {
             throw new RuntimeException("failed to load resource for " + RESOURCE_NAME, e);
         }
     }
 
+    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
+    private static volatile SoftReference<KftcFinancialInstitutionInfoSet> INSTANCE;
+
+    private static KftcFinancialInstitutionInfoSet getInstance() {
+        var result = INSTANCE;
+        if (result == null) {
+            synchronized (KftcFinancialInstitutionInfoSet.class) {
+                result = INSTANCE;
+                if (result == null) {
+                    result = INSTANCE = new SoftReference<>(newInstance());
+                }
+            }
+        }
+        return Optional.ofNullable(result.get()).orElseGet(() -> {
+            INSTANCE = null;
+            return getInstance();
+        });
+    }
+
+    // TODO: make it public
+    static <R> R applyInstance(final Function<? super KftcFinancialInstitutionInfoSet, ? extends R> function) {
+        Objects.requireNonNull(function, "function is null");
+        return function.apply(getInstance());
+    }
+
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
 
     /**
-     * Creates a new instance with specified list.
+     * Creates a new instance with the specified array.
      *
-     * @param list the list to hold.
+     * @param array the array to hold.
      */
-    KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
+//    KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
+    KftcFinancialInstitutionInfoSet(final KftcFinancialInstitutionInfo[] array) {
         super();
-        this.list = Objects.requireNonNull(list, "list is null");
+        this.list = Arrays.asList(Objects.requireNonNull(array, "array is null"));
         map = this.list.stream()
-                .collect(Collectors.toUnmodifiableMap(KftcFinancialInstitutionInfo::getCode, Function.identity()));
+                .collect(
+                        Collectors.toUnmodifiableMap(
+                                KftcFinancialInstitutionInfo::getCode,
+                                Function.identity()
+                        )
+                );
     }
 
     // ------------------------------------------------------------------------------------------------------------ list
