@@ -20,12 +20,12 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.lang.ref.SoftReference;
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -62,37 +62,35 @@ public final class KftcFinancialInstitutionInfoSet {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    private static volatile SoftReference<KftcFinancialInstitutionInfoSet> INSTANCE;
+    private static volatile Reference<KftcFinancialInstitutionInfoSet> INSTANCE1;
 
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
     private static KftcFinancialInstitutionInfoSet getInstance1() {
-        var result = INSTANCE == null ? null : INSTANCE.get();
+        var result = INSTANCE1 == null ? null : INSTANCE1.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
-                result = INSTANCE == null ? null : INSTANCE.get();
+                result = INSTANCE1 == null ? null : INSTANCE1.get();
                 if (result == null) {
                     result = newInstance();
-                    INSTANCE = new SoftReference<>(result);
+                    INSTANCE1 = new WeakReference<>(result);
                 }
             }
         }
         return result;
     }
 
+    private static volatile Reference<KftcFinancialInstitutionInfoSet> INSTANCE2;
+
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
     private static KftcFinancialInstitutionInfoSet getInstance2() {
-        var result = INSTANCE == null ? null : INSTANCE.get();
+        var result = INSTANCE2 == null ? null : INSTANCE2.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
                 result = newInstance();
-                INSTANCE = new SoftReference<>(result);
+                INSTANCE2 = new WeakReference<>(result);
             }
         }
         return result;
-    }
-
-    private static KftcFinancialInstitutionInfoSet getInstance() {
-        return getInstance2();
     }
 
     /**
@@ -104,7 +102,7 @@ public final class KftcFinancialInstitutionInfoSet {
      */
     static <R> R applyInstance(final Function<? super KftcFinancialInstitutionInfoSet, ? extends R> function) {
         Objects.requireNonNull(function, "function is null");
-        return function.apply(getInstance());
+        return function.apply(getInstance2());
     }
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
@@ -114,7 +112,7 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @param array the array to hold.
      */
-    KftcFinancialInstitutionInfoSet(final KftcFinancialInstitutionInfo[] array) {
+    private KftcFinancialInstitutionInfoSet(final KftcFinancialInstitutionInfo[] array) {
         super();
         this.list = Arrays.asList(Objects.requireNonNull(array, "array is null"));
         map = this.list.stream()
@@ -146,17 +144,6 @@ public final class KftcFinancialInstitutionInfoSet {
      */
     public Map<String, KftcFinancialInstitutionInfo> getMap() {
         return map;
-    }
-
-    /**
-     * Returns the info whose current value of {@link KftcFinancialInstitutionInfo#getCode() code} property matches
-     * specified value.
-     *
-     * @param code the {@link KftcFinancialInstitutionInfo#getCode() code} property value to match.
-     * @return an optional of matched value; {@link Optional#empty() empty} when none matches.
-     */
-    public Optional<KftcFinancialInstitutionInfo> get(final String code) {
-        return Optional.ofNullable(getMap().get(code));
     }
 
     // -----------------------------------------------------------------------------------------------------------------

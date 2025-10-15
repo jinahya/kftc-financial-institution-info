@@ -33,8 +33,8 @@ class Readme1Test {
     @Test
     void __001() {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = infoSet.get("001");
-        assertThat(info).hasValueSatisfying(i -> {
+        final var info = infoSet.getMap().get("001");
+        assertThat(info).satisfies(i -> {
             assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.BANK);
             assertThat(i.getCode()).isEqualTo("001");
             assertThat(i.getName()).isEqualTo("한국은행");
@@ -45,8 +45,8 @@ class Readme1Test {
     @Test
     void __101() {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = infoSet.get("101");
-        assertThat(info).hasValueSatisfying(i -> {
+        final var info = infoSet.getMap().get("101");
+        assertThat(info).isNotNull().satisfies(i -> {
             assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.OTHE);
             assertThat(i.getCode()).isEqualTo("101");
             assertThat(i.getName()).isEqualTo("한국신용정보원");

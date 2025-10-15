@@ -58,11 +58,11 @@ public final class KftcFinancialInstitutionInfo
     @Override
     public String toString() {
         return super.toString() + '{'
-                + "category=" + category
-                + ",code=" + code
-                + ",name=" + name
-                + ",representative=" + representative
-                + '}';
+               + "category=" + category
+               + ",code=" + code
+               + ",name=" + name
+               + ",representative=" + representative
+               + '}';
     }
 
     @Override

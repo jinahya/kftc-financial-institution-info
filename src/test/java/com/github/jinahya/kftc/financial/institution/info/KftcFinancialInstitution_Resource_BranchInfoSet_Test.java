@@ -61,7 +61,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
             assertThat(i.getStatus()).isEqualTo("정상");
             assertThat(i.getManagingBranchCode()).isNull();
         });
-        assertThat(instance.get("0010003")).hasValueSatisfying(i -> {
+        assertThat(instance.getMap().get("0010003")).satisfies(i -> {
             log.debug("i: {}", i);
             assertThat(i.getFinancialInstitutionName()).isEqualTo("한국");
             assertThat(i.getBranchName()).isEqualTo("본부총괄");
@@ -214,7 +214,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         branchInfoSet.getList().forEach(b -> {
             final var branchCode = b.getBranchCode();
             final var code = branchCode.substring(0, 3);
-            final var info = infoSet.get(code).orElse(null);
+            final var info = infoSet.getMap().get(code);
 //            if (info == null && !code.startsWith("0")) {
             if (info == null) {
                 // 099xxx: 금융결제원

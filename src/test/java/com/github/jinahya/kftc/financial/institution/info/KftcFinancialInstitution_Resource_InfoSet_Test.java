@@ -58,7 +58,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __대표코드(final String code, final String name) {
-        assertThat(INSTANCE.get(code)).hasValueSatisfying(v -> {
+        assertThat(INSTANCE.getMap().get(code)).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getName()).isEqualTo(name);
         });
@@ -73,12 +73,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __은행(final String code, final String name) {
-        final var value = INSTANCE.get(code);
+        final var value = INSTANCE.getMap().get(code);
         if (name == null) {
-            assertThat(value).isEmpty();
+            assertThat(value).isNull();
             return;
         }
-        assertThat(value).hasValueSatisfying(v -> {
+        assertThat(value).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.BANK);
             assertThat(v.getName()).isEqualTo(name);
@@ -91,12 +91,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __금융투자회사(final String code, final String name) {
-        final var value = INSTANCE.get(code);
+        final var value = INSTANCE.getMap().get(code);
         if (name == null) {
-            assertThat(value).isEmpty();
+            assertThat(value).isNull();
             return;
         }
-        assertThat(value).hasValueSatisfying(v -> {
+        assertThat(value).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.FIIN);
             assertThat(v.getName()).isEqualTo(name);
@@ -109,12 +109,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __캐피탈사(final String code, final String name) {
-        final var value = INSTANCE.get(code);
+        final var value = INSTANCE.getMap().get(code);
         if (name == null) {
-            assertThat(value).isEmpty();
+            assertThat(value).isNull();
             return;
         }
-        assertThat(value).hasValueSatisfying(v -> {
+        assertThat(value).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.CAPI);
             assertThat(v.getName()).isEqualTo(name);
@@ -127,12 +127,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __카드사(final String code, final String name) {
-        final var value = INSTANCE.get(code);
+        final var value = INSTANCE.getMap().get(code);
         if (name == null) {
-            assertThat(value).isEmpty();
+            assertThat(value).isNull();
             return;
         }
-        assertThat(value).hasValueSatisfying(v -> {
+        assertThat(value).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.CARD);
             assertThat(v.getName()).isEqualTo(name);
@@ -147,12 +147,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __보험사(final String code, final String name) {
-        final var value = INSTANCE.get(code);
+        final var value = INSTANCE.getMap().get(code);
         if (name == null) {
-            assertThat(value).isEmpty();
+            assertThat(value).isNull();
             return;
         }
-        assertThat(value).hasValueSatisfying(v -> {
+        assertThat(value).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.INSU);
             assertThat(v.getName()).isEqualTo(name);
@@ -166,12 +166,12 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __기타(final String code, final String name) {
-        final var value = INSTANCE.get(code);
+        final var value = INSTANCE.getMap().get(code);
         if (name == null) {
-            assertThat(value).isEmpty();
+            assertThat(value).isNull();
             return;
         }
-        assertThat(value).hasValueSatisfying(v -> {
+        assertThat(value).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getCategory()).isEqualTo(KftcFinancialInstitutionCategory.OTHE);
             assertThat(v.getName()).isEqualTo(name);

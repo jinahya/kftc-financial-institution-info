@@ -20,12 +20,12 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.lang.ref.SoftReference;
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -36,8 +36,7 @@ import java.util.stream.Collectors;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionBranchInfo
  */
-public final class KftcFinancialInstitutionBranchInfoSet
-        implements _InfoSet<KftcFinancialInstitutionBranchInfo> {
+public final class KftcFinancialInstitutionBranchInfoSet {
 
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "codefilex.ser";
@@ -63,37 +62,35 @@ public final class KftcFinancialInstitutionBranchInfoSet
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-    private static volatile SoftReference<KftcFinancialInstitutionBranchInfoSet> INSTANCE;
+    private static volatile Reference<KftcFinancialInstitutionBranchInfoSet> INSTANCE1;
 
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
     private static KftcFinancialInstitutionBranchInfoSet getInstance1() {
-        var result = INSTANCE == null ? null : INSTANCE.get();
+        var result = INSTANCE1 == null ? null : INSTANCE1.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
-                result = INSTANCE == null ? null : INSTANCE.get();
+                result = INSTANCE1 == null ? null : INSTANCE1.get();
                 if (result == null) {
                     result = newInstance();
-                    INSTANCE = new SoftReference<>(result);
+                    INSTANCE1 = new WeakReference<>(result);
                 }
             }
         }
         return result;
     }
 
+    private static Reference<KftcFinancialInstitutionBranchInfoSet> INSTANCE2;
+
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
     private static KftcFinancialInstitutionBranchInfoSet getInstance2() {
-        var result = INSTANCE == null ? null : INSTANCE.get();
+        var result = INSTANCE2 == null ? null : INSTANCE2.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
                 result = newInstance();
-                INSTANCE = new SoftReference<>(result);
+                INSTANCE2 = new WeakReference<>(result);
             }
         }
         return result;
-    }
-
-    private static KftcFinancialInstitutionBranchInfoSet getInstance() {
-        return getInstance2();
     }
 
     /**
@@ -105,7 +102,7 @@ public final class KftcFinancialInstitutionBranchInfoSet
      */
     static <R> R applyInstance(final Function<? super KftcFinancialInstitutionBranchInfoSet, ? extends R> function) {
         Objects.requireNonNull(function, "function is null");
-        return function.apply(getInstance());
+        return function.apply(getInstance2());
     }
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
@@ -115,7 +112,7 @@ public final class KftcFinancialInstitutionBranchInfoSet
      *
      * @param array the array to hold.
      */
-    KftcFinancialInstitutionBranchInfoSet(final KftcFinancialInstitutionBranchInfo[] array) {
+    private KftcFinancialInstitutionBranchInfoSet(final KftcFinancialInstitutionBranchInfo[] array) {
         super();
         this.list = Arrays.asList(Objects.requireNonNull(array, "array is null"));
         map = this.list.stream()
@@ -143,25 +140,14 @@ public final class KftcFinancialInstitutionBranchInfoSet
     // ------------------------------------------------------------------------------------------------------------- map
 
     /**
-     * Returns an <em>unmodifiable</em> map of branch codes and branch info.
+     * Returns an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
+     * and branch info.
      *
-     * @return an <em>unmodifiable</em> map of branch codes and branch info.
+     * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
+     *         and branch info.
      */
     public Map<String, KftcFinancialInstitutionBranchInfo> getMap() {
         return map;
-    }
-
-    /**
-     * Returns the branch info whose current value of
-     * {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property matches specified value.
-     *
-     * @param branchCode the {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branchCode} property value to
-     *                   match.
-     * @return an optional of matched branch info; {@link Optional#empty() empty} when none matches.
-     */
-    @Override
-    public Optional<KftcFinancialInstitutionBranchInfo> get(final String branchCode) {
-        return Optional.ofNullable(getMap().get(branchCode));
     }
 
     // -----------------------------------------------------------------------------------------------------------------
