@@ -61,26 +61,47 @@ public final class KftcFinancialInstitutionInfoSet {
         }
     }
 
-    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
+    // -----------------------------------------------------------------------------------------------------------------
     private static volatile SoftReference<KftcFinancialInstitutionInfoSet> INSTANCE;
 
-    private static KftcFinancialInstitutionInfoSet getInstance() {
-        var result = INSTANCE;
+    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
+    private static KftcFinancialInstitutionInfoSet getInstance1() {
+        var result = INSTANCE == null ? null : INSTANCE.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
-                result = INSTANCE;
+                result = INSTANCE == null ? null : INSTANCE.get();
                 if (result == null) {
-                    result = INSTANCE = new SoftReference<>(newInstance());
+                    result = newInstance();
+                    INSTANCE = new SoftReference<>(result);
                 }
             }
         }
-        return Optional.ofNullable(result.get()).orElseGet(() -> {
-            INSTANCE = null;
-            return getInstance();
-        });
+        return result;
     }
 
-    // TODO: make it public
+    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
+    private static KftcFinancialInstitutionInfoSet getInstance2() {
+        var result = INSTANCE == null ? null : INSTANCE.get();
+        if (result == null) {
+            synchronized (KftcFinancialInstitutionInfoSet.class) {
+                result = newInstance();
+                INSTANCE = new SoftReference<>(result);
+            }
+        }
+        return result;
+    }
+
+    private static KftcFinancialInstitutionInfoSet getInstance() {
+        return getInstance2();
+    }
+
+    /**
+     * Returns the result of the specified function applied to a <em>cached</em> instance of this class.
+     *
+     * @param function the function.
+     * @param <R>      result type parameter
+     * @return the result of the {@code function}.
+     */
     static <R> R applyInstance(final Function<? super KftcFinancialInstitutionInfoSet, ? extends R> function) {
         Objects.requireNonNull(function, "function is null");
         return function.apply(getInstance());
@@ -93,7 +114,6 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @param array the array to hold.
      */
-//    KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
     KftcFinancialInstitutionInfoSet(final KftcFinancialInstitutionInfo[] array) {
         super();
         this.list = Arrays.asList(Objects.requireNonNull(array, "array is null"));

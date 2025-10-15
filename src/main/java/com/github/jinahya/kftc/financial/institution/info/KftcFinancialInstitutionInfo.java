@@ -25,7 +25,7 @@ import java.util.Comparator;
 import java.util.Objects;
 
 /**
- * Represents an information of a financial institution assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
+ * Represents information of a financial institution assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
