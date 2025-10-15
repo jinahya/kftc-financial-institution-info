@@ -65,7 +65,7 @@ public final class KftcFinancialInstitutionInfoSet {
     private static volatile Reference<KftcFinancialInstitutionInfoSet> INSTANCE1;
 
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
-    private static KftcFinancialInstitutionInfoSet getInstance1() {
+    static KftcFinancialInstitutionInfoSet getInstance1() {
         var result = INSTANCE1 == null ? null : INSTANCE1.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
@@ -82,7 +82,7 @@ public final class KftcFinancialInstitutionInfoSet {
     private static volatile Reference<KftcFinancialInstitutionInfoSet> INSTANCE2;
 
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
-    private static KftcFinancialInstitutionInfoSet getInstance2() {
+    static KftcFinancialInstitutionInfoSet getInstance2() {
         var result = INSTANCE2 == null ? null : INSTANCE2.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
@@ -131,8 +131,19 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @return an <em>unmodifiable</em> list of institution info.
      */
-    public List<KftcFinancialInstitutionInfo> getList() {
+    public List<KftcFinancialInstitutionInfo> list() {
         return list;
+    }
+
+    /**
+     * Returns an <em>unmodifiable</em> list of institution info.
+     *
+     * @return an <em>unmodifiable</em> list of institution info.
+     * @deprecated use {@link #list()} instead.
+     */
+    @Deprecated(forRemoval = true)
+    public List<KftcFinancialInstitutionInfo> getList() {
+        return list();
     }
 
     // ------------------------------------------------------------------------------------------------------------- map
@@ -142,8 +153,19 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
      */
-    public Map<String, KftcFinancialInstitutionInfo> getMap() {
+    public Map<String, KftcFinancialInstitutionInfo> map() {
         return map;
+    }
+
+    /**
+     * Returns an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
+     *
+     * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
+     * @deprecated use {@link #map()} instead.
+     */
+    @Deprecated(forRemoval = true)
+    public Map<String, KftcFinancialInstitutionInfo> getMap() {
+        return map();
     }
 
     // -----------------------------------------------------------------------------------------------------------------

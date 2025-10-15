@@ -65,7 +65,7 @@ public final class KftcFinancialInstitutionBranchInfoSet {
     private static volatile Reference<KftcFinancialInstitutionBranchInfoSet> INSTANCE1;
 
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
-    private static KftcFinancialInstitutionBranchInfoSet getInstance1() {
+    static KftcFinancialInstitutionBranchInfoSet getInstance1() {
         var result = INSTANCE1 == null ? null : INSTANCE1.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
@@ -82,7 +82,7 @@ public final class KftcFinancialInstitutionBranchInfoSet {
     private static Reference<KftcFinancialInstitutionBranchInfoSet> INSTANCE2;
 
     // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
-    private static KftcFinancialInstitutionBranchInfoSet getInstance2() {
+    static KftcFinancialInstitutionBranchInfoSet getInstance2() {
         var result = INSTANCE2 == null ? null : INSTANCE2.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
@@ -133,8 +133,19 @@ public final class KftcFinancialInstitutionBranchInfoSet {
      *
      * @return an <em>unmodifiable</em> list of branch info.
      */
-    public List<KftcFinancialInstitutionBranchInfo> getList() {
+    public List<KftcFinancialInstitutionBranchInfo> list() {
         return list;
+    }
+
+    /**
+     * Returns an <em>unmodifiable</em> list of branch info.
+     *
+     * @return an <em>unmodifiable</em> list of branch info.
+     * @deprecated use {@link #list()} instead.
+     */
+    @Deprecated(forRemoval = true)
+    public List<KftcFinancialInstitutionBranchInfo> getList() {
+        return list();
     }
 
     // ------------------------------------------------------------------------------------------------------------- map
@@ -146,8 +157,21 @@ public final class KftcFinancialInstitutionBranchInfoSet {
      * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
      *         and branch info.
      */
-    public Map<String, KftcFinancialInstitutionBranchInfo> getMap() {
+    public Map<String, KftcFinancialInstitutionBranchInfo> map() {
         return map;
+    }
+
+    /**
+     * Returns an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
+     * and branch info.
+     *
+     * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
+     *         and branch info.
+     * @deprecated use {@link #map()} instead.
+     */
+    @Deprecated(forRemoval = true)
+    public Map<String, KftcFinancialInstitutionBranchInfo> getMap() {
+        return map();
     }
 
     // -----------------------------------------------------------------------------------------------------------------

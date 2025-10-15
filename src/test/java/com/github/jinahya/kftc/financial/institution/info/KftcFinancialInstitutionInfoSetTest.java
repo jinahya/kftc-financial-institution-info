@@ -31,7 +31,7 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitutionBranchInfoSetTest {
+class KftcFinancialInstitutionInfoSetTest {
 
     // -----------------------------------------------------------------------------------------------------------------
     @Nested
@@ -45,16 +45,15 @@ class KftcFinancialInstitutionBranchInfoSetTest {
     }
 
     // -----------------------------------------------------------------------------------------------------------------
-
     @Test
     void getInstance1__() {
-        final var result1 = KftcFinancialInstitutionBranchInfoSet.getInstance1();
+        final var result1 = KftcFinancialInstitutionInfoSet.getInstance1();
         log.debug("result1: {}", result1);
         assertThat(result1).isNotNull();
         if (ThreadLocalRandom.current().nextBoolean()) {
             System.gc();
         }
-        final var result2 = KftcFinancialInstitutionBranchInfoSet.getInstance1();
+        final var result2 = KftcFinancialInstitutionInfoSet.getInstance1();
         log.debug("result2: {}", result2);
         assertThat(result2).isNotNull();
         // result2 may or may not same as result1
@@ -70,7 +69,7 @@ class KftcFinancialInstitutionBranchInfoSetTest {
 
     @Test
     void getInstance2__() {
-        final var result1 = KftcFinancialInstitutionBranchInfoSet.getInstance2();
+        final var result1 = KftcFinancialInstitutionInfoSet.getInstance2();
         log.debug("result1: {}", result1);
         assertThat(result1).isNotNull();
         if (ThreadLocalRandom.current().nextBoolean()) {
@@ -92,7 +91,7 @@ class KftcFinancialInstitutionBranchInfoSetTest {
 
     @Test
     void applyInstance__() {
-        final var result1 = KftcFinancialInstitutionBranchInfoSet.applyInstance(Function.identity());
+        final var result1 = KftcFinancialInstitutionInfoSet.applyInstance(Function.identity());
         log.debug("result1: {}", result1);
         assertThat(result1).isNotNull();
         if (ThreadLocalRandom.current().nextBoolean()) {
@@ -120,7 +119,7 @@ class KftcFinancialInstitutionBranchInfoSetTest {
         @Test
         void __() {
             // --------------------------------------------------------------------------------------------------- given
-            final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
+            final var instance = KftcFinancialInstitutionInfoSet.newInstance();
             // ---------------------------------------------------------------------------------------------------- when
             final var list = instance.list();
             // ---------------------------------------------------------------------------------------------------- then
@@ -135,7 +134,7 @@ class KftcFinancialInstitutionBranchInfoSetTest {
         @Test
         void __() {
             // --------------------------------------------------------------------------------------------------- given
-            final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
+            final var instance = KftcFinancialInstitutionInfoSet.newInstance();
             // ---------------------------------------------------------------------------------------------------- when
             final var map = instance.map();
             // ---------------------------------------------------------------------------------------------------- then
