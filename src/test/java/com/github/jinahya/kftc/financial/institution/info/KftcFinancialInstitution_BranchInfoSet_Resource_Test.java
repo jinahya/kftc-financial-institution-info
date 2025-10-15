@@ -29,15 +29,15 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitution_Resource_BranchInfoSet_Test
-        extends KftcFinancialInstitution_Resource__Test {
+class KftcFinancialInstitution_BranchInfoSet_Resource_Test
+        extends _KftcFinancialInstitution_ResourceTest {
 
     @Test
     void __Agency() {
         final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        instance.getMap().forEach((k, v) -> {
+        instance.map().forEach((k, v) -> {
             Optional.ofNullable(v.getManagingBranchCode()).ifPresent(mbc -> {
-                final var managingBranch = instance.getMap().get(mbc);
+                final var managingBranch = instance.map().get(mbc);
                 if (managingBranch == null) {
 //                    log.warn("managingBranch not found: {}", mbc);
                 }
@@ -49,8 +49,8 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
     void __() {
         final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
         assertThat(instance).isNotNull();
-        assertThat(instance.getMap()).isNotEmpty();
-        assertThat(instance.getMap().get("0010003")).satisfies(i -> {
+        assertThat(instance.map()).isNotEmpty();
+        assertThat(instance.map().get("0010003")).satisfies(i -> {
             log.debug("i: {}", i);
             assertThat(i.getFinancialInstitutionName()).isEqualTo("한국");
             assertThat(i.getBranchName()).isEqualTo("본부총괄");
@@ -61,7 +61,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
             assertThat(i.getStatus()).isEqualTo("정상");
             assertThat(i.getManagingBranchCode()).isNull();
         });
-        assertThat(instance.getMap().get("0010003")).satisfies(i -> {
+        assertThat(instance.map().get("0010003")).satisfies(i -> {
             log.debug("i: {}", i);
             assertThat(i.getFinancialInstitutionName()).isEqualTo("한국");
             assertThat(i.getBranchName()).isEqualTo("본부총괄");
@@ -74,7 +74,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // -------------------------------------------------------------------------------------------------- branchCode
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getBranchCode)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -86,7 +86,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ------------------------------------------------------------------------------------ financialInstitutionName
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getFinancialInstitutionName)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -97,7 +97,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // -------------------------------------------------------------------------------------------------- branchName
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getBranchName)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -108,7 +108,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ------------------------------------------------------------------------------------------------- phoneNumber
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getPhoneNumber)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -119,7 +119,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ---------=----------------------------------------------------------------------------- phoneNumberNormalized
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(v -> v.getPhoneNumberNormalized("-"))
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -131,7 +131,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // --------------------------------------------------------------------------------------------------- faxNumber
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getFaxNumber)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -141,7 +141,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ----------------------------------------------------------------------------------------- faxNumberNormalized
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(v -> v.getFaxNumberNormalized("-"))
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -153,7 +153,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // -------------------------------------------------------------------------------------------------- postalCode
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getPostalCode)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -164,7 +164,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ----------------------------------------------------------------------------------------------------- address
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getAddress)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -175,7 +175,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ------------------------------------------------------------------------------------------- addressNormalized
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(e -> e.getAddressNormalized(" "))
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -187,7 +187,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ------------------------------------------------------------------------------------------------------ status
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getStatus)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -197,7 +197,7 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
         });
         // ------------------------------------------------------------------------------------------ managingBranchCode
         assertThat(
-                instance.getList().stream()
+                instance.list().stream()
                         .map(KftcFinancialInstitutionBranchInfo::getManagingBranchCode)
                         .filter(Objects::nonNull)
         ).allSatisfy(v -> {
@@ -211,10 +211,10 @@ class KftcFinancialInstitution_Resource_BranchInfoSet_Test
     void _infoSet_branchCode() {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
         final var branchInfoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        branchInfoSet.getList().forEach(b -> {
+        branchInfoSet.list().forEach(b -> {
             final var branchCode = b.getBranchCode();
             final var code = branchCode.substring(0, 3);
-            final var info = infoSet.getMap().get(code);
+            final var info = infoSet.map().get(code);
 //            if (info == null && !code.startsWith("0")) {
             if (info == null) {
                 // 099xxx: 금융결제원

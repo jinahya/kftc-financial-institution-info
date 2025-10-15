@@ -39,8 +39,8 @@ import java.util.regex.Pattern;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitution_ResourceGeneration_InfoSet_Test
-        extends KftcFinancialInstitution_ResourceGeneration__Test {
+class KftcFinancialInstitution_InfoSet_ResourceGeneration_Test
+        extends _KftcFinancialInstitution_ResourceGenerationTest {
 
     private static final Pattern pattern = Pattern.compile(
 //            "(\\d{3})\\s([\\p{L}\\(\\)\\s]+)?\\s?(\\d{3})?\\s?([\\p{L}\\(\\)\\s]+)?");

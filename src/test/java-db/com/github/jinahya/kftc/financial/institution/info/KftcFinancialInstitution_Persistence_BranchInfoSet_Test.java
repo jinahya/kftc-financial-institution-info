@@ -40,10 +40,10 @@ class KftcFinancialInstitution_Persistence_BranchInfoSet_Test
         final var instance = KftcFinancialInstitutionBranchInfoSet.newInstance();
         acceptEntityManagerInTransaction(em -> {
             final var deleted = clear(em, KftcFinancialInstitutionBranchInfo.class);
-            instance.getList().forEach(em::persist);
+            instance.list().forEach(em::persist);
         });
         {
-            final var copy = new ArrayList<>(instance.getList());
+            final var copy = new ArrayList<>(instance.list());
             acceptEntityManager(em -> {
                 em.clear();
                 em.createQuery("SELECT e FROM %1$s AS e".formatted(ENTITY_NAME),

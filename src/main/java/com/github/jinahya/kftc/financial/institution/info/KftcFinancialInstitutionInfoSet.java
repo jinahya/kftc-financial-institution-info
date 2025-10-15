@@ -36,7 +36,9 @@ import java.util.stream.Collectors;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionInfo
  */
-public final class KftcFinancialInstitutionInfoSet {
+public final class KftcFinancialInstitutionInfoSet implements _InfoSet<KftcFinancialInstitutionInfo> {
+
+    private static final long serialVersionUID = -3125284437493607280L;
 
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "bankinfo.ser";

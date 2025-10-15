@@ -73,7 +73,7 @@ public final class _IoTestUtils {
     static Path resourceDirectory() throws IOException {
         final var directory = Stream.concat(
                         Stream.of("src", "main", "resources"),
-                        Arrays.stream(KftcFinancialInstitutionTestUtils.class.getPackage().getName().split("\\."))
+                        Arrays.stream(_IoTestUtils.class.getPackage().getName().split("\\."))
                 )
                 .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
                 .toAbsolutePath()
@@ -90,7 +90,7 @@ public final class _IoTestUtils {
     static Path testResourceDirectory() throws IOException {
         final var directory = Stream.concat(
                         Stream.of("src", "test", "resources"),
-                        Arrays.stream(KftcFinancialInstitutionTestUtils.class.getPackage().getName().split("\\."))
+                        Arrays.stream(_IoTestUtils.class.getPackage().getName().split("\\."))
                 )
                 .reduce(Path.of("."), Path::resolve, (p1, p2) -> p1)
                 .toAbsolutePath()

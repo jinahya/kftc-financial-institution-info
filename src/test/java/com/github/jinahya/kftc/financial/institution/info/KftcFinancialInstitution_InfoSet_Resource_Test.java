@@ -30,8 +30,8 @@ import java.util.List;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitution_Resource_InfoSet_Test
-        extends KftcFinancialInstitution_Resource__Test {
+class KftcFinancialInstitution_InfoSet_Resource_Test
+        extends _KftcFinancialInstitution_ResourceTest {
 
     private static final KftcFinancialInstitutionInfoSet INSTANCE = KftcFinancialInstitutionInfoSet.newInstance();
 
@@ -39,7 +39,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
 
     protected static List<KftcFinancialInstitutionInfo> list() {
         if (list == null) {
-            list = INSTANCE.getList().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+            list = INSTANCE.list().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
                     .toList();
         }
         return list;
@@ -58,7 +58,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __대표코드(final String code, final String name) {
-        assertThat(INSTANCE.getMap().get(code)).satisfies(v -> {
+        assertThat(INSTANCE.map().get(code)).satisfies(v -> {
             assertThat(v.getCode()).isEqualTo(code);
             assertThat(v.getName()).isEqualTo(name);
         });
@@ -73,7 +73,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __은행(final String code, final String name) {
-        final var value = INSTANCE.getMap().get(code);
+        final var value = INSTANCE.map().get(code);
         if (name == null) {
             assertThat(value).isNull();
             return;
@@ -91,7 +91,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __금융투자회사(final String code, final String name) {
-        final var value = INSTANCE.getMap().get(code);
+        final var value = INSTANCE.map().get(code);
         if (name == null) {
             assertThat(value).isNull();
             return;
@@ -109,7 +109,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __캐피탈사(final String code, final String name) {
-        final var value = INSTANCE.getMap().get(code);
+        final var value = INSTANCE.map().get(code);
         if (name == null) {
             assertThat(value).isNull();
             return;
@@ -127,7 +127,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __카드사(final String code, final String name) {
-        final var value = INSTANCE.getMap().get(code);
+        final var value = INSTANCE.map().get(code);
         if (name == null) {
             assertThat(value).isNull();
             return;
@@ -147,7 +147,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __보험사(final String code, final String name) {
-        final var value = INSTANCE.getMap().get(code);
+        final var value = INSTANCE.map().get(code);
         if (name == null) {
             assertThat(value).isNull();
             return;
@@ -166,7 +166,7 @@ class KftcFinancialInstitution_Resource_InfoSet_Test
     })
     @ParameterizedTest
     void __기타(final String code, final String name) {
-        final var value = INSTANCE.getMap().get(code);
+        final var value = INSTANCE.map().get(code);
         if (name == null) {
             assertThat(value).isNull();
             return;

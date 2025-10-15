@@ -20,14 +20,11 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import lombok.extern.slf4j.Slf4j;
+import java.io.Serializable;
 
-// TODO: remove; empty
-@Slf4j
-public abstract class KftcFinancialInstitutionTestUtils {
+@SuppressWarnings({
+        "java:S114" // interface _...
+})
+interface _InfoSet<INFO extends _Info> extends Serializable {
 
-    // -----------------------------------------------------------------------------------------------------------------
-    private KftcFinancialInstitutionTestUtils() {
-        throw new AssertionError("instantiation is not allowed");
-    }
 }

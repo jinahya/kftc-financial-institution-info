@@ -31,7 +31,7 @@ import java.util.function.Function;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @Slf4j
-class KftcFinancialInstitutionBranchInfoSetTest {
+class KftcFinancialInstitution_BranchInfoSet_Test {
 
     // -----------------------------------------------------------------------------------------------------------------
     @Nested

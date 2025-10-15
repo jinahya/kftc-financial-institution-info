@@ -26,6 +26,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Slf4j
-abstract class KftcFinancialInstitution_ResourceGeneration__Test {
+abstract class _KftcFinancialInstitution_ResourceTest {
 
 }

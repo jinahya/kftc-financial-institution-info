@@ -33,7 +33,7 @@ class Readme1Test {
     @Test
     void __001() {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = infoSet.getMap().get("001");
+        final var info = infoSet.map().get("001");
         assertThat(info).satisfies(i -> {
             assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.BANK);
             assertThat(i.getCode()).isEqualTo("001");
@@ -45,7 +45,7 @@ class Readme1Test {
     @Test
     void __101() {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var info = infoSet.getMap().get("101");
+        final var info = infoSet.map().get("101");
         assertThat(info).isNotNull().satisfies(i -> {
             assertThat(i.getCategory()).isSameAs(KftcFinancialInstitutionCategory.OTHE);
             assertThat(i.getCode()).isEqualTo("101");
@@ -58,7 +58,7 @@ class Readme1Test {
     @ParameterizedTest
     void __BANK(KftcFinancialInstitutionCategory category) {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        infoSet.getList().stream()
+        infoSet.list().stream()
                 .filter(i -> i.getCategory() == category)
                 .filter(KftcFinancialInstitutionInfo::isRepresentative)
                 .sorted(KftcFinancialInstitutionInfo.COMPARING_CODE)

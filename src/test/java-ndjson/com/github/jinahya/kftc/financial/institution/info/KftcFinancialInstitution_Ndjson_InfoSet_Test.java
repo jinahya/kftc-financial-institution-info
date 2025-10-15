@@ -33,7 +33,7 @@ class KftcFinancialInstitution_Ndjson_InfoSet_Test
     @Test
     void __() throws IOException {
         final var infoSet = KftcFinancialInstitutionInfoSet.newInstance();
-        final var list = infoSet.getList().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
+        final var list = infoSet.list().stream().sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
                 .toList();
         final var path = _IoTestUtils.buildOutputFile("bankinfo.ndjson");
         writeValues(list, path.toFile());

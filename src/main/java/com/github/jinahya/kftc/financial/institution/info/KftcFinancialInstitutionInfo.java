@@ -32,7 +32,7 @@ import java.util.Objects;
  * @see KftcFinancialInstitutionInfoSet
  */
 public final class KftcFinancialInstitutionInfo
-        implements Serializable {
+        implements Serializable, _Info {
 
     private static final long serialVersionUID = 5345357074469188526L;
 
