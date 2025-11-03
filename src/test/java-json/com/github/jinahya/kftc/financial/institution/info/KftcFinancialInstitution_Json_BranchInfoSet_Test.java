@@ -35,7 +35,7 @@ class KftcFinancialInstitution_Json_BranchInfoSet_Test
     @Test
     void __() throws IOException {
         final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var list = infoSet.getList().stream()
+        final var list = infoSet.list().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionBranchInfo::getBranchCode))
                 .toList();
         {

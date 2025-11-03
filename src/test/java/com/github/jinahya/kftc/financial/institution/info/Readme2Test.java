@@ -31,7 +31,8 @@ class Readme2Test {
     @Test
     void __3() {
         final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var info = infoSet.get("0010003").orElseThrow();
+        final var info = infoSet.map().get("0010003");
+        Objects.requireNonNull(info, "info is null");
         assert Objects.equals(info.getBranchCode(), "0010003");
         assert Objects.equals(info.getFinancialInstitutionName(), "한국");
         assert Objects.equals(info.getBranchName(), "본부총괄");
@@ -50,7 +51,8 @@ class Readme2Test {
     @Test
     void __4() {
         final var infoSet = KftcFinancialInstitutionBranchInfoSet.newInstance();
-        final var info = infoSet.get("4920018").orElseThrow();
+        final var info = infoSet.map().get("4920018");
+        Objects.requireNonNull(info, "info is null");
         assert info.getBranchCode().equals("4920018");
         assert info.getFinancialInstitutionName().equals("중소벤처기업진흥공단");
         assert info.getBranchName().equals("성장융합금융처");

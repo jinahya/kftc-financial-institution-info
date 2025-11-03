@@ -20,13 +20,11 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.util.Optional;
+import java.io.Serializable;
 
 @SuppressWarnings({
-        "java:S114", // interface _...
-        "java:S119"
+        "java:S114" // interface _...
 })
-interface _InfoSet<INFO extends _Info> {
+interface _InfoSet<INFO extends _Info> extends Serializable {
 
-    Optional<INFO> get(String code);
 }

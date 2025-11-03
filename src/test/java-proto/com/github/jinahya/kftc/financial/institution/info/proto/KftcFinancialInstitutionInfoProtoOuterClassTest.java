@@ -45,7 +45,7 @@ class KftcFinancialInstitutionInfoProtoOuterClassTest {
         final String name = "bankinfo.binpb";
         // write
         {
-            final var mapped = instance.getList().stream()
+            final var mapped = instance.list().stream()
                     .map(KftcFinancialInstitutionInfoProtoOuterClassUtils::from)
                     .toList();
             final var built = KftcFinancialInstitutionInfoProtoRepeated.newBuilder()
@@ -72,7 +72,7 @@ class KftcFinancialInstitutionInfoProtoOuterClassTest {
                         throw new RuntimeException(e);
                     }
                 }).toList();
-                assertThat(list).isEqualTo(instance.getList());
+                assertThat(list).isEqualTo(instance.list());
             }
         }
     }
@@ -83,7 +83,7 @@ class KftcFinancialInstitutionInfoProtoOuterClassTest {
         final String name = "bankinfo.txtpb";
         // write
         {
-            final var mapped = instance.getList().stream()
+            final var mapped = instance.list().stream()
                     .map(KftcFinancialInstitutionInfoProtoOuterClassUtils::from)
                     .toList();
             final var built = KftcFinancialInstitutionInfoProtoRepeated.newBuilder()
@@ -110,7 +110,7 @@ class KftcFinancialInstitutionInfoProtoOuterClassTest {
                     throw new RuntimeException(e);
                 }
             }).toList();
-            assertThat(list).isEqualTo(instance.getList());
+            assertThat(list).isEqualTo(instance.list());
         }
     }
 
@@ -120,7 +120,7 @@ class KftcFinancialInstitutionInfoProtoOuterClassTest {
         final String name = "bankinfo.jsonpb";
         // write
         {
-            final var mapped = instance.getList().stream()
+            final var mapped = instance.list().stream()
                     .map(KftcFinancialInstitutionInfoProtoOuterClassUtils::from)
                     .toList();
             final var built = KftcFinancialInstitutionInfoProtoRepeated.newBuilder()
@@ -149,7 +149,7 @@ class KftcFinancialInstitutionInfoProtoOuterClassTest {
                     throw new RuntimeException(e);
                 }
             }).toList();
-            assertThat(list).isEqualTo(instance.getList());
+            assertThat(list).isEqualTo(instance.list());
         }
     }
 }

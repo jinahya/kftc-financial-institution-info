@@ -86,7 +86,7 @@ class KftcFinancialInstitution_Resource_Jdbc_BranchInfoSet_Test
                               status,
                               managing_branch_code
                             ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?)""".formatted(TABLE_NAME))) {
-                for (var info : KftcFinancialInstitutionBranchInfoSet.newInstance().getList()) {
+                for (var info : KftcFinancialInstitutionBranchInfoSet.newInstance().list()) {
                     statement.clearParameters();
                     int index = 0;
                     statement.setString(++index, info.getBranchCode());

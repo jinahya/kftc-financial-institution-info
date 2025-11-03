@@ -25,14 +25,14 @@ import java.util.Comparator;
 import java.util.Objects;
 
 /**
- * Represents an information of a financial institution assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
+ * Represents information of a financial institution assigned by <a href="https://www.kftc.or.kr">KFTC</a>.
  *
  * @author Jin Kwon &lt;onacit_at_gmail.com&gt;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionInfoSet
  */
 public final class KftcFinancialInstitutionInfo
-        implements Serializable {
+        implements Serializable, _Info {
 
     private static final long serialVersionUID = 5345357074469188526L;
 
@@ -58,11 +58,11 @@ public final class KftcFinancialInstitutionInfo
     @Override
     public String toString() {
         return super.toString() + '{'
-                + "category=" + category
-                + ",code=" + code
-                + ",name=" + name
-                + ",representative=" + representative
-                + '}';
+               + "category=" + category
+               + ",code=" + code
+               + ",name=" + name
+               + ",representative=" + representative
+               + '}';
     }
 
     @Override

@@ -81,7 +81,7 @@ class KftcFinancialInstitution_Resource_Jdbc_InfoSet_Test
                               category
                             ) VALUES(?, ?, ?, ?)""".formatted(TABLE_NAME))) {
                 for (var info :
-                        KftcFinancialInstitutionInfoSet.newInstance().getList()) {
+                        KftcFinancialInstitutionInfoSet.newInstance().list()) {
                     statement.clearParameters();
                     int index = 0;
                     statement.setString(++index, info.getCode());

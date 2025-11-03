@@ -134,16 +134,16 @@ public final class KftcFinancialInstitutionBranchInfo
     @Override
     public String toString() {
         return super.toString() + '{'
-                + "branchCode=" + branchCode
-                + ",financialInstitutionName=" + financialInstitutionName
-                + ",branchName=" + branchName
-                + ",phoneNumber=" + phoneNumber
-                + ",faxNumber=" + faxNumber
-                + ",postalCode=" + postalCode
-                + ",address=" + address
-                + ",status=" + status
-                + ",managingBranchCode=" + managingBranchCode
-                + '}';
+               + "branchCode=" + branchCode
+               + ",financialInstitutionName=" + financialInstitutionName
+               + ",branchName=" + branchName
+               + ",phoneNumber=" + phoneNumber
+               + ",faxNumber=" + faxNumber
+               + ",postalCode=" + postalCode
+               + ",address=" + address
+               + ",status=" + status
+               + ",managingBranchCode=" + managingBranchCode
+               + '}';
     }
 
     @Override

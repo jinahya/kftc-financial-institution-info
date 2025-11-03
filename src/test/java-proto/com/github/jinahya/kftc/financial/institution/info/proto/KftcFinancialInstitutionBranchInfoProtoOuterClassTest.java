@@ -45,7 +45,7 @@ class KftcFinancialInstitutionBranchInfoProtoOuterClassTest {
         final String name = "codefilex.binpb";
         // write
         {
-            final var mapped = instance.getList().stream()
+            final var mapped = instance.list().stream()
                     .map(KftcFinancialInstitutionBranchInfoProtoOuterClassUtils::from)
                     .toList();
             final var built = KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder()
@@ -72,7 +72,7 @@ class KftcFinancialInstitutionBranchInfoProtoOuterClassTest {
                         throw new RuntimeException(e);
                     }
                 }).toList();
-                assertThat(list).isEqualTo(instance.getList());
+                assertThat(list).isEqualTo(instance.list());
             }
         }
     }
@@ -83,7 +83,7 @@ class KftcFinancialInstitutionBranchInfoProtoOuterClassTest {
         final String name = "codefilex.txtpb";
         // write
         {
-            final var mapped = instance.getList().stream()
+            final var mapped = instance.list().stream()
                     .map(KftcFinancialInstitutionBranchInfoProtoOuterClassUtils::from)
                     .toList();
             final var built = KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder()
@@ -110,7 +110,7 @@ class KftcFinancialInstitutionBranchInfoProtoOuterClassTest {
                     throw new RuntimeException(e);
                 }
             }).toList();
-            assertThat(list).isEqualTo(instance.getList());
+            assertThat(list).isEqualTo(instance.list());
         }
     }
 
@@ -120,7 +120,7 @@ class KftcFinancialInstitutionBranchInfoProtoOuterClassTest {
         final String name = "codefilex.jsonpb";
         // write
         {
-            final var mapped = instance.getList().stream()
+            final var mapped = instance.list().stream()
                     .map(KftcFinancialInstitutionBranchInfoProtoOuterClassUtils::from)
                     .toList();
             final var built = KftcFinancialInstitutionBranchInfoProtoRepeated.newBuilder()
@@ -149,7 +149,7 @@ class KftcFinancialInstitutionBranchInfoProtoOuterClassTest {
                     throw new RuntimeException(e);
                 }
             }).toList();
-            assertThat(list).isEqualTo(instance.getList());
+            assertThat(list).isEqualTo(instance.list());
         }
     }
 }

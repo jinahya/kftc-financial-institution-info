@@ -20,12 +20,12 @@ package com.github.jinahya.kftc.financial.institution.info;
  * #L%
  */
 
-import java.lang.ref.SoftReference;
+import java.lang.ref.Reference;
+import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
-import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -36,7 +36,9 @@ import java.util.stream.Collectors;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionInfo
  */
-public final class KftcFinancialInstitutionInfoSet {
+public final class KftcFinancialInstitutionInfoSet implements _InfoSet<KftcFinancialInstitutionInfo> {
+
+    private static final long serialVersionUID = -3125284437493607280L;
 
     // -----------------------------------------------------------------------------------------------------------------
     static final String RESOURCE_NAME = "bankinfo.ser";
@@ -61,29 +63,48 @@ public final class KftcFinancialInstitutionInfoSet {
         }
     }
 
-    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
-    private static volatile SoftReference<KftcFinancialInstitutionInfoSet> INSTANCE;
+    // -----------------------------------------------------------------------------------------------------------------
+    private static volatile Reference<KftcFinancialInstitutionInfoSet> INSTANCE1;
 
-    private static KftcFinancialInstitutionInfoSet getInstance() {
-        var result = INSTANCE;
+    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
+    static KftcFinancialInstitutionInfoSet getInstance1() {
+        var result = INSTANCE1 == null ? null : INSTANCE1.get();
         if (result == null) {
             synchronized (KftcFinancialInstitutionInfoSet.class) {
-                result = INSTANCE;
+                result = INSTANCE1 == null ? null : INSTANCE1.get();
                 if (result == null) {
-                    result = INSTANCE = new SoftReference<>(newInstance());
+                    result = newInstance();
+                    INSTANCE1 = new WeakReference<>(result);
                 }
             }
         }
-        return Optional.ofNullable(result.get()).orElseGet(() -> {
-            INSTANCE = null;
-            return getInstance();
-        });
+        return result;
     }
 
-    // TODO: make it public
+    private static volatile Reference<KftcFinancialInstitutionInfoSet> INSTANCE2;
+
+    // https://stackoverflow.com/questions/79789816/how-can-i-cache-a-single-object
+    static KftcFinancialInstitutionInfoSet getInstance2() {
+        var result = INSTANCE2 == null ? null : INSTANCE2.get();
+        if (result == null) {
+            synchronized (KftcFinancialInstitutionInfoSet.class) {
+                result = newInstance();
+                INSTANCE2 = new WeakReference<>(result);
+            }
+        }
+        return result;
+    }
+
+    /**
+     * Returns the result of the specified function applied to a <em>cached</em> instance of this class.
+     *
+     * @param function the function.
+     * @param <R>      result type parameter
+     * @return the result of the {@code function}.
+     */
     static <R> R applyInstance(final Function<? super KftcFinancialInstitutionInfoSet, ? extends R> function) {
         Objects.requireNonNull(function, "function is null");
-        return function.apply(getInstance());
+        return function.apply(getInstance2());
     }
 
     // ---------------------------------------------------------------------------------------------------- CONSTRUCTORS
@@ -93,8 +114,7 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @param array the array to hold.
      */
-//    KftcFinancialInstitutionInfoSet(final List<KftcFinancialInstitutionInfo> list) {
-    KftcFinancialInstitutionInfoSet(final KftcFinancialInstitutionInfo[] array) {
+    private KftcFinancialInstitutionInfoSet(final KftcFinancialInstitutionInfo[] array) {
         super();
         this.list = Arrays.asList(Objects.requireNonNull(array, "array is null"));
         map = this.list.stream()
@@ -113,8 +133,19 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @return an <em>unmodifiable</em> list of institution info.
      */
-    public List<KftcFinancialInstitutionInfo> getList() {
+    public List<KftcFinancialInstitutionInfo> list() {
         return list;
+    }
+
+    /**
+     * Returns an <em>unmodifiable</em> list of institution info.
+     *
+     * @return an <em>unmodifiable</em> list of institution info.
+     * @deprecated use {@link #list()} instead.
+     */
+    @Deprecated(forRemoval = true)
+    public List<KftcFinancialInstitutionInfo> getList() {
+        return list();
     }
 
     // ------------------------------------------------------------------------------------------------------------- map
@@ -124,19 +155,19 @@ public final class KftcFinancialInstitutionInfoSet {
      *
      * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
      */
-    public Map<String, KftcFinancialInstitutionInfo> getMap() {
+    public Map<String, KftcFinancialInstitutionInfo> map() {
         return map;
     }
 
     /**
-     * Returns the info whose current value of {@link KftcFinancialInstitutionInfo#getCode() code} property matches
-     * specified value.
+     * Returns an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
      *
-     * @param code the {@link KftcFinancialInstitutionInfo#getCode() code} property value to match.
-     * @return an optional of matched value; {@link Optional#empty() empty} when none matches.
+     * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionInfo#getCode() codes} and info.
+     * @deprecated use {@link #map()} instead.
      */
-    public Optional<KftcFinancialInstitutionInfo> get(final String code) {
-        return Optional.ofNullable(getMap().get(code));
+    @Deprecated(forRemoval = true)
+    public Map<String, KftcFinancialInstitutionInfo> getMap() {
+        return map();
     }
 
     // -----------------------------------------------------------------------------------------------------------------
