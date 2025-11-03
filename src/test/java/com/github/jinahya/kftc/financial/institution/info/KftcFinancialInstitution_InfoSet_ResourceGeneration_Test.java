@@ -51,10 +51,10 @@ class KftcFinancialInstitution_InfoSet_ResourceGeneration_Test
             "금융투자회사", 47,
             "캐피탈사", 14,
             "카드사", 15,
-            "보험사", 36,
+            "보험사", 37,
             "기타", 7,
-            "총기관코드수", 200,
-            "대표코드수", 153
+            "총기관코드수", 201,
+            "대표코드수", 154
     );
 
     @Test
