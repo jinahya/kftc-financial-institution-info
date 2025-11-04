@@ -57,13 +57,14 @@ class KftcFinancialInstitution_InfoSet_ResourceGeneration_Test
             "대표코드수", 154
     );
 
-    @Test
-    void __() throws Exception {
-        final var file = new File(getClass().getResource("/bankinfo.hwp.pdf").toURI());
+    static Map<String, KftcFinancialInstitutionInfo> parse() throws Exception {
+        final var file = new File(
+                KftcFinancialInstitution_InfoSet_ResourceGeneration_Test.class.getResource("/bankinfo.hwp.pdf").toURI()
+        );
         assert file.isFile();
-        final boolean[] representatives = new boolean[]{false};
-        final KftcFinancialInstitutionCategory[] categories = new KftcFinancialInstitutionCategory[]{null};
-        final Map<String, KftcFinancialInstitutionInfo> map = new TreeMap<>();
+        final var representatives = new boolean[]{false};
+        final var categories = new KftcFinancialInstitutionCategory[]{null};
+        final var map = new TreeMap<String, KftcFinancialInstitutionInfo>();
         final var reader = new PdfReader(file.toURI().toURL());
         try {
             final var numberOfPages = reader.getNumberOfPages();
@@ -183,6 +184,136 @@ class KftcFinancialInstitution_InfoSet_ResourceGeneration_Test
                         .count()
         ).isEqualTo(Long.valueOf(MAP.get("대표코드수")));
         assertThat(map).hasSize(MAP.get("총기관코드수"));
+        return map;
+    }
+
+    @Test
+    void __() throws Exception {
+//        final var file = new File(getClass().getResource("/bankinfo.hwp.pdf").toURI());
+//        assert file.isFile();
+//        final var representatives = new boolean[]{false};
+//        final var categories = new KftcFinancialInstitutionCategory[]{null};
+//        final var map = new TreeMap<String, KftcFinancialInstitutionInfo>();
+//        final var reader = new PdfReader(file.toURI().toURL());
+//        try {
+//            final var numberOfPages = reader.getNumberOfPages();
+//            for (var i = 1; i <= numberOfPages; i++) {
+//                final var textFromPage = PdfTextExtractor.getTextFromPage(reader, i);
+//                try (var lines = textFromPage.lines()) {
+//                    lines.forEach(l -> {
+//                        try {
+//                            final var category = KftcFinancialInstitutionCategory.valueOfDelimiter(l);
+//                            representatives[0] = false;
+//                            categories[0] = category;
+//                        } catch (final IllegalArgumentException iae) {
+//                        }
+//                        if (Objects.equals(_TestConstants.DELIMITER_REPR, l)) {
+//                            log.debug("................... 대표코드!!!");
+//                            representatives[0] = true;
+//                        }
+//                        final var matcher = pattern.matcher(l);
+//                        if (matcher.matches()) {
+//                            log.debug("{} / {} / {} / {}", matcher.group(1), matcher.group(2), matcher.group(3),
+//                                      matcher.group(4));
+//                            if (matcher.group(1) != null && matcher.group(2) != null) {
+//                                final var code = matcher.group(1);
+//                                assertThat(code).isNotBlank();
+//                                final var name = matcher.group(2);
+//                                assertThat(name).isNotBlank();
+//                                log.debug("\t\tcode: {}, name: {}", code, name);
+//                                final var value = new KftcFinancialInstitutionInfo();
+//                                value.setCategory(categories[0]);
+//                                value.setCode(code.strip());
+//                                value.setName(name.strip());
+//                                value.setRepresentative(representatives[0]);
+//                                map.compute(code, (k, v) -> {
+//                                    if (v != null) {
+//                                        assertThat(v.isRepresentative())
+//                                                .as("representative of previous %1$s", v)
+//                                                .isTrue();
+//                                        v.setCategory(value.getCategory());
+//                                        return v;
+//                                    } else {
+//                                        return value;
+//                                    }
+//                                });
+//                            }
+////                        assert prev1 == null : "prev1 for " + key1;
+//                            if (matcher.group(3) != null && matcher.group(4) != null) {
+//                                final var code = matcher.group(3);
+//                                assertThat(code).isNotBlank();
+//                                final var name = matcher.group(4);
+//                                assertThat(name).isNotBlank();
+//                                log.debug("\t\tcode: {}, name: {}", code, name);
+//                                final var value = new KftcFinancialInstitutionInfo();
+//                                value.setCategory(categories[0]);
+//                                value.setCode(code.strip());
+//                                value.setName(name.strip());
+//                                value.setRepresentative(representatives[0]);
+//                                map.compute(code, (k, v) -> {
+//                                    if (v != null) {
+//                                        assertThat(v.isRepresentative())
+//                                                .as("representative of previous %1$s", v)
+//                                                .isTrue();
+//                                        v.setCategory(value.getCategory());
+//                                        return v;
+//                                    } else {
+//                                        return value;
+//                                    }
+//                                });
+//                            }
+////                        assert prev2 == null : "prev2 for " + key1;
+//                        }
+//                    });
+//                }
+//            }
+//        } finally {
+//            reader.close();
+//        }
+//        assertThat(map.keySet()).doesNotContainNull();
+//        assertThat(map.values()).allSatisfy(v -> {
+//            assertThat(v.getCode()).isNotBlank();
+//            assertThat(v.getName()).isNotBlank();
+//        });
+//        assertThat(
+//                map.values().stream()
+//                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.BANK)
+//                        .count()
+//        ).isEqualTo(Long.valueOf(MAP.get("은행")));
+//        assertThat(
+//                map.values().stream()
+//                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.FIIN)
+//                        .count()
+//        ).isEqualTo(Long.valueOf(MAP.get("금융투자회사")));
+//        assertThat(
+//                map.values().stream()
+//                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CAPI)
+//                        .count()
+//        ).isEqualTo(Long.valueOf(MAP.get("캐피탈사")));
+//        assertThat(
+//                map.values().stream()
+//                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.CARD)
+//                        .count()
+//        )
+//                .as("count of %1$s", KftcFinancialInstitutionCategory.CARD)
+//                .isEqualTo(Long.valueOf(MAP.get("카드사")));
+//        assertThat(
+//                map.values().stream()
+//                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.INSU)
+//                        .count()
+//        ).isEqualTo(Long.valueOf(MAP.get("보험사")));
+//        assertThat(
+//                map.values().stream()
+//                        .filter(v -> v.getCategory() == KftcFinancialInstitutionCategory.OTHE)
+//                        .count()
+//        ).isEqualTo(Long.valueOf(MAP.get("기타")));
+//        assertThat(
+//                map.values().stream()
+//                        .filter(KftcFinancialInstitutionInfo::isRepresentative)
+//                        .count()
+//        ).isEqualTo(Long.valueOf(MAP.get("대표코드수")));
+//        assertThat(map).hasSize(MAP.get("총기관코드수"));
+        final var map = parse();
         // -------------------------------------------------------------------------------------------------------------
         final var array = map.values().stream()
                 .sorted(Comparator.comparing(KftcFinancialInstitutionInfo::getCode))
