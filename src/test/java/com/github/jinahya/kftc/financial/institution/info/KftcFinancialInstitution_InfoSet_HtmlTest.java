@@ -23,6 +23,7 @@ package com.github.jinahya.kftc.financial.institution.info;
 import htmlflow.HtmlFlow;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import org.xmlet.htmlapifaster.EnumCrossoriginCrossOriginType;
 import org.xmlet.htmlapifaster.EnumRelType;
 
 import java.io.FileOutputStream;
@@ -48,9 +49,12 @@ class KftcFinancialInstitution_InfoSet_HtmlTest {
                     .head()
                     .title().text("KFTC Financial Institution Branch Info").__()
 
+                    // https://pure-css.github.io/start/
                     .link()
                     .attrRel(EnumRelType.STYLESHEET)
                     .attrHref("https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css")
+                    .addAttr("integrity", "sha384-X38yfunGUhNzHpBaEBsWLO+A0HDYOQi8ufWDkZ0k9e0eXz/tH3II7uKZ9msv++Ls")
+                    .attrCrossorigin(EnumCrossoriginCrossOriginType.ANONYMOUS)
                     .__() // </link>
 
                     .meta().attrName("viewport").attrContent("width=device-width, initial-scale=1").__()
