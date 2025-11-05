@@ -49,7 +49,7 @@ and Clearings Institute).
 
 ### JDK
 
-Requires `21` for building while the module targets `11`.
+Requires `25` for building while the module targets `11`.
 
 <!-- $ grep maven.compiler\\. pom.xml -->
 
@@ -58,7 +58,7 @@ Requires `21` for building while the module targets `11`.
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
-    <maven.compiler.testSource>21</maven.compiler.testSource>
+    <maven.compiler.testSource>25</maven.compiler.testSource>
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
     <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
 ```
