@@ -5,11 +5,11 @@
   <parent>
     <groupId>io.github.jinahya</groupId>
     <artifactId>jinahya-parent</artifactId>
-    <version>0.9.9</version>
+    <version>1.0.5</version>
   </parent>
 
   <artifactId>kftc-financial-institution-info</artifactId>
-  <version>1.0.0.20251103</version>
+  <version>1.0.0.20251222</version>
   <packaging>jar</packaging>
 
   <name>${project.artifactId}</name>
@@ -46,7 +46,7 @@
     <connection>scm:git:git@github.com:jinahya/${project.artifactId}.git</connection>
     <developerConnection>scm:git:git@github.com:jinahya/${project.artifactId}.git</developerConnection>
     <url>https://github.com:jinahya/${project.artifactId}</url>
-    <tag>1.0.0.20251103</tag>
+    <tag>1.0.0.20251222</tag>
   </scm>
   <issueManagement>
     <system>GitHub Issues</system>
@@ -63,7 +63,7 @@
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>${maven.compiler.source}</maven.compiler.target>
     <maven.compiler.release>${maven.compiler.target}</maven.compiler.release>
-    <maven.compiler.testSource>21</maven.compiler.testSource>
+    <maven.compiler.testSource>25</maven.compiler.testSource>
     <maven.compiler.testTarget>${maven.compiler.testSource}</maven.compiler.testTarget>
     <maven.compiler.testRelease>${maven.compiler.testTarget}</maven.compiler.testRelease>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -73,7 +73,8 @@
     <!-- https://search.maven.org/search?q=g:com.google.protobuf -->
     <!-- https://central.sonatype.com/artifact/com.google.protobuf/protobuf-java/versions -->
     <!--    <version.com.google.protobuf>4.29.0</version.com.google.protobuf>-->
-    <version.com.google.protobuf>4.30.0</version.com.google.protobuf>
+<!--    <version.com.google.protobuf>4.30.0</version.com.google.protobuf>-->
+    <version.com.google.protobuf>4.33.2</version.com.google.protobuf>
     <!--    <version.lombok>1.18.38</version.lombok>-->
     <version.lombok>1.18.42</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
@@ -82,14 +83,15 @@
     <!-- https://search.maven.org/search?q=g:org.apache.pdfbox -->
     <!--    <version.org.apache.poi>5.2.5</version.org.apache.poi>-->
     <!--    <version.org.apache.poi>5.4.0</version.org.apache.poi>-->
-    <version.org.apache.poi>5.4.1</version.org.apache.poi>
+    <version.org.apache.poi>5.5.1</version.org.apache.poi>
     <!-- https://central.sonatype.com/artifact/org.hibernate.orm/hibernate-platform -->
     <version.org.hibernate.orm>7.0.0.Beta1</version.org.hibernate.orm>
     <!-- https://central.sonatype.com/artifact/org.junit/junit-bom/versions -->
-    <version.org.junit>5.13.4</version.org.junit>
+<!--    <version.org.junit>5.14.1</version.org.junit>-->
+    <version.org.junit>6.0.1</version.org.junit>
     <!-- https://central.sonatype.com/artifact/org.mockito/mockito-junit-jupiter/versions -->
     <!--    <version.org.mockito>5.18.0</version.org.mockito>-->
-    <version.org.mockito>5.20.0</version.org.mockito>
+    <version.org.mockito>5.21.0</version.org.mockito>
   </properties>
 
   <dependencyManagement>
@@ -132,7 +134,13 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.5.18</version>
+      <version>1.5.23</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.github.xmlet</groupId>
+      <artifactId>htmlflow</artifactId>
+      <version>5.0.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -144,7 +152,7 @@
     <dependency>
       <groupId>nl.jqno.equalsverifier</groupId>
       <artifactId>equalsverifier-nodep</artifactId>
-      <version>4.1.1</version>
+      <version>4.2.5</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -194,7 +202,7 @@
       <artifactId>sqlite-jdbc</artifactId>
       <!-- https://central.sonatype.com/artifact/org.xerial/sqlite-jdbc/versions -->
       <!--      <version>3.49.1.0</version>-->
-      <version>3.50.3.0</version>
+      <version>3.51.1.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -220,7 +228,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>3.4.2</version>
+          <version>3.5.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -271,7 +279,7 @@
           <artifactId>maven-resources-plugin</artifactId>
           <!-- https://issues.apache.org/jira/browse/MRESOURCES-237 -->
           <!-- https://search.maven.org/artifact/org.apache.maven.plugins/maven-resources-plugin -->
-          <version>3.3.1</version>
+          <version>3.4.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -288,12 +296,12 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <version>3.6.1</version>
+          <version>3.6.3</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.19.1</version>
+          <version>2.20.1</version>
           <configuration>
             <processDependencyManagement>false</processDependencyManagement>
             <processPluginDependenciesInPluginManagement>false</processPluginDependenciesInPluginManagement>
@@ -318,7 +326,8 @@
           <!--          <version>4.0.0.4121</version>-->
           <!--          <version>5.0.0.4389</version>-->
           <!--          <version>5.1.0.4751</version>-->
-          <version>5.2.0.4988</version>
+<!--          <version>5.2.0.4988</version>-->
+          <version>5.5.0.6356</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -403,7 +412,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>
-        <version>3.3.1</version>
+        <version>3.4.0</version>
         <executions>
           <execution>
             <id>attach-sources</id>
@@ -481,11 +490,6 @@
 
   <reporting>
     <plugins>
-      <plugin>
-        <groupId>com.github.spotbugs</groupId>
-        <artifactId>spotbugs-maven-plugin</artifactId>
-        <version>4.9.6.0</version>
-      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
