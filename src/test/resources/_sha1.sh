@@ -19,12 +19,12 @@
 # limitations under the License.
 # #L%
 ###
-sha1sum bankinfo.hwp > bankinfo.hwp.sha1
-sha1sum bankinfo.hwp.pdf > bankinfo.hwp.pdf.sha1
-sha1sum bankinfo.pdf > bankinfo.pdf.sha1
-sha1sum codechgfile.text > codechgfile.text.sha1
-sha1sum codechgfile.text.xlsx > codechgfile.text.xlsx.sha1
-sha1sum codechgfile.xls > codechgfile.xls.sha1
-sha1sum codefilex.text > codefilex.text.sha1
-sha1sum codefilex.text.xlsx > codefilex.text.xlsx.sha1
-sha1sum codefilex.xls > codefilex.xls.sha1
+sha1sum bankinfo.hwp > _sha1sum.txt
+sha1sum bankinfo.hwp.pdf >> _sha1sum.txt
+sha1sum bankinfo.pdf >> _sha1sum.txt
+sha1sum codechgfile.text >> _sha1sum.txt
+sha1sum codechgfile.text.xlsx >> _sha1sum.txt
+sha1sum codechgfile.xls >> _sha1sum.txt
+sha1sum codefilex.text >> _sha1sum.txt
+sha1sum codefilex.text.xlsx >> _sha1sum.txt
+sha1sum codefilex.xls >> _sha1sum.txt
