@@ -1,0 +1,48 @@
+plugins {
+    id 'java'
+    // Reference versions from gradle.properties using string interpolation
+    id 'com.google.protobuf' version "${protobufPluginVersion}"
+    id 'com.github.ben-manes.versions' version "${benManesVersion}"
+}
+
+ext {
+    versions = [
+            // Also pull the artifact version from gradle.properties
+            protobuf: project.getProperty('protobufArtifactVersion')
+    ]
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    test {
+        proto {
+            srcDir 'src/test/resources-proto'
+        }
+        java {
+            srcDir 'src/test/java-proto'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${versions.protobuf}"
+    }
+    generateProtoTasks {
+        all().each { task ->
+            task.builtins {
+                java {
+                    outputSubDir = 'java-proto'
+                }
+            }
+        }
+    }
+    generatedFilesBaseDir = "$projectDir/src"
+}
+
+dependencies {
+    testImplementation "com.google.protobuf:protobuf-java:${versions.protobuf}"
+}

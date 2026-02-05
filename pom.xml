@@ -317,7 +317,7 @@
           <!--          <version>4.0.0.4121</version>-->
           <!--          <version>5.0.0.4389</version>-->
           <!--          <version>5.1.0.4751</version>-->
-<!--          <version>5.2.0.4988</version>-->
+          <!--          <version>5.2.0.4988</version>-->
           <version>5.5.0.6356</version>
         </plugin>
       </plugins>
@@ -349,7 +349,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -736,31 +736,25 @@
             <artifactId>exec-maven-plugin</artifactId>
             <executions>
               <execution>
-                <id>protoc-branch-info</id>
+                <id>gradle-protobuf-generation</id>
                 <phase>generate-test-sources</phase>
                 <goals>
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <executable>protoc</executable>
+                  <!-- Use gradlew.bat for Windows environments -->
+                  <executable>${basedir}/gradlew</executable>
                   <arguments>
-                    <argument>--java_out=src/test/java-proto</argument>
-                    <argument>src/test/resources-proto/KftcFinancialInstitutionBranchInfoProto.proto</argument>
+                    <argument>generateTestProto</argument>
                   </arguments>
-                </configuration>
-              </execution>
-              <execution>
-                <id>protoc-info</id>
-                <phase>generate-test-sources</phase>
-                <goals>
-                  <goal>exec</goal>
-                </goals>
-                <configuration>
-                  <executable>protoc</executable>
-                  <arguments>
-                    <argument>--java_out=src/test/java-proto</argument>
-                    <argument>src/test/resources-proto/KftcFinancialInstitutionInfoProto.proto</argument>
-                  </arguments>
+                  <environmentVariables>
+                    <!-- This forces Gradle to use your settings file -->
+<!--                    <GRADLE_USER_HOME>${project.basedir}/.gradle_home</GRADLE_USER_HOME>-->
+                    <!-- These tell Gradle exactly which files to use -->
+                    <GRADLE_SETTINGS_FILE>settings.gradle</GRADLE_SETTINGS_FILE>
+                    <!-- This overrides the search for build.gradle -->
+                    <GRADLE_BUILD_FILE>_build.gradle</GRADLE_BUILD_FILE>
+                  </environmentVariables>
                 </configuration>
               </execution>
             </executions>
