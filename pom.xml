@@ -439,15 +439,16 @@
         </configuration>
       </plugin>
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>tidy-maven-plugin</artifactId>
-        <version>1.4.0</version>
-        <executions>
+         <groupId>org.codehaus.mojo</groupId>
+         <artifactId>tidy-maven-plugin</artifactId>
+         <version>1.4.0</version>
+         <executions>
           <execution>
             <id>validate</id>
             <phase>validate</phase>
             <goals>
-              <goal>check</goal>
+<!--              <goal>check</goal>-->
+              <goal>pom</goal>
             </goals>
           </execution>
         </executions>
@@ -742,19 +743,13 @@
                   <goal>exec</goal>
                 </goals>
                 <configuration>
-                  <!-- Use gradlew.bat for Windows environments -->
                   <executable>${basedir}/gradlew</executable>
                   <arguments>
                     <argument>generateTestProto</argument>
+                    <argument>--no-daemon</argument>
+                    <argument>--gradle-user-home</argument>
+                    <argument>${project.basedir}/.gradle_home</argument>
                   </arguments>
-                  <environmentVariables>
-                    <!-- This forces Gradle to use your settings file -->
-<!--                    <GRADLE_USER_HOME>${project.basedir}/.gradle_home</GRADLE_USER_HOME>-->
-                    <!-- These tell Gradle exactly which files to use -->
-                    <GRADLE_SETTINGS_FILE>settings.gradle</GRADLE_SETTINGS_FILE>
-                    <!-- This overrides the search for build.gradle -->
-                    <GRADLE_BUILD_FILE>_build.gradle</GRADLE_BUILD_FILE>
-                  </environmentVariables>
                 </configuration>
               </execution>
             </executions>

@@ -72,3 +72,6 @@ gradle-app.setting
 db/kftc-financial-institution-info.sqlite3
 db/kftc-financial-institution-info.sqlite3.md
 db/kftc-financial-institution-info.sqlite3.sh
+
+
+.gradle_home
