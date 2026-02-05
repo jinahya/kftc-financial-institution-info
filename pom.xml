@@ -23,7 +23,7 @@
   <licenses>
     <license>
       <name>Apache 2</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
       <distribution>repo</distribution>
       <comments>A business-friendly OSS license</comments>
     </license>
@@ -70,27 +70,18 @@
     <sonar.organization>jinahya-github</sonar.organization>
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
-    <!-- https://search.maven.org/search?q=g:com.google.protobuf -->
     <!-- https://central.sonatype.com/artifact/com.google.protobuf/protobuf-java/versions -->
-    <!--    <version.com.google.protobuf>4.29.0</version.com.google.protobuf>-->
-<!--    <version.com.google.protobuf>4.30.0</version.com.google.protobuf>-->
-    <version.com.google.protobuf>4.33.2</version.com.google.protobuf>
-    <!--    <version.lombok>1.18.38</version.lombok>-->
+    <version.com.google.protobuf>4.33.5</version.com.google.protobuf>
     <version.lombok>1.18.42</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
-    <!--    <version.maven-surefire>3.4.0</version.maven-surefire>-->
     <version.maven-surefire>3.5.4</version.maven-surefire>
     <!-- https://search.maven.org/search?q=g:org.apache.pdfbox -->
-    <!--    <version.org.apache.poi>5.2.5</version.org.apache.poi>-->
-    <!--    <version.org.apache.poi>5.4.0</version.org.apache.poi>-->
     <version.org.apache.poi>5.5.1</version.org.apache.poi>
     <!-- https://central.sonatype.com/artifact/org.hibernate.orm/hibernate-platform -->
     <version.org.hibernate.orm>7.0.0.Beta1</version.org.hibernate.orm>
     <!-- https://central.sonatype.com/artifact/org.junit/junit-bom/versions -->
-<!--    <version.org.junit>5.14.1</version.org.junit>-->
     <version.org.junit>6.0.2</version.org.junit>
     <!-- https://central.sonatype.com/artifact/org.mockito/mockito-junit-jupiter/versions -->
-    <!--    <version.org.mockito>5.18.0</version.org.mockito>-->
     <version.org.mockito>5.21.0</version.org.mockito>
   </properties>
 
@@ -134,25 +125,25 @@
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
-      <version>1.5.24</version>
+      <version>1.5.27</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.github.xmlet</groupId>
       <artifactId>htmlflow</artifactId>
-      <version>5.0.1</version>
+      <version>5.0.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>com.itextpdf</groupId>
       <artifactId>itextpdf</artifactId>
-      <version>5.5.13.4</version>
+      <version>5.5.13.5</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>nl.jqno.equalsverifier</groupId>
       <artifactId>equalsverifier-nodep</artifactId>
-      <version>4.3</version>
+      <version>4.3.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -223,7 +214,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.14.1</version>
+          <version>3.15.0</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -301,7 +292,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>versions-maven-plugin</artifactId>
-          <version>2.20.1</version>
+          <version>2.21.0</version>
           <configuration>
             <processDependencyManagement>false</processDependencyManagement>
             <processPluginDependenciesInPluginManagement>false</processPluginDependenciesInPluginManagement>
