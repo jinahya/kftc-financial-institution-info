@@ -10,17 +10,17 @@
 # Refreshes the bundled KFTC data after new source files have been downloaded.
 # Automates every step of _WORKFLOW.md that does not require a GUI:
 #
-#   1. verify the 6 downloaded files + the manually printed bankinfo.hwp.pdf exist
+#   1. verify the 6 downloaded files exist
 #   2. regenerate codefilex.text.xlsx / codechgfile.text.xlsx from the .text files
 #      (replaces the manual Excel "Get Data / Text/CSV / EUC-KR" import)
 #   3. regenerate _sha1sum.txt
 #   4. mvn clean test   -> rebuilds src/main/resources/.../*.ser from the sources
+#      (bankinfo.ser is read straight from bankinfo.hwp via hwplib -- no PDF print)
 #   5. full multi-profile verification build
 #   6. report what changed in the committed data and print tag/deploy next steps
 #
 # By default it downloads the 6 files itself (headless browser, see
-# tools/kftc-download), so you don't have to. Printing bankinfo.hwp ->
-# bankinfo.hwp.pdf stays manual (Hancom, GUI-only) and is only *checked* here.
+# tools/kftc-download), so you don't have to.
 #
 # Usage:
 #   sh ./_refresh.sh                # download the 6 files, refresh, verify
@@ -44,26 +44,15 @@ done
 
 say() { printf '\n==> %s\n' "$1"; }
 die() { printf 'ERROR: %s\n' "$1" >&2; exit 1; }
-hash_of() { [ -f "$1" ] && shasum "$1" | cut -d' ' -f1 || echo "absent"; }
 
 # --- 0. (optional) download the 6 source files via headless browser -----------
 if [ "$DOWNLOAD" -eq 1 ]; then
     say "Downloading the 6 source files (headless browser, real clicks)"
     command -v node >/dev/null 2>&1 || die "node is required for --download (https://nodejs.org)"
-    HWP_BEFORE=$(hash_of "$RES/bankinfo.hwp")
     DL_DIR="$ROOT/tools/kftc-download"
     [ -d "$DL_DIR/node_modules" ] || ( cd "$DL_DIR" && npm install )
     ( cd "$DL_DIR" && node download.mjs --out "$RES" ) \
         || die "download failed -- existing source files left untouched"
-    # The HWP->PDF print is still manual. If bankinfo.hwp actually changed, the
-    # existing bankinfo.hwp.pdf is stale and would yield wrong institution data.
-    if [ "$(hash_of "$RES/bankinfo.hwp")" != "$HWP_BEFORE" ]; then
-        die "bankinfo.hwp changed -- re-print it: open bankinfo.hwp in Hancom, export to bankinfo.hwp.pdf, then re-run 'sh ./_refresh.sh' (without --download)"
-    fi
-    # content is unchanged, so the existing print is valid; refresh its mtime to
-    # avoid the stale-print heuristic warning below (download rewrote the hwp mtime).
-    touch "$RES/bankinfo.hwp.pdf"
-    say "bankinfo.hwp unchanged -- existing bankinfo.hwp.pdf is still valid"
 fi
 
 # --- 1. preconditions ---------------------------------------------------------
@@ -72,12 +61,6 @@ DOWNLOADED="bankinfo.hwp bankinfo.pdf codefilex.text codefilex.xls codechgfile.t
 for f in $DOWNLOADED; do
     [ -s "$RES/$f" ] || die "missing/empty: $f -- download all 6 files from https://www.kftc.or.kr/archive/bankListByCode into src/test/resources first"
 done
-[ -s "$RES/bankinfo.hwp.pdf" ] || die "missing: bankinfo.hwp.pdf -- open bankinfo.hwp in Hancom and print/export it to bankinfo.hwp.pdf (the raw bankinfo.pdf is 2-up and won't parse)"
-
-# warn if the printed pdf looks older than the source hwp (likely a stale print)
-if [ "$RES/bankinfo.hwp" -nt "$RES/bankinfo.hwp.pdf" ]; then
-    printf 'WARNING: bankinfo.hwp is newer than bankinfo.hwp.pdf -- did you forget to re-print it?\n' >&2
-fi
 
 # --- 2. regenerate xlsx from the EUC-KR text files ----------------------------
 say "Regenerating .xlsx from .text (EUC-KR) -- replaces the manual Excel step"

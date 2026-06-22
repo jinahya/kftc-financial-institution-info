@@ -20,7 +20,6 @@
 # #L%
 ###
 sha1sum bankinfo.hwp > _sha1sum.txt
-sha1sum bankinfo.hwp.pdf >> _sha1sum.txt
 sha1sum bankinfo.pdf >> _sha1sum.txt
 sha1sum codechgfile.text >> _sha1sum.txt
 sha1sum codechgfile.text.xlsx >> _sha1sum.txt

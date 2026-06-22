@@ -65,8 +65,14 @@ abstract class KftcFinancialInstitution_Resource_Jdbc__Test {
         acceptConnection(c -> {
             try {
                 {
-                    final int autoVacuum = c.createStatement().executeUpdate("PRAGMA auto_vacuum = FULL");
+                    // read-only distribution DB: NONE avoids pointer-map page overhead (smallest file)
+                    final int autoVacuum = c.createStatement().executeUpdate("PRAGMA auto_vacuum = NONE");
                     log.debug("auto_vacuum: {}", autoVacuum);
+                }
+                {
+                    // populate sqlite_stat1 so a consumer's query planner has index statistics
+                    final int analyze = c.createStatement().executeUpdate("ANALYZE");
+                    log.debug("analyze: {}", analyze);
                 }
                 {
                     final int vacuum = c.createStatement().executeUpdate("VACUUM");
