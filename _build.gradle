@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'com.google.protobuf' version "${protobufPluginVersion}"
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    test {
+        proto {
+            srcDir 'src/test/resources-proto'
+        }
+        java {
+            srcDir 'src/test/java-proto'
+        }
+    }
+}
+
+protobuf {
+    protoc {
+        artifact = "com.google.protobuf:protoc:${protobufArtifactVersion}"
+    }
+    generateProtoTasks {
+        all().configureEach { task ->
+            task.builtins {
+                java {}
+            }
+        }
+    }
+}
+
+// Copy generated proto sources into the source tree
+tasks.named('generateTestProto').configure { task ->
+    doLast {
+        copy {
+            from task.outputBaseDir + '/java'
+            into "$projectDir/src/test/java-proto"
+        }
+    }
+}
+
+dependencies {
+    testImplementation "com.google.protobuf:protobuf-java:${protobufArtifactVersion}"
+}

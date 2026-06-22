@@ -46,7 +46,7 @@ class KftcFinancialInstitution_Jdbc_InfoSet_Test
                                     code           TEXT    not null primary key,
                                     name           TEXT    not null,
                                     representative INTEGER not null,
-                                    category       TEXT    not null)""".formatted(TABLE_NAME),
+                                    category       TEXT    not null) without rowid""".formatted(TABLE_NAME),
                         """
                                 create index idx_category_name
                                 on %1$s (category, name)""".formatted(TABLE_NAME),

@@ -52,7 +52,7 @@ class KftcFinancialInstitution_Jdbc_BranchInfoSet_Test
                                     address                    TEXT,
                                     status                     TEXT,
                                     managing_branch_code       TEXT
-                                )""".formatted(TABLE_NAME),
+                                ) without rowid""".formatted(TABLE_NAME),
                         """
                                 create index idx_financial_institution_name_branch_name
                                 on %1$s (financial_institution_name, branch_name)""".formatted(TABLE_NAME)

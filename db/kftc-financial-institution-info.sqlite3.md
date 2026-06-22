@@ -9,7 +9,7 @@ CREATE TABLE financial_institution
     name           TEXT    not null,
     representative INTEGER not null,
     category       TEXT    not null
-);
+) WITHOUT ROWID;
 CREATE TABLE financial_institution_branch
 (
     branch_code                TEXT not null primary key,
@@ -21,7 +21,7 @@ CREATE TABLE financial_institution_branch
     address                    TEXT,
     status                     TEXT,
     managing_branch_code       TEXT
-);
+) WITHOUT ROWID;
 CREATE INDEX idx_category_name
     on financial_institution (category, name);
 CREATE INDEX idx_name
