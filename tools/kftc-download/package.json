@@ -1,0 +1,14 @@
+{
+  "name": "kftc-download",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Headless-browser downloader for the 6 KFTC bankListByCode source files",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "download": "node download.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0"
+  }
+}

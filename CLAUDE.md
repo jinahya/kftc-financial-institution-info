@@ -30,7 +30,7 @@ mvn -Pproto test                         # Protocol Buffers
 # All profiles at once
 mvn -Pdb,json,ndjson,proto clean process-test-resources test
 
-# Full build script (runs tests 2x, then with all profiles)
+# Full build script (runs tests 2x, regenerates proto via .protoc.sh, then runs all profiles)
 sh ./.mvn.build.sh
 ```
 
@@ -71,6 +71,8 @@ Each profile uses `build-helper-maven-plugin` to add its `java-*` and `resources
 Proto definitions live in `src/test/resources-proto/`. The `proto` Maven profile invokes Gradle via `exec-maven-plugin` to run `./gradlew generateTestProto`, which compiles `.proto` files and copies generated Java sources to `src/test/java-proto/`. Generated files are committed to the repo.
 
 Gradle files: `_build.gradle` (underscore prefix to avoid Maven conflicts), `settings.gradle`, `gradle.properties`, `gradlew`. Gradle home is isolated to `.gradle_home/`.
+
+Alternatively, `./.protoc.sh` regenerates the same Java sources by invoking a locally-installed `protoc` directly (bypassing Gradle) — used by `.mvn.build.sh`.
 
 ## Key Conventions
 
