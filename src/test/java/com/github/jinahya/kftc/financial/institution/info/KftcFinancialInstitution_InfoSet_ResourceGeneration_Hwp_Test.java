@@ -130,9 +130,10 @@ class KftcFinancialInstitution_InfoSet_ResourceGeneration_Hwp_Test
                     continue;
                 }
                 for (final Control control : paragraph.getControlList()) {
-                    if (!(control instanceof ControlTable table)) {
+                    if (!(control instanceof ControlTable)) {
                         continue;
                     }
+                    final ControlTable table = (ControlTable) control;
                     for (final Row row : table.getRowList()) {
                         final List<Cell> cells = row.getCellList();
                         if (cells.size() >= 2) {

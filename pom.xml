@@ -280,8 +280,8 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-site-plugin/versions -->
-          <!--          <version>3.21.0</version>-->
-          <version>4.0.0-M16</version>
+          <!--          <version>4.0.0-M16</version>-->
+          <version>3.21.0</version>
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -353,7 +353,7 @@
             <configuration>
               <skip>true</skip>
               <rules>
-                <dependencyConvergence />
+                <dependencyConvergence/>
               </rules>
             </configuration>
             <goals>
@@ -443,15 +443,15 @@
         </configuration>
       </plugin>
       <plugin>
-         <groupId>org.codehaus.mojo</groupId>
-         <artifactId>tidy-maven-plugin</artifactId>
-         <version>1.4.0</version>
-         <executions>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>tidy-maven-plugin</artifactId>
+        <version>1.4.0</version>
+        <executions>
           <execution>
             <id>validate</id>
             <phase>validate</phase>
             <goals>
-<!--              <goal>check</goal>-->
+              <!--              <goal>check</goal>-->
               <goal>pom</goal>
             </goals>
           </execution>
@@ -532,15 +532,15 @@
         <artifactId>maven-checkstyle-plugin</artifactId>
         <version>3.6.0</version>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <version>3.28.0</version>
-        <configuration>
-          <!-- Unsupported targetJdk value '21'. -->
-          <!--          <skip>true</skip>-->
-        </configuration>
-      </plugin>
+      <!--      <plugin>-->
+      <!--        <groupId>org.apache.maven.plugins</groupId>-->
+      <!--        <artifactId>maven-pmd-plugin</artifactId>-->
+      <!--        <version>3.28.0</version>-->
+      <!--        <configuration>-->
+      <!--          &lt;!&ndash; Unsupported targetJdk value '21'. &ndash;&gt;-->
+      <!--          &lt;!&ndash;          <skip>true</skip>&ndash;&gt;-->
+      <!--        </configuration>-->
+      <!--      </plugin>-->
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
