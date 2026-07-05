@@ -3,8 +3,16 @@
 // Loads https://www.kftc.or.kr/archive/bankListByCode in a headless Chromium and
 // clicks the six real download buttons -- exactly what a human does -- so the
 // dynamic server-side file names resolve themselves. Files are downloaded into a
-// temporary staging dir, validated, and only moved into the target dir if ALL six
-// pass. That way a broken scrape can never overwrite known-good committed files.
+// temporary staging dir, validated, and only moved into the target dir if every
+// downloaded file passes. That way a broken scrape can never overwrite known-good
+// committed files.
+//
+// As of 2026-06 KFTC serves the two "대표기관 및 기관코드" downloads (bankinfo.hwp
+// and bankinfo.pdf) wrapped in DOCUMENTSAFER document-security DRM, which a
+// headless download cannot unwrap. Files flagged `drmFallback` are therefore
+// tolerated: when one comes back DRM-wrapped it is left at its committed version
+// (with a warning) instead of aborting the whole refresh -- the institution list
+// changes rarely, while the branch data (codefilex.text) still downloads cleanly.
 //
 // Usage:
 //   node download.mjs [--out <dir>] [--headed] [--keep-temp]
@@ -31,8 +39,8 @@ const KEEP_TEMP = argv.includes('--keep-temp');
 
 // exact aria-label on the page -> target filename + validator
 const FILES = [
-  { aria: '대표기관 및 기관코드 다운로드(한글파일)', name: 'bankinfo.hwp', check: isOle, minBytes: 10_000 },
-  { aria: '대표기관 및 기관코드 다운로드(pdf파일)', name: 'bankinfo.pdf', check: isPdf, minBytes: 10_000 },
+  { aria: '대표기관 및 기관코드 다운로드(한글파일)', name: 'bankinfo.hwp', check: isOle, minBytes: 10_000, drmFallback: true },
+  { aria: '대표기관 및 기관코드 다운로드(pdf파일)', name: 'bankinfo.pdf', check: isPdf, minBytes: 10_000, drmFallback: true },
   // The "excel" downloads are actually HTML <table> documents saved with an .xls
   // extension (a common KR-gov pattern) -- not OLE/OOXML. No test consumes them.
   { aria: '전체코드 다운로드(엑셀)', name: 'codefilex.xls', check: isHtml, minBytes: 100_000 },
@@ -49,6 +57,11 @@ function isOle(buf) {
 }
 function isPdf(buf) {
   return buf.slice(0, 5).toString('latin1') === '%PDF-' || 'not a PDF file';
+}
+// DOCUMENTSAFER DRM-wrapped files start with a literal "<DOCUMENTSAFER_n>" tag
+// followed by an encrypted payload -- not the real OLE2/PDF document.
+function isDocumentSafer(buf) {
+  return buf.slice(0, 16).toString('latin1').startsWith('<DOCUMENTSAFER');
 }
 function isHtml(buf) {
   const head = buf.slice(0, 64).toString('latin1').toLowerCase().trimStart();
@@ -85,6 +98,7 @@ try {
   await page.waitForTimeout(2_500);
 
   const staged = [];
+  const drmSkipped = [];
   for (const f of FILES) {
     const btn = page.locator(`button[aria-label="${f.aria}"]`);
     if ((await btn.count()) === 0) {
@@ -98,6 +112,12 @@ try {
     await dl.saveAs(dest);
 
     const buf = fs.readFileSync(dest);
+    // Upstream-DRM-wrapped file: leave the committed copy in place, keep going.
+    if (f.drmFallback && isDocumentSafer(buf)) {
+      drmSkipped.push(f.name);
+      log(`  drm ${f.name.padEnd(18)} ${buf.length} bytes  DOCUMENTSAFER-wrapped upstream -- keeping committed file`);
+      continue;
+    }
     if (buf.length < f.minBytes) {
       throw new Error(`${f.name}: too small (${buf.length} < ${f.minBytes} bytes)`);
     }
@@ -107,12 +127,22 @@ try {
     staged.push(f.name);
   }
 
-  // all six valid -> move into place atomically (overwrite committed files)
+  if (staged.length === 0) {
+    throw new Error('no files passed validation -- nothing to write');
+  }
+
+  // every validated file -> move into place atomically (overwrite committed files)
   fs.mkdirSync(OUT, { recursive: true });
   for (const name of staged) {
     fs.copyFileSync(path.join(tmp, name), path.join(OUT, name));
   }
-  log(`\nAll ${staged.length} files validated and written to ${OUT}`);
+  log(`\n${staged.length} file(s) validated and written to ${OUT}`);
+  if (drmSkipped.length) {
+    log(`WARNING: left untouched (DOCUMENTSAFER DRM upstream): ${drmSkipped.join(', ')}`);
+    log('         The committed copy is reused. If the institution list itself');
+    log('         changed upstream, update those file(s) by hand (the DRM blocks');
+    log('         headless download); the branch data was refreshed normally.');
+  }
 } catch (err) {
   log(`\nERROR: ${err.message}`);
   log('No files were written (staging discarded); existing source files are untouched.');
