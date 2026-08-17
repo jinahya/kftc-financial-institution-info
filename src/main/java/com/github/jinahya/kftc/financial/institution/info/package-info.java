@@ -18,8 +18,8 @@
  * assert info.getBranchCode().equals("0010003");
  * assert info.getFinancialInstitutionName().equals("한국");
  * assert info.getBranchName().equals("본부총괄");
- * assert info.getPhoneNumber().equals("02  759 4114"); // mind multiple spaces
- * assert info.getFaxNumber().equals("02  759 4060");   // mind multiple spaces
+ * assert info.getPhoneNumber().equals("02  759 4114"); // mind the consecutive whitespace
+ * assert info.getFaxNumber().equals("02  759 4060");   // mind the consecutive whitespace
  * assert info.getPostalCode().equals("100794");
  * assert info.getAddress().equals("서울특별시 중구 남대문로 39");
  * assert info.getStatus().equals("정상");
