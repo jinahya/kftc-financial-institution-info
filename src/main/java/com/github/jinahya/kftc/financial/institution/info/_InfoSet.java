@@ -25,6 +25,7 @@ import java.io.Serializable;
 @SuppressWarnings({
         "java:S114" // interface _...
 })
-interface _InfoSet<INFO extends _Info> extends Serializable {
+interface _InfoSet<INFO extends _Info>
+        extends Serializable {
 
 }

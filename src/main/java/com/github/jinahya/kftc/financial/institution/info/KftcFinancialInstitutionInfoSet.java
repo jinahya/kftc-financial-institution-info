@@ -36,7 +36,8 @@ import java.util.stream.Collectors;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionInfo
  */
-public final class KftcFinancialInstitutionInfoSet implements _InfoSet<KftcFinancialInstitutionInfo> {
+public final class KftcFinancialInstitutionInfoSet
+        implements _InfoSet<KftcFinancialInstitutionInfo> {
 
     private static final long serialVersionUID = -3125284437493607280L;
 
@@ -49,8 +50,7 @@ public final class KftcFinancialInstitutionInfoSet implements _InfoSet<KftcFinan
      * Returns a new instance of this class.
      *
      * @return a new instance of this class.
-     * @implSpec This method, whenever invoked, loads a resource from the classpath. Callees are recommended to
-     *         store the result.
+     * @implSpec This method, whenever invoked, loads a resource from the classpath.
      */
     public static KftcFinancialInstitutionInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
