@@ -36,7 +36,8 @@ import java.util.stream.Collectors;
  * @implSpec Instances of this class are unmodifiable and thread-safe.
  * @see KftcFinancialInstitutionBranchInfo
  */
-public final class KftcFinancialInstitutionBranchInfoSet implements _InfoSet<KftcFinancialInstitutionBranchInfo> {
+public final class KftcFinancialInstitutionBranchInfoSet
+        implements _InfoSet<KftcFinancialInstitutionBranchInfo> {
 
     private static final long serialVersionUID = 5546021898470951773L;
 
@@ -49,8 +50,7 @@ public final class KftcFinancialInstitutionBranchInfoSet implements _InfoSet<Kft
      * Returns a new instance of this class.
      *
      * @return a new instance of this class.
-     * @implSpec This method, whenever invoked, loads a resource from the classpath. Callees are recommended to
-     *         store the result.
+     * @implSpec This method, whenever invoked, loads a resource from the classpath.
      */
     public static KftcFinancialInstitutionBranchInfoSet newInstance() {
         try (var resource = KftcFinancialInstitutionBranchInfoSet.class.getResourceAsStream(RESOURCE_NAME)) {
@@ -157,7 +157,7 @@ public final class KftcFinancialInstitutionBranchInfoSet implements _InfoSet<Kft
      * and branch info.
      *
      * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
-     *         and branch info.
+     * and branch info.
      */
     public Map<String, KftcFinancialInstitutionBranchInfo> map() {
         return map;
@@ -168,7 +168,7 @@ public final class KftcFinancialInstitutionBranchInfoSet implements _InfoSet<Kft
      * and branch info.
      *
      * @return an <em>unmodifiable</em> map of {@link KftcFinancialInstitutionBranchInfo#getBranchCode() branch codes}
-     *         and branch info.
+     * and branch info.
      * @deprecated use {@link #map()} instead.
      */
     @Deprecated(forRemoval = true)
