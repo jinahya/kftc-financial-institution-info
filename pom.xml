@@ -71,7 +71,7 @@
     <sonar.projectKey>jinahya_kftc-financial-institution-info</sonar.projectKey>
     <sonar.coverage.jacoco.xmlReportPaths>${project.build.directory}/site/jacoco.xml</sonar.coverage.jacoco.xmlReportPaths>
     <!-- https://central.sonatype.com/artifact/com.google.protobuf/protobuf-java/versions -->
-    <version.com.google.protobuf>4.35.1</version.com.google.protobuf>
+    <version.com.google.protobuf>4.36.2</version.com.google.protobuf>
     <version.lombok>1.18.46</version.lombok>
     <version.maven-failsafe>${version.maven-surefire}</version.maven-failsafe>
     <!-- https://central.sonatype.com/artifact/org.apache.maven.plugins/maven-surefire-plugin/versions -->

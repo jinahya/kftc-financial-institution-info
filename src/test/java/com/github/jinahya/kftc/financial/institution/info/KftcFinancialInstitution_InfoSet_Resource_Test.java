@@ -142,7 +142,7 @@ class KftcFinancialInstitution_InfoSet_Resource_Test
     @CsvSource(value = {
             "401, 하나생명보험", "442, 현대해상",
             "438, 신한라이프생명보험", "457, DB생명보험",
-            "439, KB라이프", "458, KDB생명보험",
+            "439, KB라이프생명", "458, KDB생명보험",
             "441, 삼성화재", "460, 처브라이프생명보험"
     })
     @ParameterizedTest
