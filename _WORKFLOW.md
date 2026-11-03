@@ -15,9 +15,9 @@ sh ./_refresh.sh --no-build     # xlsx/체크섬만 다시 만들고 Maven 빌�
 
 ## 2. `_refresh.sh` 가 하는 일
 
-0. (기본) 헤드리스 브라우저(Playwright)가 <https://www.kftc.or.kr/archive/bankListByCode>
+0. (기본) 헤드리스 Chrome(Playwright, 로컬에 설치된 Google Chrome 사용)이 <https://www.kftc.or.kr/archive/bankListByCode>
    의 다운로드 버튼을 실제로 클릭해 여섯 파일을 받아 형식 검증 후 `src/test/resources` 에
-   덮어쓴다. (`tools/kftc-download`, 처음 한 번 `npm install` 필요.)
+   덮어쓴다. (`tools/kftc-download`, 처음 한 번 `sh ./_install.sh` 필요.)
    * `bankinfo.hwp`, `bankinfo.pdf`, `codefilex.text`, `codefilex.xls`,
      `codechgfile.text`, `codechgfile.xls`
 1. 여섯 파일이 있는지 확인한다.
