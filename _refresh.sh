@@ -19,7 +19,9 @@
 #   5. full multi-profile verification build
 #   6. report what changed in the committed data and print tag/deploy next steps
 #
-# By default it downloads the 6 files itself (headless browser, see
+# Prerequisites: sh ./_install.sh (once).
+#
+# By default it downloads the 6 files itself (headless Chrome, see
 # tools/kftc-download), so you don't have to.
 #
 # Usage:
@@ -48,9 +50,9 @@ die() { printf 'ERROR: %s\n' "$1" >&2; exit 1; }
 # --- 0. (optional) download the 6 source files via headless browser -----------
 if [ "$DOWNLOAD" -eq 1 ]; then
     say "Downloading the 6 source files (headless browser, real clicks)"
-    command -v node >/dev/null 2>&1 || die "node is required for --download (https://nodejs.org)"
+    command -v node >/dev/null 2>&1 || die "node is required for --download -- run: sh ./_install.sh"
     DL_DIR="$ROOT/tools/kftc-download"
-    [ -d "$DL_DIR/node_modules" ] || ( cd "$DL_DIR" && npm install )
+    [ -d "$DL_DIR/node_modules" ] || die "tools/kftc-download not set up -- run: sh ./_install.sh"
     ( cd "$DL_DIR" && node download.mjs --out "$RES" ) \
         || die "download failed -- existing source files left untouched"
 fi

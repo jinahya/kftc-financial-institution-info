@@ -1,6 +1,6 @@
 // Headless-browser downloader for the KFTC bankListByCode source files.
 //
-// Loads https://www.kftc.or.kr/archive/bankListByCode in a headless Chromium and
+// Loads https://www.kftc.or.kr/archive/bankListByCode in a headless Google Chrome and
 // clicks the six real download buttons -- exactly what a human does -- so the
 // dynamic server-side file names resolve themselves. Files are downloaded into a
 // temporary staging dir, validated, and only moved into the target dir if every
@@ -90,8 +90,10 @@ const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'kftc-dl-'));
 const log = (m) => process.stdout.write(m + '\n');
 let browser;
 try {
-  log(`Launching headless Chromium -> ${PAGE_URL}`);
-  browser = await chromium.launch({ headless: !HEADED });
+  log(`Launching headless Chrome -> ${PAGE_URL}`);
+  // channel 'chrome' drives the locally installed Google Chrome instead of a
+  // Playwright-downloaded chromium, so no browser cache to keep in sync.
+  browser = await chromium.launch({ channel: 'chrome', headless: !HEADED });
   const ctx = await browser.newContext({ acceptDownloads: true });
   const page = await ctx.newPage();
   await page.goto(PAGE_URL, { waitUntil: 'networkidle', timeout: 60_000 });
