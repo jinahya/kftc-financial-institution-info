@@ -17,7 +17,9 @@
 #   4. mvn clean test   -> rebuilds src/main/resources/.../*.ser from the sources
 #      (bankinfo.ser is read straight from bankinfo.hwp via hwplib -- no PDF print)
 #   5. full multi-profile verification build
-#   6. report what changed in the committed data and print tag/deploy next steps
+#   6. report what changed in the committed data
+#   7. commit everything as "Update files on yyyy-MM-dd" -- only after the full
+#      build succeeded (not with --no-build), and only when something changed
 #
 # Prerequisites: sh ./_install.sh (once).
 #
@@ -27,7 +29,7 @@
 # Usage:
 #   sh ./_refresh.sh                # download the 6 files, refresh, verify
 #   sh ./_refresh.sh --no-download  # use the files already in src/test/resources
-#   sh ./_refresh.sh --no-build     # only regenerate xlsx + checksums (skip Maven)
+#   sh ./_refresh.sh --no-build     # only regenerate xlsx + checksums (skip Maven, no commit)
 set -eu
 
 ROOT=$(cd "$(dirname "$0")" && pwd)
@@ -90,14 +92,20 @@ mvn -q -Pdb,json,ndjson,proto clean process-test-resources test
 say "Refresh complete. Changes to committed data:"
 git --no-pager status --short -- src/main/resources src/test/resources || true
 
+# --- 7. commit ----------------------------------------------------------------
+if [ -z "$(git status --porcelain)" ]; then
+    say "Nothing changed -- upstream data is identical; nothing to commit or release."
+    exit 0
+fi
+MESSAGE="Update files on $(date +%Y-%m-%d)"
+say "Committing on $(git symbolic-ref -q --short HEAD || echo 'detached HEAD'): $MESSAGE"
+git add -A
+git commit -q -m "$MESSAGE"
+git --no-pager log -1 --stat --format='%h %s'
+
 cat <<'EOF'
 
-Next steps (manual, after reviewing the diff above):
-  git add -A
-  git commit -m "data: refresh KFTC financial institution data"
-  git push
-
-  # Release: maven-release-plugin (from jinahya-parent) creates the tag and deploys.
-  # Versions are date-based (e.g. 1.0.0.20260205); accept the defaults it proposes:
-  mvn release:prepare release:perform
+Next step, after reviewing the commit above:
+  sh ./_release.sh     # releases and deploys (see RELEASE.md)
+  # or run the `release` skill in Claude Code, which runs the same script
 EOF

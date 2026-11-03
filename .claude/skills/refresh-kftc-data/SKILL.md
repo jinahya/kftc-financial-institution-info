@@ -50,12 +50,11 @@ If inputs are missing, stop and ask the user — do not fabricate data.
    identical — tell the user (a release may be unnecessary).
 
 4. **Commit & release** (only when the user confirms the diff looks right):
-   ```bash
-   git add -A && git commit -m "data: refresh KFTC financial institution data" && git push
-   mvn release:prepare release:perform   # date-based tag (1.0.0.YYYYMMDD) + deploy
-   ```
-   `release:prepare release:perform` requires deploy credentials and a clean tree;
-   if the user only wants the tag, `release:prepare` alone creates and pushes it.
+   `_refresh.sh` has already committed the refresh on `develop` (`Update files on
+   yyyy-MM-dd`) once the full build succeeded; run the `release` skill, which releases
+   and deploys following `RELEASE.md`. Don't run
+   `release:prepare release:perform` on `develop` directly: it skips the `main` merge
+   and, under `jinahya-parent`, does not deploy.
 
 ## Notes
 
