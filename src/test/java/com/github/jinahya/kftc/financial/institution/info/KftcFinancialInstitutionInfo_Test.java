@@ -25,7 +25,8 @@ import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-class KftcFinancialInstitutionInfo_Test extends _Info_Test<KftcFinancialInstitutionInfo> {
+class KftcFinancialInstitutionInfo_Test
+        extends _Info_Test<KftcFinancialInstitutionInfo> {
 
     KftcFinancialInstitutionInfo_Test() {
         super(KftcFinancialInstitutionInfo.class);
