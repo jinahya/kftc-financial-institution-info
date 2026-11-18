@@ -59,7 +59,7 @@ Tests are split across directories activated by Maven profiles:
 | Directory | Profile | Purpose |
 |-----------|---------|---------|
 | `src/test/java/` | (always) | Core unit tests |
-| `src/test/java-db/` | `db` | JPA/Hibernate persistence to SQLite |
+| `src/test/java-db/` | `db` | JDBC export to SQLite |
 | `src/test/java-json/` | `json` | Jackson JSON serialization |
 | `src/test/java-ndjson/` | `ndjson` | NDJSON output |
 | `src/test/java-proto/` | `proto` | Generated protobuf classes + tests |

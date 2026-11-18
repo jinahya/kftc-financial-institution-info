@@ -26,7 +26,6 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.util.List;
 
-//@Disabled("KftcFinancialInstitution_Persistence_BranchInfoSet_Test")
 @Slf4j
 class KftcFinancialInstitution_Resource_Jdbc_BranchInfoSet_Test
         extends KftcFinancialInstitution_Resource_Jdbc__Test {
