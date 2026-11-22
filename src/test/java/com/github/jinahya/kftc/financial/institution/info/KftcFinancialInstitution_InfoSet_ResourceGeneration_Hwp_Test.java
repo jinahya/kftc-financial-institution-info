@@ -50,10 +50,8 @@ import static org.assertj.core.api.Assertions.assertThat;
  * <a href="https://github.com/neolord0/hwplib">hwplib</a>, with no intermediate {@code bankinfo.hwp.pdf} print step.
  *
  * <p>The parsed data is cross-checked against the document's own "구분 / 개수" summary table, so the check is not a
- * hard-coded snapshot: it adjusts to KFTC data updates automatically while still catching a mis-parse (truncated
- * read, layout change, broken download), where the rows would no longer add up to the figures the document declares.
- *
- * @see KftcFinancialInstitution_InfoSet_ResourceGeneration_Test the original PDF-based generator
+ * hard-coded snapshot: it adjusts to KFTC data updates automatically while still catching a mis-parse (truncated read,
+ * layout change, broken download), where the rows would no longer add up to the figures the document declares.
  */
 @Slf4j
 class KftcFinancialInstitution_InfoSet_ResourceGeneration_Hwp_Test

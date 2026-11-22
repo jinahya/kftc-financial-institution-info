@@ -30,7 +30,7 @@ mvn -Pproto test                         # Protocol Buffers
 # All profiles at once
 mvn -Pdb,json,ndjson,proto clean process-test-resources test
 
-# Full build script (runs tests 2x, regenerates proto via .protoc.sh, then runs all profiles)
+# Full build script (runs tests 2x, then runs all profiles; proto is regenerated via Gradle)
 sh ./.mvn.build.sh
 ```
 
@@ -59,7 +59,7 @@ Tests are split across directories activated by Maven profiles:
 | Directory | Profile | Purpose |
 |-----------|---------|---------|
 | `src/test/java/` | (always) | Core unit tests |
-| `src/test/java-db/` | `db` | JPA/Hibernate persistence to SQLite |
+| `src/test/java-db/` | `db` | JDBC export to SQLite |
 | `src/test/java-json/` | `json` | Jackson JSON serialization |
 | `src/test/java-ndjson/` | `ndjson` | NDJSON output |
 | `src/test/java-proto/` | `proto` | Generated protobuf classes + tests |
@@ -71,8 +71,6 @@ Each profile uses `build-helper-maven-plugin` to add its `java-*` and `resources
 Proto definitions live in `src/test/resources-proto/`. The `proto` Maven profile invokes Gradle via `exec-maven-plugin` to run `./gradlew generateTestProto`, which compiles `.proto` files and copies generated Java sources to `src/test/java-proto/`. Generated files are committed to the repo.
 
 Gradle files: `_build.gradle` (underscore prefix to avoid Maven conflicts), `settings.gradle`, `gradle.properties`, `gradlew`. Gradle home is isolated to `.gradle_home/`.
-
-Alternatively, `./.protoc.sh` regenerates the same Java sources by invoking a locally-installed `protoc` directly (bypassing Gradle) — used by `.mvn.build.sh`.
 
 ## Key Conventions
 
