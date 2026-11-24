@@ -17,7 +17,7 @@
 #   5. merge release/<release> into develop
 #   6. delete release/<release>
 #   7. git push origin main develop <release>
-#   then deploy the tag: ./mvnw -Pcentral clean deploy
+#   then deploy the tag: ./mvnw -Pcentral-releases clean deploy
 #
 # Versions default to RELEASE.md's rule and are passed to the release plugin as
 # -DreleaseVersion / -DdevelopmentVersion: <release> = x.y.z+<today> and develop =
@@ -85,7 +85,7 @@ deploy() {
     say "Deploy $1 to Maven Central"
     git rev-parse -q --verify "refs/tags/$1" >/dev/null || die "no such tag: $1"
     git switch -q -d "$1"
-    ./mvnw -Pcentral clean deploy
+    ./mvnw -Pcentral-releases clean deploy
     git switch -q develop
     url="https://repo1.maven.org/maven2/$GROUP_PATH/$ARTIFACT/$(printf %s "$1" | sed 's/+/%2B/g')/$ARTIFACT-$(printf %s "$1" | sed 's/+/%2B/g').pom"
     code=$(curl -s -o /dev/null -w '%{http_code}' "$url" || true)

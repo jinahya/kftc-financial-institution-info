@@ -104,7 +104,7 @@ Any time after the release. From `develop`, check out the tag (detached), deploy
 
 ```sh
 git switch -d <release>
-./mvnw -Pcentral clean deploy && git switch -
+./mvnw -Pcentral-releases clean deploy && git switch -
 ```
 
 ## Not applicable here
